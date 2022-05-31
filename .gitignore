@@ -1,3 +1,4 @@
 *.tar
 logs/
 data/
+.ipynb_checkpoints/
