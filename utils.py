@@ -38,13 +38,11 @@ def compute_similarity(device, client_weights):
                     j_layer_weight = jth_state_dict[name]
                     i_layer_vec = i_layer_weight.view(-1).unsqueeze(-1).to(device)
                     j_layer_vec = j_layer_weight.view(-1).unsqueeze(-1).to(device)
-                    #print(i_layer_vec.shape)
-                    #print(j_layer_vec.shape)
+
                     #cka_value = cuda_cka.linear_CKA(i_layer_vec, j_layer_vec).cpu().item()
-                    #print(cka_value)
-                    cos_value = cos(i_layer_vec, j_layer_vec).cpu().item()
-                    #print(cos_value)
                     #cka_sim[sim_idx] += cka_value
+                    
+                    cos_value = cos(i_layer_vec, j_layer_vec).cpu().item()
                     cos_sim[sim_idx] += cos_value
 
 
@@ -63,10 +61,6 @@ class TransformWrapper(object):
         return [self.base_transform(x) for i in range(self.n_views)] # two views by default
     
 def get_dataset(args):
-    """ Returns train and test datasets and a user group which is a dict where
-    the keys are the user index and the values are the corresponding data for
-    each of those users.
-    """
     cifar_data_path = os.path.join(args.data_path, "cifar")
     mnist_data_path = os.path.join(args.data_path, "mnist")
     
@@ -328,50 +322,98 @@ def average_weights(w):
 
 def exp_details(args, writer):
     print('Experimental details:')
+    print(f'    Seed            : {args.seed}')
     print(f'    Dataset         : {args.dataset}')
     print(f'    Model           : {args.model}')
     print(f'    Pretrained      : {args.pretrained}')
     print(f'    Optimizer       : {args.optimizer}')
-    print(f'    Learning        : {args.lr}')
+    print(f'    Learning rate   : {args.lr}')
     print(f'    Total Rounds    : {args.epochs}')
     print(f'    Alpha           : {args.alpha}')
-    writer.add_text("Dataset", args.dataset, 0)
-    writer.add_text("Model", args.model, 0)
-    writer.add_text("Pretrained", str(args.pretrained), 0)
-    writer.add_text("Optimizer", args.optimizer, 0)
-    writer.add_text("LR", str(args.lr), 0)
-    writer.add_text("Total rounds", str(args.epochs), 0)
-    writer.add_text("Alpha", str(args.alpha), 0)
+    print(f'    Momentum        : {args.momentum}')
+    print(f'    Weight decay    : {args.weight_decay}')
+    
+    
+    writer.add_text("Seed", str(args.seed))
+    writer.add_text("Dataset", args.dataset)
+    writer.add_text("Model", args.model)
+    writer.add_text("Pretrained", str(args.pretrained))
+    writer.add_text("Optimizer", args.optimizer)
+    writer.add_text("LR", str(args.lr))
+    writer.add_text("Total rounds", str(args.epochs))
+    writer.add_text("Alpha", str(args.alpha))
+    writer.add_text("Momentum", str(args.momentum))
+    writer.add_text("Weight decay", str(args.weight_decay))
+    writer.add_text("Exp", args.exp)
+    
     
     if args.exp == "simclr":
+        print("SimCLR")
+        print(f'    Warmup          : {args.warmup}')
+        print(f'    Freeze          : {args.freeze}')
+        print(f'    Adapt Epochs    : {args.adapt_epoch}')
+        print(f'    Warmup Epochs   : {args.warmup_epochs}')
+        print(f'    Warmup Batchsize: {args.warmup_bs}')
+        print(f'    Temperature     : {args.temperature}')
+        print(f'    Output dim      : {args.out_dim}')
+        print(f'    N views         : {args.n_views}')
+
+        writer.add_text("Warmup", str(args.warmup))
+        writer.add_text("Freeze", str(args.freeze))
+        writer.add_text("Adapt Epochs", str(args.adapt_epoch))
+        writer.add_text("Warmup Epochs", str(args.warmup_epochs))
+        writer.add_text("Warmup Batchsize", str(args.warmup_bs))
+        writer.add_text("Temperature", str(args.temperature))
+        writer.add_text("Output dim", str(args.out_dim))
+        writer.add_text("N views", str(args.n_views))
+        
+    elif args.exp == "simsiam":
+        print("SimSiam")
+        print(f'    Freeze          : {args.freeze}')
+        print(f'    Adapt Epochs    : {args.adapt_epoch}')
+        print(f'    Warmup Epochs   : {args.warmup_epochs}')
+        print(f'    Warmup Batchsize: {args.warmup_bs}')
+        print(f'    Output dim      : {args.out_dim}')
+        print(f'    Pred   dim      : {args.pred_dim}')
+        
+        writer.add_text("Warmup", str(args.warmup))
+        writer.add_text("Freeze", str(args.freeze))
+        writer.add_text("Adapt Epochs", str(args.adapt_epoch))
+        writer.add_text("Warmup Epochs", str(args.warmup_epochs))
+        writer.add_text("Warmup Batchsize", str(args.warmup_bs))
+        writer.add_text("Output dim", str(args.out_dim))
+        writer.add_text("Pred dim", str(args.pred_dim))
+        pass
+    
+    elif args.exp == "FL":
+        print("FL")
+        print(f'    Warmup          : {args.warmup}')
         print(f'    Freeze          : {args.freeze}')
         print(f'    Adapt Epochs    : {args.adapt_epoch}')
         print(f'    Warmup Epochs   : {args.warmup_epochs}')
         print(f'    Warmup Batchsize: {args.warmup_bs}')
         
-
+        writer.add_text("Warmup", str(args.warmup))
         writer.add_text("Freeze", str(args.freeze))
         writer.add_text("Adapt Epochs", str(args.adapt_epoch))
         writer.add_text("Warmup Epochs", str(args.warmup_epochs))
-        writer.add_text("Warmup BS", str(args.warmup_bs))
-    
-    elif args.exp == "simsiam":
-        pass
+        writer.add_text("Warmup Batchsize", str(args.warmup_bs))
+        
         
     print('Federated parameters:')
     print(f'    Number of users                : {args.num_users}')
+    print(f'    Fraction of users              : {args.frac}')
     print(f'    Number of train items per user : {args.num_items}')
     print(f'    Number of classes per user     : {args.num_class_per_client}')
-    print(f'    Fraction of users              : {args.frac}')
     print(f'    Local Batch size               : {args.local_bs}')
     print(f'    Local Epochs                   : {args.local_ep}')
     print(f'    Checkpoint path                : {args.ckpt_path}')
     print(f'    Tensorboard log path           : {args.log_path}')
     writer.add_text("Num users", str(args.num_users))
+    writer.add_text("Frac client", str(args.frac))
     writer.add_text("Num items per user", str(args.num_items))
     writer.add_text("Num classes per user", str(args.num_class_per_client))
-    writer.add_text("Frac client", str(args.frac))
-    writer.add_text("Local bs", str(args.local_bs))
+    writer.add_text("Local Batchsize", str(args.local_bs))
     writer.add_text("Local epochs", str(args.local_ep))
     writer.flush()
     
