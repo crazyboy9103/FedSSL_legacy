@@ -54,13 +54,20 @@ def compute_similarity(device, client_weights):
 
     return cos_sim
             
-class TransformWrapper(object):
+class TransformWrapperSimCLR(object):
     def __init__(self, base_transform, args):
         self.base_transform = base_transform
         self.n_views = args.n_views
 
     def __call__(self, x):
         return [self.base_transform(x) for i in range(self.n_views)] # two views by default
+   
+class TransformWrapperSimSiam(object):
+    def __init__(self, base_transform, args):
+        self.base_transform = base_transform
+
+    def __call__(self, x):
+        return [transforms.ToTensor()(x), self.base_transform(x)]
     
 def get_dataset(args):
     """ Returns train and test datasets and a user group which is a dict where
@@ -70,7 +77,7 @@ def get_dataset(args):
     cifar_data_path = os.path.join(args.data_path, "cifar")
     mnist_data_path = os.path.join(args.data_path, "mnist")
     
-    if args.exp == "simclr" or args.exp == "simsiam":
+    if args.exp == "simclr":
         s = args.strength
         target_size = args.target_size
         
@@ -95,7 +102,7 @@ def get_dataset(args):
             train_dataset = datasets.CIFAR10(
                 cifar_data_path, 
                 train=True, 
-                transform=TransformWrapper(train_transforms, args), 
+                transform=TransformWrapperSimCLR(train_transforms, args), 
                 download=True
             )
             test_dataset = datasets.CIFAR10(
@@ -107,7 +114,7 @@ def get_dataset(args):
             warmup_dataset = datasets.CIFAR10(
                 cifar_data_path, 
                 train=False, 
-                transform=TransformWrapper(warmup_transforms, args), 
+                transform=TransformWrapperSimCLR(warmup_transforms, args), 
                 download=True
             )
             
@@ -143,7 +150,7 @@ def get_dataset(args):
                 mnist_data_path, 
                 train=True, 
                 download=True,
-                transform=TransformWrapper(train_transforms, args)
+                transform=TransformWrapperSimCLR(train_transforms, args)
             )
 
             test_dataset = datasets.MNIST(
@@ -157,7 +164,7 @@ def get_dataset(args):
                 mnist_data_path, 
                 train=False, 
                 download=True,
-                transform=TransformWrapper(warmup_transforms, args),
+                transform=TransformWrapperSimCLR(warmup_transforms, args),
             )
 
             # sample training data amongst users
@@ -191,6 +198,125 @@ def get_dataset(args):
                     )
 
     
+    elif args.exp == "simsiam":
+        s = args.strength
+        target_size = args.target_size
+        
+        color_jitter = transforms.ColorJitter(0.8 * s, 0.8 * s, 0.8 * s, 0.2 * s)
+        train_transforms = transforms.Compose([
+            transforms.RandomResizedCrop(size=target_size),
+            transforms.RandomHorizontalFlip(),
+            transforms.RandomApply([color_jitter], p=0.8),
+            #transforms.RandomGrayscale(p=0.2),
+            transforms.GaussianBlur(kernel_size=int(0.1 * target_size)),
+            transforms.ToTensor()
+        ])
+        
+        test_transforms = transforms.Compose([
+            transforms.Resize(size=target_size), 
+            transforms.ToTensor()
+        ])
+
+        warmup_transforms = train_transforms
+        
+        if args.dataset == "cifar":
+            train_dataset = datasets.CIFAR10(
+                cifar_data_path, 
+                train=True, 
+                transform=TransformWrapperSimSiam(train_transforms, args), 
+                download=True
+            )
+            test_dataset = datasets.CIFAR10(
+                cifar_data_path, 
+                train=False, 
+                transform=test_transforms, 
+                download=True
+            )
+            warmup_dataset = datasets.CIFAR10(
+                cifar_data_path, 
+                train=False, 
+                transform=TransformWrapperSimSiam(warmup_transforms, args), 
+                download=True
+            )
+            
+            if args.iid:
+                user_train_idxs = cifar_iid(
+                    train_dataset, 
+                    args.num_users, 
+                    args.num_items
+                )
+            
+            else:
+                if args.unequal:
+                    user_train_idxs = cifar_noniid_unequal(
+                        train_dataset, 
+                        args.num_users,
+                        args.num_items, 
+                        args.alpha, 
+                        args.num_class_per_client
+                    )
+
+                else:
+                    # Chose equal size splits for every user
+                    user_train_idxs = cifar_noniid(
+                        train_dataset, 
+                        args.num_users, 
+                        args.num_items, 
+                        args.alpha,
+                        args.num_class_per_client
+                    )
+        
+        elif args.dataset == 'mnist':
+            train_dataset = datasets.MNIST(
+                mnist_data_path, 
+                train=True, 
+                download=True,
+                transform=TransformWrapperSimSiam(train_transforms, args)
+            )
+
+            test_dataset = datasets.MNIST(
+                mnist_data_path, 
+                train=False, 
+                download=True,
+                transform=test_transforms
+            )
+            
+            warmup_dataset = datasets.MNIST(
+                mnist_data_path, 
+                train=False, 
+                download=True,
+                transform=TransformWrapperSimSiam(warmup_transforms, args),
+            )
+
+            # sample training data amongst users
+
+            if args.iid:
+                # Sample IID user data from Mnist
+                user_train_idxs = mnist_iid(
+                    train_dataset, 
+                    args.num_users, 
+                    args.num_items
+                )
+            else:
+                # Sample Non-IID user data from Mnist
+                if args.unequal:
+                    # Chose unequal splits for every user
+                    user_train_idxs = mnist_noniid_unequal(
+                        train_dataset, 
+                        args.num_users, 
+                        args.num_items, 
+                        args.alpha, 
+                        args.num_class_per_client
+                    )
+                else:
+                    # Chose equal splits for every user
+                    user_train_idxs = mnist_noniid(
+                        train_dataset, 
+                        args.num_users, 
+                        args.num_items, 
+                        args.alpha, 
+                        args.num_class_per_client
+                    )
     # Normal FL
     elif args.exp == "FL":
         if args.dataset == 'cifar':
