@@ -15,14 +15,11 @@ from torch.utils.data import DataLoader, Subset
 
 from options import args_parser
 
-from trainers import NormalFL, SimCLR, SimSiam
+from trainers import Trainer
 from update import LocalModel
 from models import LinearEvalModel, ResNet50, ResNet18, SimSiamResNet18, SimSiamResNet50
 from utils import get_dataset, average_weights, exp_details, compute_similarity
 from CKA import CKA, CudaCKA
-# import threading 
-# import GPUtil
-# GPUtil.showUtilization()
 
 if __name__ == '__main__':
     args = args_parser()
@@ -107,36 +104,16 @@ if __name__ == '__main__':
             pin_memory=True
         )
         
-        if args.exp == "simclr":
-            server_model = SimCLR(
-                args = args,
-                model = copy.deepcopy(global_model), 
-                train_loader = None, 
-                test_loader = test_loader,
-                warmup_loader = warmup_loader,
-                device = device, 
-                client_id = -1
-            )
-        elif args.exp == "simsiam":
-            server_model = SimSiam(
-                args = args,
-                model = copy.deepcopy(global_model), 
-                train_loader = None, 
-                test_loader = test_loader,
-                warmup_loader = warmup_loader,
-                device = device, 
-                client_id = -1
-            )
-        elif args.exp == "FL":
-            server_model = NormalFL(
-                args = args,
-                model = copy.deepcopy(global_model), 
-                train_loader = None, 
-                test_loader = test_loader,
-                warmup_loader = warmup_loader,
-                device = device, 
-                client_id = -1
-            )
+        server_model = Trainer(
+            args = args,
+            model = copy.deepcopy(global_model), 
+            train_loader = None, 
+            test_loader = test_loader,
+            warmup_loader = warmup_loader,
+            device = device, 
+            client_id = -1
+        )
+        
         # Start warmup
         warmup_state = server_model.warmup(args.warmup_epochs)
         
@@ -217,37 +194,15 @@ if __name__ == '__main__':
             pin_memory=True
         )
         
-        if args.exp == "simclr":
-            server_model = SimCLR(
-                args = args,
-                model = copy.deepcopy(global_model), 
-                train_loader = None, 
-                test_loader = test_loader,
-                warmup_loader = None,
-                device = device, 
-                client_id = -1
-            )
-            
-        elif args.exp == "FL":
-            server_model = NormalFL(
-                args = args,
-                model = copy.deepcopy(global_model), 
-                train_loader = None, 
-                test_loader = test_loader,
-                device = device, 
-                client_id = -1
-            )
-        
-        elif args.exp == "simsiam":
-            server_model = SimSiam(
-                args = args,
-                model = copy.deepcopy(global_model), 
-                train_loader = None, 
-                test_loader = test_loader,
-                warmup_loader = None,
-                device = device, 
-                client_id = -1
-            )
+        server_model = Trainer(
+            args = args,
+            model = copy.deepcopy(global_model), 
+            train_loader = None, 
+            test_loader = test_loader,
+            warmup_loader = None,
+            device = device, 
+            client_id = -1
+        )
         
         loss_avg, top1_avg, top5_avg = server_model.test()
         

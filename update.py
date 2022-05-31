@@ -5,7 +5,7 @@
 import torch
 from torch import nn
 from torch.utils.data import DataLoader, Dataset, Subset
-from trainers import SimCLR, NormalFL, SimSiam
+from trainers import Trainer
 import copy 
 
 class LocalModel():
@@ -47,37 +47,18 @@ class LocalModel():
             pin_memory=True
         )
         
-        if args.exp == "simclr":
-            self.trainer = SimCLR(
-                args = self.args,
-                model = self.model, 
-                train_loader = self.train_loader,
-                test_loader = self.test_loader,
-                warmup_loader = None,
-                device = self.device, 
-                client_id = client_id
-            )
-            
-        elif args.exp == "simsiam":
-            self.trainer = SimSiam(
-                args = self.args,
-                model = self.model, 
-                train_loader = self.train_loader,
-                test_loader = self.test_loader,
-                warmup_loader = None,
-                device = self.device, 
-                client_id = client_id
-            )
+
+        self.trainer = Trainer(
+            args = self.args,
+            model = self.model, 
+            train_loader = self.train_loader,
+            test_loader = self.test_loader,
+            warmup_loader = None,
+            device = self.device, 
+            client_id = client_id
+        )
+
         
-        elif args.exp == "FL":
-            self.trainer = NormalFL(
-                args = self.args,
-                model = self.model, 
-                train_loader = self.train_loader,
-                test_loader = self.test_loader,
-                device = self.device, 
-                client_id = client_id
-            )
         
 
     def update_weights(self):
