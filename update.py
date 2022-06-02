@@ -19,7 +19,8 @@ class LocalModel():
             self.optimizer = torch.optim.SGD(
                 self.model.parameters(), 
                 lr=args.lr, 
-                momentum=args.momentum)
+                momentum=args.momentum
+            )
             
         elif args.optimizer == "adam":
             self.optimizer = torch.optim.Adam(
@@ -28,9 +29,10 @@ class LocalModel():
                 weight_decay=args.weight_decay
             )
         
-        
         self.device = torch.device(f"cuda:{args.train_device}") if torch.cuda.is_available() else torch.device("cpu")
-        
+        if args.parallel:
+            num_gpu = torch.cuda.device_count()
+            self.device = torch.device(f"cuda:{client_id % num_gpu}")
         
         self.train_loader = DataLoader(
             trainset, 
@@ -65,3 +67,12 @@ class LocalModel():
         best_model_state = self.trainer.train()
         model_state_dict, loss, top1, top5 = best_model_state["model"], best_model_state["loss"], best_model_state["top1"], best_model_state["top5"]
         return model_state_dict, loss, top1, top5
+    
+    def update_weights_parallel(self, model_dict, loss_dict, top1_dict, top5_dict):
+        best_model_state = self.trainer.train()
+        model_state_dict, loss, top1, top5 = best_model_state["model"], best_model_state["loss"], best_model_state["top1"], best_model_state["top5"]
+        model_dict[self.client_id] = model_state_dict
+        loss_dict[self.client_id] = loss
+        top1_dict[self.client_id] = top1
+        top5_dict[self.client_id] = top5
+        

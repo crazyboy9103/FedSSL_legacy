@@ -8,6 +8,7 @@ import copy
 import time
 import numpy as np
 from tqdm import tqdm
+import threading 
 
 import torch
 from torch.utils.tensorboard import SummaryWriter
@@ -17,7 +18,7 @@ from options import args_parser
 
 from trainers import Trainer
 from update import LocalModel
-from models import LinearEvalModel, ResNet50, ResNet18, SimSiamResNet18, SimSiamResNet50
+from models import ResNet50, ResNet18, VGG16
 from utils import get_dataset, average_weights, exp_details, compute_similarity
 from CKA import CKA, CudaCKA
 
@@ -34,50 +35,41 @@ if __name__ == '__main__':
     torch.manual_seed(args.seed)
     np.random.seed(args.seed)
     
-
+    models_dict = {"resnet18": ResNet50, "resnet50": ResNet50, "vgg16": VGG16}
     if args.exp == "simclr":
         # BUILD MODEL
-        if args.model == "resnet18":
-            global_model = ResNet18(
-                pretrained = args.pretrained, 
-                out_dim = args.out_dim, 
-                simclr = True
-            )
-        elif args.model == "resnet50":
-            global_model = ResNet50(
-                pretrained = args.pretrained, 
-                out_dim = args.out_dim, 
-                simclr = True
-            )
+        global_model = models_dict[args.model](
+            pretrained = args.pretrained, 
+            out_dim = args.out_dim, 
+            exp = "simclr", 
+            mode = "train", 
+            freeze = args.freeze,
+            pred_dim = None, 
+            num_classes = 10
+        )
     
     elif args.exp == "simsiam":
-        if args.model == "resnet18":
-            global_model = SimSiamResNet18(
-                pretrained = args.pretrained, 
-                out_dim = args.out_dim, 
-                pred_dim = args.pred_dim
-            )
-        elif args.model == "resnet50":
-            global_model = SimSiamResNet50(
-                pretrained = args.pretrained, 
-                out_dim = args.out_dim, 
-                pred_dim = args.pred_dim
-            )
+         global_model = models_dict[args.model](
+            pretrained = args.pretrained, 
+            out_dim = args.out_dim, 
+            exp = "simsiam", 
+            mode = "train", 
+            freeze = args.freeze,
+            pred_dim = args.pred_dim, 
+            num_classes = 10
+        )
                 
     elif args.exp == "FL":
-        if args.model == "resnet18":
-            global_model = ResNet18(
-                pretrained = args.pretrained, 
-                out_dim = args.out_dim, 
-                simclr = False
-            )
-        elif args.model == "resnet50":
-            global_model = ResNet50(
-                pretrained = args.pretrained, 
-                out_dim = args.out_dim, 
-                simclr = False
-            )
-
+        global_model = models_dict[args.model](
+            pretrained = args.pretrained, 
+            out_dim = args.out_dim, 
+            exp = "FL", 
+            mode = "train", 
+            freeze = args.freeze,
+            pred_dim = None, 
+            num_classes = 10
+        )
+        
     # Set the model to train and send it to device.
     global_model.to(device)
     global_model.train()
@@ -131,14 +123,13 @@ if __name__ == '__main__':
     for epoch in range(args.epochs):
         local_weights, local_losses, local_top1s, local_top5s = {}, {}, {}, {}
         print(f'\n | Global Training Round : {epoch+1} |\n')
-
-        global_model.train()
         
         # Select clients for training in this round
         num_clients_part = int(args.frac * args.num_users)
         assert num_clients_part > 0
         part_users_ids = np.random.choice(range(args.num_users), num_clients_part, replace=False)
         
+        threads = []
         for i, client_id in enumerate(part_users_ids):
             trainset = Subset(train_dataset, user_train_idxs[client_id]) 
             # instantiate local model
@@ -150,16 +141,24 @@ if __name__ == '__main__':
                 client_id = i
             )
             
-            model_state_dict, loss, top1, top5 = local_model.update_weights()
-            
-            print(f"client {i} updated")
-            # collect weights, metrics
-            local_weights[i] = copy.deepcopy(model_state_dict)
-            local_losses[i] = copy.deepcopy(loss)
-            local_top1s[i] = top1
-            local_top5s[i] = top5
+            if args.parallel:
+                thread = threading.Thread(target=local_model.update_weights_parallel, args=(local_weights, local_losses, local_top1s, local_top5s,))
+                threads.append(thread)
+                thread.start()
+                
+            else:
+                model_state_dict, loss, top1, top5 = local_model.update_weights()
+
+                print(f"client {i} updated")
+                # collect weights, metrics
+                local_weights[i] = model_state_dict
+                local_losses[i] = loss
+                local_top1s[i] = top1
+                local_top5s[i] = top5
         
-        
+        if args.parallel:
+            for thread in threads:
+                thread.join()
             
             
         for i, client_id in enumerate(part_users_ids):
@@ -201,7 +200,7 @@ if __name__ == '__main__':
             client_id = -1
         )
         
-        loss_avg, top1_avg, top5_avg = server_model.test()
+        _, _, loss_avg, top1_avg, top5_avg = server_model.test()
         
         valid_loss.append(loss_avg)
         valid_top1.append(top1_avg)

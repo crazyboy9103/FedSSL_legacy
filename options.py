@@ -21,7 +21,7 @@ def args_parser():
     parser.add_argument('--num_classes', type=int,  default=10,         help="number of classes")
     
     # Experimental setup
-    parser.add_argument("--exp",           type=str,   default="simclr", help="FL|simclr|simsiam")
+    parser.add_argument("--exp",           type=str,   default="simclr",  help="FL|simclr|simsiam")
     parser.add_argument("--temperature",   type=float, default=0.1,       help="softmax temperature")
     parser.add_argument("--alpha",         type=float, default=0.9,       help="dirichlet param 0<alpha<1 controls iidness")
     parser.add_argument('--adapt_epoch',   type=int,   default=10,        help="adaptation epochs")
@@ -34,6 +34,11 @@ def args_parser():
     parser.add_argument('--warmup_epochs', type=int,   default=90,        help="warmup epochs")
     parser.add_argument("--pred_dim",      type=int,   default=256,       help="pred dim for simsiam")
     parser.add_argument("--warmup",        type=bool,  default=True,      help="warmup at init")
+    parser.add_argument("--ema",           type=float, default=0.996,     help="ema value for target net in orchestra")
+    parser.add_argument("--n_glob_clusters",       type=int,  default=128,      help="number of global clusters in orchestra")
+    parser.add_argument("--n_loc_clusters",        type=int,  default=16,       help="number of local clusters in orchestra")
+    parser.add_argument("--cluster_m_size",        type=int,  default=128,      help="Memory size per client in orchestra")
+    
     
     
     # FL
@@ -50,6 +55,7 @@ def args_parser():
     parser.add_argument('--weight_decay',         type=float,  default=1e-4,       help='weight decay (default: 1e-4)')
     
     # Train setting
+    parser.add_argument("--parallel",    type=bool,  default=True,                 help="parallel training with threads")
     parser.add_argument('--log_path',    type=str,   default='./logs',             help="tensorboard log dir")
     parser.add_argument('--dataset',     type=str,   default='cifar',              help="mnist|cifar")
     parser.add_argument('--optimizer',   type=str,   default='sgd',                help="type of optimizer")

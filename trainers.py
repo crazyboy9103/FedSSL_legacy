@@ -3,7 +3,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 
-from models import LinearEvalModel, SimSiamLinear
 import copy 
 import time
 from tqdm import tqdm
@@ -98,6 +97,7 @@ class Trainer():
         )
         
         self.model.train()
+        
         start = time.time()
         for epoch in range(self.local_epochs):
             # Metric
@@ -139,13 +139,13 @@ class Trainer():
             lr = self.optimizer.param_groups[0]['lr']
             if (epoch+1)%5 == 0:
                 # Test metrics
-                test_loss, test_top1, test_top5 = self.test()
+                eval_model_state, optim_state, test_loss, test_top1, test_top5 = self.test()
                 
                 end = time.time()
                 time_taken = end-start
                 start = end
                 
-                print(f"""Client {self.client_id} Epoch [{epoch}/{self.local_epochs}]:
+                print(f"""Client {self.client_id} Epoch [{epoch+1}/{self.local_epochs}]:
                           learning rate : {lr:.6f}
                           test acc/top1 : {test_top1:.2f}%
                           test acc/top5 : {test_top5:.2f}%
@@ -161,44 +161,25 @@ class Trainer():
                         "loss": test_loss, 
                         "top1": test_top1, 
                         "top5": test_top5,
-                        "model": self.model.state_dict(), 
-                        "optim": self.optimizer.state_dict()
+                        "model": eval_model_state, 
+                        "optim": optim_state
                     }
 
                     best_model_state = state_dict
 
         print(f"Training complete best top1/top5: {best_top1:.2f}%/{best_top5:.2f}%")
         return best_model_state
-
+    
+    
     def test(self):
         print(f"Linear evaluating {self.exp} model")
-        if self.exp == "FL":
-            eval_model = copy.deepcopy(self.model)
-        
-
-       
-        elif self.exp == "simclr":
-            eval_model = LinearEvalModel(
-                self.model.linear_eval_model(
-                    freeze=self.args.freeze, 
-                    num_classes=self.args.num_classes
-                )
-            )
-       
-        elif self.exp == "simsiam":
-            eval_model = SimSiamLinear(
-                trained_encoder = self.model.encoder,
-                freeze = self.args.freeze, 
-                num_classes = self.args.num_classes
-            )
-            
-        eval_model.eval()
+        eval_model = copy.deepcopy(self.model)
+        eval_model.mode = "linear"
         eval_model = eval_model.to(self.device)
         optimizer = optim.Adam(
             eval_model.parameters(), 
             lr=0.001
         )
-        
         
         N = len(self.test_loader)
         
@@ -207,25 +188,36 @@ class Trainer():
         running_top5 = AverageMeter("acc/top5")
     
         for batch_idx, (images, labels) in enumerate(self.test_loader):
-            
-            if self.exp == "FL":
+            if batch_idx < int(0.8 * N):
+                eval_model.train()
+                images = images.to(self.device)
+                labels = labels.to(self.device)
+                
+                preds = eval_model(images)
+                loss = self.FL_criterion(preds, labels) # FL_criterion is standard CE
+                
+                optimizer.zero_grad()
+                loss.backward()
+                optimizer.step()
+
+            # Testing
+            else:
+                eval_model.eval()
                 with torch.no_grad():
                     images = images.to(self.device)
                     labels = labels.to(self.device)
-
+                    
                     preds = eval_model(images)
-
                     loss = self.FL_criterion(preds, labels)
-
-                    running_loss.update(loss)
+                    
+                    
+                    loss_value = loss.item()
 
                     _, top1_preds = torch.max(preds.data, 1)
-
                     _, top5_preds = torch.topk(preds.data, k=5, dim=-1)
 
                     top1 = ((top1_preds == labels).sum().item() / labels.size(0)) * 100
                     top5 = 0
-
                     for label, pred in zip(labels, top5_preds):
                         if label in pred:
                             top5 += 1
@@ -233,61 +225,17 @@ class Trainer():
                     top5 /= labels.size(0)
                     top5 *= 100
 
+                    running_loss.update(loss_value)
                     running_top1.update(top1)
-                    running_top5.update(top5)
-            elif self.exp == "simclr" or self.exp == "simsiam":
-                # Finetuning
-                if batch_idx < int(0.8 * N):
-                    eval_model.train()
-                    images = images.to(self.device)
-                    labels = labels.to(self.device)
-
-                    preds = eval_model(images)
-                    optimizer.zero_grad()
-                    loss = self.FL_criterion(preds, labels)
-                    loss.backward()
-                    optimizer.step()
-
-                # Testing
-                else:
-                    eval_model.eval()
-                    with torch.no_grad():
-
-                        images = images.to(self.device)
-                        labels = labels.to(self.device)
-                        preds = eval_model(images)
-
-                        loss = self.FL_criterion(preds, labels)
-
-                        running_loss.update(loss)
-
-                        _, top1_preds = torch.max(preds.data, 1)
-
-                        _, top5_preds = torch.topk(preds.data, k=5, dim=-1)
-
-                        top1 = ((top1_preds == labels).sum().item() / labels.size(0)) * 100
-                        top5 = 0
-                        for label, pred in zip(labels, top5_preds):
-                            if label in pred:
-                                top5 += 1
-
-                        top5 /= labels.size(0)
-                        top5 *= 100
-
-                        running_top1.update(top1)
-                        running_top5.update(top5)
-            
-            elif self.exp == "orchestra":
-                pass
-            
-            
-                
-                
+                    running_top5.update(top5)                
+        
+        
+        eval_model_state = eval_model.state_dict()
+        optim_state = optimizer.state_dict()
         avg_loss = running_loss.get_result()
         avg_top1 = running_top1.get_result()
         avg_top5 = running_top5.get_result()
-            
-        return avg_loss, avg_top1, avg_top5
+        return eval_model_state, optim_state, avg_loss, avg_top1, avg_top5
     
     def warmup(self, epochs):
         scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
@@ -296,6 +244,7 @@ class Trainer():
             eta_min = 0,
             last_epoch = -1
         )
+        
         best_loss = 999999
         best_top1 = -999999
         best_top5 = -999999
@@ -342,11 +291,11 @@ class Trainer():
             
             if (warm_epoch+1) % 5 == 0:
                 # Test metrics
-                test_loss, test_top1, test_top5 = self.test()
+                eval_model_state, optim_state, test_loss, test_top1, test_top5 = self.test()
                 end = time.time()
                 time_taken = end-start
                 start = end
-                print(f"""Client {self.client_id} Epoch [{warm_epoch}/{self.args.warmup_epochs}]:
+                print(f"""Client {self.client_id} Epoch [{warm_epoch+1}/{self.args.warmup_epochs}]:
                           learning rate : {lr:.6f}
                           test acc/top1 : {test_top1:.2f}%
                           test acc/top5 : {test_top5:.2f}%
@@ -362,8 +311,8 @@ class Trainer():
                         "loss": test_loss, 
                         "top1": test_top1, 
                         "top5": test_top5,
-                        "model": self.model.state_dict(), 
-                        "optim": self.optimizer.state_dict()
+                        "model": eval_model_state,
+                        "optim": optim_state
                     }
 
                     best_model_state = state_dict
