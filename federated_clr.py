@@ -170,9 +170,6 @@ if __name__ == '__main__':
             tb_writer.add_scalar(f"val_top5_acc_client_{i}", top5, epoch)
         
         
-        # Convert dictionary into list
-        # local_weights = list(local_weights.values())
-        
         # Compute cosine similarity between model weights
         cos_sim = compute_similarity(torch.device(f"cuda:{args.train_device}"), local_weights)
         

@@ -25,7 +25,7 @@ def compute_similarity(device, client_weights):
 
         # CKA, Cosine
         #cuda_cka = CudaCKA(device)
-        cos = nn.CosineSimilarity(dim=0, eps=1e-6)
+        cos = nn.CosineSimilarity(dim=0, eps=1e-6).to(device)
 
         N_weights = len(client_weights)
         for i in range(N_weights):

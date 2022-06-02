@@ -40,12 +40,6 @@ class Trainer():
             args.lr
         )
         
-        self.scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
-            self.optimizer, 
-            T_max = self.local_epochs, 
-            eta_min = 0,
-            last_epoch = -1
-        )
         
         self.train_loader = train_loader
         self.test_loader = test_loader
@@ -55,28 +49,33 @@ class Trainer():
         
         self.FL_criterion = nn.CrossEntropyLoss().to(self.device)
         self.SimCLR_criterion = nn.CrossEntropyLoss(reduction="sum").to(self.device)
-        self.SimSiam_criterion = nn.CosineSimilarity(dim=1).to(self.device)
-        #self.criterion = nn.CrossEntropyLoss().to(self.device)
+        self.SimSiam_criterion = nn.CosineSimilarity(dim=-1).to(self.device)
+
         
     def simsiam_loss(self, p1, p2, z1, z2):
         loss = -(self.SimSiam_criterion(p1, z2).mean() + self.SimSiam_criterion(p2, z1).mean()) * 0.5
         return loss
     
     def nce_loss(self, features):
-        features = F.normalize(features, dim=1)
+        # features = (local batch size * 2, out_dim) shape 
         feature1, feature2 = torch.tensor_split(features, 2, 0)
+        # feature1, 2 = (local batch size, out_dim) shape
+        feature1, feature2 = F.normalize(feature1, dim=1), F.normalize(feature2, dim=1)
         batch_size = feature1.shape[0]
         LARGE_NUM = 1e9
         
+        # each example in feature1 (or 2) corresponds assigned to label in [0, batch_size) 
         labels = torch.arange(0, batch_size, device=self.device, dtype=torch.int64)
+        # mask to ignore diagonal entries (self similarity)
         masks = torch.eye(batch_size, device=self.device)
         
         
-        logits_aa = torch.matmul(feature1, feature1.T) / self.temperature
+        logits_aa = torch.matmul(feature1, feature1.T) / self.temperature #similarity matrix 
         logits_aa = logits_aa - masks * LARGE_NUM
         
         logits_bb = torch.matmul(feature2, feature2.T) / self.temperature
         logits_bb = logits_bb - masks * LARGE_NUM
+        
         logits_ab = torch.matmul(feature1, feature2.T) / self.temperature
         logits_ba = torch.matmul(feature2, feature1.T) / self.temperature
         
@@ -91,7 +90,12 @@ class Trainer():
         best_top5 = -999999
         best_model_state = None
         
-        
+        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+            self.optimizer, 
+            T_max = self.local_epochs, 
+            eta_min = 0,
+            last_epoch = -1
+        )
         
         self.model.train()
         start = time.time()
@@ -126,7 +130,7 @@ class Trainer():
                 running_loss.update(loss_value)
 
                 
-            self.scheduler.step()
+            scheduler.step()
             
             # Train metrics
             avg_loss = running_loss.get_result()
@@ -286,17 +290,19 @@ class Trainer():
         return avg_loss, avg_top1, avg_top5
     
     def warmup(self, epochs):
-        self.scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
             self.optimizer, 
-            T_max=epochs,
-            eta_min=0, 
-            last_epoch=-1
+            T_max = epochs, 
+            eta_min = 0,
+            last_epoch = -1
         )
         best_loss = 999999
         best_top1 = -999999
         best_top5 = -999999
         best_model_state = None
         print(f"Warming up {self.exp} model")
+        
+        self.model.train()
         start = time.time()
         for warm_epoch in range(epochs):
             running_loss = AverageMeter("loss")
@@ -327,7 +333,7 @@ class Trainer():
                 running_loss.update(loss_value)
             
             
-            self.scheduler.step()
+            scheduler.step()
             # Train metrics
             avg_loss = running_loss.get_result()
             running_loss.reset()
