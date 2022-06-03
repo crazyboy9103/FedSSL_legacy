@@ -136,6 +136,8 @@ class Trainer():
             avg_loss = running_loss.get_result()
             running_loss.reset()
             
+
+            
             lr = self.optimizer.param_groups[0]['lr']
             if (epoch+1)%5 == 0:
                 # Test metrics
@@ -161,8 +163,12 @@ class Trainer():
                         "loss": test_loss, 
                         "top1": test_top1, 
                         "top5": test_top5,
-                        "model": eval_model_state, 
-                        "optim": optim_state
+                        ########## Keondo: I think below part should be changed as below ##########
+                        ## Client should not have access to the test data
+                        "model": copy.deepcopy(self.model.state_dict()),
+                        "optim": copy.deepcopy(self.optimizer.state_dict())
+                        #"model": eval_model_state, 
+                        #"optim": optim_state
                     }
 
                     best_model_state = state_dict
@@ -171,7 +177,7 @@ class Trainer():
         return best_model_state
     
     
-    def test(self):
+    def test(self, finetune=False):
         print(f"Linear evaluating {self.exp} model")
         eval_model = copy.deepcopy(self.model)
         eval_model.mode = "linear"
@@ -188,7 +194,7 @@ class Trainer():
         running_top5 = AverageMeter("acc/top5")
     
         for batch_idx, (images, labels) in enumerate(self.test_loader):
-            if batch_idx < int(0.8 * N):
+            if finetune and batch_idx < int(0.8 * N):
                 eval_model.train()
                 images = images.to(self.device)
                 labels = labels.to(self.device)
@@ -230,8 +236,8 @@ class Trainer():
                     running_top5.update(top5)                
         
         
-        eval_model_state = eval_model.state_dict()
-        optim_state = optimizer.state_dict()
+        eval_model_state = copy.deepcopy(eval_model.state_dict())
+        optim_state = copy.deepcopy(optimizer.state_dict())
         avg_loss = running_loss.get_result()
         avg_top1 = running_top1.get_result()
         avg_top5 = running_top5.get_result()
@@ -250,12 +256,19 @@ class Trainer():
         best_top5 = -999999
         best_model_state = None
         print(f"Warming up {self.exp} model")
+
+        N = len(self.test_loader)
+
         
         self.model.train()
         start = time.time()
         for warm_epoch in range(epochs):
             running_loss = AverageMeter("loss")
             for batch_idx, (images, labels) in enumerate(self.warmup_loader):
+                
+                # Warmup should not use evaluation data
+                if batch_idx >= int(0.8 * N): continue
+
                 if self.exp == "FL":
                     images = images.to(self.device)
                     labels = labels.to(self.device)

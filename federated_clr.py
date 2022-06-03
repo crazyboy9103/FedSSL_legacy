@@ -200,7 +200,10 @@ if __name__ == '__main__':
             client_id = -1
         )
         
-        _, _, loss_avg, top1_avg, top5_avg = server_model.test()
+        eval_model_state, _, loss_avg, top1_avg, top5_avg = server_model.test(finetune=True)
+
+        # Update the finetuned model from labeld data, to global model
+        global_model.load_state_dict(eval_model_state, strict=False)
         
         valid_loss.append(loss_avg)
         valid_top1.append(top1_avg)
