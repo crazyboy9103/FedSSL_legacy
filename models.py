@@ -7,6 +7,7 @@ import torch.nn.functional as F
 from torchvision import models
 import copy 
 
+
 # VGG
 class VGG16(nn.Module):
     def __init__(self, pretrained, out_dim, exp, mode, freeze, pred_dim = None, num_classes = 10):
@@ -80,10 +81,7 @@ class VGG16(nn.Module):
             
             #Rotation
             self.deg_layer = nn.Linear(hidden_dim, 4)
-            
-            self.mem_projections = nn.Linear(self.m_size, 512, bias=False)
-            self.centroids = nn.Linear(512, self.N_centroids, bias=False) # must be defined second last
-            self.local_centroids = nn.Linear(512, self.N_local, bias=False) # must be defined last
+            self.centroids = 
             
             
             
@@ -96,8 +94,8 @@ class VGG16(nn.Module):
             # Train last linear layer is must
             for param in self.predictor.parameters():
                 param.requires_grad = True
-                
-    def forward(self, x1, x2=None, x3=None, deg_labels=None):
+    
+    def forward(self, x1, x2=None, x3=None):
         if self.mode == "linear":
             return self.predictor(self.backbone(x1))
         
@@ -118,43 +116,11 @@ class VGG16(nn.Module):
                 return self.predictor(self.backbone(x1))
             
             elif self.exp == "orchestra":
-                N = x1.shape[0]
-                C = self.centroids.weight.data.detach().T
-                
-                Z1 = F.normalize(self.predictor(self.backbone(x1)), dim=1)
-                Z2 = F.normalize(self.predictor(self.backbone(x2)), dim=1)
-                
-                cZ2 = Z2 @ C
-                
-                logpZ2 = torch.log(F.softmax(cZ2 / self.T, dim=1))
-                
-                with torch.no_grad():
-                    tau = self.ema
-                    
-                    for target, online in zip(self.target_backbone.parameters(), self.backbone.parameters()):
-                        target.data = (tau) * target.data + (1 - tau) * online.data
-                    for target, online in zip(self.target_projector.parameters(), self.projector.parameters()):
-                        target.data = (tau) * target.data + (1 - tau) * online.data
-                        
-                    tZ1 = F.normalize(self.target_predictor(self.target_backbone(x1)), dim=1)
-                    
-                    cP1 = tZ1 @ C
-                    tP1 = F.softmax(cP1 / self.T, dim=1)
-                
-                L_cluster = -torch.sum(tP1 * logpZ2, dim=1).mean()
-                
-                deg_preds = self.deg_layer(self.predictor(self.backbone(x3)))
-                L_deg = F.cross_entropy(deg_preds, deg_labels)
-                L = L_cluster + L_deg
-                
-                with torch.no_grad():
-                    N = tZ1.shape[0]
-                    self.mem_projections.weight.data[:, :-N] = self.mem_projections.weight.data[:, N:].detach().clone()
-                    self.mem_projections.weight.data[:, -N:] = tZ1.T.detach().clone()
-                
-                return L
-
-# ResNet
+                # x1 : original image
+                # x2 : augmented
+                # x3 : rotated
+                target_pred = self.predictor(self.target_backbone(x1))
+                online_pred = self.predictor(self.backbone(x2))
 
 class ResNet50(nn.Module):
     def __init__(self, pretrained, out_dim, exp, mode, freeze, pred_dim = None, num_classes = 10):

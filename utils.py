@@ -4,10 +4,13 @@
 # Python version: 3.6
 
 import copy
+import random
 import torch
 import torch.nn as nn
 import os
 from torchvision import datasets, transforms
+from torchvision.transforms.functional import rotate
+
 from sampling import mnist_iid, mnist_noniid, mnist_noniid_unequal
 from sampling import cifar_iid, cifar_noniid, cifar_noniid_unequal
 
@@ -52,13 +55,33 @@ def compute_similarity(device, client_weights):
 
     return cos_sim
             
-class TransformWrapper(object):
+class SimCLRTransformWrapper(object):
     def __init__(self, base_transform, args):
         self.base_transform = base_transform
         self.n_views = args.n_views
 
     def __call__(self, x):
         return [self.base_transform(x) for i in range(self.n_views)] # two views by default
+
+class OrchestraTransformWrapper(object):
+    def __init__(self, base_transform):
+        self.base_transform = base_transform
+    
+    def __call__(self, x):
+        rand = random.random()
+        if rand < 0.25:
+            angle = 0
+        elif 0.25 < rand < 0.5:
+            angle = 1
+        elif 0.5 < rand < 0.75:
+            angle = 2
+        else:
+            angle = 3
+            
+        x1 = x
+        x2 = self.base_transform(x)
+        x3 = rotate(x, 90 * angle)
+        return [x1, x2, x3, angle]
     
 def get_dataset(args):
     cifar_data_path = os.path.join(args.data_path, "cifar")
@@ -89,7 +112,7 @@ def get_dataset(args):
             train_dataset = datasets.CIFAR10(
                 cifar_data_path, 
                 train=True, 
-                transform=TransformWrapper(train_transforms, args), 
+                transform=SimCLRTransformWrapper(train_transforms, args), 
                 download=True
             )
             test_dataset = datasets.CIFAR10(
@@ -101,7 +124,7 @@ def get_dataset(args):
             warmup_dataset = datasets.CIFAR10(
                 cifar_data_path, 
                 train=False, 
-                transform=TransformWrapper(warmup_transforms, args), 
+                transform=SimCLRTransformWrapper(warmup_transforms, args), 
                 download=True
             )
             
@@ -137,7 +160,7 @@ def get_dataset(args):
                 mnist_data_path, 
                 train=True, 
                 download=True,
-                transform=TransformWrapper(train_transforms, args)
+                transform=SimCLRTransformWrapper(train_transforms, args)
             )
 
             test_dataset = datasets.MNIST(
@@ -151,7 +174,7 @@ def get_dataset(args):
                 mnist_data_path, 
                 train=False, 
                 download=True,
-                transform=TransformWrapper(warmup_transforms, args),
+                transform=SimCLRTransformWrapper(warmup_transforms, args),
             )
 
             # sample training data amongst users
@@ -303,7 +326,135 @@ def get_dataset(args):
                     )
     #TODO orchestra
     elif args.exp == "orchestra":
-        pass
+        s = args.strength
+        target_size = args.target_size
+        
+        color_jitter = transforms.ColorJitter(0.8 * s, 0.8 * s, 0.8 * s, 0.2 * s)
+        if args.dataset == 'cifar':
+            transform = transforms.Compose([
+                transforms.RandomResizedCrop(target_size, scale=(0.5, 1.0), interpolation=T.InterpolationMode.BICUBIC),
+                transforms.RandomHorizontalFlip(p=0.5),
+                transforms.RandomApply([color_jitter], p=0.8),
+                transforms.RandomGrayscale(p=0.2),
+                transforms.RandomApply([transforms.GaussianBlur(kernel_size=3, sigma=(0.1, 2.0))], p=0.5),
+                transforms.ToTensor(),
+                transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+            ])
+            
+            
+            train_dataset = datasets.CIFAR10(
+                cifar_data_path, 
+                train=True, 
+                download=True,
+                transform=OrchestraTransformWrapper(transform)
+            )
+
+            test_dataset = datasets.CIFAR10(
+                cifar_data_path, 
+                train=False, 
+                download=True,
+                transform=transform
+            )
+            
+            warmup_dataset = datasets.CIFAR10(
+                cifar_data_path, 
+                train=False, 
+                transform=OrchestraTransformWrapper(transform), 
+                download=True
+            )
+
+            # sample training data amongst users
+            if args.iid:
+                # Sample IID user data from Mnist
+                user_train_idxs = cifar_iid(
+                    train_dataset, 
+                    args.num_users, 
+                    args.num_items
+                )
+
+            else:
+                # Sample Non-IID user data from Mnist
+                if args.unequal:
+                    # Chose unequal splits for every user
+                    user_train_idxs = cifar_noniid_unequal(
+                        train_dataset, 
+                        args.num_users,
+                        args.num_items, 
+                        args.alpha, 
+                        args.num_class_per_client
+                    )
+
+                else:
+                    # Chose equal splits for every user
+                    user_train_idxs = cifar_noniid(
+                        train_dataset, 
+                        args.num_users, 
+                        args.num_items, 
+                        args.alpha,
+                        args.num_class_per_client
+                    )
+        
+        elif args.dataset == 'mnist':
+            transform = transforms.Compose([
+                transforms.RandomResizedCrop(target_size, scale=(0.5, 1.0), interpolation=T.InterpolationMode.BICUBIC),
+                transforms.RandomHorizontalFlip(p=0.5),
+                transforms.RandomApply([color_jitter], p=0.8),
+                transforms.RandomGrayscale(p=0.2),
+                transforms.RandomApply([transforms.GaussianBlur(kernel_size=3, sigma=(0.1, 2.0))], p=0.5),
+                transforms.ToTensor(),
+                transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+            ])
+            
+            
+            train_dataset = datasets.MNIST(
+                mnist_data_path, 
+                train=True, 
+                download=True,      
+                transform=OrchestraTransformWrapper(transform)
+            )
+
+            test_dataset = datasets.MNIST(
+                mnist_data_path, 
+                train=False, 
+                download=True,
+                transform=transform
+            )
+             
+            warmup_dataset = datasets.MNIST(
+                cifar_data_path, 
+                train=False, 
+                transform=OrchestraTransformWrapper(transform), 
+                download=True
+            )
+
+            # sample training data amongst users
+
+            if args.iid:
+                # Sample IID user data from Mnist
+                user_train_idxs = mnist_iid(
+                    train_dataset, 
+                    args.num_users, 
+                    args.num_items
+                )
+            else:
+                # Sample Non-IID user data from Mnist
+                if args.unequal:
+                    # Chose unequal splits for every user
+                    user_train_idxs = mnist_noniid_unequal(
+                        train_dataset, 
+                        args.num_users, 
+                        args.num_items, 
+                        args.alpha, 
+                        args.num_class_per_client
+                    )
+                else:
+                    # Chose equal splits for every user
+                    user_train_idxs = mnist_noniid(
+                        train_dataset, 
+                        args.num_users, 
+                        args.num_items, 
+                        args.alpha, 
+                        args.num_class_per_client
     
     return train_dataset, test_dataset, warmup_dataset, user_train_idxs
 

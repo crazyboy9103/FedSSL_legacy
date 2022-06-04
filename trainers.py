@@ -121,6 +121,13 @@ class Trainer():
                     images[1] = images[1].to(self.device)
                     p1, p2, z1, z2 = self.model(images[0], images[1]) 
                     loss = self.simsiam_loss(p1, p2, z1, z2)
+                
+                elif self.exp == "orchestra":
+                    images = list(map(lambda x: x.to(self.device), images))
+                    angles = images[-1] # last index corresponds to rotated angle
+                    loss_cluster, preds = self.model(images[0], images[1], images[2])
+                    loss_deg = F.cross_entropy(preds, angles)
+                    loss = loss_cluster + loss_deg
                     
                 self.optimizer.zero_grad()
                 loss.backward()
