@@ -464,10 +464,13 @@ def average_weights(w):
     """
     Returns the average of the weights.
     """
-    w_avg = copy.deepcopy(w[0])
+    w_avg = copy.deepcopy(w[0]) # this would be on cuda:0 
     for key in w_avg.keys():
         for i in range(1, len(w)):
+            if w_avg[key].get_device() != w[i][key].get_device():
+                w[i][key] = w[i][key].to(torch.device("cuda:0"))
             w_avg[key] += w[i][key]
+            
         w_avg[key] = torch.div(w_avg[key], len(w))
     return w_avg
 
