@@ -118,7 +118,7 @@ def cifar_iid(dataset, num_users, num_items):
     :param num_users:
     :return: dict of image index
     """
-    assert (len(dataset) // num_users) > num_items, f"num_items must be smaller than {len(dataset) // num_users}"
+    assert (len(dataset) // num_users) >= num_items, f"num_items must be smaller than {len(dataset) // num_users}"
     #num_items = int(len(dataset)/num_users)
     dict_users, all_idxs = {}, set([i for i in range(len(dataset))])
     for i in range(num_users):

@@ -59,9 +59,7 @@ class LocalModel():
             device = self.device, 
             client_id = client_id
         )
-
-        
-        
+    
 
     def update_weights(self):
         best_model_state = self.trainer.train()

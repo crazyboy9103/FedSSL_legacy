@@ -17,7 +17,7 @@ def args_parser():
     
     # model arguments
     parser.add_argument('--model',       type=str,  default='resnet18', help='resnet18|resnet50|vgg16')
-    parser.add_argument('--pretrained',  type=bool, default=True,       help='pretrained backbone')
+    parser.add_argument('--pretrained',  type=bool, default=False,       help='pretrained backbone')
     parser.add_argument('--num_classes', type=int,  default=10,         help="number of classes")
     
     # Experimental setup
@@ -28,10 +28,10 @@ def args_parser():
     parser.add_argument('--strength',      type=float, default=0.8,       help="augmentation strength 0<s<1")
     parser.add_argument('--target_size',   type=int,   default=32,        help="augmentation target width (=height)")
     parser.add_argument('--out_dim',       type=int,   default=512,       help="output dimension of the feature for simclr and simsiam")
-    parser.add_argument('--freeze',        type=bool,  default=True,      help='freeze feature extractor during linear eval')
+    parser.add_argument('--freeze',        type=bool,  default=False,     help='freeze feature extractor during linear eval')
     parser.add_argument('--n_views',       type=int,   default=2,         help="default simclr n_views=2")
     parser.add_argument('--warmup_bs',     type=int,   default=512,       help="warmup batch size")
-    parser.add_argument('--warmup_epochs', type=int,   default=90,        help="warmup epochs")
+    parser.add_argument('--warmup_epochs', type=int,   default=30,        help="warmup epochs")
     parser.add_argument("--pred_dim",      type=int,   default=256,       help="pred dim for simsiam")
     parser.add_argument("--warmup",        type=bool,  default=True,      help="warmup at init")
     parser.add_argument("--ema",           type=float, default=0.996,     help="ema value for target net in orchestra")
@@ -43,7 +43,7 @@ def args_parser():
     
     # FL
     parser.add_argument("--num_users",            type=int,    default=100,        help="num users")
-    parser.add_argument("--num_items",            type=int,    default=256,        help="num data each client holds")
+    parser.add_argument("--num_items",            type=int,    default=500,        help="num data each client holds")
     parser.add_argument("--num_class_per_client", type=int,    default=5,          help="num classes each client holds")
     parser.add_argument('--unequal',              type=bool,   default=False,      help='unequal num of data')
     parser.add_argument('--epochs',               type=int,    default=100,        help="number of rounds of training")
