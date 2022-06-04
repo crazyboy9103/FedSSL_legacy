@@ -455,6 +455,7 @@ def get_dataset(args):
                         args.num_items, 
                         args.alpha, 
                         args.num_class_per_client
+                    )
     
     return train_dataset, test_dataset, warmup_dataset, user_train_idxs
 

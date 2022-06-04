@@ -89,7 +89,7 @@ if __name__ == '__main__':
         )
         
         warmup_loader = DataLoader(
-            warmup_dataset, 
+            test_dataset if args.sup_warmup else warmup_dataset,
             batch_size=args.warmup_bs, 
             shuffle=True, 
             num_workers=8,
@@ -107,7 +107,7 @@ if __name__ == '__main__':
         )
         
         # Start warmup
-        warmup_state = server_model.warmup(args.warmup_epochs)
+        warmup_state = server_model.warmup(args.warmup_epochs, args.sup_warmup)
         
         # Get model_state_dict
         warmup_model_state = warmup_state["model"]
@@ -200,10 +200,7 @@ if __name__ == '__main__':
             client_id = -1
         )
         
-        eval_model_state, _, loss_avg, top1_avg, top5_avg = server_model.test(finetune=True)
-
-        # Update the finetuned model from labeld data, to global model
-        global_model.load_state_dict(eval_model_state, strict=False)
+        _, _, loss_avg, top1_avg, top5_avg = server_model.test()
         
         valid_loss.append(loss_avg)
         valid_top1.append(top1_avg)

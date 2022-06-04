@@ -81,7 +81,7 @@ class VGG16(nn.Module):
             
             #Rotation
             self.deg_layer = nn.Linear(hidden_dim, 4)
-            self.centroids = 
+            #self.centroids = 
             
             
             

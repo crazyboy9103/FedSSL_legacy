@@ -250,7 +250,8 @@ class Trainer():
         avg_top5 = running_top5.get_result()
         return eval_model_state, optim_state, avg_loss, avg_top1, avg_top5
     
-    def warmup(self, epochs):
+    def warmup(self, epochs, sup):
+        # sup: supervised warmup
         scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
             self.optimizer, 
             T_max = epochs, 
@@ -263,7 +264,14 @@ class Trainer():
         best_top5 = -999999
         best_model_state = None
         print(f"Warming up {self.exp} model")
-
+        
+        self.model.mode = "linear" if sup else "train"
+        self.model = self.model.to(self.device)
+        optimizer = optim.Adam(
+            self.model.parameters(), 
+            lr=0.001
+        )
+        
         N = len(self.test_loader)
 
         
@@ -274,7 +282,7 @@ class Trainer():
             for batch_idx, (images, labels) in enumerate(self.warmup_loader):
                 
                 # Warmup should not use evaluation data
-                if batch_idx >= int(0.8 * N): continue
+                if batch_idx >= int(0.8 * N): break
 
                 if self.exp == "FL":
                     images = images.to(self.device)
@@ -283,16 +291,30 @@ class Trainer():
                     loss = self.FL_criterion(preds, labels)
                     
                 elif self.exp == "simclr":
-                    images = torch.cat(images, dim=0)
-                    images = images.to(self.device)
-                    features = self.model(images)
-                    loss = self.nce_loss(features)
+                    if sup:
+                        images = images.to(self.device)
+                        labels = labels.to(self.device)
+                        preds = self.model(images)
+                        loss = self.FL_criterion(preds, labels) # FL_criterion is standard CE
+                        
+                    else:
+                        images = torch.cat(images, dim=0)
+                        images = images.to(self.device)
+                        features = self.model(images)
+                        loss = self.nce_loss(features)
                 
                 elif self.exp == "simsiam":
-                    images[0] = images[0].to(self.device)
-                    images[1] = images[1].to(self.device)
-                    p1, p2, z1, z2 = self.model(images[0], images[1]) 
-                    loss = self.simsiam_loss(p1, p2, z1, z2)
+                    if sup:
+                        images = images.to(self.device)
+                        labels = labels.to(self.device)
+                        preds = self.model(images)
+                        loss = self.FL_criterion(preds, labels) 
+                        
+                    else:
+                        images[0] = images[0].to(self.device)
+                        images[1] = images[1].to(self.device)
+                        p1, p2, z1, z2 = self.model(images[0], images[1]) 
+                        loss = self.simsiam_loss(p1, p2, z1, z2)
                     
                 self.optimizer.zero_grad()
                 loss.backward()
