@@ -58,7 +58,7 @@ def args_parser():
     parser.add_argument("--num_class_per_client", type=int,    default=5,          help="num classes each client holds")
     parser.add_argument('--unequal',              type=str2bool,   default=False,      help='unequal num of data')
     parser.add_argument('--epochs',               type=int,    default=100,        help="number of rounds of training")
-    parser.add_argument('--frac',                 type=float,  default=0.01,       help='the fraction of clients: C')
+    parser.add_argument('--frac',                 type=float,  default=0.05,       help='the fraction of clients: C')
     parser.add_argument('--local_ep',             type=int,    default=10,         help="the number of local epochs: E")
     parser.add_argument('--local_bs',             type=int,    default=32,         help="local batch size")
     parser.add_argument('--lr',                   type=float,  default=0.001,      help='learning rate')
