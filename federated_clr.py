@@ -35,7 +35,7 @@ if __name__ == '__main__':
     torch.manual_seed(args.seed)
     np.random.seed(args.seed)
     
-    models_dict = {"resnet18": ResNet18, "resnet50": ResNet50, "vgg16": VGG16}
+    models_dict = {"resnet18": ResNet50, "resnet50": ResNet50, "vgg16": VGG16}
     if args.exp == "simclr":
         # BUILD MODEL
         global_model = models_dict[args.model](
@@ -84,7 +84,7 @@ if __name__ == '__main__':
             test_dataset, 
             batch_size=args.local_bs, 
             shuffle=False,
-            num_workers=8,
+            num_workers=args.num_workers,
             pin_memory=True
         )
         
@@ -92,7 +92,7 @@ if __name__ == '__main__':
             test_dataset if args.sup_warmup else warmup_dataset,
             batch_size=args.warmup_bs, 
             shuffle=True, 
-            num_workers=8,
+            num_workers=args.num_workers,
             pin_memory=True
         )
         
@@ -186,7 +186,7 @@ if __name__ == '__main__':
             test_dataset, 
             batch_size=args.local_bs, 
             shuffle=False, 
-            num_workers=4, 
+            num_workers=args.num_workers, 
             pin_memory=True
         )
         
@@ -200,8 +200,7 @@ if __name__ == '__main__':
             client_id = -1
         )
         
-        state_dict, _, loss_avg, top1_avg, top5_avg = server_model.test(finetune=True)
-        global_model.load_state_dict(state_dict)
+        _, _, loss_avg, top1_avg, top5_avg = server_model.test()
         
         valid_loss.append(loss_avg)
         valid_top1.append(top1_avg)

@@ -84,18 +84,6 @@ class Trainer():
         return loss
     
     def train(self):
-        best_loss = 999999
-        best_top1 = -999999
-        best_top5 = -999999
-        best_model_state = None
-        
-        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
-            self.optimizer, 
-            T_max = self.local_epochs, 
-            eta_min = 0,
-            last_epoch = -1
-        )
-        
         self.model.train()
         
         start = time.time()
@@ -124,20 +112,15 @@ class Trainer():
                 
                 elif self.exp == "orchestra":
                     images = list(map(lambda x: x.to(self.device), images))
-                    angles = images[-1] # last index corresponds to rotated angle
-                    loss_cluster, preds = self.model(images[0], images[1], images[2])
-                    loss_deg = F.cross_entropy(preds, angles)
-                    loss = loss_cluster + loss_deg
-                    
+                    angles = labels.to(self.device)
+                    loss = self.model(images[0], images[1], images[2], angles)
+
                 self.optimizer.zero_grad()
                 loss.backward()
                 self.optimizer.step()
                 
                 loss_value = loss.item()
                 running_loss.update(loss_value)
-
-                
-            scheduler.step()
             
             # Train metrics
             avg_loss = running_loss.get_result()
@@ -160,28 +143,22 @@ class Trainer():
                           test acc/top5 : {test_top5:.2f}%
                           test loss : {test_loss:.2f}
                           time taken : {time_taken:.2f} """)
+                
+                state_dict = {
+                    "loss": test_loss, 
+                    "top1": test_top1, 
+                    "top5": test_top5,
+                    ########## Keondo: I think below part should be changed as below ##########
+                    ## Client should not have access to the test data
+                    "model": copy.deepcopy(self.model.state_dict()),
+                    "optim": copy.deepcopy(self.optimizer.state_dict())
+                    #"model": eval_model_state, 
+                    #"optim": optim_state
+                }
+               
 
-                if test_loss < best_loss:
-                    best_loss = test_loss
-                    best_top1 = test_top1
-                    best_top5 = test_top5
-
-                    state_dict = {
-                        "loss": test_loss, 
-                        "top1": test_top1, 
-                        "top5": test_top5,
-                        ########## Keondo: I think below part should be changed as below ##########
-                        ## Client should not have access to the test data
-                        "model": copy.deepcopy(self.model.state_dict()),
-                        "optim": copy.deepcopy(self.optimizer.state_dict())
-                        #"model": eval_model_state, 
-                        #"optim": optim_state
-                    }
-
-                    best_model_state = state_dict
-
-        print(f"Training complete best top1/top5: {best_top1:.2f}%/{best_top5:.2f}%")
-        return best_model_state
+        print(f"Training complete best top1/top5: {test_top1:.2f}%/{test_top5:.2f}%")
+        return state_dict
     
     
     def test(self, finetune=False):
@@ -214,7 +191,7 @@ class Trainer():
                 optimizer.step()
 
             # Testing
-            else:
+            elif batch_idx >= int(0.8 * N):
                 eval_model.eval()
                 with torch.no_grad():
                     images = images.to(self.device)
@@ -252,12 +229,12 @@ class Trainer():
     
     def warmup(self, epochs, sup):
         # sup: supervised warmup
-        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
-            self.optimizer, 
-            T_max = epochs, 
-            eta_min = 0,
-            last_epoch = -1
-        )
+        # scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+        #     self.optimizer, 
+        #     T_max = epochs, 
+        #     eta_min = 0,
+        #     last_epoch = -1
+        # )
         
         best_loss = 999999
         best_top1 = -999999
@@ -267,10 +244,6 @@ class Trainer():
         
         self.model.mode = "linear" if sup else "train"
         self.model = self.model.to(self.device)
-        optimizer = optim.Adam(
-            self.model.parameters(), 
-            lr=0.001
-        )
         
         N = len(self.test_loader)
 
@@ -315,7 +288,18 @@ class Trainer():
                         images[1] = images[1].to(self.device)
                         p1, p2, z1, z2 = self.model(images[0], images[1]) 
                         loss = self.simsiam_loss(p1, p2, z1, z2)
-                    
+                
+                elif self.exp == "orchestra":
+                    if sup:
+                        images = images.to(self.device)
+                        labels = labels.to(self.device)
+                        preds = self.model(images)
+                        loss = self.FL_criterion(preds, labels) 
+                    else:
+                        images = list(map(lambda x: x.to(self.device), images))
+                        angles = labels.to(self.device)
+                        loss = self.model(images[0], images[1], images[2], angles)   
+                        
                 self.optimizer.zero_grad()
                 loss.backward()
                 self.optimizer.step()
@@ -324,7 +308,7 @@ class Trainer():
                 running_loss.update(loss_value)
             
             
-            scheduler.step()
+            # scheduler.step()
             # Train metrics
             avg_loss = running_loss.get_result()
             running_loss.reset()

@@ -1,0 +1,4524 @@
+2022-06-07 05:11:41.593761: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Experimental details:
+    Seed            : 2022
+    Dataset         : cifar
+    Model           : resnet18
+    Pretrained      : False
+    Optimizer       : sgd
+    Learning rate   : 0.001
+    Total Rounds    : 50
+    Alpha           : 0.9
+    Momentum        : 0.9
+    Weight decay    : 0.0001
+SimSiam
+    Freeze          : False
+    Adapt Epochs    : 10
+    Warmup Epochs   : 30
+    Warmup Batchsize: 512
+    Output dim      : 1024
+    Pred   dim      : 256
+Federated parameters:
+    Number of users                : 100
+    Fraction of users              : 0.05
+    Number of train items per user : 100
+    Number of classes per user     : 2
+    Local Batch size               : 32
+    Local Epochs                   : 10
+    Checkpoint path                : checkpoint.pth.tar
+    Tensorboard log path           : ./logs/simsiam/exp8
+Files already downloaded and verified
+Files already downloaded and verified
+Files already downloaded and verified
+Warming up simsiam model
+Linear evaluating simsiam model
+Client -1 Epoch [5/30]:
+                          learning rate : 0.000933
+                          test acc/top1 : 8.28%
+                          test acc/top5 : 20.28%
+                          test loss : 6.32
+                          time taken : 11.61 
+Linear evaluating simsiam model
+Client -1 Epoch [10/30]:
+                          learning rate : 0.000750
+                          test acc/top1 : 25.90%
+                          test acc/top5 : 57.72%
+                          test loss : 5.81
+                          time taken : 10.78 
+Linear evaluating simsiam model
+Client -1 Epoch [15/30]:
+                          learning rate : 0.000500
+                          test acc/top1 : 30.79%
+                          test acc/top5 : 73.61%
+                          test loss : 5.43
+                          time taken : 10.43 
+Linear evaluating simsiam model
+Client -1 Epoch [20/30]:
+                          learning rate : 0.000250
+                          test acc/top1 : 40.03%
+                          test acc/top5 : 83.59%
+                          test loss : 5.08
+                          time taken : 10.19 
+Linear evaluating simsiam model
+Client -1 Epoch [25/30]:
+                          learning rate : 0.000067
+                          test acc/top1 : 43.62%
+                          test acc/top5 : 86.36%
+                          test loss : 4.92
+                          time taken : 9.95 
+Linear evaluating simsiam model
+Client -1 Epoch [30/30]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.54%
+                          test acc/top5 : 86.94%
+                          test loss : 4.88
+                          time taken : 10.30 
+
+ | Global Training Round : 1 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.34%
+                          test acc/top5 : 65.98%
+                          test loss : 5.40
+                          time taken : 8.32 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 23.26%
+                          test acc/top5 : 70.54%
+                          test loss : 5.50
+                          time taken : 8.69 
+Training complete best top1/top5: 19.34%/65.98%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.33%
+                          test acc/top5 : 66.93%
+                          test loss : 5.38
+                          time taken : 8.40 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 23.32%
+                          test acc/top5 : 71.18%
+                          test loss : 5.40
+                          time taken : 8.24 
+Training complete best top1/top5: 21.33%/66.93%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.62%
+                          test acc/top5 : 66.24%
+                          test loss : 5.40
+                          time taken : 8.28 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 22.26%
+                          test acc/top5 : 69.61%
+                          test loss : 5.51
+                          time taken : 8.73 
+Training complete best top1/top5: 20.62%/66.24%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 17.77%
+                          test acc/top5 : 62.29%
+                          test loss : 5.33
+                          time taken : 8.58 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.82%
+                          test acc/top5 : 68.84%
+                          test loss : 5.45
+                          time taken : 8.36 
+Training complete best top1/top5: 17.77%/62.29%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.86%
+                          test acc/top5 : 69.32%
+                          test loss : 5.33
+                          time taken : 8.34 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 23.39%
+                          test acc/top5 : 70.75%
+                          test loss : 5.45
+                          time taken : 9.07 
+Training complete best top1/top5: 20.86%/69.32%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 1 global rounds:
+Validation Loss : 5.50
+Validation Accuracy: top1/top5 24.23%/72.25%
+
+
+ | Global Training Round : 2 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.29%
+                          test acc/top5 : 67.31%
+                          test loss : 5.37
+                          time taken : 8.62 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 23.09%
+                          test acc/top5 : 69.62%
+                          test loss : 5.42
+                          time taken : 8.36 
+Training complete best top1/top5: 21.29%/67.31%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.00%
+                          test acc/top5 : 67.73%
+                          test loss : 5.40
+                          time taken : 8.39 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 22.39%
+                          test acc/top5 : 70.08%
+                          test loss : 5.41
+                          time taken : 8.27 
+Training complete best top1/top5: 20.00%/67.73%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.56%
+                          test acc/top5 : 64.03%
+                          test loss : 5.28
+                          time taken : 8.40 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 22.86%
+                          test acc/top5 : 69.81%
+                          test loss : 5.33
+                          time taken : 8.63 
+Training complete best top1/top5: 18.56%/64.03%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.06%
+                          test acc/top5 : 63.87%
+                          test loss : 5.39
+                          time taken : 8.56 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 22.44%
+                          test acc/top5 : 69.92%
+                          test loss : 5.44
+                          time taken : 8.53 
+Training complete best top1/top5: 19.06%/63.87%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.00%
+                          test acc/top5 : 68.63%
+                          test loss : 5.43
+                          time taken : 8.41 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.88%
+                          test acc/top5 : 69.53%
+                          test loss : 5.40
+                          time taken : 8.66 
+Training complete best top1/top5: 21.88%/69.53%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 2 global rounds:
+Validation Loss : 5.53
+Validation Accuracy: top1/top5 25.04%/73.43%
+
+
+ | Global Training Round : 3 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.63%
+                          test acc/top5 : 67.75%
+                          test loss : 5.49
+                          time taken : 8.59 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 22.06%
+                          test acc/top5 : 70.63%
+                          test loss : 5.49
+                          time taken : 8.87 
+Training complete best top1/top5: 19.63%/67.75%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.33%
+                          test acc/top5 : 68.78%
+                          test loss : 5.40
+                          time taken : 8.16 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 23.12%
+                          test acc/top5 : 71.52%
+                          test loss : 5.48
+                          time taken : 8.39 
+Training complete best top1/top5: 21.33%/68.78%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.50%
+                          test acc/top5 : 66.56%
+                          test loss : 5.32
+                          time taken : 8.59 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 22.88%
+                          test acc/top5 : 71.06%
+                          test loss : 5.51
+                          time taken : 8.73 
+Training complete best top1/top5: 19.50%/66.56%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.45%
+                          test acc/top5 : 66.04%
+                          test loss : 5.53
+                          time taken : 8.40 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 22.53%
+                          test acc/top5 : 69.79%
+                          test loss : 5.51
+                          time taken : 8.52 
+Training complete best top1/top5: 22.53%/69.79%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.33%
+                          test acc/top5 : 67.86%
+                          test loss : 5.37
+                          time taken : 8.13 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.57%
+                          test acc/top5 : 68.09%
+                          test loss : 5.34
+                          time taken : 8.73 
+Training complete best top1/top5: 21.57%/68.09%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 3 global rounds:
+Validation Loss : 5.56
+Validation Accuracy: top1/top5 24.45%/72.86%
+
+
+ | Global Training Round : 4 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 17.48%
+                          test acc/top5 : 63.28%
+                          test loss : 5.15
+                          time taken : 8.53 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.60%
+                          test acc/top5 : 67.10%
+                          test loss : 5.38
+                          time taken : 8.92 
+Training complete best top1/top5: 17.48%/63.28%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.30%
+                          test acc/top5 : 68.46%
+                          test loss : 5.40
+                          time taken : 8.60 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 22.88%
+                          test acc/top5 : 70.61%
+                          test loss : 5.41
+                          time taken : 8.31 
+Training complete best top1/top5: 21.30%/68.46%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.17%
+                          test acc/top5 : 68.55%
+                          test loss : 5.45
+                          time taken : 8.73 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.60%
+                          test acc/top5 : 70.08%
+                          test loss : 5.48
+                          time taken : 8.41 
+Training complete best top1/top5: 20.17%/68.55%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.25%
+                          test acc/top5 : 63.69%
+                          test loss : 5.33
+                          time taken : 8.11 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.91%
+                          test acc/top5 : 68.70%
+                          test loss : 5.44
+                          time taken : 8.37 
+Training complete best top1/top5: 18.25%/63.69%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.46%
+                          test acc/top5 : 68.83%
+                          test loss : 5.25
+                          time taken : 8.44 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 22.46%
+                          test acc/top5 : 70.27%
+                          test loss : 5.41
+                          time taken : 8.75 
+Training complete best top1/top5: 21.46%/68.83%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 4 global rounds:
+Validation Loss : 5.56
+Validation Accuracy: top1/top5 23.77%/72.21%
+
+
+ | Global Training Round : 5 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 14.77%
+                          test acc/top5 : 57.30%
+                          test loss : 5.09
+                          time taken : 8.67 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.79%
+                          test acc/top5 : 67.83%
+                          test loss : 5.47
+                          time taken : 8.44 
+Training complete best top1/top5: 14.77%/57.30%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.33%
+                          test acc/top5 : 67.45%
+                          test loss : 5.42
+                          time taken : 8.44 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.85%
+                          test acc/top5 : 68.45%
+                          test loss : 5.48
+                          time taken : 8.20 
+Training complete best top1/top5: 20.33%/67.45%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.70%
+                          test acc/top5 : 65.58%
+                          test loss : 5.19
+                          time taken : 8.46 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.81%
+                          test acc/top5 : 70.56%
+                          test loss : 5.49
+                          time taken : 8.87 
+Training complete best top1/top5: 18.70%/65.58%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.84%
+                          test acc/top5 : 69.14%
+                          test loss : 5.50
+                          time taken : 8.29 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 22.08%
+                          test acc/top5 : 70.54%
+                          test loss : 5.58
+                          time taken : 8.53 
+Training complete best top1/top5: 20.84%/69.14%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.84%
+                          test acc/top5 : 67.52%
+                          test loss : 5.42
+                          time taken : 8.94 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.73%
+                          test acc/top5 : 67.40%
+                          test loss : 5.37
+                          time taken : 8.42 
+Training complete best top1/top5: 19.73%/67.40%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 5 global rounds:
+Validation Loss : 5.52
+Validation Accuracy: top1/top5 22.26%/71.45%
+
+
+ | Global Training Round : 6 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.97%
+                          test acc/top5 : 68.12%
+                          test loss : 5.56
+                          time taken : 8.88 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.37%
+                          test acc/top5 : 68.07%
+                          test loss : 5.58
+                          time taken : 8.31 
+Training complete best top1/top5: 19.97%/68.12%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.88%
+                          test acc/top5 : 70.17%
+                          test loss : 5.55
+                          time taken : 8.52 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.96%
+                          test acc/top5 : 70.64%
+                          test loss : 5.50
+                          time taken : 8.24 
+Training complete best top1/top5: 20.96%/70.64%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 17.94%
+                          test acc/top5 : 64.06%
+                          test loss : 5.36
+                          time taken : 8.76 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.92%
+                          test acc/top5 : 68.81%
+                          test loss : 5.45
+                          time taken : 8.60 
+Training complete best top1/top5: 17.94%/64.06%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.70%
+                          test acc/top5 : 67.03%
+                          test loss : 5.47
+                          time taken : 8.57 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.86%
+                          test acc/top5 : 69.46%
+                          test loss : 5.46
+                          time taken : 8.30 
+Training complete best top1/top5: 21.86%/69.46%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.47%
+                          test acc/top5 : 66.77%
+                          test loss : 5.41
+                          time taken : 8.25 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.57%
+                          test acc/top5 : 68.62%
+                          test loss : 5.52
+                          time taken : 8.94 
+Training complete best top1/top5: 20.47%/66.77%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 6 global rounds:
+Validation Loss : 5.64
+Validation Accuracy: top1/top5 22.39%/71.28%
+
+
+ | Global Training Round : 7 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.74%
+                          test acc/top5 : 68.74%
+                          test loss : 5.41
+                          time taken : 8.50 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 22.32%
+                          test acc/top5 : 69.55%
+                          test loss : 5.47
+                          time taken : 8.12 
+Training complete best top1/top5: 20.74%/68.74%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.52%
+                          test acc/top5 : 70.19%
+                          test loss : 5.47
+                          time taken : 8.33 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.62%
+                          test acc/top5 : 70.26%
+                          test loss : 5.53
+                          time taken : 8.65 
+Training complete best top1/top5: 20.52%/70.19%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.89%
+                          test acc/top5 : 67.77%
+                          test loss : 5.44
+                          time taken : 8.68 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.91%
+                          test acc/top5 : 67.92%
+                          test loss : 5.60
+                          time taken : 8.43 
+Training complete best top1/top5: 20.89%/67.77%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.90%
+                          test acc/top5 : 67.92%
+                          test loss : 5.41
+                          time taken : 8.47 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 22.10%
+                          test acc/top5 : 69.46%
+                          test loss : 5.49
+                          time taken : 8.62 
+Training complete best top1/top5: 19.90%/67.92%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.20%
+                          test acc/top5 : 68.69%
+                          test loss : 5.52
+                          time taken : 8.68 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.31%
+                          test acc/top5 : 70.01%
+                          test loss : 5.52
+                          time taken : 8.56 
+Training complete best top1/top5: 20.20%/68.69%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 7 global rounds:
+Validation Loss : 5.61
+Validation Accuracy: top1/top5 21.15%/70.06%
+
+
+ | Global Training Round : 8 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.93%
+                          test acc/top5 : 65.75%
+                          test loss : 5.38
+                          time taken : 8.89 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.46%
+                          test acc/top5 : 69.68%
+                          test loss : 5.50
+                          time taken : 8.34 
+Training complete best top1/top5: 19.93%/65.75%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.57%
+                          test acc/top5 : 69.34%
+                          test loss : 5.54
+                          time taken : 8.41 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.88%
+                          test acc/top5 : 69.05%
+                          test loss : 5.46
+                          time taken : 8.75 
+Training complete best top1/top5: 21.88%/69.05%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.87%
+                          test acc/top5 : 70.05%
+                          test loss : 5.50
+                          time taken : 8.71 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 22.11%
+                          test acc/top5 : 70.75%
+                          test loss : 5.54
+                          time taken : 8.26 
+Training complete best top1/top5: 21.87%/70.05%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.69%
+                          test acc/top5 : 69.66%
+                          test loss : 5.50
+                          time taken : 8.38 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.10%
+                          test acc/top5 : 69.47%
+                          test loss : 5.57
+                          time taken : 8.53 
+Training complete best top1/top5: 20.69%/69.66%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.19%
+                          test acc/top5 : 64.33%
+                          test loss : 5.34
+                          time taken : 8.76 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.94%
+                          test acc/top5 : 69.15%
+                          test loss : 5.44
+                          time taken : 8.24 
+Training complete best top1/top5: 18.19%/64.33%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 8 global rounds:
+Validation Loss : 5.60
+Validation Accuracy: top1/top5 22.41%/71.19%
+
+
+ | Global Training Round : 9 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.85%
+                          test acc/top5 : 65.62%
+                          test loss : 5.39
+                          time taken : 8.59 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.11%
+                          test acc/top5 : 68.34%
+                          test loss : 5.58
+                          time taken : 8.38 
+Training complete best top1/top5: 19.85%/65.62%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.66%
+                          test acc/top5 : 69.19%
+                          test loss : 5.49
+                          time taken : 8.18 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.31%
+                          test acc/top5 : 69.78%
+                          test loss : 5.55
+                          time taken : 8.47 
+Training complete best top1/top5: 21.66%/69.19%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.74%
+                          test acc/top5 : 64.48%
+                          test loss : 5.41
+                          time taken : 8.66 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.53%
+                          test acc/top5 : 68.89%
+                          test loss : 5.42
+                          time taken : 8.57 
+Training complete best top1/top5: 18.74%/64.48%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.85%
+                          test acc/top5 : 67.78%
+                          test loss : 5.45
+                          time taken : 8.22 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.94%
+                          test acc/top5 : 68.96%
+                          test loss : 5.54
+                          time taken : 9.05 
+Training complete best top1/top5: 20.85%/67.78%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.31%
+                          test acc/top5 : 67.04%
+                          test loss : 5.40
+                          time taken : 8.39 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.82%
+                          test acc/top5 : 67.72%
+                          test loss : 5.40
+                          time taken : 8.55 
+Training complete best top1/top5: 19.31%/67.04%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 9 global rounds:
+Validation Loss : 5.63
+Validation Accuracy: top1/top5 21.87%/69.95%
+
+
+ | Global Training Round : 10 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.88%
+                          test acc/top5 : 67.86%
+                          test loss : 5.45
+                          time taken : 8.43 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.72%
+                          test acc/top5 : 68.59%
+                          test loss : 5.55
+                          time taken : 8.56 
+Training complete best top1/top5: 19.88%/67.86%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.35%
+                          test acc/top5 : 67.57%
+                          test loss : 5.57
+                          time taken : 8.40 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.11%
+                          test acc/top5 : 69.67%
+                          test loss : 5.48
+                          time taken : 8.54 
+Training complete best top1/top5: 21.11%/69.67%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 15.54%
+                          test acc/top5 : 57.74%
+                          test loss : 5.09
+                          time taken : 8.67 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.04%
+                          test acc/top5 : 68.70%
+                          test loss : 5.43
+                          time taken : 8.28 
+Training complete best top1/top5: 15.54%/57.74%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.70%
+                          test acc/top5 : 67.85%
+                          test loss : 5.46
+                          time taken : 8.25 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.57%
+                          test acc/top5 : 68.81%
+                          test loss : 5.50
+                          time taken : 8.91 
+Training complete best top1/top5: 20.70%/67.85%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 17.27%
+                          test acc/top5 : 60.61%
+                          test loss : 5.44
+                          time taken : 8.14 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.13%
+                          test acc/top5 : 69.43%
+                          test loss : 5.50
+                          time taken : 8.56 
+Training complete best top1/top5: 17.27%/60.61%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 10 global rounds:
+Validation Loss : 5.60
+Validation Accuracy: top1/top5 22.46%/70.92%
+
+
+ | Global Training Round : 11 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.91%
+                          test acc/top5 : 66.83%
+                          test loss : 5.47
+                          time taken : 8.35 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.88%
+                          test acc/top5 : 68.44%
+                          test loss : 5.50
+                          time taken : 8.36 
+Training complete best top1/top5: 19.91%/66.83%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.24%
+                          test acc/top5 : 67.66%
+                          test loss : 5.36
+                          time taken : 8.39 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.29%
+                          test acc/top5 : 68.77%
+                          test loss : 5.40
+                          time taken : 9.09 
+Training complete best top1/top5: 20.24%/67.66%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 22.14%
+                          test acc/top5 : 69.71%
+                          test loss : 5.55
+                          time taken : 8.28 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.58%
+                          test acc/top5 : 68.31%
+                          test loss : 5.44
+                          time taken : 8.38 
+Training complete best top1/top5: 20.58%/68.31%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.19%
+                          test acc/top5 : 70.58%
+                          test loss : 5.54
+                          time taken : 8.20 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 22.16%
+                          test acc/top5 : 70.72%
+                          test loss : 5.46
+                          time taken : 8.71 
+Training complete best top1/top5: 22.16%/70.72%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.22%
+                          test acc/top5 : 69.62%
+                          test loss : 5.51
+                          time taken : 8.69 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.85%
+                          test acc/top5 : 69.00%
+                          test loss : 5.49
+                          time taken : 8.35 
+Training complete best top1/top5: 20.85%/69.00%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 11 global rounds:
+Validation Loss : 5.59
+Validation Accuracy: top1/top5 22.49%/71.29%
+
+
+ | Global Training Round : 12 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.59%
+                          test acc/top5 : 65.91%
+                          test loss : 5.51
+                          time taken : 8.51 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.07%
+                          test acc/top5 : 67.68%
+                          test loss : 5.44
+                          time taken : 8.41 
+Training complete best top1/top5: 20.07%/67.68%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.91%
+                          test acc/top5 : 65.11%
+                          test loss : 5.24
+                          time taken : 8.58 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.37%
+                          test acc/top5 : 68.99%
+                          test loss : 5.48
+                          time taken : 8.74 
+Training complete best top1/top5: 19.91%/65.11%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.67%
+                          test acc/top5 : 68.30%
+                          test loss : 5.52
+                          time taken : 8.30 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.60%
+                          test acc/top5 : 69.17%
+                          test loss : 5.46
+                          time taken : 8.28 
+Training complete best top1/top5: 20.60%/69.17%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 16.81%
+                          test acc/top5 : 59.90%
+                          test loss : 5.04
+                          time taken : 8.42 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.53%
+                          test acc/top5 : 69.31%
+                          test loss : 5.50
+                          time taken : 8.82 
+Training complete best top1/top5: 16.81%/59.90%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.99%
+                          test acc/top5 : 67.90%
+                          test loss : 5.40
+                          time taken : 8.56 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.97%
+                          test acc/top5 : 69.10%
+                          test loss : 5.50
+                          time taken : 8.35 
+Training complete best top1/top5: 19.99%/67.90%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 12 global rounds:
+Validation Loss : 5.56
+Validation Accuracy: top1/top5 21.28%/69.87%
+
+
+ | Global Training Round : 13 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.54%
+                          test acc/top5 : 65.96%
+                          test loss : 5.52
+                          time taken : 8.36 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.43%
+                          test acc/top5 : 68.30%
+                          test loss : 5.50
+                          time taken : 8.33 
+Training complete best top1/top5: 21.43%/68.30%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.51%
+                          test acc/top5 : 67.01%
+                          test loss : 5.46
+                          time taken : 9.22 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.14%
+                          test acc/top5 : 69.90%
+                          test loss : 5.50
+                          time taken : 8.45 
+Training complete best top1/top5: 20.51%/67.01%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.01%
+                          test acc/top5 : 63.96%
+                          test loss : 5.26
+                          time taken : 8.16 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.46%
+                          test acc/top5 : 67.95%
+                          test loss : 5.50
+                          time taken : 8.56 
+Training complete best top1/top5: 19.01%/63.96%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.09%
+                          test acc/top5 : 67.55%
+                          test loss : 5.36
+                          time taken : 8.21 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.05%
+                          test acc/top5 : 67.89%
+                          test loss : 5.40
+                          time taken : 8.96 
+Training complete best top1/top5: 18.09%/67.55%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.99%
+                          test acc/top5 : 66.91%
+                          test loss : 5.48
+                          time taken : 8.64 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.38%
+                          test acc/top5 : 67.66%
+                          test loss : 5.58
+                          time taken : 8.65 
+Training complete best top1/top5: 18.99%/66.91%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 13 global rounds:
+Validation Loss : 5.61
+Validation Accuracy: top1/top5 21.02%/69.92%
+
+
+ | Global Training Round : 14 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.55%
+                          test acc/top5 : 66.89%
+                          test loss : 5.42
+                          time taken : 8.22 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.68%
+                          test acc/top5 : 67.30%
+                          test loss : 5.51
+                          time taken : 8.24 
+Training complete best top1/top5: 19.55%/66.89%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.35%
+                          test acc/top5 : 67.86%
+                          test loss : 5.54
+                          time taken : 8.49 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.17%
+                          test acc/top5 : 67.95%
+                          test loss : 5.41
+                          time taken : 8.97 
+Training complete best top1/top5: 20.17%/67.95%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.15%
+                          test acc/top5 : 68.27%
+                          test loss : 5.54
+                          time taken : 8.82 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.71%
+                          test acc/top5 : 68.81%
+                          test loss : 5.48
+                          time taken : 8.42 
+Training complete best top1/top5: 21.71%/68.81%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.77%
+                          test acc/top5 : 67.97%
+                          test loss : 5.49
+                          time taken : 8.55 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.94%
+                          test acc/top5 : 67.52%
+                          test loss : 5.51
+                          time taken : 8.68 
+Training complete best top1/top5: 20.77%/67.97%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.77%
+                          test acc/top5 : 67.02%
+                          test loss : 5.51
+                          time taken : 8.32 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.53%
+                          test acc/top5 : 69.63%
+                          test loss : 5.51
+                          time taken : 8.37 
+Training complete best top1/top5: 19.77%/67.02%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 14 global rounds:
+Validation Loss : 5.61
+Validation Accuracy: top1/top5 21.80%/69.81%
+
+
+ | Global Training Round : 15 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.14%
+                          test acc/top5 : 68.08%
+                          test loss : 5.57
+                          time taken : 8.49 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.37%
+                          test acc/top5 : 68.57%
+                          test loss : 5.55
+                          time taken : 8.54 
+Training complete best top1/top5: 21.37%/68.57%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.08%
+                          test acc/top5 : 67.61%
+                          test loss : 5.41
+                          time taken : 8.24 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.36%
+                          test acc/top5 : 67.37%
+                          test loss : 5.62
+                          time taken : 9.00 
+Training complete best top1/top5: 20.08%/67.61%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.34%
+                          test acc/top5 : 67.87%
+                          test loss : 5.48
+                          time taken : 8.33 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.06%
+                          test acc/top5 : 68.27%
+                          test loss : 5.52
+                          time taken : 8.45 
+Training complete best top1/top5: 19.34%/67.87%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.34%
+                          test acc/top5 : 66.04%
+                          test loss : 5.49
+                          time taken : 8.62 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.22%
+                          test acc/top5 : 67.85%
+                          test loss : 5.56
+                          time taken : 8.73 
+Training complete best top1/top5: 19.34%/66.04%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.26%
+                          test acc/top5 : 67.14%
+                          test loss : 5.57
+                          time taken : 8.47 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.40%
+                          test acc/top5 : 67.16%
+                          test loss : 5.54
+                          time taken : 8.58 
+Training complete best top1/top5: 19.40%/67.16%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 15 global rounds:
+Validation Loss : 5.64
+Validation Accuracy: top1/top5 21.00%/68.44%
+
+
+ | Global Training Round : 16 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.13%
+                          test acc/top5 : 65.68%
+                          test loss : 5.35
+                          time taken : 8.64 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.13%
+                          test acc/top5 : 68.51%
+                          test loss : 5.42
+                          time taken : 8.32 
+Training complete best top1/top5: 18.13%/65.68%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.15%
+                          test acc/top5 : 67.35%
+                          test loss : 5.51
+                          time taken : 8.23 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.97%
+                          test acc/top5 : 66.58%
+                          test loss : 5.54
+                          time taken : 8.98 
+Training complete best top1/top5: 19.15%/67.35%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.74%
+                          test acc/top5 : 66.76%
+                          test loss : 5.49
+                          time taken : 8.29 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.90%
+                          test acc/top5 : 66.84%
+                          test loss : 5.50
+                          time taken : 8.50 
+Training complete best top1/top5: 19.74%/66.76%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.52%
+                          test acc/top5 : 69.16%
+                          test loss : 5.43
+                          time taken : 8.80 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.20%
+                          test acc/top5 : 65.74%
+                          test loss : 5.40
+                          time taken : 8.25 
+Training complete best top1/top5: 19.20%/65.74%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.11%
+                          test acc/top5 : 65.67%
+                          test loss : 5.49
+                          time taken : 9.03 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.41%
+                          test acc/top5 : 68.64%
+                          test loss : 5.49
+                          time taken : 8.45 
+Training complete best top1/top5: 19.11%/65.67%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 16 global rounds:
+Validation Loss : 5.63
+Validation Accuracy: top1/top5 20.63%/68.39%
+
+
+ | Global Training Round : 17 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.68%
+                          test acc/top5 : 68.61%
+                          test loss : 5.56
+                          time taken : 8.35 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.05%
+                          test acc/top5 : 68.32%
+                          test loss : 5.43
+                          time taken : 8.31 
+Training complete best top1/top5: 20.05%/68.32%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.27%
+                          test acc/top5 : 66.85%
+                          test loss : 5.43
+                          time taken : 8.57 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.11%
+                          test acc/top5 : 67.05%
+                          test loss : 5.42
+                          time taken : 8.93 
+Training complete best top1/top5: 20.11%/67.05%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 17.77%
+                          test acc/top5 : 63.96%
+                          test loss : 5.65
+                          time taken : 8.43 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.24%
+                          test acc/top5 : 67.08%
+                          test loss : 5.50
+                          time taken : 8.64 
+Training complete best top1/top5: 20.24%/67.08%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.63%
+                          test acc/top5 : 64.89%
+                          test loss : 5.45
+                          time taken : 8.73 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.15%
+                          test acc/top5 : 68.20%
+                          test loss : 5.48
+                          time taken : 8.49 
+Training complete best top1/top5: 19.63%/64.89%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.36%
+                          test acc/top5 : 68.61%
+                          test loss : 5.58
+                          time taken : 8.97 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.25%
+                          test acc/top5 : 68.02%
+                          test loss : 5.53
+                          time taken : 8.44 
+Training complete best top1/top5: 21.25%/68.02%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 17 global rounds:
+Validation Loss : 5.63
+Validation Accuracy: top1/top5 21.44%/69.30%
+
+
+ | Global Training Round : 18 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.62%
+                          test acc/top5 : 66.10%
+                          test loss : 5.48
+                          time taken : 8.50 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 22.18%
+                          test acc/top5 : 69.47%
+                          test loss : 5.51
+                          time taken : 8.44 
+Training complete best top1/top5: 19.62%/66.10%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.18%
+                          test acc/top5 : 62.08%
+                          test loss : 5.49
+                          time taken : 8.91 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.35%
+                          test acc/top5 : 68.18%
+                          test loss : 5.51
+                          time taken : 8.75 
+Training complete best top1/top5: 18.18%/62.08%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 16.52%
+                          test acc/top5 : 59.49%
+                          test loss : 5.34
+                          time taken : 8.21 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.17%
+                          test acc/top5 : 67.85%
+                          test loss : 5.59
+                          time taken : 8.44 
+Training complete best top1/top5: 16.52%/59.49%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.72%
+                          test acc/top5 : 67.48%
+                          test loss : 5.47
+                          time taken : 8.65 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.69%
+                          test acc/top5 : 69.56%
+                          test loss : 5.56
+                          time taken : 8.75 
+Training complete best top1/top5: 19.72%/67.48%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.39%
+                          test acc/top5 : 67.15%
+                          test loss : 5.56
+                          time taken : 8.79 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.05%
+                          test acc/top5 : 68.30%
+                          test loss : 5.57
+                          time taken : 8.50 
+Training complete best top1/top5: 19.39%/67.15%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 18 global rounds:
+Validation Loss : 5.64
+Validation Accuracy: top1/top5 20.69%/68.29%
+
+
+ | Global Training Round : 19 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.69%
+                          test acc/top5 : 66.80%
+                          test loss : 5.52
+                          time taken : 8.27 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.29%
+                          test acc/top5 : 67.85%
+                          test loss : 5.52
+                          time taken : 8.25 
+Training complete best top1/top5: 19.69%/66.80%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.59%
+                          test acc/top5 : 65.13%
+                          test loss : 5.46
+                          time taken : 8.35 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.99%
+                          test acc/top5 : 66.33%
+                          test loss : 5.51
+                          time taken : 8.66 
+Training complete best top1/top5: 19.59%/65.13%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.10%
+                          test acc/top5 : 66.98%
+                          test loss : 5.58
+                          time taken : 8.47 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.82%
+                          test acc/top5 : 69.08%
+                          test loss : 5.49
+                          time taken : 8.30 
+Training complete best top1/top5: 20.82%/69.08%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.54%
+                          test acc/top5 : 65.43%
+                          test loss : 5.29
+                          time taken : 8.68 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.76%
+                          test acc/top5 : 67.54%
+                          test loss : 5.48
+                          time taken : 8.33 
+Training complete best top1/top5: 18.54%/65.43%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.45%
+                          test acc/top5 : 67.22%
+                          test loss : 5.64
+                          time taken : 8.48 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.11%
+                          test acc/top5 : 69.35%
+                          test loss : 5.56
+                          time taken : 8.17 
+Training complete best top1/top5: 21.11%/69.35%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 19 global rounds:
+Validation Loss : 5.62
+Validation Accuracy: top1/top5 21.54%/69.12%
+
+
+ | Global Training Round : 20 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.73%
+                          test acc/top5 : 67.68%
+                          test loss : 5.55
+                          time taken : 8.30 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.00%
+                          test acc/top5 : 67.25%
+                          test loss : 5.35
+                          time taken : 8.38 
+Training complete best top1/top5: 20.00%/67.25%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.58%
+                          test acc/top5 : 68.74%
+                          test loss : 5.55
+                          time taken : 8.58 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.51%
+                          test acc/top5 : 68.34%
+                          test loss : 5.46
+                          time taken : 8.62 
+Training complete best top1/top5: 21.51%/68.34%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.08%
+                          test acc/top5 : 65.92%
+                          test loss : 5.36
+                          time taken : 8.44 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.90%
+                          test acc/top5 : 68.90%
+                          test loss : 5.54
+                          time taken : 8.60 
+Training complete best top1/top5: 20.08%/65.92%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.16%
+                          test acc/top5 : 67.00%
+                          test loss : 5.42
+                          time taken : 8.17 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.94%
+                          test acc/top5 : 68.02%
+                          test loss : 5.50
+                          time taken : 8.77 
+Training complete best top1/top5: 19.16%/67.00%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.17%
+                          test acc/top5 : 68.26%
+                          test loss : 5.43
+                          time taken : 8.43 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.53%
+                          test acc/top5 : 69.88%
+                          test loss : 5.57
+                          time taken : 8.42 
+Training complete best top1/top5: 20.17%/68.26%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 20 global rounds:
+Validation Loss : 5.56
+Validation Accuracy: top1/top5 21.66%/69.98%
+
+
+ | Global Training Round : 21 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.07%
+                          test acc/top5 : 66.36%
+                          test loss : 5.57
+                          time taken : 8.48 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.39%
+                          test acc/top5 : 68.40%
+                          test loss : 5.48
+                          time taken : 8.97 
+Training complete best top1/top5: 21.39%/68.40%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.72%
+                          test acc/top5 : 68.32%
+                          test loss : 5.46
+                          time taken : 8.48 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.16%
+                          test acc/top5 : 68.94%
+                          test loss : 5.49
+                          time taken : 8.61 
+Training complete best top1/top5: 21.72%/68.32%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.82%
+                          test acc/top5 : 65.14%
+                          test loss : 5.41
+                          time taken : 8.48 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.60%
+                          test acc/top5 : 67.76%
+                          test loss : 5.49
+                          time taken : 8.41 
+Training complete best top1/top5: 18.82%/65.14%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.20%
+                          test acc/top5 : 68.95%
+                          test loss : 5.58
+                          time taken : 8.25 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.22%
+                          test acc/top5 : 68.32%
+                          test loss : 5.55
+                          time taken : 8.51 
+Training complete best top1/top5: 21.22%/68.32%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.37%
+                          test acc/top5 : 66.54%
+                          test loss : 5.30
+                          time taken : 8.31 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.28%
+                          test acc/top5 : 67.68%
+                          test loss : 5.47
+                          time taken : 8.44 
+Training complete best top1/top5: 19.37%/66.54%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 21 global rounds:
+Validation Loss : 5.58
+Validation Accuracy: top1/top5 22.17%/69.55%
+
+
+ | Global Training Round : 22 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.95%
+                          test acc/top5 : 67.41%
+                          test loss : 5.51
+                          time taken : 8.27 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.69%
+                          test acc/top5 : 67.93%
+                          test loss : 5.51
+                          time taken : 8.25 
+Training complete best top1/top5: 21.69%/67.93%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.53%
+                          test acc/top5 : 67.73%
+                          test loss : 5.52
+                          time taken : 8.71 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.30%
+                          test acc/top5 : 68.08%
+                          test loss : 5.58
+                          time taken : 8.45 
+Training complete best top1/top5: 20.53%/67.73%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.72%
+                          test acc/top5 : 67.12%
+                          test loss : 5.50
+                          time taken : 8.30 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.04%
+                          test acc/top5 : 67.88%
+                          test loss : 5.44
+                          time taken : 8.16 
+Training complete best top1/top5: 21.04%/67.88%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.90%
+                          test acc/top5 : 65.39%
+                          test loss : 5.48
+                          time taken : 8.63 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.88%
+                          test acc/top5 : 68.38%
+                          test loss : 5.46
+                          time taken : 8.74 
+Training complete best top1/top5: 20.88%/68.38%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.12%
+                          test acc/top5 : 67.46%
+                          test loss : 5.50
+                          time taken : 8.66 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.69%
+                          test acc/top5 : 68.08%
+                          test loss : 5.54
+                          time taken : 8.37 
+Training complete best top1/top5: 21.12%/67.46%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 22 global rounds:
+Validation Loss : 5.60
+Validation Accuracy: top1/top5 21.77%/69.40%
+
+
+ | Global Training Round : 23 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.86%
+                          test acc/top5 : 64.68%
+                          test loss : 5.32
+                          time taken : 8.29 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.12%
+                          test acc/top5 : 68.02%
+                          test loss : 5.50
+                          time taken : 8.37 
+Training complete best top1/top5: 18.86%/64.68%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.40%
+                          test acc/top5 : 67.70%
+                          test loss : 5.57
+                          time taken : 8.81 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.99%
+                          test acc/top5 : 68.31%
+                          test loss : 5.55
+                          time taken : 8.65 
+Training complete best top1/top5: 20.99%/68.31%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.90%
+                          test acc/top5 : 67.56%
+                          test loss : 5.53
+                          time taken : 8.14 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.55%
+                          test acc/top5 : 68.49%
+                          test loss : 5.45
+                          time taken : 8.38 
+Training complete best top1/top5: 21.55%/68.49%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.86%
+                          test acc/top5 : 68.18%
+                          test loss : 5.39
+                          time taken : 8.92 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.44%
+                          test acc/top5 : 68.36%
+                          test loss : 5.53
+                          time taken : 8.33 
+Training complete best top1/top5: 19.86%/68.18%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.15%
+                          test acc/top5 : 67.91%
+                          test loss : 5.53
+                          time taken : 8.23 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.26%
+                          test acc/top5 : 67.72%
+                          test loss : 5.58
+                          time taken : 8.17 
+Training complete best top1/top5: 20.15%/67.91%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 23 global rounds:
+Validation Loss : 5.60
+Validation Accuracy: top1/top5 22.48%/69.59%
+
+
+ | Global Training Round : 24 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.22%
+                          test acc/top5 : 67.58%
+                          test loss : 5.61
+                          time taken : 8.50 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.10%
+                          test acc/top5 : 68.69%
+                          test loss : 5.55
+                          time taken : 8.17 
+Training complete best top1/top5: 21.10%/68.69%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.49%
+                          test acc/top5 : 68.29%
+                          test loss : 5.37
+                          time taken : 8.59 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.26%
+                          test acc/top5 : 68.63%
+                          test loss : 5.58
+                          time taken : 8.67 
+Training complete best top1/top5: 20.49%/68.29%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.99%
+                          test acc/top5 : 64.60%
+                          test loss : 5.39
+                          time taken : 8.39 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.82%
+                          test acc/top5 : 67.89%
+                          test loss : 5.44
+                          time taken : 8.63 
+Training complete best top1/top5: 18.99%/64.60%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.50%
+                          test acc/top5 : 66.62%
+                          test loss : 5.62
+                          time taken : 8.52 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.09%
+                          test acc/top5 : 68.64%
+                          test loss : 5.51
+                          time taken : 8.50 
+Training complete best top1/top5: 21.09%/68.64%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.97%
+                          test acc/top5 : 65.98%
+                          test loss : 5.65
+                          time taken : 8.94 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.61%
+                          test acc/top5 : 66.92%
+                          test loss : 5.53
+                          time taken : 8.69 
+Training complete best top1/top5: 19.61%/66.92%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 24 global rounds:
+Validation Loss : 5.60
+Validation Accuracy: top1/top5 21.56%/68.84%
+
+
+ | Global Training Round : 25 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.01%
+                          test acc/top5 : 65.75%
+                          test loss : 5.45
+                          time taken : 8.43 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.10%
+                          test acc/top5 : 68.60%
+                          test loss : 5.57
+                          time taken : 8.38 
+Training complete best top1/top5: 19.01%/65.75%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.86%
+                          test acc/top5 : 68.10%
+                          test loss : 5.57
+                          time taken : 8.50 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.54%
+                          test acc/top5 : 67.05%
+                          test loss : 5.56
+                          time taken : 8.56 
+Training complete best top1/top5: 20.54%/67.05%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.92%
+                          test acc/top5 : 67.77%
+                          test loss : 5.57
+                          time taken : 8.26 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.07%
+                          test acc/top5 : 69.04%
+                          test loss : 5.49
+                          time taken : 8.48 
+Training complete best top1/top5: 21.07%/69.04%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.93%
+                          test acc/top5 : 69.10%
+                          test loss : 5.54
+                          time taken : 8.31 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.54%
+                          test acc/top5 : 68.70%
+                          test loss : 5.55
+                          time taken : 8.85 
+Training complete best top1/top5: 21.93%/69.10%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.83%
+                          test acc/top5 : 66.45%
+                          test loss : 5.41
+                          time taken : 8.20 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.49%
+                          test acc/top5 : 68.38%
+                          test loss : 5.51
+                          time taken : 8.34 
+Training complete best top1/top5: 20.83%/66.45%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 25 global rounds:
+Validation Loss : 5.59
+Validation Accuracy: top1/top5 22.03%/69.60%
+
+
+ | Global Training Round : 26 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.47%
+                          test acc/top5 : 67.97%
+                          test loss : 5.55
+                          time taken : 8.19 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.12%
+                          test acc/top5 : 67.22%
+                          test loss : 5.59
+                          time taken : 8.34 
+Training complete best top1/top5: 20.47%/67.97%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.37%
+                          test acc/top5 : 67.41%
+                          test loss : 5.37
+                          time taken : 8.79 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.39%
+                          test acc/top5 : 68.04%
+                          test loss : 5.56
+                          time taken : 8.49 
+Training complete best top1/top5: 20.37%/67.41%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.54%
+                          test acc/top5 : 68.45%
+                          test loss : 5.47
+                          time taken : 8.69 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.92%
+                          test acc/top5 : 68.80%
+                          test loss : 5.48
+                          time taken : 8.56 
+Training complete best top1/top5: 20.54%/68.45%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.96%
+                          test acc/top5 : 66.77%
+                          test loss : 5.45
+                          time taken : 8.31 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.01%
+                          test acc/top5 : 67.82%
+                          test loss : 5.43
+                          time taken : 8.79 
+Training complete best top1/top5: 21.01%/67.82%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.25%
+                          test acc/top5 : 65.98%
+                          test loss : 5.54
+                          time taken : 8.28 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.28%
+                          test acc/top5 : 66.73%
+                          test loss : 5.61
+                          time taken : 8.77 
+Training complete best top1/top5: 19.25%/65.98%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 26 global rounds:
+Validation Loss : 5.61
+Validation Accuracy: top1/top5 21.35%/68.76%
+
+
+ | Global Training Round : 27 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.30%
+                          test acc/top5 : 67.10%
+                          test loss : 5.45
+                          time taken : 8.29 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.63%
+                          test acc/top5 : 68.20%
+                          test loss : 5.51
+                          time taken : 8.79 
+Training complete best top1/top5: 19.30%/67.10%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.56%
+                          test acc/top5 : 66.41%
+                          test loss : 5.59
+                          time taken : 8.71 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.15%
+                          test acc/top5 : 68.38%
+                          test loss : 5.56
+                          time taken : 8.21 
+Training complete best top1/top5: 20.15%/68.38%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.09%
+                          test acc/top5 : 66.11%
+                          test loss : 5.51
+                          time taken : 8.55 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.43%
+                          test acc/top5 : 66.25%
+                          test loss : 5.57
+                          time taken : 8.35 
+Training complete best top1/top5: 19.09%/66.11%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.26%
+                          test acc/top5 : 66.58%
+                          test loss : 5.49
+                          time taken : 8.76 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.81%
+                          test acc/top5 : 68.13%
+                          test loss : 5.50
+                          time taken : 8.61 
+Training complete best top1/top5: 20.26%/66.58%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.37%
+                          test acc/top5 : 68.17%
+                          test loss : 5.52
+                          time taken : 8.64 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.46%
+                          test acc/top5 : 67.17%
+                          test loss : 5.54
+                          time taken : 8.35 
+Training complete best top1/top5: 21.37%/68.17%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 27 global rounds:
+Validation Loss : 5.63
+Validation Accuracy: top1/top5 21.69%/68.81%
+
+
+ | Global Training Round : 28 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.77%
+                          test acc/top5 : 64.96%
+                          test loss : 5.34
+                          time taken : 8.65 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.16%
+                          test acc/top5 : 66.86%
+                          test loss : 5.48
+                          time taken : 8.51 
+Training complete best top1/top5: 18.77%/64.96%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.62%
+                          test acc/top5 : 68.27%
+                          test loss : 5.56
+                          time taken : 8.76 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.63%
+                          test acc/top5 : 67.58%
+                          test loss : 5.57
+                          time taken : 8.37 
+Training complete best top1/top5: 20.62%/68.27%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.75%
+                          test acc/top5 : 66.86%
+                          test loss : 5.49
+                          time taken : 8.44 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.20%
+                          test acc/top5 : 67.16%
+                          test loss : 5.55
+                          time taken : 8.33 
+Training complete best top1/top5: 20.75%/66.86%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.14%
+                          test acc/top5 : 67.71%
+                          test loss : 5.46
+                          time taken : 8.89 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.07%
+                          test acc/top5 : 67.77%
+                          test loss : 5.56
+                          time taken : 8.40 
+Training complete best top1/top5: 20.14%/67.71%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.94%
+                          test acc/top5 : 65.71%
+                          test loss : 5.38
+                          time taken : 8.63 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.94%
+                          test acc/top5 : 66.81%
+                          test loss : 5.50
+                          time taken : 8.61 
+Training complete best top1/top5: 18.94%/65.71%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 28 global rounds:
+Validation Loss : 5.58
+Validation Accuracy: top1/top5 21.03%/68.81%
+
+
+ | Global Training Round : 29 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.02%
+                          test acc/top5 : 65.85%
+                          test loss : 5.51
+                          time taken : 8.79 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.15%
+                          test acc/top5 : 68.04%
+                          test loss : 5.56
+                          time taken : 8.17 
+Training complete best top1/top5: 20.02%/65.85%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.93%
+                          test acc/top5 : 66.33%
+                          test loss : 5.50
+                          time taken : 8.65 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.19%
+                          test acc/top5 : 68.78%
+                          test loss : 5.51
+                          time taken : 8.94 
+Training complete best top1/top5: 20.93%/66.33%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.37%
+                          test acc/top5 : 65.31%
+                          test loss : 5.52
+                          time taken : 8.27 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.83%
+                          test acc/top5 : 67.99%
+                          test loss : 5.52
+                          time taken : 8.57 
+Training complete best top1/top5: 20.83%/67.99%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.88%
+                          test acc/top5 : 66.31%
+                          test loss : 5.51
+                          time taken : 8.71 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.37%
+                          test acc/top5 : 67.53%
+                          test loss : 5.57
+                          time taken : 8.75 
+Training complete best top1/top5: 19.88%/66.31%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.47%
+                          test acc/top5 : 67.02%
+                          test loss : 5.62
+                          time taken : 8.47 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.66%
+                          test acc/top5 : 67.68%
+                          test loss : 5.57
+                          time taken : 8.40 
+Training complete best top1/top5: 20.66%/67.68%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 29 global rounds:
+Validation Loss : 5.65
+Validation Accuracy: top1/top5 21.13%/67.66%
+
+
+ | Global Training Round : 30 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.09%
+                          test acc/top5 : 68.28%
+                          test loss : 5.58
+                          time taken : 8.27 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.09%
+                          test acc/top5 : 66.64%
+                          test loss : 5.59
+                          time taken : 8.36 
+Training complete best top1/top5: 20.09%/68.28%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.26%
+                          test acc/top5 : 66.43%
+                          test loss : 5.47
+                          time taken : 8.60 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.14%
+                          test acc/top5 : 67.10%
+                          test loss : 5.55
+                          time taken : 8.57 
+Training complete best top1/top5: 19.26%/66.43%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.28%
+                          test acc/top5 : 67.76%
+                          test loss : 5.58
+                          time taken : 8.33 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.70%
+                          test acc/top5 : 67.09%
+                          test loss : 5.56
+                          time taken : 8.37 
+Training complete best top1/top5: 20.70%/67.09%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.23%
+                          test acc/top5 : 66.79%
+                          test loss : 5.53
+                          time taken : 8.18 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.31%
+                          test acc/top5 : 66.96%
+                          test loss : 5.63
+                          time taken : 8.89 
+Training complete best top1/top5: 20.23%/66.79%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.37%
+                          test acc/top5 : 66.90%
+                          test loss : 5.56
+                          time taken : 8.41 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.12%
+                          test acc/top5 : 67.91%
+                          test loss : 5.52
+                          time taken : 8.42 
+Training complete best top1/top5: 21.12%/67.91%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 30 global rounds:
+Validation Loss : 5.65
+Validation Accuracy: top1/top5 20.98%/68.21%
+
+
+ | Global Training Round : 31 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.25%
+                          test acc/top5 : 63.75%
+                          test loss : 5.38
+                          time taken : 8.65 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.25%
+                          test acc/top5 : 67.43%
+                          test loss : 5.57
+                          time taken : 8.31 
+Training complete best top1/top5: 18.25%/63.75%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.78%
+                          test acc/top5 : 67.13%
+                          test loss : 5.52
+                          time taken : 8.60 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.99%
+                          test acc/top5 : 67.08%
+                          test loss : 5.58
+                          time taken : 8.43 
+Training complete best top1/top5: 20.78%/67.13%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.85%
+                          test acc/top5 : 67.04%
+                          test loss : 5.58
+                          time taken : 8.24 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.96%
+                          test acc/top5 : 67.11%
+                          test loss : 5.59
+                          time taken : 8.38 
+Training complete best top1/top5: 19.85%/67.04%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.94%
+                          test acc/top5 : 68.21%
+                          test loss : 5.49
+                          time taken : 8.32 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 21.25%
+                          test acc/top5 : 68.02%
+                          test loss : 5.54
+                          time taken : 8.77 
+Training complete best top1/top5: 20.94%/68.21%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.80%
+                          test acc/top5 : 67.05%
+                          test loss : 5.56
+                          time taken : 8.65 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.54%
+                          test acc/top5 : 67.36%
+                          test loss : 5.55
+                          time taken : 8.44 
+Training complete best top1/top5: 20.54%/67.36%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 31 global rounds:
+Validation Loss : 5.63
+Validation Accuracy: top1/top5 20.86%/67.95%
+
+
+ | Global Training Round : 32 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.52%
+                          test acc/top5 : 66.17%
+                          test loss : 5.55
+                          time taken : 8.44 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.00%
+                          test acc/top5 : 66.16%
+                          test loss : 5.49
+                          time taken : 8.60 
+Training complete best top1/top5: 20.00%/66.16%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 21.19%
+                          test acc/top5 : 67.63%
+                          test loss : 5.55
+                          time taken : 8.70 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.35%
+                          test acc/top5 : 66.98%
+                          test loss : 5.61
+                          time taken : 8.04 
+Training complete best top1/top5: 21.19%/67.63%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.04%
+                          test acc/top5 : 68.17%
+                          test loss : 5.57
+                          time taken : 8.57 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.42%
+                          test acc/top5 : 67.00%
+                          test loss : 5.56
+                          time taken : 8.24 
+Training complete best top1/top5: 20.42%/67.00%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.80%
+                          test acc/top5 : 67.21%
+                          test loss : 5.55
+                          time taken : 8.50 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.26%
+                          test acc/top5 : 66.28%
+                          test loss : 5.52
+                          time taken : 8.68 
+Training complete best top1/top5: 20.26%/66.28%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.88%
+                          test acc/top5 : 66.25%
+                          test loss : 5.48
+                          time taken : 8.39 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.38%
+                          test acc/top5 : 66.55%
+                          test loss : 5.60
+                          time taken : 8.34 
+Training complete best top1/top5: 18.88%/66.25%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 32 global rounds:
+Validation Loss : 5.65
+Validation Accuracy: top1/top5 20.42%/67.42%
+
+
+ | Global Training Round : 33 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.48%
+                          test acc/top5 : 67.36%
+                          test loss : 5.59
+                          time taken : 8.34 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.88%
+                          test acc/top5 : 66.77%
+                          test loss : 5.53
+                          time taken : 8.32 
+Training complete best top1/top5: 18.88%/66.77%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.77%
+                          test acc/top5 : 66.66%
+                          test loss : 5.56
+                          time taken : 8.80 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.36%
+                          test acc/top5 : 66.75%
+                          test loss : 5.62
+                          time taken : 8.49 
+Training complete best top1/top5: 19.77%/66.66%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.03%
+                          test acc/top5 : 64.36%
+                          test loss : 5.36
+                          time taken : 8.32 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.78%
+                          test acc/top5 : 66.32%
+                          test loss : 5.59
+                          time taken : 8.40 
+Training complete best top1/top5: 18.03%/64.36%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.51%
+                          test acc/top5 : 66.08%
+                          test loss : 5.55
+                          time taken : 8.77 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.26%
+                          test acc/top5 : 67.16%
+                          test loss : 5.56
+                          time taken : 8.45 
+Training complete best top1/top5: 19.51%/66.08%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.71%
+                          test acc/top5 : 65.91%
+                          test loss : 5.57
+                          time taken : 8.54 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.19%
+                          test acc/top5 : 67.06%
+                          test loss : 5.47
+                          time taken : 8.42 
+Training complete best top1/top5: 20.19%/67.06%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 33 global rounds:
+Validation Loss : 5.62
+Validation Accuracy: top1/top5 20.08%/67.88%
+
+
+ | Global Training Round : 34 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.50%
+                          test acc/top5 : 65.91%
+                          test loss : 5.63
+                          time taken : 8.76 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.57%
+                          test acc/top5 : 65.32%
+                          test loss : 5.67
+                          time taken : 8.53 
+Training complete best top1/top5: 19.50%/65.91%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.70%
+                          test acc/top5 : 66.35%
+                          test loss : 5.52
+                          time taken : 8.51 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.66%
+                          test acc/top5 : 66.44%
+                          test loss : 5.65
+                          time taken : 8.80 
+Training complete best top1/top5: 19.70%/66.35%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.06%
+                          test acc/top5 : 67.50%
+                          test loss : 5.53
+                          time taken : 8.35 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.93%
+                          test acc/top5 : 66.37%
+                          test loss : 5.58
+                          time taken : 8.28 
+Training complete best top1/top5: 19.06%/67.50%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.24%
+                          test acc/top5 : 65.61%
+                          test loss : 5.65
+                          time taken : 8.82 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.71%
+                          test acc/top5 : 67.01%
+                          test loss : 5.60
+                          time taken : 8.21 
+Training complete best top1/top5: 19.71%/67.01%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.55%
+                          test acc/top5 : 66.68%
+                          test loss : 5.62
+                          time taken : 8.49 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.35%
+                          test acc/top5 : 67.31%
+                          test loss : 5.56
+                          time taken : 8.36 
+Training complete best top1/top5: 20.35%/67.31%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 34 global rounds:
+Validation Loss : 5.68
+Validation Accuracy: top1/top5 20.14%/66.52%
+
+
+ | Global Training Round : 35 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.89%
+                          test acc/top5 : 66.84%
+                          test loss : 5.44
+                          time taken : 8.29 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.30%
+                          test acc/top5 : 67.33%
+                          test loss : 5.49
+                          time taken : 8.31 
+Training complete best top1/top5: 18.89%/66.84%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.90%
+                          test acc/top5 : 66.23%
+                          test loss : 5.46
+                          time taken : 8.84 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.11%
+                          test acc/top5 : 66.62%
+                          test loss : 5.57
+                          time taken : 8.34 
+Training complete best top1/top5: 18.90%/66.23%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.19%
+                          test acc/top5 : 66.63%
+                          test loss : 5.49
+                          time taken : 8.27 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.50%
+                          test acc/top5 : 67.61%
+                          test loss : 5.52
+                          time taken : 8.70 
+Training complete best top1/top5: 20.19%/66.63%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.10%
+                          test acc/top5 : 67.27%
+                          test loss : 5.53
+                          time taken : 8.31 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.85%
+                          test acc/top5 : 67.05%
+                          test loss : 5.58
+                          time taken : 8.58 
+Training complete best top1/top5: 20.10%/67.27%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.53%
+                          test acc/top5 : 67.83%
+                          test loss : 5.59
+                          time taken : 8.28 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.77%
+                          test acc/top5 : 66.81%
+                          test loss : 5.57
+                          time taken : 8.43 
+Training complete best top1/top5: 19.77%/66.81%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 35 global rounds:
+Validation Loss : 5.63
+Validation Accuracy: top1/top5 20.61%/67.19%
+
+
+ | Global Training Round : 36 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.79%
+                          test acc/top5 : 67.07%
+                          test loss : 5.53
+                          time taken : 8.29 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.51%
+                          test acc/top5 : 67.25%
+                          test loss : 5.59
+                          time taken : 8.51 
+Training complete best top1/top5: 18.79%/67.07%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.34%
+                          test acc/top5 : 65.57%
+                          test loss : 5.57
+                          time taken : 8.51 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.65%
+                          test acc/top5 : 65.91%
+                          test loss : 5.59
+                          time taken : 8.19 
+Training complete best top1/top5: 19.34%/65.57%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.34%
+                          test acc/top5 : 66.65%
+                          test loss : 5.62
+                          time taken : 8.26 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.88%
+                          test acc/top5 : 65.54%
+                          test loss : 5.66
+                          time taken : 8.32 
+Training complete best top1/top5: 19.34%/66.65%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.11%
+                          test acc/top5 : 67.61%
+                          test loss : 5.51
+                          time taken : 8.62 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.87%
+                          test acc/top5 : 67.06%
+                          test loss : 5.52
+                          time taken : 8.33 
+Training complete best top1/top5: 20.11%/67.61%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 17.37%
+                          test acc/top5 : 62.60%
+                          test loss : 5.42
+                          time taken : 8.26 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.11%
+                          test acc/top5 : 65.04%
+                          test loss : 5.63
+                          time taken : 8.38 
+Training complete best top1/top5: 17.37%/62.60%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 36 global rounds:
+Validation Loss : 5.66
+Validation Accuracy: top1/top5 19.59%/67.04%
+
+
+ | Global Training Round : 37 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.89%
+                          test acc/top5 : 65.65%
+                          test loss : 5.54
+                          time taken : 8.82 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.49%
+                          test acc/top5 : 66.71%
+                          test loss : 5.50
+                          time taken : 8.71 
+Training complete best top1/top5: 19.49%/66.71%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.06%
+                          test acc/top5 : 64.42%
+                          test loss : 5.62
+                          time taken : 8.32 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.21%
+                          test acc/top5 : 65.86%
+                          test loss : 5.61
+                          time taken : 8.33 
+Training complete best top1/top5: 19.21%/65.86%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.05%
+                          test acc/top5 : 65.86%
+                          test loss : 5.52
+                          time taken : 8.42 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.49%
+                          test acc/top5 : 67.09%
+                          test loss : 5.50
+                          time taken : 8.87 
+Training complete best top1/top5: 19.49%/67.09%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.92%
+                          test acc/top5 : 67.13%
+                          test loss : 5.61
+                          time taken : 8.76 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.82%
+                          test acc/top5 : 67.09%
+                          test loss : 5.59
+                          time taken : 8.28 
+Training complete best top1/top5: 19.82%/67.09%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.12%
+                          test acc/top5 : 67.21%
+                          test loss : 5.51
+                          time taken : 8.46 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.63%
+                          test acc/top5 : 66.72%
+                          test loss : 5.48
+                          time taken : 8.31 
+Training complete best top1/top5: 19.63%/66.72%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 37 global rounds:
+Validation Loss : 5.65
+Validation Accuracy: top1/top5 19.33%/66.99%
+
+
+ | Global Training Round : 38 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.11%
+                          test acc/top5 : 65.45%
+                          test loss : 5.49
+                          time taken : 8.16 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.44%
+                          test acc/top5 : 64.91%
+                          test loss : 5.37
+                          time taken : 8.66 
+Training complete best top1/top5: 18.44%/64.91%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.88%
+                          test acc/top5 : 66.80%
+                          test loss : 5.55
+                          time taken : 9.03 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.13%
+                          test acc/top5 : 66.53%
+                          test loss : 5.55
+                          time taken : 8.23 
+Training complete best top1/top5: 19.13%/66.53%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.36%
+                          test acc/top5 : 67.42%
+                          test loss : 5.61
+                          time taken : 8.19 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.14%
+                          test acc/top5 : 67.81%
+                          test loss : 5.56
+                          time taken : 8.88 
+Training complete best top1/top5: 20.14%/67.81%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.03%
+                          test acc/top5 : 65.23%
+                          test loss : 5.62
+                          time taken : 8.65 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.91%
+                          test acc/top5 : 66.09%
+                          test loss : 5.56
+                          time taken : 8.37 
+Training complete best top1/top5: 18.91%/66.09%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.66%
+                          test acc/top5 : 65.54%
+                          test loss : 5.58
+                          time taken : 8.38 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.81%
+                          test acc/top5 : 66.61%
+                          test loss : 5.59
+                          time taken : 8.47 
+Training complete best top1/top5: 18.66%/65.54%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 38 global rounds:
+Validation Loss : 5.65
+Validation Accuracy: top1/top5 20.10%/66.57%
+
+
+ | Global Training Round : 39 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.22%
+                          test acc/top5 : 65.75%
+                          test loss : 5.58
+                          time taken : 8.33 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.98%
+                          test acc/top5 : 66.54%
+                          test loss : 5.55
+                          time taken : 8.53 
+Training complete best top1/top5: 18.98%/66.54%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.71%
+                          test acc/top5 : 65.28%
+                          test loss : 5.61
+                          time taken : 8.68 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.88%
+                          test acc/top5 : 65.57%
+                          test loss : 5.63
+                          time taken : 8.54 
+Training complete best top1/top5: 18.71%/65.28%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.00%
+                          test acc/top5 : 66.50%
+                          test loss : 5.54
+                          time taken : 8.50 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.42%
+                          test acc/top5 : 67.09%
+                          test loss : 5.56
+                          time taken : 9.16 
+Training complete best top1/top5: 19.00%/66.50%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.57%
+                          test acc/top5 : 65.15%
+                          test loss : 5.57
+                          time taken : 8.17 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.01%
+                          test acc/top5 : 65.54%
+                          test loss : 5.63
+                          time taken : 8.34 
+Training complete best top1/top5: 19.57%/65.15%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.86%
+                          test acc/top5 : 66.22%
+                          test loss : 5.53
+                          time taken : 8.40 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.08%
+                          test acc/top5 : 66.97%
+                          test loss : 5.59
+                          time taken : 8.67 
+Training complete best top1/top5: 19.86%/66.22%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 39 global rounds:
+Validation Loss : 5.67
+Validation Accuracy: top1/top5 19.15%/66.74%
+
+
+ | Global Training Round : 40 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.54%
+                          test acc/top5 : 66.18%
+                          test loss : 5.58
+                          time taken : 8.54 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.92%
+                          test acc/top5 : 66.63%
+                          test loss : 5.62
+                          time taken : 8.91 
+Training complete best top1/top5: 19.54%/66.18%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.60%
+                          test acc/top5 : 66.09%
+                          test loss : 5.60
+                          time taken : 8.69 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.52%
+                          test acc/top5 : 66.92%
+                          test loss : 5.60
+                          time taken : 8.41 
+Training complete best top1/top5: 19.52%/66.92%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.87%
+                          test acc/top5 : 67.38%
+                          test loss : 5.52
+                          time taken : 8.43 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.78%
+                          test acc/top5 : 68.03%
+                          test loss : 5.55
+                          time taken : 8.29 
+Training complete best top1/top5: 19.87%/67.38%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.91%
+                          test acc/top5 : 65.94%
+                          test loss : 5.50
+                          time taken : 8.77 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.51%
+                          test acc/top5 : 66.26%
+                          test loss : 5.53
+                          time taken : 8.47 
+Training complete best top1/top5: 18.91%/65.94%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.44%
+                          test acc/top5 : 64.74%
+                          test loss : 5.42
+                          time taken : 8.42 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.09%
+                          test acc/top5 : 66.35%
+                          test loss : 5.56
+                          time taken : 8.71 
+Training complete best top1/top5: 18.44%/64.74%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 40 global rounds:
+Validation Loss : 5.62
+Validation Accuracy: top1/top5 19.42%/67.06%
+
+
+ | Global Training Round : 41 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.92%
+                          test acc/top5 : 65.73%
+                          test loss : 5.56
+                          time taken : 8.36 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.11%
+                          test acc/top5 : 66.52%
+                          test loss : 5.59
+                          time taken : 8.95 
+Training complete best top1/top5: 18.92%/65.73%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.37%
+                          test acc/top5 : 66.52%
+                          test loss : 5.45
+                          time taken : 8.41 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.59%
+                          test acc/top5 : 65.78%
+                          test loss : 5.54
+                          time taken : 8.20 
+Training complete best top1/top5: 19.37%/66.52%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.79%
+                          test acc/top5 : 66.20%
+                          test loss : 5.53
+                          time taken : 8.54 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.31%
+                          test acc/top5 : 67.15%
+                          test loss : 5.53
+                          time taken : 8.77 
+Training complete best top1/top5: 19.31%/67.15%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 20.11%
+                          test acc/top5 : 66.47%
+                          test loss : 5.41
+                          time taken : 8.81 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.93%
+                          test acc/top5 : 65.48%
+                          test loss : 5.58
+                          time taken : 8.41 
+Training complete best top1/top5: 20.11%/66.47%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.44%
+                          test acc/top5 : 66.22%
+                          test loss : 5.54
+                          time taken : 8.54 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.27%
+                          test acc/top5 : 66.53%
+                          test loss : 5.59
+                          time taken : 8.31 
+Training complete best top1/top5: 19.44%/66.22%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 41 global rounds:
+Validation Loss : 5.63
+Validation Accuracy: top1/top5 19.48%/66.82%
+
+
+ | Global Training Round : 42 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.70%
+                          test acc/top5 : 65.97%
+                          test loss : 5.61
+                          time taken : 8.58 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.63%
+                          test acc/top5 : 65.33%
+                          test loss : 5.52
+                          time taken : 8.70 
+Training complete best top1/top5: 19.63%/65.33%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.82%
+                          test acc/top5 : 67.11%
+                          test loss : 5.46
+                          time taken : 8.26 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.91%
+                          test acc/top5 : 66.95%
+                          test loss : 5.57
+                          time taken : 8.65 
+Training complete best top1/top5: 19.82%/67.11%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 17.84%
+                          test acc/top5 : 63.26%
+                          test loss : 5.46
+                          time taken : 8.53 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.34%
+                          test acc/top5 : 65.25%
+                          test loss : 5.55
+                          time taken : 8.56 
+Training complete best top1/top5: 17.84%/63.26%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.38%
+                          test acc/top5 : 64.68%
+                          test loss : 5.65
+                          time taken : 8.69 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.37%
+                          test acc/top5 : 64.72%
+                          test loss : 5.66
+                          time taken : 8.42 
+Training complete best top1/top5: 18.38%/64.68%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.19%
+                          test acc/top5 : 65.78%
+                          test loss : 5.59
+                          time taken : 8.36 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.75%
+                          test acc/top5 : 67.72%
+                          test loss : 5.56
+                          time taken : 8.18 
+Training complete best top1/top5: 19.75%/67.72%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 42 global rounds:
+Validation Loss : 5.67
+Validation Accuracy: top1/top5 19.14%/65.55%
+
+
+ | Global Training Round : 43 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.46%
+                          test acc/top5 : 65.30%
+                          test loss : 5.61
+                          time taken : 8.29 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.82%
+                          test acc/top5 : 66.83%
+                          test loss : 5.62
+                          time taken : 8.66 
+Training complete best top1/top5: 18.46%/65.30%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.55%
+                          test acc/top5 : 65.31%
+                          test loss : 5.47
+                          time taken : 8.70 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.65%
+                          test acc/top5 : 66.37%
+                          test loss : 5.64
+                          time taken : 8.38 
+Training complete best top1/top5: 18.55%/65.31%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.51%
+                          test acc/top5 : 66.11%
+                          test loss : 5.54
+                          time taken : 8.66 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.73%
+                          test acc/top5 : 66.48%
+                          test loss : 5.60
+                          time taken : 8.87 
+Training complete best top1/top5: 19.51%/66.11%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.00%
+                          test acc/top5 : 65.96%
+                          test loss : 5.57
+                          time taken : 9.18 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.23%
+                          test acc/top5 : 66.09%
+                          test loss : 5.58
+                          time taken : 8.59 
+Training complete best top1/top5: 19.00%/65.96%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.86%
+                          test acc/top5 : 65.67%
+                          test loss : 5.63
+                          time taken : 8.51 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.83%
+                          test acc/top5 : 66.27%
+                          test loss : 5.58
+                          time taken : 8.29 
+Training complete best top1/top5: 19.83%/66.27%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 43 global rounds:
+Validation Loss : 5.69
+Validation Accuracy: top1/top5 18.81%/66.09%
+
+
+ | Global Training Round : 44 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 17.35%
+                          test acc/top5 : 65.18%
+                          test loss : 5.54
+                          time taken : 8.69 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.59%
+                          test acc/top5 : 65.99%
+                          test loss : 5.57
+                          time taken : 8.44 
+Training complete best top1/top5: 17.35%/65.18%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.05%
+                          test acc/top5 : 65.83%
+                          test loss : 5.56
+                          time taken : 8.86 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.56%
+                          test acc/top5 : 65.75%
+                          test loss : 5.55
+                          time taken : 8.65 
+Training complete best top1/top5: 18.56%/65.75%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.90%
+                          test acc/top5 : 67.39%
+                          test loss : 5.54
+                          time taken : 8.50 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.59%
+                          test acc/top5 : 66.78%
+                          test loss : 5.54
+                          time taken : 8.76 
+Training complete best top1/top5: 18.90%/67.39%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.21%
+                          test acc/top5 : 65.67%
+                          test loss : 5.52
+                          time taken : 8.25 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.46%
+                          test acc/top5 : 66.01%
+                          test loss : 5.57
+                          time taken : 8.59 
+Training complete best top1/top5: 18.21%/65.67%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.96%
+                          test acc/top5 : 65.22%
+                          test loss : 5.64
+                          time taken : 8.29 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.53%
+                          test acc/top5 : 67.04%
+                          test loss : 5.57
+                          time taken : 8.41 
+Training complete best top1/top5: 19.53%/67.04%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 44 global rounds:
+Validation Loss : 5.65
+Validation Accuracy: top1/top5 19.61%/66.72%
+
+
+ | Global Training Round : 45 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.71%
+                          test acc/top5 : 65.80%
+                          test loss : 5.64
+                          time taken : 8.31 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.06%
+                          test acc/top5 : 66.82%
+                          test loss : 5.49
+                          time taken : 8.52 
+Training complete best top1/top5: 19.06%/66.82%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.81%
+                          test acc/top5 : 66.53%
+                          test loss : 5.54
+                          time taken : 8.74 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.78%
+                          test acc/top5 : 66.76%
+                          test loss : 5.58
+                          time taken : 8.40 
+Training complete best top1/top5: 19.81%/66.53%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.40%
+                          test acc/top5 : 65.56%
+                          test loss : 5.51
+                          time taken : 8.67 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.62%
+                          test acc/top5 : 65.87%
+                          test loss : 5.60
+                          time taken : 8.34 
+Training complete best top1/top5: 19.40%/65.56%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.24%
+                          test acc/top5 : 64.68%
+                          test loss : 5.55
+                          time taken : 8.58 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 17.89%
+                          test acc/top5 : 63.78%
+                          test loss : 5.67
+                          time taken : 8.51 
+Training complete best top1/top5: 18.24%/64.68%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.10%
+                          test acc/top5 : 65.62%
+                          test loss : 5.57
+                          time taken : 8.43 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.45%
+                          test acc/top5 : 66.46%
+                          test loss : 5.57
+                          time taken : 8.53 
+Training complete best top1/top5: 19.10%/65.62%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 45 global rounds:
+Validation Loss : 5.64
+Validation Accuracy: top1/top5 19.75%/66.30%
+
+
+ | Global Training Round : 46 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.79%
+                          test acc/top5 : 66.61%
+                          test loss : 5.63
+                          time taken : 8.40 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.25%
+                          test acc/top5 : 66.93%
+                          test loss : 5.57
+                          time taken : 8.87 
+Training complete best top1/top5: 19.25%/66.93%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.36%
+                          test acc/top5 : 64.09%
+                          test loss : 5.55
+                          time taken : 8.42 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.14%
+                          test acc/top5 : 65.85%
+                          test loss : 5.60
+                          time taken : 8.25 
+Training complete best top1/top5: 18.36%/64.09%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.63%
+                          test acc/top5 : 66.38%
+                          test loss : 5.43
+                          time taken : 8.18 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.43%
+                          test acc/top5 : 66.47%
+                          test loss : 5.49
+                          time taken : 8.76 
+Training complete best top1/top5: 19.63%/66.38%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.11%
+                          test acc/top5 : 67.54%
+                          test loss : 5.60
+                          time taken : 8.70 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.02%
+                          test acc/top5 : 66.87%
+                          test loss : 5.56
+                          time taken : 8.21 
+Training complete best top1/top5: 19.02%/66.87%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.09%
+                          test acc/top5 : 66.33%
+                          test loss : 5.57
+                          time taken : 8.63 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.49%
+                          test acc/top5 : 66.16%
+                          test loss : 5.62
+                          time taken : 8.25 
+Training complete best top1/top5: 19.09%/66.33%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 46 global rounds:
+Validation Loss : 5.66
+Validation Accuracy: top1/top5 19.58%/66.87%
+
+
+ | Global Training Round : 47 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.79%
+                          test acc/top5 : 65.99%
+                          test loss : 5.56
+                          time taken : 8.63 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.90%
+                          test acc/top5 : 66.40%
+                          test loss : 5.53
+                          time taken : 8.47 
+Training complete best top1/top5: 19.90%/66.40%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.11%
+                          test acc/top5 : 66.80%
+                          test loss : 5.59
+                          time taken : 8.47 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.19%
+                          test acc/top5 : 66.44%
+                          test loss : 5.59
+                          time taken : 8.28 
+Training complete best top1/top5: 19.11%/66.80%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.38%
+                          test acc/top5 : 66.00%
+                          test loss : 5.46
+                          time taken : 8.29 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.49%
+                          test acc/top5 : 65.95%
+                          test loss : 5.59
+                          time taken : 8.88 
+Training complete best top1/top5: 18.38%/66.00%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.25%
+                          test acc/top5 : 65.97%
+                          test loss : 5.60
+                          time taken : 8.21 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.45%
+                          test acc/top5 : 65.28%
+                          test loss : 5.60
+                          time taken : 8.40 
+Training complete best top1/top5: 18.45%/65.28%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.94%
+                          test acc/top5 : 66.31%
+                          test loss : 5.60
+                          time taken : 8.61 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.78%
+                          test acc/top5 : 66.32%
+                          test loss : 5.62
+                          time taken : 8.47 
+Training complete best top1/top5: 18.94%/66.31%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 47 global rounds:
+Validation Loss : 5.67
+Validation Accuracy: top1/top5 18.79%/66.91%
+
+
+ | Global Training Round : 48 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.06%
+                          test acc/top5 : 66.19%
+                          test loss : 5.53
+                          time taken : 8.18 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.68%
+                          test acc/top5 : 67.07%
+                          test loss : 5.53
+                          time taken : 8.86 
+Training complete best top1/top5: 19.68%/67.07%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.63%
+                          test acc/top5 : 66.68%
+                          test loss : 5.57
+                          time taken : 8.40 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.20%
+                          test acc/top5 : 66.22%
+                          test loss : 5.59
+                          time taken : 8.94 
+Training complete best top1/top5: 18.63%/66.68%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.26%
+                          test acc/top5 : 65.37%
+                          test loss : 5.52
+                          time taken : 8.58 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.91%
+                          test acc/top5 : 65.31%
+                          test loss : 5.55
+                          time taken : 8.40 
+Training complete best top1/top5: 19.26%/65.37%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.39%
+                          test acc/top5 : 65.91%
+                          test loss : 5.50
+                          time taken : 8.21 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.98%
+                          test acc/top5 : 66.29%
+                          test loss : 5.56
+                          time taken : 8.29 
+Training complete best top1/top5: 19.39%/65.91%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.70%
+                          test acc/top5 : 65.78%
+                          test loss : 5.59
+                          time taken : 8.48 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.84%
+                          test acc/top5 : 65.91%
+                          test loss : 5.63
+                          time taken : 8.76 
+Training complete best top1/top5: 18.70%/65.78%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 48 global rounds:
+Validation Loss : 5.65
+Validation Accuracy: top1/top5 20.33%/66.76%
+
+
+ | Global Training Round : 49 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.35%
+                          test acc/top5 : 63.85%
+                          test loss : 5.63
+                          time taken : 8.65 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.91%
+                          test acc/top5 : 66.91%
+                          test loss : 5.55
+                          time taken : 8.56 
+Training complete best top1/top5: 19.91%/66.91%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.30%
+                          test acc/top5 : 67.66%
+                          test loss : 5.58
+                          time taken : 8.17 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.02%
+                          test acc/top5 : 67.39%
+                          test loss : 5.58
+                          time taken : 8.33 
+Training complete best top1/top5: 19.02%/67.39%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.73%
+                          test acc/top5 : 64.44%
+                          test loss : 5.64
+                          time taken : 8.54 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.09%
+                          test acc/top5 : 65.79%
+                          test loss : 5.62
+                          time taken : 8.70 
+Training complete best top1/top5: 19.09%/65.79%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.33%
+                          test acc/top5 : 65.58%
+                          test loss : 5.52
+                          time taken : 8.35 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.52%
+                          test acc/top5 : 66.39%
+                          test loss : 5.62
+                          time taken : 8.44 
+Training complete best top1/top5: 19.33%/65.58%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 17.62%
+                          test acc/top5 : 63.77%
+                          test loss : 5.31
+                          time taken : 8.83 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 18.41%
+                          test acc/top5 : 65.04%
+                          test loss : 5.64
+                          time taken : 8.88 
+Training complete best top1/top5: 17.62%/63.77%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 49 global rounds:
+Validation Loss : 5.69
+Validation Accuracy: top1/top5 19.32%/66.31%
+
+
+ | Global Training Round : 50 |
+
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.71%
+                          test acc/top5 : 65.61%
+                          test loss : 5.56
+                          time taken : 8.80 
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.64%
+                          test acc/top5 : 66.63%
+                          test loss : 5.63
+                          time taken : 8.11 
+Training complete best top1/top5: 18.71%/65.61%
+client 0 updated
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.99%
+                          test acc/top5 : 65.93%
+                          test loss : 5.71
+                          time taken : 8.10 
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 20.41%
+                          test acc/top5 : 67.51%
+                          test loss : 5.59
+                          time taken : 8.26 
+Training complete best top1/top5: 20.41%/67.51%
+client 1 updated
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.38%
+                          test acc/top5 : 65.91%
+                          test loss : 5.43
+                          time taken : 8.96 
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.16%
+                          test acc/top5 : 65.70%
+                          test loss : 5.55
+                          time taken : 8.27 
+Training complete best top1/top5: 19.38%/65.91%
+client 2 updated
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 19.31%
+                          test acc/top5 : 66.24%
+                          test loss : 5.54
+                          time taken : 8.33 
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.20%
+                          test acc/top5 : 66.69%
+                          test loss : 5.57
+                          time taken : 8.62 
+Training complete best top1/top5: 19.31%/66.24%
+client 3 updated
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 18.90%
+                          test acc/top5 : 66.45%
+                          test loss : 5.53
+                          time taken : 8.78 
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 19.19%
+                          test acc/top5 : 66.78%
+                          test loss : 5.58
+                          time taken : 7.91 
+Training complete best top1/top5: 18.90%/66.45%
+client 4 updated
+Linear evaluating simsiam model
+ 
+Avg Validation Stats after 50 global rounds:
+Validation Loss : 5.64
+Validation Accuracy: top1/top5 19.97%/67.28%
+

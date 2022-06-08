@@ -1,0 +1,4523 @@
+2022-06-07 10:33:09.606764: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Experimental details:
+    Seed            : 2022
+    Dataset         : cifar
+    Model           : resnet18
+    Pretrained      : False
+    Optimizer       : sgd
+    Learning rate   : 0.001
+    Total Rounds    : 50
+    Alpha           : 0.9
+    Momentum        : 0.9
+    Weight decay    : 0.0001
+FL
+    Warmup          : True
+    Freeze          : False
+    Adapt Epochs    : 10
+    Warmup Epochs   : 30
+    Warmup Batchsize: 512
+Federated parameters:
+    Number of users                : 100
+    Fraction of users              : 0.05
+    Number of train items per user : 300
+    Number of classes per user     : 2
+    Local Batch size               : 32
+    Local Epochs                   : 10
+    Checkpoint path                : checkpoint.pth.tar
+    Tensorboard log path           : ./logs/FL/exp6
+Files already downloaded and verified
+Files already downloaded and verified
+Files already downloaded and verified
+Warming up FL model
+Linear evaluating FL model
+Client -1 Epoch [5/30]:
+                          learning rate : 0.000933
+                          test acc/top1 : 27.31%
+                          test acc/top5 : 77.01%
+                          test loss : 2.04
+                          time taken : 11.67 
+Linear evaluating FL model
+Client -1 Epoch [10/30]:
+                          learning rate : 0.000750
+                          test acc/top1 : 36.92%
+                          test acc/top5 : 85.56%
+                          test loss : 1.84
+                          time taken : 10.50 
+Linear evaluating FL model
+Client -1 Epoch [15/30]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.40%
+                          test acc/top5 : 88.68%
+                          test loss : 1.71
+                          time taken : 10.41 
+Linear evaluating FL model
+Client -1 Epoch [20/30]:
+                          learning rate : 0.000250
+                          test acc/top1 : 46.66%
+                          test acc/top5 : 90.18%
+                          test loss : 1.65
+                          time taken : 9.76 
+Linear evaluating FL model
+Client -1 Epoch [25/30]:
+                          learning rate : 0.000067
+                          test acc/top1 : 48.18%
+                          test acc/top5 : 90.81%
+                          test loss : 1.62
+                          time taken : 10.15 
+Linear evaluating FL model
+Client -1 Epoch [30/30]:
+                          learning rate : 0.000000
+                          test acc/top1 : 48.60%
+                          test acc/top5 : 91.02%
+                          test loss : 1.61
+                          time taken : 10.09 
+
+ | Global Training Round : 1 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 31.85%
+                          test acc/top5 : 83.18%
+                          test loss : 1.88
+                          time taken : 8.10 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 33.39%
+                          test acc/top5 : 83.83%
+                          test loss : 1.86
+                          time taken : 8.23 
+Training complete best top1/top5: 33.39%/83.83%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 31.42%
+                          test acc/top5 : 81.71%
+                          test loss : 1.91
+                          time taken : 8.66 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 33.02%
+                          test acc/top5 : 83.00%
+                          test loss : 1.87
+                          time taken : 8.18 
+Training complete best top1/top5: 33.02%/83.00%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 32.52%
+                          test acc/top5 : 82.52%
+                          test loss : 1.88
+                          time taken : 8.21 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 33.55%
+                          test acc/top5 : 83.13%
+                          test loss : 1.86
+                          time taken : 8.72 
+Training complete best top1/top5: 33.55%/83.13%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 31.82%
+                          test acc/top5 : 82.02%
+                          test loss : 1.89
+                          time taken : 8.39 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 31.64%
+                          test acc/top5 : 82.58%
+                          test loss : 1.88
+                          time taken : 8.20 
+Training complete best top1/top5: 31.64%/82.58%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 31.17%
+                          test acc/top5 : 81.58%
+                          test loss : 1.91
+                          time taken : 8.37 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 32.35%
+                          test acc/top5 : 82.14%
+                          test loss : 1.88
+                          time taken : 8.38 
+Training complete best top1/top5: 32.35%/82.14%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 1 global rounds:
+Validation Loss : 1.78
+Validation Accuracy: top1/top5 37.40%/85.09%
+
+
+ | Global Training Round : 2 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 33.68%
+                          test acc/top5 : 83.60%
+                          test loss : 1.84
+                          time taken : 8.21 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 34.61%
+                          test acc/top5 : 84.49%
+                          test loss : 1.82
+                          time taken : 8.49 
+Training complete best top1/top5: 34.61%/84.49%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 33.24%
+                          test acc/top5 : 83.83%
+                          test loss : 1.84
+                          time taken : 8.50 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 34.59%
+                          test acc/top5 : 84.41%
+                          test loss : 1.83
+                          time taken : 7.96 
+Training complete best top1/top5: 34.59%/84.41%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 33.89%
+                          test acc/top5 : 83.43%
+                          test loss : 1.85
+                          time taken : 7.98 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 33.50%
+                          test acc/top5 : 83.51%
+                          test loss : 1.84
+                          time taken : 8.71 
+Training complete best top1/top5: 33.50%/83.51%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 32.69%
+                          test acc/top5 : 82.70%
+                          test loss : 1.87
+                          time taken : 8.09 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 32.68%
+                          test acc/top5 : 83.61%
+                          test loss : 1.86
+                          time taken : 8.00 
+Training complete best top1/top5: 32.68%/83.61%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 33.22%
+                          test acc/top5 : 83.52%
+                          test loss : 1.85
+                          time taken : 8.40 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 34.88%
+                          test acc/top5 : 83.38%
+                          test loss : 1.83
+                          time taken : 8.42 
+Training complete best top1/top5: 34.88%/83.38%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 2 global rounds:
+Validation Loss : 1.78
+Validation Accuracy: top1/top5 36.27%/85.26%
+
+
+ | Global Training Round : 3 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 34.59%
+                          test acc/top5 : 84.13%
+                          test loss : 1.82
+                          time taken : 8.81 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 34.35%
+                          test acc/top5 : 83.72%
+                          test loss : 1.82
+                          time taken : 8.10 
+Training complete best top1/top5: 34.59%/84.13%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 35.10%
+                          test acc/top5 : 84.26%
+                          test loss : 1.81
+                          time taken : 8.06 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 35.75%
+                          test acc/top5 : 84.54%
+                          test loss : 1.80
+                          time taken : 8.04 
+Training complete best top1/top5: 35.75%/84.54%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 33.50%
+                          test acc/top5 : 83.53%
+                          test loss : 1.84
+                          time taken : 8.51 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 34.63%
+                          test acc/top5 : 84.35%
+                          test loss : 1.81
+                          time taken : 8.04 
+Training complete best top1/top5: 34.63%/84.35%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 32.41%
+                          test acc/top5 : 82.62%
+                          test loss : 1.87
+                          time taken : 8.19 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 33.68%
+                          test acc/top5 : 83.38%
+                          test loss : 1.84
+                          time taken : 8.11 
+Training complete best top1/top5: 33.68%/83.38%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 34.35%
+                          test acc/top5 : 84.22%
+                          test loss : 1.83
+                          time taken : 8.68 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 34.34%
+                          test acc/top5 : 84.59%
+                          test loss : 1.81
+                          time taken : 8.12 
+Training complete best top1/top5: 34.34%/84.59%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 3 global rounds:
+Validation Loss : 1.77
+Validation Accuracy: top1/top5 36.64%/85.40%
+
+
+ | Global Training Round : 4 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 34.93%
+                          test acc/top5 : 85.19%
+                          test loss : 1.79
+                          time taken : 8.00 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 34.81%
+                          test acc/top5 : 85.31%
+                          test loss : 1.79
+                          time taken : 8.12 
+Training complete best top1/top5: 34.81%/85.31%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 34.34%
+                          test acc/top5 : 84.42%
+                          test loss : 1.83
+                          time taken : 7.93 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 35.05%
+                          test acc/top5 : 84.91%
+                          test loss : 1.81
+                          time taken : 8.66 
+Training complete best top1/top5: 35.05%/84.91%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 35.55%
+                          test acc/top5 : 85.06%
+                          test loss : 1.79
+                          time taken : 8.19 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 36.14%
+                          test acc/top5 : 85.23%
+                          test loss : 1.79
+                          time taken : 8.17 
+Training complete best top1/top5: 36.14%/85.23%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 33.90%
+                          test acc/top5 : 84.30%
+                          test loss : 1.82
+                          time taken : 8.08 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 34.32%
+                          test acc/top5 : 84.85%
+                          test loss : 1.81
+                          time taken : 8.53 
+Training complete best top1/top5: 34.32%/84.85%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 34.09%
+                          test acc/top5 : 84.89%
+                          test loss : 1.81
+                          time taken : 8.16 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 34.64%
+                          test acc/top5 : 84.82%
+                          test loss : 1.81
+                          time taken : 8.04 
+Training complete best top1/top5: 34.64%/84.82%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 4 global rounds:
+Validation Loss : 1.75
+Validation Accuracy: top1/top5 36.48%/86.20%
+
+
+ | Global Training Round : 5 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 35.62%
+                          test acc/top5 : 84.60%
+                          test loss : 1.79
+                          time taken : 8.12 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 36.51%
+                          test acc/top5 : 85.10%
+                          test loss : 1.77
+                          time taken : 8.42 
+Training complete best top1/top5: 36.51%/85.10%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 33.13%
+                          test acc/top5 : 84.45%
+                          test loss : 1.83
+                          time taken : 8.35 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 34.69%
+                          test acc/top5 : 84.88%
+                          test loss : 1.81
+                          time taken : 9.01 
+Training complete best top1/top5: 34.69%/84.88%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 35.98%
+                          test acc/top5 : 85.77%
+                          test loss : 1.78
+                          time taken : 8.07 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 36.29%
+                          test acc/top5 : 85.30%
+                          test loss : 1.78
+                          time taken : 8.03 
+Training complete best top1/top5: 35.98%/85.77%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 35.53%
+                          test acc/top5 : 84.91%
+                          test loss : 1.80
+                          time taken : 8.54 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 35.75%
+                          test acc/top5 : 85.08%
+                          test loss : 1.79
+                          time taken : 8.41 
+Training complete best top1/top5: 35.75%/85.08%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 35.43%
+                          test acc/top5 : 85.47%
+                          test loss : 1.78
+                          time taken : 8.07 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 35.41%
+                          test acc/top5 : 85.55%
+                          test loss : 1.78
+                          time taken : 8.01 
+Training complete best top1/top5: 35.41%/85.55%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 5 global rounds:
+Validation Loss : 1.74
+Validation Accuracy: top1/top5 37.51%/86.22%
+
+
+ | Global Training Round : 6 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 36.53%
+                          test acc/top5 : 86.10%
+                          test loss : 1.77
+                          time taken : 8.02 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 36.59%
+                          test acc/top5 : 85.96%
+                          test loss : 1.77
+                          time taken : 8.21 
+Training complete best top1/top5: 36.59%/85.96%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 36.73%
+                          test acc/top5 : 85.83%
+                          test loss : 1.76
+                          time taken : 8.45 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 37.25%
+                          test acc/top5 : 86.16%
+                          test loss : 1.74
+                          time taken : 8.20 
+Training complete best top1/top5: 37.25%/86.16%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 35.68%
+                          test acc/top5 : 85.80%
+                          test loss : 1.77
+                          time taken : 8.25 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 36.04%
+                          test acc/top5 : 85.89%
+                          test loss : 1.77
+                          time taken : 8.50 
+Training complete best top1/top5: 36.04%/85.89%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 36.06%
+                          test acc/top5 : 85.44%
+                          test loss : 1.77
+                          time taken : 8.58 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 35.70%
+                          test acc/top5 : 85.76%
+                          test loss : 1.76
+                          time taken : 8.09 
+Training complete best top1/top5: 35.70%/85.76%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 35.88%
+                          test acc/top5 : 84.89%
+                          test loss : 1.79
+                          time taken : 8.16 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 36.27%
+                          test acc/top5 : 85.42%
+                          test loss : 1.77
+                          time taken : 8.13 
+Training complete best top1/top5: 36.27%/85.42%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 6 global rounds:
+Validation Loss : 1.72
+Validation Accuracy: top1/top5 37.93%/86.58%
+
+
+ | Global Training Round : 7 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 35.63%
+                          test acc/top5 : 86.52%
+                          test loss : 1.75
+                          time taken : 8.22 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 36.62%
+                          test acc/top5 : 86.84%
+                          test loss : 1.74
+                          time taken : 8.49 
+Training complete best top1/top5: 36.62%/86.84%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 36.07%
+                          test acc/top5 : 85.44%
+                          test loss : 1.75
+                          time taken : 8.62 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 35.84%
+                          test acc/top5 : 86.18%
+                          test loss : 1.75
+                          time taken : 8.26 
+Training complete best top1/top5: 35.84%/86.18%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 37.47%
+                          test acc/top5 : 86.63%
+                          test loss : 1.73
+                          time taken : 8.10 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 37.64%
+                          test acc/top5 : 86.71%
+                          test loss : 1.73
+                          time taken : 8.31 
+Training complete best top1/top5: 37.64%/86.71%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 36.36%
+                          test acc/top5 : 85.57%
+                          test loss : 1.77
+                          time taken : 8.46 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 36.46%
+                          test acc/top5 : 85.58%
+                          test loss : 1.76
+                          time taken : 8.01 
+Training complete best top1/top5: 36.46%/85.58%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 35.63%
+                          test acc/top5 : 85.88%
+                          test loss : 1.78
+                          time taken : 8.52 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 35.62%
+                          test acc/top5 : 86.05%
+                          test loss : 1.77
+                          time taken : 8.69 
+Training complete best top1/top5: 35.62%/86.05%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 7 global rounds:
+Validation Loss : 1.70
+Validation Accuracy: top1/top5 38.36%/87.01%
+
+
+ | Global Training Round : 8 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 37.83%
+                          test acc/top5 : 86.92%
+                          test loss : 1.72
+                          time taken : 8.71 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 38.31%
+                          test acc/top5 : 86.93%
+                          test loss : 1.72
+                          time taken : 8.29 
+Training complete best top1/top5: 38.31%/86.93%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 36.50%
+                          test acc/top5 : 86.57%
+                          test loss : 1.75
+                          time taken : 8.21 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 36.73%
+                          test acc/top5 : 86.57%
+                          test loss : 1.75
+                          time taken : 8.04 
+Training complete best top1/top5: 36.50%/86.57%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 35.97%
+                          test acc/top5 : 86.31%
+                          test loss : 1.75
+                          time taken : 8.67 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 36.77%
+                          test acc/top5 : 86.81%
+                          test loss : 1.73
+                          time taken : 8.66 
+Training complete best top1/top5: 36.77%/86.81%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 36.40%
+                          test acc/top5 : 85.81%
+                          test loss : 1.75
+                          time taken : 8.03 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 36.74%
+                          test acc/top5 : 86.11%
+                          test loss : 1.74
+                          time taken : 8.12 
+Training complete best top1/top5: 36.74%/86.11%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 35.94%
+                          test acc/top5 : 86.56%
+                          test loss : 1.75
+                          time taken : 7.93 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 36.85%
+                          test acc/top5 : 86.64%
+                          test loss : 1.74
+                          time taken : 8.65 
+Training complete best top1/top5: 36.85%/86.64%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 8 global rounds:
+Validation Loss : 1.70
+Validation Accuracy: top1/top5 38.19%/86.99%
+
+
+ | Global Training Round : 9 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 36.30%
+                          test acc/top5 : 85.73%
+                          test loss : 1.75
+                          time taken : 8.29 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 36.90%
+                          test acc/top5 : 85.82%
+                          test loss : 1.74
+                          time taken : 8.11 
+Training complete best top1/top5: 36.90%/85.82%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 38.16%
+                          test acc/top5 : 87.23%
+                          test loss : 1.70
+                          time taken : 8.11 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 38.74%
+                          test acc/top5 : 87.72%
+                          test loss : 1.69
+                          time taken : 8.51 
+Training complete best top1/top5: 38.74%/87.72%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 36.26%
+                          test acc/top5 : 86.10%
+                          test loss : 1.75
+                          time taken : 8.60 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 37.03%
+                          test acc/top5 : 86.65%
+                          test loss : 1.73
+                          time taken : 8.32 
+Training complete best top1/top5: 37.03%/86.65%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 37.44%
+                          test acc/top5 : 87.03%
+                          test loss : 1.73
+                          time taken : 8.13 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 37.87%
+                          test acc/top5 : 87.39%
+                          test loss : 1.72
+                          time taken : 8.11 
+Training complete best top1/top5: 37.87%/87.39%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 36.32%
+                          test acc/top5 : 86.26%
+                          test loss : 1.75
+                          time taken : 8.83 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 37.17%
+                          test acc/top5 : 86.84%
+                          test loss : 1.73
+                          time taken : 8.16 
+Training complete best top1/top5: 37.17%/86.84%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 9 global rounds:
+Validation Loss : 1.70
+Validation Accuracy: top1/top5 38.47%/87.22%
+
+
+ | Global Training Round : 10 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 37.74%
+                          test acc/top5 : 86.87%
+                          test loss : 1.72
+                          time taken : 8.39 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 37.51%
+                          test acc/top5 : 87.43%
+                          test loss : 1.71
+                          time taken : 8.17 
+Training complete best top1/top5: 37.51%/87.43%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 38.54%
+                          test acc/top5 : 87.75%
+                          test loss : 1.70
+                          time taken : 8.51 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 38.90%
+                          test acc/top5 : 87.70%
+                          test loss : 1.69
+                          time taken : 8.45 
+Training complete best top1/top5: 38.90%/87.70%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 37.64%
+                          test acc/top5 : 87.71%
+                          test loss : 1.71
+                          time taken : 8.19 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 37.98%
+                          test acc/top5 : 87.78%
+                          test loss : 1.70
+                          time taken : 8.19 
+Training complete best top1/top5: 37.98%/87.78%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 38.11%
+                          test acc/top5 : 86.68%
+                          test loss : 1.72
+                          time taken : 8.35 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 38.33%
+                          test acc/top5 : 86.60%
+                          test loss : 1.71
+                          time taken : 8.88 
+Training complete best top1/top5: 38.33%/86.60%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 38.49%
+                          test acc/top5 : 87.43%
+                          test loss : 1.70
+                          time taken : 8.10 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 38.62%
+                          test acc/top5 : 87.48%
+                          test loss : 1.69
+                          time taken : 8.11 
+Training complete best top1/top5: 38.62%/87.48%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 10 global rounds:
+Validation Loss : 1.67
+Validation Accuracy: top1/top5 39.47%/88.25%
+
+
+ | Global Training Round : 11 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 39.39%
+                          test acc/top5 : 88.21%
+                          test loss : 1.68
+                          time taken : 8.13 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 39.39%
+                          test acc/top5 : 88.17%
+                          test loss : 1.68
+                          time taken : 8.15 
+Training complete best top1/top5: 39.39%/88.17%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 39.16%
+                          test acc/top5 : 87.46%
+                          test loss : 1.69
+                          time taken : 8.00 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 39.21%
+                          test acc/top5 : 87.36%
+                          test loss : 1.69
+                          time taken : 8.63 
+Training complete best top1/top5: 39.21%/87.36%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 37.96%
+                          test acc/top5 : 87.20%
+                          test loss : 1.71
+                          time taken : 8.17 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 38.85%
+                          test acc/top5 : 87.73%
+                          test loss : 1.69
+                          time taken : 8.23 
+Training complete best top1/top5: 38.85%/87.73%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 39.52%
+                          test acc/top5 : 88.22%
+                          test loss : 1.67
+                          time taken : 8.57 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 40.13%
+                          test acc/top5 : 88.00%
+                          test loss : 1.66
+                          time taken : 8.08 
+Training complete best top1/top5: 40.13%/88.00%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 38.75%
+                          test acc/top5 : 87.37%
+                          test loss : 1.69
+                          time taken : 7.95 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 39.43%
+                          test acc/top5 : 87.72%
+                          test loss : 1.68
+                          time taken : 8.00 
+Training complete best top1/top5: 39.43%/87.72%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 11 global rounds:
+Validation Loss : 1.65
+Validation Accuracy: top1/top5 39.93%/88.42%
+
+
+ | Global Training Round : 12 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 38.30%
+                          test acc/top5 : 87.95%
+                          test loss : 1.69
+                          time taken : 8.17 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 38.55%
+                          test acc/top5 : 88.18%
+                          test loss : 1.68
+                          time taken : 8.53 
+Training complete best top1/top5: 38.55%/88.18%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 39.56%
+                          test acc/top5 : 87.84%
+                          test loss : 1.67
+                          time taken : 8.52 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 39.46%
+                          test acc/top5 : 88.15%
+                          test loss : 1.67
+                          time taken : 8.30 
+Training complete best top1/top5: 39.56%/87.84%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 39.69%
+                          test acc/top5 : 88.02%
+                          test loss : 1.67
+                          time taken : 8.00 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 39.87%
+                          test acc/top5 : 88.28%
+                          test loss : 1.66
+                          time taken : 8.14 
+Training complete best top1/top5: 39.87%/88.28%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 39.45%
+                          test acc/top5 : 88.39%
+                          test loss : 1.67
+                          time taken : 8.86 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 39.55%
+                          test acc/top5 : 88.63%
+                          test loss : 1.66
+                          time taken : 8.26 
+Training complete best top1/top5: 39.55%/88.63%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 39.49%
+                          test acc/top5 : 88.40%
+                          test loss : 1.68
+                          time taken : 8.34 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 39.31%
+                          test acc/top5 : 88.26%
+                          test loss : 1.69
+                          time taken : 8.69 
+Training complete best top1/top5: 39.49%/88.40%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 12 global rounds:
+Validation Loss : 1.64
+Validation Accuracy: top1/top5 40.23%/88.54%
+
+
+ | Global Training Round : 13 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 38.90%
+                          test acc/top5 : 87.74%
+                          test loss : 1.68
+                          time taken : 8.51 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 38.87%
+                          test acc/top5 : 87.95%
+                          test loss : 1.67
+                          time taken : 8.48 
+Training complete best top1/top5: 38.87%/87.95%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 40.36%
+                          test acc/top5 : 88.17%
+                          test loss : 1.67
+                          time taken : 8.15 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 39.82%
+                          test acc/top5 : 88.04%
+                          test loss : 1.66
+                          time taken : 8.03 
+Training complete best top1/top5: 39.82%/88.04%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 39.25%
+                          test acc/top5 : 88.78%
+                          test loss : 1.66
+                          time taken : 8.10 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 39.08%
+                          test acc/top5 : 88.56%
+                          test loss : 1.67
+                          time taken : 8.72 
+Training complete best top1/top5: 39.25%/88.78%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 38.53%
+                          test acc/top5 : 88.01%
+                          test loss : 1.69
+                          time taken : 8.56 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 39.36%
+                          test acc/top5 : 88.39%
+                          test loss : 1.67
+                          time taken : 8.26 
+Training complete best top1/top5: 39.36%/88.39%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 39.07%
+                          test acc/top5 : 86.99%
+                          test loss : 1.71
+                          time taken : 8.10 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 39.51%
+                          test acc/top5 : 87.90%
+                          test loss : 1.69
+                          time taken : 8.36 
+Training complete best top1/top5: 39.51%/87.90%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 13 global rounds:
+Validation Loss : 1.63
+Validation Accuracy: top1/top5 40.85%/88.77%
+
+
+ | Global Training Round : 14 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 40.36%
+                          test acc/top5 : 88.73%
+                          test loss : 1.66
+                          time taken : 8.64 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 40.09%
+                          test acc/top5 : 88.77%
+                          test loss : 1.66
+                          time taken : 8.23 
+Training complete best top1/top5: 40.09%/88.77%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 40.92%
+                          test acc/top5 : 88.79%
+                          test loss : 1.63
+                          time taken : 8.10 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 40.59%
+                          test acc/top5 : 88.84%
+                          test loss : 1.63
+                          time taken : 8.17 
+Training complete best top1/top5: 40.92%/88.79%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 38.36%
+                          test acc/top5 : 87.57%
+                          test loss : 1.70
+                          time taken : 8.46 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 39.32%
+                          test acc/top5 : 88.05%
+                          test loss : 1.67
+                          time taken : 8.40 
+Training complete best top1/top5: 39.32%/88.05%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 40.47%
+                          test acc/top5 : 88.89%
+                          test loss : 1.65
+                          time taken : 8.11 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 40.81%
+                          test acc/top5 : 88.60%
+                          test loss : 1.64
+                          time taken : 8.41 
+Training complete best top1/top5: 40.81%/88.60%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 39.15%
+                          test acc/top5 : 88.41%
+                          test loss : 1.66
+                          time taken : 8.24 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 39.31%
+                          test acc/top5 : 88.57%
+                          test loss : 1.66
+                          time taken : 8.84 
+Training complete best top1/top5: 39.15%/88.41%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 14 global rounds:
+Validation Loss : 1.62
+Validation Accuracy: top1/top5 41.10%/89.23%
+
+
+ | Global Training Round : 15 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 40.52%
+                          test acc/top5 : 88.80%
+                          test loss : 1.64
+                          time taken : 8.55 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 40.32%
+                          test acc/top5 : 88.92%
+                          test loss : 1.64
+                          time taken : 8.38 
+Training complete best top1/top5: 40.32%/88.92%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 39.40%
+                          test acc/top5 : 88.38%
+                          test loss : 1.66
+                          time taken : 8.17 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 40.29%
+                          test acc/top5 : 88.51%
+                          test loss : 1.66
+                          time taken : 8.62 
+Training complete best top1/top5: 40.29%/88.51%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 40.74%
+                          test acc/top5 : 88.83%
+                          test loss : 1.65
+                          time taken : 8.23 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 40.43%
+                          test acc/top5 : 89.20%
+                          test loss : 1.65
+                          time taken : 8.09 
+Training complete best top1/top5: 40.43%/89.20%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.58%
+                          test acc/top5 : 89.50%
+                          test loss : 1.62
+                          time taken : 8.20 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.30%
+                          test acc/top5 : 89.58%
+                          test loss : 1.63
+                          time taken : 8.51 
+Training complete best top1/top5: 41.58%/89.50%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 40.96%
+                          test acc/top5 : 89.00%
+                          test loss : 1.64
+                          time taken : 8.76 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.07%
+                          test acc/top5 : 89.16%
+                          test loss : 1.63
+                          time taken : 8.09 
+Training complete best top1/top5: 41.07%/89.16%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 15 global rounds:
+Validation Loss : 1.61
+Validation Accuracy: top1/top5 41.60%/89.57%
+
+
+ | Global Training Round : 16 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 40.74%
+                          test acc/top5 : 88.71%
+                          test loss : 1.63
+                          time taken : 8.10 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.25%
+                          test acc/top5 : 89.10%
+                          test loss : 1.62
+                          time taken : 8.22 
+Training complete best top1/top5: 41.25%/89.10%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 40.87%
+                          test acc/top5 : 88.84%
+                          test loss : 1.64
+                          time taken : 8.20 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.11%
+                          test acc/top5 : 89.07%
+                          test loss : 1.63
+                          time taken : 8.48 
+Training complete best top1/top5: 41.11%/89.07%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.41%
+                          test acc/top5 : 89.69%
+                          test loss : 1.62
+                          time taken : 9.10 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.51%
+                          test acc/top5 : 89.65%
+                          test loss : 1.62
+                          time taken : 8.17 
+Training complete best top1/top5: 41.41%/89.69%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 39.97%
+                          test acc/top5 : 88.76%
+                          test loss : 1.64
+                          time taken : 8.02 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 40.30%
+                          test acc/top5 : 88.73%
+                          test loss : 1.65
+                          time taken : 8.90 
+Training complete best top1/top5: 39.97%/88.76%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.53%
+                          test acc/top5 : 89.09%
+                          test loss : 1.63
+                          time taken : 8.40 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.36%
+                          test acc/top5 : 89.38%
+                          test loss : 1.62
+                          time taken : 8.21 
+Training complete best top1/top5: 41.36%/89.38%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 16 global rounds:
+Validation Loss : 1.60
+Validation Accuracy: top1/top5 42.05%/89.42%
+
+
+ | Global Training Round : 17 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.33%
+                          test acc/top5 : 89.11%
+                          test loss : 1.62
+                          time taken : 8.12 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.54%
+                          test acc/top5 : 88.80%
+                          test loss : 1.62
+                          time taken : 8.27 
+Training complete best top1/top5: 41.33%/89.11%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.05%
+                          test acc/top5 : 89.34%
+                          test loss : 1.63
+                          time taken : 7.98 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.03%
+                          test acc/top5 : 89.34%
+                          test loss : 1.62
+                          time taken : 8.70 
+Training complete best top1/top5: 41.03%/89.34%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.27%
+                          test acc/top5 : 89.48%
+                          test loss : 1.63
+                          time taken : 8.05 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.84%
+                          test acc/top5 : 89.53%
+                          test loss : 1.62
+                          time taken : 8.20 
+Training complete best top1/top5: 41.84%/89.53%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.24%
+                          test acc/top5 : 89.25%
+                          test loss : 1.63
+                          time taken : 8.13 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.79%
+                          test acc/top5 : 89.59%
+                          test loss : 1.61
+                          time taken : 8.55 
+Training complete best top1/top5: 41.79%/89.59%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 40.22%
+                          test acc/top5 : 88.96%
+                          test loss : 1.65
+                          time taken : 8.49 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 40.79%
+                          test acc/top5 : 89.31%
+                          test loss : 1.64
+                          time taken : 8.00 
+Training complete best top1/top5: 40.79%/89.31%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 17 global rounds:
+Validation Loss : 1.59
+Validation Accuracy: top1/top5 42.57%/89.65%
+
+
+ | Global Training Round : 18 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.18%
+                          test acc/top5 : 89.46%
+                          test loss : 1.64
+                          time taken : 8.12 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.15%
+                          test acc/top5 : 89.70%
+                          test loss : 1.63
+                          time taken : 8.08 
+Training complete best top1/top5: 41.15%/89.70%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.00%
+                          test acc/top5 : 89.49%
+                          test loss : 1.62
+                          time taken : 8.88 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.38%
+                          test acc/top5 : 89.47%
+                          test loss : 1.63
+                          time taken : 8.14 
+Training complete best top1/top5: 41.00%/89.49%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 40.44%
+                          test acc/top5 : 89.27%
+                          test loss : 1.63
+                          time taken : 8.02 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.06%
+                          test acc/top5 : 89.61%
+                          test loss : 1.63
+                          time taken : 8.32 
+Training complete best top1/top5: 41.06%/89.61%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.80%
+                          test acc/top5 : 89.56%
+                          test loss : 1.63
+                          time taken : 8.46 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.22%
+                          test acc/top5 : 89.59%
+                          test loss : 1.63
+                          time taken : 8.51 
+Training complete best top1/top5: 41.80%/89.56%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 40.90%
+                          test acc/top5 : 88.88%
+                          test loss : 1.64
+                          time taken : 8.42 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 40.91%
+                          test acc/top5 : 89.40%
+                          test loss : 1.62
+                          time taken : 8.22 
+Training complete best top1/top5: 40.91%/89.40%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 18 global rounds:
+Validation Loss : 1.58
+Validation Accuracy: top1/top5 42.85%/90.31%
+
+
+ | Global Training Round : 19 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 40.10%
+                          test acc/top5 : 88.88%
+                          test loss : 1.65
+                          time taken : 8.18 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 40.19%
+                          test acc/top5 : 89.16%
+                          test loss : 1.64
+                          time taken : 8.69 
+Training complete best top1/top5: 40.19%/89.16%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.73%
+                          test acc/top5 : 89.85%
+                          test loss : 1.59
+                          time taken : 8.07 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.96%
+                          test acc/top5 : 89.76%
+                          test loss : 1.59
+                          time taken : 8.16 
+Training complete best top1/top5: 42.96%/89.76%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.62%
+                          test acc/top5 : 89.89%
+                          test loss : 1.62
+                          time taken : 8.27 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.20%
+                          test acc/top5 : 89.66%
+                          test loss : 1.62
+                          time taken : 8.34 
+Training complete best top1/top5: 41.62%/89.89%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.89%
+                          test acc/top5 : 89.45%
+                          test loss : 1.62
+                          time taken : 8.89 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.86%
+                          test acc/top5 : 89.36%
+                          test loss : 1.61
+                          time taken : 8.17 
+Training complete best top1/top5: 41.86%/89.36%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.38%
+                          test acc/top5 : 89.40%
+                          test loss : 1.63
+                          time taken : 8.28 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.60%
+                          test acc/top5 : 89.59%
+                          test loss : 1.61
+                          time taken : 8.76 
+Training complete best top1/top5: 41.60%/89.59%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 19 global rounds:
+Validation Loss : 1.57
+Validation Accuracy: top1/top5 42.77%/90.38%
+
+
+ | Global Training Round : 20 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.17%
+                          test acc/top5 : 89.72%
+                          test loss : 1.60
+                          time taken : 7.89 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.10%
+                          test acc/top5 : 89.88%
+                          test loss : 1.60
+                          time taken : 8.21 
+Training complete best top1/top5: 42.10%/89.88%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.66%
+                          test acc/top5 : 89.64%
+                          test loss : 1.59
+                          time taken : 8.51 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.03%
+                          test acc/top5 : 89.78%
+                          test loss : 1.59
+                          time taken : 8.51 
+Training complete best top1/top5: 43.03%/89.78%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.57%
+                          test acc/top5 : 89.46%
+                          test loss : 1.62
+                          time taken : 8.03 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.86%
+                          test acc/top5 : 89.86%
+                          test loss : 1.61
+                          time taken : 8.78 
+Training complete best top1/top5: 41.86%/89.86%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.95%
+                          test acc/top5 : 89.64%
+                          test loss : 1.61
+                          time taken : 8.40 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.73%
+                          test acc/top5 : 89.96%
+                          test loss : 1.60
+                          time taken : 8.04 
+Training complete best top1/top5: 42.73%/89.96%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.72%
+                          test acc/top5 : 89.34%
+                          test loss : 1.62
+                          time taken : 8.01 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.33%
+                          test acc/top5 : 89.18%
+                          test loss : 1.63
+                          time taken : 8.27 
+Training complete best top1/top5: 41.72%/89.34%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 20 global rounds:
+Validation Loss : 1.56
+Validation Accuracy: top1/top5 43.27%/90.56%
+
+
+ | Global Training Round : 21 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.27%
+                          test acc/top5 : 89.32%
+                          test loss : 1.60
+                          time taken : 8.12 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.02%
+                          test acc/top5 : 89.50%
+                          test loss : 1.61
+                          time taken : 8.75 
+Training complete best top1/top5: 42.27%/89.32%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.73%
+                          test acc/top5 : 90.13%
+                          test loss : 1.61
+                          time taken : 8.18 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.51%
+                          test acc/top5 : 90.20%
+                          test loss : 1.61
+                          time taken : 8.22 
+Training complete best top1/top5: 41.51%/90.20%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.64%
+                          test acc/top5 : 89.90%
+                          test loss : 1.60
+                          time taken : 8.26 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.37%
+                          test acc/top5 : 89.88%
+                          test loss : 1.60
+                          time taken : 8.33 
+Training complete best top1/top5: 42.37%/89.88%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.39%
+                          test acc/top5 : 89.59%
+                          test loss : 1.62
+                          time taken : 8.49 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 41.64%
+                          test acc/top5 : 89.83%
+                          test loss : 1.61
+                          time taken : 8.27 
+Training complete best top1/top5: 41.64%/89.83%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.18%
+                          test acc/top5 : 89.72%
+                          test loss : 1.61
+                          time taken : 8.27 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.12%
+                          test acc/top5 : 89.62%
+                          test loss : 1.61
+                          time taken : 8.53 
+Training complete best top1/top5: 42.18%/89.72%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 21 global rounds:
+Validation Loss : 1.57
+Validation Accuracy: top1/top5 42.98%/90.49%
+
+
+ | Global Training Round : 22 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.07%
+                          test acc/top5 : 90.07%
+                          test loss : 1.59
+                          time taken : 8.86 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.20%
+                          test acc/top5 : 90.31%
+                          test loss : 1.59
+                          time taken : 8.47 
+Training complete best top1/top5: 43.20%/90.31%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.08%
+                          test acc/top5 : 90.09%
+                          test loss : 1.61
+                          time taken : 8.17 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.59%
+                          test acc/top5 : 90.42%
+                          test loss : 1.61
+                          time taken : 8.14 
+Training complete best top1/top5: 42.59%/90.42%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 41.96%
+                          test acc/top5 : 89.27%
+                          test loss : 1.62
+                          time taken : 8.18 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.39%
+                          test acc/top5 : 90.30%
+                          test loss : 1.60
+                          time taken : 8.90 
+Training complete best top1/top5: 42.39%/90.30%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.84%
+                          test acc/top5 : 90.02%
+                          test loss : 1.59
+                          time taken : 7.98 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.81%
+                          test acc/top5 : 89.93%
+                          test loss : 1.59
+                          time taken : 8.36 
+Training complete best top1/top5: 42.84%/90.02%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.35%
+                          test acc/top5 : 89.87%
+                          test loss : 1.60
+                          time taken : 8.03 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.36%
+                          test acc/top5 : 89.92%
+                          test loss : 1.59
+                          time taken : 8.59 
+Training complete best top1/top5: 42.36%/89.92%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 22 global rounds:
+Validation Loss : 1.55
+Validation Accuracy: top1/top5 44.14%/90.79%
+
+
+ | Global Training Round : 23 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.12%
+                          test acc/top5 : 90.33%
+                          test loss : 1.58
+                          time taken : 8.71 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.48%
+                          test acc/top5 : 90.75%
+                          test loss : 1.57
+                          time taken : 8.16 
+Training complete best top1/top5: 43.48%/90.75%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.26%
+                          test acc/top5 : 90.47%
+                          test loss : 1.58
+                          time taken : 8.10 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.70%
+                          test acc/top5 : 90.04%
+                          test loss : 1.59
+                          time taken : 8.00 
+Training complete best top1/top5: 43.26%/90.47%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.57%
+                          test acc/top5 : 90.35%
+                          test loss : 1.58
+                          time taken : 8.89 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.78%
+                          test acc/top5 : 90.44%
+                          test loss : 1.59
+                          time taken : 8.38 
+Training complete best top1/top5: 42.57%/90.35%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.38%
+                          test acc/top5 : 89.59%
+                          test loss : 1.61
+                          time taken : 8.13 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.76%
+                          test acc/top5 : 90.21%
+                          test loss : 1.60
+                          time taken : 8.00 
+Training complete best top1/top5: 42.76%/90.21%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.45%
+                          test acc/top5 : 89.85%
+                          test loss : 1.60
+                          time taken : 8.28 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.47%
+                          test acc/top5 : 89.89%
+                          test loss : 1.60
+                          time taken : 8.60 
+Training complete best top1/top5: 42.47%/89.89%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 23 global rounds:
+Validation Loss : 1.55
+Validation Accuracy: top1/top5 44.11%/90.69%
+
+
+ | Global Training Round : 24 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.96%
+                          test acc/top5 : 90.06%
+                          test loss : 1.59
+                          time taken : 8.81 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.27%
+                          test acc/top5 : 90.14%
+                          test loss : 1.59
+                          time taken : 8.11 
+Training complete best top1/top5: 43.27%/90.14%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.88%
+                          test acc/top5 : 90.17%
+                          test loss : 1.58
+                          time taken : 8.13 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.29%
+                          test acc/top5 : 90.59%
+                          test loss : 1.55
+                          time taken : 8.98 
+Training complete best top1/top5: 44.29%/90.59%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.59%
+                          test acc/top5 : 90.62%
+                          test loss : 1.58
+                          time taken : 8.17 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.82%
+                          test acc/top5 : 90.88%
+                          test loss : 1.57
+                          time taken : 8.00 
+Training complete best top1/top5: 43.82%/90.88%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.08%
+                          test acc/top5 : 89.96%
+                          test loss : 1.61
+                          time taken : 8.09 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.15%
+                          test acc/top5 : 89.98%
+                          test loss : 1.61
+                          time taken : 8.48 
+Training complete best top1/top5: 42.08%/89.96%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.76%
+                          test acc/top5 : 90.24%
+                          test loss : 1.59
+                          time taken : 8.45 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.08%
+                          test acc/top5 : 90.30%
+                          test loss : 1.59
+                          time taken : 8.16 
+Training complete best top1/top5: 43.08%/90.30%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 24 global rounds:
+Validation Loss : 1.54
+Validation Accuracy: top1/top5 44.28%/90.79%
+
+
+ | Global Training Round : 25 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.80%
+                          test acc/top5 : 89.74%
+                          test loss : 1.60
+                          time taken : 8.01 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.22%
+                          test acc/top5 : 90.01%
+                          test loss : 1.60
+                          time taken : 8.12 
+Training complete best top1/top5: 43.22%/90.01%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.67%
+                          test acc/top5 : 90.67%
+                          test loss : 1.59
+                          time taken : 8.10 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.39%
+                          test acc/top5 : 90.48%
+                          test loss : 1.58
+                          time taken : 8.56 
+Training complete best top1/top5: 43.39%/90.48%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.67%
+                          test acc/top5 : 89.95%
+                          test loss : 1.60
+                          time taken : 8.62 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.02%
+                          test acc/top5 : 90.10%
+                          test loss : 1.59
+                          time taken : 8.09 
+Training complete best top1/top5: 43.02%/90.10%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.88%
+                          test acc/top5 : 89.55%
+                          test loss : 1.61
+                          time taken : 8.46 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.92%
+                          test acc/top5 : 90.11%
+                          test loss : 1.60
+                          time taken : 8.41 
+Training complete best top1/top5: 42.92%/90.11%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.36%
+                          test acc/top5 : 90.28%
+                          test loss : 1.58
+                          time taken : 8.15 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.53%
+                          test acc/top5 : 90.25%
+                          test loss : 1.58
+                          time taken : 8.07 
+Training complete best top1/top5: 43.36%/90.28%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 25 global rounds:
+Validation Loss : 1.55
+Validation Accuracy: top1/top5 44.67%/90.60%
+
+
+ | Global Training Round : 26 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.88%
+                          test acc/top5 : 90.28%
+                          test loss : 1.60
+                          time taken : 8.25 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.38%
+                          test acc/top5 : 90.43%
+                          test loss : 1.61
+                          time taken : 8.04 
+Training complete best top1/top5: 42.88%/90.28%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.82%
+                          test acc/top5 : 89.92%
+                          test loss : 1.59
+                          time taken : 8.38 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.78%
+                          test acc/top5 : 90.09%
+                          test loss : 1.59
+                          time taken : 8.51 
+Training complete best top1/top5: 42.82%/89.92%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.94%
+                          test acc/top5 : 90.03%
+                          test loss : 1.60
+                          time taken : 8.08 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.38%
+                          test acc/top5 : 89.88%
+                          test loss : 1.59
+                          time taken : 8.29 
+Training complete best top1/top5: 43.38%/89.88%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.29%
+                          test acc/top5 : 90.70%
+                          test loss : 1.57
+                          time taken : 8.08 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.31%
+                          test acc/top5 : 90.64%
+                          test loss : 1.57
+                          time taken : 8.85 
+Training complete best top1/top5: 44.31%/90.64%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.45%
+                          test acc/top5 : 90.42%
+                          test loss : 1.58
+                          time taken : 8.30 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.57%
+                          test acc/top5 : 90.64%
+                          test loss : 1.57
+                          time taken : 8.01 
+Training complete best top1/top5: 43.57%/90.64%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 26 global rounds:
+Validation Loss : 1.54
+Validation Accuracy: top1/top5 44.71%/90.81%
+
+
+ | Global Training Round : 27 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.35%
+                          test acc/top5 : 90.27%
+                          test loss : 1.58
+                          time taken : 8.19 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.10%
+                          test acc/top5 : 90.62%
+                          test loss : 1.58
+                          time taken : 8.34 
+Training complete best top1/top5: 43.35%/90.27%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.98%
+                          test acc/top5 : 90.49%
+                          test loss : 1.57
+                          time taken : 8.29 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.66%
+                          test acc/top5 : 90.51%
+                          test loss : 1.56
+                          time taken : 8.28 
+Training complete best top1/top5: 43.66%/90.51%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.26%
+                          test acc/top5 : 90.16%
+                          test loss : 1.56
+                          time taken : 8.12 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.25%
+                          test acc/top5 : 90.47%
+                          test loss : 1.56
+                          time taken : 8.24 
+Training complete best top1/top5: 44.25%/90.47%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.55%
+                          test acc/top5 : 90.29%
+                          test loss : 1.61
+                          time taken : 8.78 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.75%
+                          test acc/top5 : 90.53%
+                          test loss : 1.58
+                          time taken : 8.20 
+Training complete best top1/top5: 43.75%/90.53%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.24%
+                          test acc/top5 : 90.18%
+                          test loss : 1.60
+                          time taken : 8.08 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.39%
+                          test acc/top5 : 90.63%
+                          test loss : 1.59
+                          time taken : 8.09 
+Training complete best top1/top5: 43.39%/90.63%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 27 global rounds:
+Validation Loss : 1.53
+Validation Accuracy: top1/top5 45.09%/90.91%
+
+
+ | Global Training Round : 28 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.07%
+                          test acc/top5 : 90.31%
+                          test loss : 1.58
+                          time taken : 8.50 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.63%
+                          test acc/top5 : 90.41%
+                          test loss : 1.58
+                          time taken : 8.31 
+Training complete best top1/top5: 43.63%/90.41%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.83%
+                          test acc/top5 : 89.64%
+                          test loss : 1.61
+                          time taken : 8.17 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.33%
+                          test acc/top5 : 89.64%
+                          test loss : 1.61
+                          time taken : 8.03 
+Training complete best top1/top5: 42.83%/89.64%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.88%
+                          test acc/top5 : 90.83%
+                          test loss : 1.58
+                          time taken : 8.41 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.53%
+                          test acc/top5 : 90.74%
+                          test loss : 1.58
+                          time taken : 8.73 
+Training complete best top1/top5: 43.53%/90.74%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.15%
+                          test acc/top5 : 89.91%
+                          test loss : 1.57
+                          time taken : 8.42 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.80%
+                          test acc/top5 : 89.81%
+                          test loss : 1.57
+                          time taken : 8.13 
+Training complete best top1/top5: 44.15%/89.91%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.70%
+                          test acc/top5 : 90.38%
+                          test loss : 1.59
+                          time taken : 8.00 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.54%
+                          test acc/top5 : 90.43%
+                          test loss : 1.58
+                          time taken : 8.39 
+Training complete best top1/top5: 43.54%/90.43%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 28 global rounds:
+Validation Loss : 1.53
+Validation Accuracy: top1/top5 45.32%/90.70%
+
+
+ | Global Training Round : 29 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.70%
+                          test acc/top5 : 90.13%
+                          test loss : 1.58
+                          time taken : 8.26 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.25%
+                          test acc/top5 : 90.60%
+                          test loss : 1.56
+                          time taken : 8.79 
+Training complete best top1/top5: 44.25%/90.60%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.06%
+                          test acc/top5 : 90.56%
+                          test loss : 1.56
+                          time taken : 7.99 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.08%
+                          test acc/top5 : 90.40%
+                          test loss : 1.56
+                          time taken : 8.42 
+Training complete best top1/top5: 44.08%/90.40%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.47%
+                          test acc/top5 : 89.92%
+                          test loss : 1.58
+                          time taken : 8.61 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.07%
+                          test acc/top5 : 89.69%
+                          test loss : 1.60
+                          time taken : 8.15 
+Training complete best top1/top5: 43.47%/89.92%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.82%
+                          test acc/top5 : 90.48%
+                          test loss : 1.58
+                          time taken : 7.98 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.50%
+                          test acc/top5 : 90.97%
+                          test loss : 1.56
+                          time taken : 8.24 
+Training complete best top1/top5: 44.50%/90.97%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.78%
+                          test acc/top5 : 90.62%
+                          test loss : 1.57
+                          time taken : 8.61 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.83%
+                          test acc/top5 : 90.62%
+                          test loss : 1.58
+                          time taken : 8.67 
+Training complete best top1/top5: 43.78%/90.62%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 29 global rounds:
+Validation Loss : 1.53
+Validation Accuracy: top1/top5 44.92%/90.79%
+
+
+ | Global Training Round : 30 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.00%
+                          test acc/top5 : 89.75%
+                          test loss : 1.60
+                          time taken : 8.80 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 42.94%
+                          test acc/top5 : 89.84%
+                          test loss : 1.60
+                          time taken : 8.29 
+Training complete best top1/top5: 43.00%/89.75%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.05%
+                          test acc/top5 : 90.24%
+                          test loss : 1.58
+                          time taken : 8.10 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.34%
+                          test acc/top5 : 90.00%
+                          test loss : 1.58
+                          time taken : 8.11 
+Training complete best top1/top5: 44.05%/90.24%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.36%
+                          test acc/top5 : 90.53%
+                          test loss : 1.57
+                          time taken : 8.62 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.57%
+                          test acc/top5 : 90.60%
+                          test loss : 1.57
+                          time taken : 8.45 
+Training complete best top1/top5: 44.36%/90.53%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.58%
+                          test acc/top5 : 90.37%
+                          test loss : 1.59
+                          time taken : 8.27 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.70%
+                          test acc/top5 : 90.67%
+                          test loss : 1.58
+                          time taken : 8.37 
+Training complete best top1/top5: 43.70%/90.67%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.70%
+                          test acc/top5 : 90.80%
+                          test loss : 1.59
+                          time taken : 8.74 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.46%
+                          test acc/top5 : 90.66%
+                          test loss : 1.60
+                          time taken : 8.27 
+Training complete best top1/top5: 43.70%/90.80%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 30 global rounds:
+Validation Loss : 1.54
+Validation Accuracy: top1/top5 45.25%/90.85%
+
+
+ | Global Training Round : 31 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.68%
+                          test acc/top5 : 90.20%
+                          test loss : 1.59
+                          time taken : 8.16 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.31%
+                          test acc/top5 : 90.42%
+                          test loss : 1.57
+                          time taken : 8.06 
+Training complete best top1/top5: 44.31%/90.42%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 42.57%
+                          test acc/top5 : 90.10%
+                          test loss : 1.62
+                          time taken : 8.00 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.11%
+                          test acc/top5 : 90.59%
+                          test loss : 1.59
+                          time taken : 8.50 
+Training complete best top1/top5: 43.11%/90.59%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.13%
+                          test acc/top5 : 90.48%
+                          test loss : 1.56
+                          time taken : 8.45 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.29%
+                          test acc/top5 : 90.59%
+                          test loss : 1.56
+                          time taken : 8.13 
+Training complete best top1/top5: 44.29%/90.59%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.15%
+                          test acc/top5 : 90.62%
+                          test loss : 1.57
+                          time taken : 7.98 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.73%
+                          test acc/top5 : 90.50%
+                          test loss : 1.58
+                          time taken : 8.12 
+Training complete best top1/top5: 44.15%/90.62%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.87%
+                          test acc/top5 : 90.30%
+                          test loss : 1.59
+                          time taken : 8.57 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.46%
+                          test acc/top5 : 90.19%
+                          test loss : 1.60
+                          time taken : 7.97 
+Training complete best top1/top5: 43.87%/90.30%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 31 global rounds:
+Validation Loss : 1.53
+Validation Accuracy: top1/top5 45.44%/91.04%
+
+
+ | Global Training Round : 32 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.30%
+                          test acc/top5 : 90.51%
+                          test loss : 1.54
+                          time taken : 8.11 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.63%
+                          test acc/top5 : 90.63%
+                          test loss : 1.55
+                          time taken : 8.04 
+Training complete best top1/top5: 45.30%/90.51%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.92%
+                          test acc/top5 : 90.49%
+                          test loss : 1.59
+                          time taken : 8.33 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.96%
+                          test acc/top5 : 90.67%
+                          test loss : 1.58
+                          time taken : 8.87 
+Training complete best top1/top5: 43.96%/90.67%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.93%
+                          test acc/top5 : 90.62%
+                          test loss : 1.58
+                          time taken : 8.06 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.51%
+                          test acc/top5 : 90.36%
+                          test loss : 1.58
+                          time taken : 7.96 
+Training complete best top1/top5: 43.93%/90.62%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.09%
+                          test acc/top5 : 89.42%
+                          test loss : 1.62
+                          time taken : 8.05 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.74%
+                          test acc/top5 : 89.95%
+                          test loss : 1.60
+                          time taken : 8.65 
+Training complete best top1/top5: 43.74%/89.95%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.53%
+                          test acc/top5 : 90.17%
+                          test loss : 1.59
+                          time taken : 8.37 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.57%
+                          test acc/top5 : 90.43%
+                          test loss : 1.58
+                          time taken : 8.21 
+Training complete best top1/top5: 43.57%/90.43%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 32 global rounds:
+Validation Loss : 1.53
+Validation Accuracy: top1/top5 45.62%/90.92%
+
+
+ | Global Training Round : 33 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.16%
+                          test acc/top5 : 90.28%
+                          test loss : 1.59
+                          time taken : 8.32 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.36%
+                          test acc/top5 : 90.66%
+                          test loss : 1.58
+                          time taken : 8.34 
+Training complete best top1/top5: 44.36%/90.66%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.34%
+                          test acc/top5 : 90.65%
+                          test loss : 1.57
+                          time taken : 8.69 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.77%
+                          test acc/top5 : 90.66%
+                          test loss : 1.57
+                          time taken : 8.39 
+Training complete best top1/top5: 44.77%/90.66%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.61%
+                          test acc/top5 : 90.72%
+                          test loss : 1.56
+                          time taken : 8.14 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.29%
+                          test acc/top5 : 90.62%
+                          test loss : 1.56
+                          time taken : 8.16 
+Training complete best top1/top5: 45.61%/90.72%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.15%
+                          test acc/top5 : 90.55%
+                          test loss : 1.57
+                          time taken : 8.45 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.75%
+                          test acc/top5 : 90.65%
+                          test loss : 1.56
+                          time taken : 8.32 
+Training complete best top1/top5: 44.75%/90.65%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.13%
+                          test acc/top5 : 90.49%
+                          test loss : 1.55
+                          time taken : 8.43 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.64%
+                          test acc/top5 : 90.54%
+                          test loss : 1.55
+                          time taken : 8.08 
+Training complete best top1/top5: 44.13%/90.49%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 33 global rounds:
+Validation Loss : 1.52
+Validation Accuracy: top1/top5 46.24%/91.23%
+
+
+ | Global Training Round : 34 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.56%
+                          test acc/top5 : 90.22%
+                          test loss : 1.60
+                          time taken : 8.10 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.58%
+                          test acc/top5 : 90.49%
+                          test loss : 1.59
+                          time taken : 8.10 
+Training complete best top1/top5: 43.58%/90.49%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.44%
+                          test acc/top5 : 90.74%
+                          test loss : 1.56
+                          time taken : 8.58 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.77%
+                          test acc/top5 : 90.88%
+                          test loss : 1.54
+                          time taken : 8.14 
+Training complete best top1/top5: 44.77%/90.88%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.40%
+                          test acc/top5 : 90.70%
+                          test loss : 1.55
+                          time taken : 8.13 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.13%
+                          test acc/top5 : 90.71%
+                          test loss : 1.56
+                          time taken : 8.72 
+Training complete best top1/top5: 45.40%/90.70%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.92%
+                          test acc/top5 : 90.95%
+                          test loss : 1.56
+                          time taken : 8.58 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.45%
+                          test acc/top5 : 90.92%
+                          test loss : 1.55
+                          time taken : 8.15 
+Training complete best top1/top5: 45.45%/90.92%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.64%
+                          test acc/top5 : 90.68%
+                          test loss : 1.59
+                          time taken : 8.13 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.39%
+                          test acc/top5 : 90.82%
+                          test loss : 1.57
+                          time taken : 8.00 
+Training complete best top1/top5: 44.39%/90.82%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 34 global rounds:
+Validation Loss : 1.51
+Validation Accuracy: top1/top5 46.37%/91.34%
+
+
+ | Global Training Round : 35 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.58%
+                          test acc/top5 : 90.94%
+                          test loss : 1.57
+                          time taken : 8.07 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.52%
+                          test acc/top5 : 91.42%
+                          test loss : 1.56
+                          time taken : 8.51 
+Training complete best top1/top5: 44.52%/91.42%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.92%
+                          test acc/top5 : 90.45%
+                          test loss : 1.58
+                          time taken : 8.51 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.12%
+                          test acc/top5 : 90.63%
+                          test loss : 1.56
+                          time taken : 8.26 
+Training complete best top1/top5: 44.12%/90.63%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.08%
+                          test acc/top5 : 90.33%
+                          test loss : 1.56
+                          time taken : 8.11 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.91%
+                          test acc/top5 : 90.98%
+                          test loss : 1.56
+                          time taken : 8.13 
+Training complete best top1/top5: 44.91%/90.98%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.97%
+                          test acc/top5 : 90.74%
+                          test loss : 1.57
+                          time taken : 8.73 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.61%
+                          test acc/top5 : 90.80%
+                          test loss : 1.57
+                          time taken : 8.14 
+Training complete best top1/top5: 44.97%/90.74%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.76%
+                          test acc/top5 : 90.72%
+                          test loss : 1.57
+                          time taken : 8.15 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.96%
+                          test acc/top5 : 90.66%
+                          test loss : 1.56
+                          time taken : 8.59 
+Training complete best top1/top5: 44.96%/90.66%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 35 global rounds:
+Validation Loss : 1.52
+Validation Accuracy: top1/top5 46.12%/91.34%
+
+
+ | Global Training Round : 36 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.83%
+                          test acc/top5 : 91.03%
+                          test loss : 1.55
+                          time taken : 8.34 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.60%
+                          test acc/top5 : 91.04%
+                          test loss : 1.55
+                          time taken : 8.74 
+Training complete best top1/top5: 45.60%/91.04%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.33%
+                          test acc/top5 : 90.37%
+                          test loss : 1.58
+                          time taken : 8.03 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 43.83%
+                          test acc/top5 : 90.36%
+                          test loss : 1.58
+                          time taken : 8.11 
+Training complete best top1/top5: 44.33%/90.37%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.92%
+                          test acc/top5 : 90.70%
+                          test loss : 1.55
+                          time taken : 8.23 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.76%
+                          test acc/top5 : 90.56%
+                          test loss : 1.55
+                          time taken : 8.55 
+Training complete best top1/top5: 44.76%/90.56%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.15%
+                          test acc/top5 : 91.00%
+                          test loss : 1.55
+                          time taken : 8.54 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.14%
+                          test acc/top5 : 90.87%
+                          test loss : 1.55
+                          time taken : 7.92 
+Training complete best top1/top5: 45.14%/90.87%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.04%
+                          test acc/top5 : 91.35%
+                          test loss : 1.54
+                          time taken : 8.10 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.75%
+                          test acc/top5 : 91.34%
+                          test loss : 1.55
+                          time taken : 8.54 
+Training complete best top1/top5: 45.04%/91.35%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 36 global rounds:
+Validation Loss : 1.51
+Validation Accuracy: top1/top5 45.99%/91.48%
+
+
+ | Global Training Round : 37 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.20%
+                          test acc/top5 : 91.21%
+                          test loss : 1.54
+                          time taken : 8.42 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.79%
+                          test acc/top5 : 91.34%
+                          test loss : 1.55
+                          time taken : 8.41 
+Training complete best top1/top5: 46.20%/91.21%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.56%
+                          test acc/top5 : 90.92%
+                          test loss : 1.58
+                          time taken : 8.27 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.88%
+                          test acc/top5 : 91.08%
+                          test loss : 1.57
+                          time taken : 8.01 
+Training complete best top1/top5: 44.88%/91.08%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.09%
+                          test acc/top5 : 90.74%
+                          test loss : 1.56
+                          time taken : 8.76 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.32%
+                          test acc/top5 : 90.70%
+                          test loss : 1.55
+                          time taken : 8.28 
+Training complete best top1/top5: 45.32%/90.70%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.67%
+                          test acc/top5 : 91.04%
+                          test loss : 1.56
+                          time taken : 7.98 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.56%
+                          test acc/top5 : 90.99%
+                          test loss : 1.55
+                          time taken : 8.20 
+Training complete best top1/top5: 45.56%/90.99%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.00%
+                          test acc/top5 : 90.76%
+                          test loss : 1.55
+                          time taken : 8.27 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.35%
+                          test acc/top5 : 91.09%
+                          test loss : 1.54
+                          time taken : 8.30 
+Training complete best top1/top5: 45.35%/91.09%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 37 global rounds:
+Validation Loss : 1.51
+Validation Accuracy: top1/top5 46.69%/91.55%
+
+
+ | Global Training Round : 38 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.90%
+                          test acc/top5 : 90.89%
+                          test loss : 1.58
+                          time taken : 8.82 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.28%
+                          test acc/top5 : 90.97%
+                          test loss : 1.58
+                          time taken : 8.07 
+Training complete best top1/top5: 44.90%/90.89%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.78%
+                          test acc/top5 : 90.53%
+                          test loss : 1.57
+                          time taken : 8.27 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.54%
+                          test acc/top5 : 90.85%
+                          test loss : 1.57
+                          time taken : 8.92 
+Training complete best top1/top5: 44.54%/90.85%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.64%
+                          test acc/top5 : 91.00%
+                          test loss : 1.54
+                          time taken : 8.19 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.43%
+                          test acc/top5 : 91.10%
+                          test loss : 1.54
+                          time taken : 8.14 
+Training complete best top1/top5: 45.43%/91.10%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.44%
+                          test acc/top5 : 90.54%
+                          test loss : 1.57
+                          time taken : 8.21 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.63%
+                          test acc/top5 : 90.77%
+                          test loss : 1.56
+                          time taken : 8.44 
+Training complete best top1/top5: 45.63%/90.77%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.26%
+                          test acc/top5 : 90.75%
+                          test loss : 1.56
+                          time taken : 8.40 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.11%
+                          test acc/top5 : 90.85%
+                          test loss : 1.55
+                          time taken : 8.14 
+Training complete best top1/top5: 45.11%/90.85%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 38 global rounds:
+Validation Loss : 1.51
+Validation Accuracy: top1/top5 46.76%/91.41%
+
+
+ | Global Training Round : 39 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 43.82%
+                          test acc/top5 : 89.97%
+                          test loss : 1.59
+                          time taken : 8.05 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.33%
+                          test acc/top5 : 90.31%
+                          test loss : 1.57
+                          time taken : 8.14 
+Training complete best top1/top5: 45.33%/90.31%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.56%
+                          test acc/top5 : 90.94%
+                          test loss : 1.56
+                          time taken : 8.08 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.70%
+                          test acc/top5 : 91.09%
+                          test loss : 1.55
+                          time taken : 8.50 
+Training complete best top1/top5: 45.70%/91.09%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.82%
+                          test acc/top5 : 90.62%
+                          test loss : 1.57
+                          time taken : 8.38 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.99%
+                          test acc/top5 : 90.80%
+                          test loss : 1.54
+                          time taken : 8.12 
+Training complete best top1/top5: 45.99%/90.80%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.46%
+                          test acc/top5 : 91.35%
+                          test loss : 1.55
+                          time taken : 8.51 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.81%
+                          test acc/top5 : 91.52%
+                          test loss : 1.55
+                          time taken : 8.60 
+Training complete best top1/top5: 45.46%/91.35%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.33%
+                          test acc/top5 : 90.99%
+                          test loss : 1.55
+                          time taken : 8.20 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.48%
+                          test acc/top5 : 91.18%
+                          test loss : 1.55
+                          time taken : 8.17 
+Training complete best top1/top5: 45.48%/91.18%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 39 global rounds:
+Validation Loss : 1.50
+Validation Accuracy: top1/top5 46.87%/91.36%
+
+
+ | Global Training Round : 40 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.36%
+                          test acc/top5 : 90.91%
+                          test loss : 1.58
+                          time taken : 8.25 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.80%
+                          test acc/top5 : 90.93%
+                          test loss : 1.57
+                          time taken : 7.92 
+Training complete best top1/top5: 44.80%/90.93%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.49%
+                          test acc/top5 : 91.03%
+                          test loss : 1.57
+                          time taken : 8.29 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.20%
+                          test acc/top5 : 90.82%
+                          test loss : 1.58
+                          time taken : 8.48 
+Training complete best top1/top5: 45.49%/91.03%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.98%
+                          test acc/top5 : 91.14%
+                          test loss : 1.56
+                          time taken : 8.21 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.82%
+                          test acc/top5 : 91.13%
+                          test loss : 1.56
+                          time taken : 8.23 
+Training complete best top1/top5: 44.98%/91.14%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.03%
+                          test acc/top5 : 90.96%
+                          test loss : 1.57
+                          time taken : 8.29 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.74%
+                          test acc/top5 : 91.22%
+                          test loss : 1.55
+                          time taken : 8.73 
+Training complete best top1/top5: 45.74%/91.22%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.49%
+                          test acc/top5 : 91.30%
+                          test loss : 1.53
+                          time taken : 7.99 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.60%
+                          test acc/top5 : 91.24%
+                          test loss : 1.53
+                          time taken : 8.33 
+Training complete best top1/top5: 46.60%/91.24%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 40 global rounds:
+Validation Loss : 1.50
+Validation Accuracy: top1/top5 46.76%/91.72%
+
+
+ | Global Training Round : 41 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.51%
+                          test acc/top5 : 90.63%
+                          test loss : 1.56
+                          time taken : 8.04 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.83%
+                          test acc/top5 : 90.98%
+                          test loss : 1.55
+                          time taken : 8.27 
+Training complete best top1/top5: 45.83%/90.98%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.19%
+                          test acc/top5 : 91.18%
+                          test loss : 1.56
+                          time taken : 8.47 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.27%
+                          test acc/top5 : 90.80%
+                          test loss : 1.57
+                          time taken : 8.21 
+Training complete best top1/top5: 45.19%/91.18%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.88%
+                          test acc/top5 : 91.10%
+                          test loss : 1.55
+                          time taken : 8.18 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.94%
+                          test acc/top5 : 90.98%
+                          test loss : 1.55
+                          time taken : 8.33 
+Training complete best top1/top5: 45.88%/91.10%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.69%
+                          test acc/top5 : 91.25%
+                          test loss : 1.53
+                          time taken : 8.70 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.94%
+                          test acc/top5 : 91.29%
+                          test loss : 1.53
+                          time taken : 8.11 
+Training complete best top1/top5: 46.94%/91.29%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 44.74%
+                          test acc/top5 : 91.01%
+                          test loss : 1.57
+                          time taken : 8.42 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.83%
+                          test acc/top5 : 91.37%
+                          test loss : 1.56
+                          time taken : 8.09 
+Training complete best top1/top5: 44.83%/91.37%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 41 global rounds:
+Validation Loss : 1.50
+Validation Accuracy: top1/top5 47.11%/91.53%
+
+
+ | Global Training Round : 42 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.25%
+                          test acc/top5 : 90.53%
+                          test loss : 1.58
+                          time taken : 8.40 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.17%
+                          test acc/top5 : 90.97%
+                          test loss : 1.56
+                          time taken : 8.61 
+Training complete best top1/top5: 45.17%/90.97%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.84%
+                          test acc/top5 : 91.48%
+                          test loss : 1.54
+                          time taken : 8.07 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.07%
+                          test acc/top5 : 91.39%
+                          test loss : 1.54
+                          time taken : 8.20 
+Training complete best top1/top5: 46.07%/91.39%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.55%
+                          test acc/top5 : 91.00%
+                          test loss : 1.55
+                          time taken : 8.27 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.99%
+                          test acc/top5 : 90.98%
+                          test loss : 1.53
+                          time taken : 8.31 
+Training complete best top1/top5: 46.99%/90.98%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.92%
+                          test acc/top5 : 91.56%
+                          test loss : 1.54
+                          time taken : 8.43 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.98%
+                          test acc/top5 : 91.32%
+                          test loss : 1.54
+                          time taken : 8.24 
+Training complete best top1/top5: 45.92%/91.56%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.40%
+                          test acc/top5 : 90.35%
+                          test loss : 1.57
+                          time taken : 8.10 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 44.72%
+                          test acc/top5 : 90.51%
+                          test loss : 1.58
+                          time taken : 8.21 
+Training complete best top1/top5: 45.40%/90.35%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 42 global rounds:
+Validation Loss : 1.50
+Validation Accuracy: top1/top5 48.00%/91.83%
+
+
+ | Global Training Round : 43 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.15%
+                          test acc/top5 : 91.13%
+                          test loss : 1.55
+                          time taken : 8.12 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.62%
+                          test acc/top5 : 91.36%
+                          test loss : 1.55
+                          time taken : 8.70 
+Training complete best top1/top5: 46.62%/91.36%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.96%
+                          test acc/top5 : 90.82%
+                          test loss : 1.55
+                          time taken : 8.11 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.14%
+                          test acc/top5 : 91.00%
+                          test loss : 1.55
+                          time taken : 8.13 
+Training complete best top1/top5: 46.14%/91.00%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.82%
+                          test acc/top5 : 91.21%
+                          test loss : 1.53
+                          time taken : 8.64 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 47.01%
+                          test acc/top5 : 91.10%
+                          test loss : 1.53
+                          time taken : 8.28 
+Training complete best top1/top5: 47.01%/91.10%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.49%
+                          test acc/top5 : 91.05%
+                          test loss : 1.56
+                          time taken : 8.12 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.22%
+                          test acc/top5 : 90.96%
+                          test loss : 1.53
+                          time taken : 8.12 
+Training complete best top1/top5: 46.22%/90.96%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.83%
+                          test acc/top5 : 90.88%
+                          test loss : 1.56
+                          time taken : 8.38 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.92%
+                          test acc/top5 : 91.21%
+                          test loss : 1.55
+                          time taken : 8.80 
+Training complete best top1/top5: 45.92%/91.21%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 43 global rounds:
+Validation Loss : 1.50
+Validation Accuracy: top1/top5 47.70%/91.72%
+
+
+ | Global Training Round : 44 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.73%
+                          test acc/top5 : 90.97%
+                          test loss : 1.54
+                          time taken : 9.02 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.94%
+                          test acc/top5 : 90.86%
+                          test loss : 1.54
+                          time taken : 8.11 
+Training complete best top1/top5: 45.73%/90.97%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.38%
+                          test acc/top5 : 91.22%
+                          test loss : 1.55
+                          time taken : 8.26 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 47.24%
+                          test acc/top5 : 91.40%
+                          test loss : 1.53
+                          time taken : 8.16 
+Training complete best top1/top5: 47.24%/91.40%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.86%
+                          test acc/top5 : 91.13%
+                          test loss : 1.56
+                          time taken : 8.25 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.78%
+                          test acc/top5 : 91.21%
+                          test loss : 1.55
+                          time taken : 8.49 
+Training complete best top1/top5: 46.78%/91.21%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.21%
+                          test acc/top5 : 90.57%
+                          test loss : 1.54
+                          time taken : 8.10 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.20%
+                          test acc/top5 : 90.73%
+                          test loss : 1.54
+                          time taken : 8.51 
+Training complete best top1/top5: 46.21%/90.57%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.44%
+                          test acc/top5 : 90.70%
+                          test loss : 1.56
+                          time taken : 8.54 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.94%
+                          test acc/top5 : 90.85%
+                          test loss : 1.55
+                          time taken : 8.19 
+Training complete best top1/top5: 45.94%/90.85%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 44 global rounds:
+Validation Loss : 1.50
+Validation Accuracy: top1/top5 47.77%/91.34%
+
+
+ | Global Training Round : 45 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.70%
+                          test acc/top5 : 91.09%
+                          test loss : 1.56
+                          time taken : 8.08 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.94%
+                          test acc/top5 : 91.43%
+                          test loss : 1.55
+                          time taken : 8.15 
+Training complete best top1/top5: 45.94%/91.43%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.49%
+                          test acc/top5 : 91.55%
+                          test loss : 1.54
+                          time taken : 8.07 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.70%
+                          test acc/top5 : 91.20%
+                          test loss : 1.54
+                          time taken : 8.47 
+Training complete best top1/top5: 46.70%/91.20%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.75%
+                          test acc/top5 : 90.60%
+                          test loss : 1.56
+                          time taken : 8.51 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.34%
+                          test acc/top5 : 90.74%
+                          test loss : 1.56
+                          time taken : 7.98 
+Training complete best top1/top5: 45.75%/90.60%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.40%
+                          test acc/top5 : 91.12%
+                          test loss : 1.56
+                          time taken : 8.07 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.75%
+                          test acc/top5 : 91.48%
+                          test loss : 1.55
+                          time taken : 8.20 
+Training complete best top1/top5: 46.75%/91.48%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.64%
+                          test acc/top5 : 90.84%
+                          test loss : 1.55
+                          time taken : 8.66 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 47.08%
+                          test acc/top5 : 90.90%
+                          test loss : 1.54
+                          time taken : 8.02 
+Training complete best top1/top5: 47.08%/90.90%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 45 global rounds:
+Validation Loss : 1.50
+Validation Accuracy: top1/top5 48.08%/91.58%
+
+
+ | Global Training Round : 46 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.81%
+                          test acc/top5 : 91.11%
+                          test loss : 1.54
+                          time taken : 8.20 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 47.00%
+                          test acc/top5 : 91.16%
+                          test loss : 1.53
+                          time taken : 8.15 
+Training complete best top1/top5: 47.00%/91.16%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.21%
+                          test acc/top5 : 90.64%
+                          test loss : 1.56
+                          time taken : 8.36 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.68%
+                          test acc/top5 : 90.98%
+                          test loss : 1.55
+                          time taken : 8.54 
+Training complete best top1/top5: 45.68%/90.98%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.44%
+                          test acc/top5 : 90.42%
+                          test loss : 1.61
+                          time taken : 8.13 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.09%
+                          test acc/top5 : 91.58%
+                          test loss : 1.56
+                          time taken : 7.99 
+Training complete best top1/top5: 46.09%/91.58%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.13%
+                          test acc/top5 : 91.17%
+                          test loss : 1.56
+                          time taken : 7.99 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.83%
+                          test acc/top5 : 91.81%
+                          test loss : 1.55
+                          time taken : 8.73 
+Training complete best top1/top5: 46.83%/91.81%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.24%
+                          test acc/top5 : 90.99%
+                          test loss : 1.54
+                          time taken : 8.40 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.90%
+                          test acc/top5 : 91.06%
+                          test loss : 1.54
+                          time taken : 8.40 
+Training complete best top1/top5: 46.90%/91.06%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 46 global rounds:
+Validation Loss : 1.49
+Validation Accuracy: top1/top5 48.00%/91.81%
+
+
+ | Global Training Round : 47 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.56%
+                          test acc/top5 : 91.54%
+                          test loss : 1.55
+                          time taken : 8.25 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.88%
+                          test acc/top5 : 91.56%
+                          test loss : 1.54
+                          time taken : 8.42 
+Training complete best top1/top5: 46.88%/91.56%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.68%
+                          test acc/top5 : 90.98%
+                          test loss : 1.55
+                          time taken : 8.49 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.18%
+                          test acc/top5 : 91.03%
+                          test loss : 1.55
+                          time taken : 8.24 
+Training complete best top1/top5: 46.68%/90.98%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 47.00%
+                          test acc/top5 : 91.38%
+                          test loss : 1.54
+                          time taken : 8.08 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 47.22%
+                          test acc/top5 : 91.49%
+                          test loss : 1.55
+                          time taken : 8.01 
+Training complete best top1/top5: 47.00%/91.38%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.33%
+                          test acc/top5 : 91.45%
+                          test loss : 1.56
+                          time taken : 8.70 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.68%
+                          test acc/top5 : 91.67%
+                          test loss : 1.55
+                          time taken : 8.21 
+Training complete best top1/top5: 46.68%/91.67%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.89%
+                          test acc/top5 : 91.15%
+                          test loss : 1.56
+                          time taken : 7.87 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.33%
+                          test acc/top5 : 91.33%
+                          test loss : 1.55
+                          time taken : 8.28 
+Training complete best top1/top5: 46.33%/91.33%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 47 global rounds:
+Validation Loss : 1.49
+Validation Accuracy: top1/top5 47.92%/91.89%
+
+
+ | Global Training Round : 48 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.88%
+                          test acc/top5 : 91.04%
+                          test loss : 1.56
+                          time taken : 8.22 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.78%
+                          test acc/top5 : 90.90%
+                          test loss : 1.56
+                          time taken : 8.30 
+Training complete best top1/top5: 45.88%/91.04%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.60%
+                          test acc/top5 : 91.41%
+                          test loss : 1.57
+                          time taken : 8.43 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.37%
+                          test acc/top5 : 91.40%
+                          test loss : 1.57
+                          time taken : 8.15 
+Training complete best top1/top5: 45.37%/91.40%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.29%
+                          test acc/top5 : 91.33%
+                          test loss : 1.54
+                          time taken : 8.46 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.17%
+                          test acc/top5 : 91.35%
+                          test loss : 1.54
+                          time taken : 8.65 
+Training complete best top1/top5: 46.29%/91.33%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.09%
+                          test acc/top5 : 91.30%
+                          test loss : 1.56
+                          time taken : 8.29 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.45%
+                          test acc/top5 : 91.19%
+                          test loss : 1.57
+                          time taken : 8.07 
+Training complete best top1/top5: 46.09%/91.30%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.96%
+                          test acc/top5 : 91.24%
+                          test loss : 1.54
+                          time taken : 8.14 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 47.31%
+                          test acc/top5 : 91.33%
+                          test loss : 1.54
+                          time taken : 8.56 
+Training complete best top1/top5: 47.31%/91.33%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 48 global rounds:
+Validation Loss : 1.50
+Validation Accuracy: top1/top5 47.31%/92.07%
+
+
+ | Global Training Round : 49 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.80%
+                          test acc/top5 : 91.08%
+                          test loss : 1.57
+                          time taken : 8.26 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.78%
+                          test acc/top5 : 91.09%
+                          test loss : 1.57
+                          time taken : 8.41 
+Training complete best top1/top5: 45.78%/91.09%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.69%
+                          test acc/top5 : 91.16%
+                          test loss : 1.55
+                          time taken : 8.23 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.25%
+                          test acc/top5 : 91.53%
+                          test loss : 1.54
+                          time taken : 8.01 
+Training complete best top1/top5: 46.25%/91.53%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.10%
+                          test acc/top5 : 91.15%
+                          test loss : 1.57
+                          time taken : 8.16 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.41%
+                          test acc/top5 : 91.27%
+                          test loss : 1.56
+                          time taken : 8.71 
+Training complete best top1/top5: 46.41%/91.27%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.51%
+                          test acc/top5 : 91.58%
+                          test loss : 1.54
+                          time taken : 8.41 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.79%
+                          test acc/top5 : 91.28%
+                          test loss : 1.55
+                          time taken : 8.26 
+Training complete best top1/top5: 46.51%/91.58%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.74%
+                          test acc/top5 : 91.23%
+                          test loss : 1.54
+                          time taken : 8.49 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.59%
+                          test acc/top5 : 91.10%
+                          test loss : 1.54
+                          time taken : 8.70 
+Training complete best top1/top5: 46.59%/91.10%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 49 global rounds:
+Validation Loss : 1.51
+Validation Accuracy: top1/top5 47.29%/91.82%
+
+
+ | Global Training Round : 50 |
+
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.83%
+                          test acc/top5 : 91.39%
+                          test loss : 1.56
+                          time taken : 8.78 
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 45.54%
+                          test acc/top5 : 91.34%
+                          test loss : 1.56
+                          time taken : 8.38 
+Training complete best top1/top5: 45.83%/91.39%
+client 0 updated
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.57%
+                          test acc/top5 : 91.45%
+                          test loss : 1.56
+                          time taken : 8.07 
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.21%
+                          test acc/top5 : 91.65%
+                          test loss : 1.56
+                          time taken : 8.12 
+Training complete best top1/top5: 46.57%/91.45%
+client 1 updated
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.65%
+                          test acc/top5 : 91.31%
+                          test loss : 1.56
+                          time taken : 8.44 
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.67%
+                          test acc/top5 : 91.41%
+                          test loss : 1.56
+                          time taken : 8.56 
+Training complete best top1/top5: 46.67%/91.41%
+client 2 updated
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 45.58%
+                          test acc/top5 : 91.51%
+                          test loss : 1.55
+                          time taken : 8.13 
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.10%
+                          test acc/top5 : 91.16%
+                          test loss : 1.55
+                          time taken : 8.08 
+Training complete best top1/top5: 45.58%/91.51%
+client 3 updated
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.000500
+                          test acc/top1 : 46.64%
+                          test acc/top5 : 91.26%
+                          test loss : 1.55
+                          time taken : 8.20 
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.000000
+                          test acc/top1 : 46.70%
+                          test acc/top5 : 91.56%
+                          test loss : 1.55
+                          time taken : 8.76 
+Training complete best top1/top5: 46.70%/91.56%
+client 4 updated
+Linear evaluating FL model
+ 
+Avg Validation Stats after 50 global rounds:
+Validation Loss : 1.51
+Validation Accuracy: top1/top5 47.38%/92.04%
+

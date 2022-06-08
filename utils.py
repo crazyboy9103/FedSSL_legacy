@@ -78,10 +78,10 @@ class OrchestraTransformWrapper(object):
         else:
             angle = 3
             
-        x1 = x
+        x1 = self.base_transform(x)
         x2 = self.base_transform(x)
-        x3 = rotate(x, 90 * angle)
-        return [x1, x2, x3, angle]
+        x3 = rotate(self.base_transform(x), 90 * angle)
+        return [x1, x2, x3], angle
     
 def get_dataset(args):
     cifar_data_path = os.path.join(args.data_path, "cifar")
@@ -487,7 +487,7 @@ def exp_details(args, writer):
     print(f'    Alpha           : {args.alpha}')
     print(f'    Momentum        : {args.momentum}')
     print(f'    Weight decay    : {args.weight_decay}')
-    
+    print(f'    Sup Warmup      : {args.sup_warmup}')
     
     writer.add_text("Seed", str(args.seed))
     writer.add_text("Dataset", args.dataset)
@@ -500,7 +500,7 @@ def exp_details(args, writer):
     writer.add_text("Momentum", str(args.momentum))
     writer.add_text("Weight decay", str(args.weight_decay))
     writer.add_text("Exp", args.exp)
-    
+    writer.add_text("Sup Warmup", str(args.sup_warmup))
     
     if args.exp == "simclr":
         print("SimCLR")
@@ -524,6 +524,7 @@ def exp_details(args, writer):
         
     elif args.exp == "simsiam":
         print("SimSiam")
+        print(f'    Warmup          : {args.warmup}')
         print(f'    Freeze          : {args.freeze}')
         print(f'    Adapt Epochs    : {args.adapt_epoch}')
         print(f'    Warmup Epochs   : {args.warmup_epochs}')
