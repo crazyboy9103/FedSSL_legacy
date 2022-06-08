@@ -77,6 +77,13 @@ if __name__ == '__main__':
     # load dataset and user train indices
     train_dataset, test_dataset, warmup_dataset, user_train_idxs = get_dataset(args)
     
+    # only used small fraction of the test data 
+    len_data = len(test_dataset)
+    idxs = [i for i in range(len_data)]
+    np.random.shuffle(idxs)
+    len_data = int(len_data * args.server_data_frac)
+    idxs = idxs[:len_data]
+    test_dataset = Subset(test_dataset, idxs)
     
     if args.warmup:
         # Only test, warmup are used

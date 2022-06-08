@@ -32,7 +32,7 @@ def args_parser():
     parser.add_argument('--num_classes', type=int,  default=10,         help="number of classes")
     
     # Experimental setup
-    parser.add_argument("--exp",           type=str,   default="simclr",  help="FL|simclr|simsiam")
+    parser.add_argument("--exp",           type=str,   default="FL",  help="FL|simclr|simsiam")
     parser.add_argument("--temperature",   type=float, default=0.1,       help="softmax temperature")
     parser.add_argument("--alpha",         type=float, default=0.9,       help="dirichlet param 0<alpha<1 controls iidness")
     parser.add_argument('--adapt_epoch',   type=int,   default=10,        help="adaptation epochs")
@@ -46,6 +46,8 @@ def args_parser():
     parser.add_argument("--pred_dim",      type=int,   default=256,       help="pred dim for simsiam")
     parser.add_argument("--warmup",        type=str2bool,  default=False,      help="warmup at init")
     parser.add_argument("--sup_warmup",    type=str2bool,  default=True,      help="supervised warmup")
+    parser.add_argument("--server_data_frac", type=float,  default=0.1,      help="fraction of test data used at the server")
+    
     
     parser.add_argument("--ema",           type=float, default=0.996,     help="ema value for target net in orchestra")
     parser.add_argument("--n_glob_clusters",       type=int,  default=128,      help="number of global clusters in orchestra")

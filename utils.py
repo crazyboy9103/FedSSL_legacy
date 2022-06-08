@@ -488,19 +488,22 @@ def exp_details(args, writer):
     print(f'    Momentum        : {args.momentum}')
     print(f'    Weight decay    : {args.weight_decay}')
     print(f'    Sup Warmup      : {args.sup_warmup}')
+    print(f'    Server data frac: {args.server_data_frac}')
     
-    writer.add_text("Seed", str(args.seed))
-    writer.add_text("Dataset", args.dataset)
-    writer.add_text("Model", args.model)
-    writer.add_text("Pretrained", str(args.pretrained))
-    writer.add_text("Optimizer", args.optimizer)
-    writer.add_text("LR", str(args.lr))
-    writer.add_text("Total rounds", str(args.epochs))
-    writer.add_text("Alpha", str(args.alpha))
-    writer.add_text("Momentum", str(args.momentum))
-    writer.add_text("Weight decay", str(args.weight_decay))
-    writer.add_text("Exp", args.exp)
-    writer.add_text("Sup Warmup", str(args.sup_warmup))
+    sb = ""
+    sb = sb + "\nSeed " + str(args.seed)
+    sb = sb + "\nDataset " + args.dataset
+    sb = sb + "\nModel " + args.model
+    sb = sb + "\nPretrained " + str(args.pretrained)
+    sb = sb + "\nOptimizer " + args.optimizer
+    sb = sb + "\nLR " + str(args.lr)
+    sb = sb + "\nTotal rounds " + str(args.epochs)
+    sb = sb + "\nAlpha " + str(args.alpha)
+    sb = sb + "\nMomentum " + str(args.momentum)
+    sb = sb + "\nWeight decay " + str(args.weight_decay)
+    sb = sb + "\nExp " + args.exp
+    sb = sb + "\nSup Warmup " + str(args.sup_warmup)
+    sb = sb + "\nServer data frac " + str(args.server_data_frac)
     
     if args.exp == "simclr":
         print("SimCLR")
@@ -513,14 +516,14 @@ def exp_details(args, writer):
         print(f'    Output dim      : {args.out_dim}')
         print(f'    N views         : {args.n_views}')
 
-        writer.add_text("Warmup", str(args.warmup))
-        writer.add_text("Freeze", str(args.freeze))
-        writer.add_text("Adapt Epochs", str(args.adapt_epoch))
-        writer.add_text("Warmup Epochs", str(args.warmup_epochs))
-        writer.add_text("Warmup Batchsize", str(args.warmup_bs))
-        writer.add_text("Temperature", str(args.temperature))
-        writer.add_text("Output dim", str(args.out_dim))
-        writer.add_text("N views", str(args.n_views))
+        sb = sb + "\nWarmup " +  str(args.warmup)
+        sb = sb + "\nFreeze " +  str(args.freeze)
+        sb = sb + "\nAdapt Epochs " +  str(args.adapt_epoch)
+        sb = sb + "\nWarmup Epochs " +  str(args.warmup_epochs)
+        sb = sb + "\nWarmup Batchsize " +  str(args.warmup_bs)
+        sb = sb + "\nTemperature " +  str(args.temperature)
+        sb = sb + "\nOutput dim " +  str(args.out_dim)
+        sb = sb + "\nN views " +  str(args.n_views)
         
     elif args.exp == "simsiam":
         print("SimSiam")
@@ -532,14 +535,14 @@ def exp_details(args, writer):
         print(f'    Output dim      : {args.out_dim}')
         print(f'    Pred   dim      : {args.pred_dim}')
         
-        writer.add_text("Warmup", str(args.warmup))
-        writer.add_text("Freeze", str(args.freeze))
-        writer.add_text("Adapt Epochs", str(args.adapt_epoch))
-        writer.add_text("Warmup Epochs", str(args.warmup_epochs))
-        writer.add_text("Warmup Batchsize", str(args.warmup_bs))
-        writer.add_text("Output dim", str(args.out_dim))
-        writer.add_text("Pred dim", str(args.pred_dim))
-        pass
+        sb = sb + "\nWarmup " +  str(args.warmup)
+        sb = sb + "\nFreeze " +  str(args.freeze)
+        sb = sb + "\nAdapt Epochs " +  str(args.adapt_epoch)
+        sb = sb + "\nWarmup Epochs " +  str(args.warmup_epochs)
+        sb = sb + "\nWarmup Batchsize " +  str(args.warmup_bs)
+        sb = sb + "\nOutput dim " +  str(args.out_dim)
+        sb = sb + "\nPred dim " +  str(args.pred_dim)
+        
     
     elif args.exp == "FL":
         print("FL")
@@ -549,11 +552,11 @@ def exp_details(args, writer):
         print(f'    Warmup Epochs   : {args.warmup_epochs}')
         print(f'    Warmup Batchsize: {args.warmup_bs}')
         
-        writer.add_text("Warmup", str(args.warmup))
-        writer.add_text("Freeze", str(args.freeze))
-        writer.add_text("Adapt Epochs", str(args.adapt_epoch))
-        writer.add_text("Warmup Epochs", str(args.warmup_epochs))
-        writer.add_text("Warmup Batchsize", str(args.warmup_bs))
+        sb = sb + "\nWarmup " + str(args.warmup)
+        sb = sb + "\nFreeze " + str(args.freeze)
+        sb = sb + "\nAdapt Epochs " + str(args.adapt_epoch)
+        sb = sb + "\nWarmup Epochs " + str(args.warmup_epochs)
+        sb = sb + "\nWarmup Batchsize " + str(args.warmup_bs)
         
         
     print('Federated parameters:')
@@ -565,12 +568,13 @@ def exp_details(args, writer):
     print(f'    Local Epochs                   : {args.local_ep}')
     print(f'    Checkpoint path                : {args.ckpt_path}')
     print(f'    Tensorboard log path           : {args.log_path}')
-    writer.add_text("Num users", str(args.num_users))
-    writer.add_text("Frac client", str(args.frac))
-    writer.add_text("Num items per user", str(args.num_items))
-    writer.add_text("Num classes per user", str(args.num_class_per_client))
-    writer.add_text("Local Batchsize", str(args.local_bs))
-    writer.add_text("Local epochs", str(args.local_ep))
+    sb = sb + "\nNum users " + str(args.num_users)
+    sb = sb + "\nFrac client " + str(args.frac)
+    sb = sb + "\nNum items per user " + str(args.num_items)
+    sb = sb + "\nNum classes per user " + str(args.num_class_per_client)
+    sb = sb + "\nLocal Batchsize " + str(args.local_bs)
+    sb = sb + "\nLocal epochs " + str(args.local_ep)
+    writer.add_text("Params", sb)
     writer.flush()
     
     

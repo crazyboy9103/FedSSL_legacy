@@ -83,7 +83,6 @@ def mnist_noniid_unequal(dataset, num_users, num_items, alpha, num_class_per_cli
     # MNIST has 10 labels
     class_dist = np.random.dirichlet(alpha=[alpha for _ in range(10)], size=num_users)
     
-    # TODO: change this line to make it unbalanced
     dict_users = {i: set() for i in range(num_users)}
     
     num_items_per_class_dist = num_items * np.random.dirichlet(alpha=[alpha for _ in range(10)], size=num_users)

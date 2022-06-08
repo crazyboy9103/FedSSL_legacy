@@ -203,10 +203,6 @@ if __name__ == '__main__':
         state_dict, _, loss_avg, top1_avg, top5_avg = server_model.test(finetune=True)
         global_model.load_state_dict(state_dict)
         
-        valid_loss.append(loss_avg)
-        valid_top1.append(top1_avg)
-        valid_top5.append(top5_avg)
-
         # print global training loss after every 'i' rounds
         #if (epoch+1) % print_every == 0:
         print(f' \nAvg Validation Stats after {epoch+1} global rounds:')
