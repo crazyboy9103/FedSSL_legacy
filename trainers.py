@@ -178,7 +178,7 @@ class Trainer():
         running_top5 = AverageMeter("acc/top5")
     
         for batch_idx, (images, labels) in enumerate(self.test_loader):
-            if finetune and batch_idx < int(0.8 * N):
+            if finetune and batch_idx < int(0.5 * N):
                 eval_model.train()
                 images = images.to(self.device)
                 labels = labels.to(self.device)
@@ -191,7 +191,7 @@ class Trainer():
                 optimizer.step()
 
             # Testing
-            elif batch_idx >= int(0.8 * N):
+            elif batch_idx >= int(0.5 * N):
                 eval_model.eval()
                 with torch.no_grad():
                     images = images.to(self.device)
@@ -255,7 +255,7 @@ class Trainer():
             for batch_idx, (images, labels) in enumerate(self.warmup_loader):
                 
                 # Warmup should not use evaluation data
-                if batch_idx >= int(0.8 * N): break
+                if batch_idx >= int(0.5 * N): break
 
                 if self.exp == "FL":
                     images = images.to(self.device)
