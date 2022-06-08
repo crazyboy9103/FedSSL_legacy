@@ -35,7 +35,7 @@ if __name__ == '__main__':
     torch.manual_seed(args.seed)
     np.random.seed(args.seed)
     
-    models_dict = {"resnet18": ResNet50, "resnet50": ResNet50, "vgg16": VGG16}
+    models_dict = {"resnet18": ResNet18, "resnet50": ResNet50, "vgg16": VGG16}
     if args.exp == "simclr":
         # BUILD MODEL
         global_model = models_dict[args.model](
@@ -84,7 +84,7 @@ if __name__ == '__main__':
             test_dataset, 
             batch_size=args.local_bs, 
             shuffle=False,
-            num_workers=args.num_workers,
+            num_workers=8,
             pin_memory=True
         )
         
@@ -92,7 +92,7 @@ if __name__ == '__main__':
             test_dataset if args.sup_warmup else warmup_dataset,
             batch_size=args.warmup_bs, 
             shuffle=True, 
-            num_workers=args.num_workers,
+            num_workers=8,
             pin_memory=True
         )
         
@@ -117,76 +117,76 @@ if __name__ == '__main__':
         
     
     
-    # Training
-    valid_loss, valid_top1, valid_top5 = [],  [], []
+#     # Training
+#     valid_loss, valid_top1, valid_top5 = [],  [], []
 
     for epoch in range(args.epochs):
-        local_weights, local_losses, local_top1s, local_top5s = {}, {}, {}, {}
-        print(f'\n | Global Training Round : {epoch+1} |\n')
+#         local_weights, local_losses, local_top1s, local_top5s = {}, {}, {}, {}
+#         print(f'\n | Global Training Round : {epoch+1} |\n')
         
-        # Select clients for training in this round
-        num_clients_part = int(args.frac * args.num_users)
-        assert num_clients_part > 0
-        part_users_ids = np.random.choice(range(args.num_users), num_clients_part, replace=False)
+#         # Select clients for training in this round
+#         num_clients_part = int(args.frac * args.num_users)
+#         assert num_clients_part > 0
+#         part_users_ids = np.random.choice(range(args.num_users), num_clients_part, replace=False)
         
-        threads = []
-        for i, client_id in enumerate(part_users_ids):
-            trainset = Subset(train_dataset, user_train_idxs[client_id]) 
-            # instantiate local model
-            local_model = LocalModel(
-                args=args,
-                model=copy.deepcopy(global_model), 
-                trainset=trainset,
-                test_dataset=test_dataset, 
-                client_id = i
-            )
+#         threads = []
+#         for i, client_id in enumerate(part_users_ids):
+#             trainset = Subset(train_dataset, user_train_idxs[client_id]) 
+#             # instantiate local model
+#             local_model = LocalModel(
+#                 args=args,
+#                 model=copy.deepcopy(global_model), 
+#                 trainset=trainset,
+#                 test_dataset=test_dataset, 
+#                 client_id = i
+#             )
             
-            if args.parallel:
-                thread = threading.Thread(target=local_model.update_weights_parallel, args=(local_weights, local_losses, local_top1s, local_top5s,))
-                threads.append(thread)
-                thread.start()
+#             if args.parallel:
+#                 thread = threading.Thread(target=local_model.update_weights_parallel, args=(local_weights, local_losses, local_top1s, local_top5s,))
+#                 threads.append(thread)
+#                 thread.start()
                 
-            else:
-                model_state_dict, loss, top1, top5 = local_model.update_weights()
+#             else:
+#                 model_state_dict, loss, top1, top5 = local_model.update_weights()
 
-                print(f"client {i} updated")
-                # collect weights, metrics
-                local_weights[i] = model_state_dict
-                local_losses[i] = loss
-                local_top1s[i] = top1
-                local_top5s[i] = top5
+#                 print(f"client {i} updated")
+#                 # collect weights, metrics
+#                 local_weights[i] = model_state_dict
+#                 local_losses[i] = loss
+#                 local_top1s[i] = top1
+#                 local_top5s[i] = top5
         
-        if args.parallel:
-            for thread in threads:
-                thread.join()
+#         if args.parallel:
+#             for thread in threads:
+#                 thread.join()
             
             
-        for i, client_id in enumerate(part_users_ids):
-            loss, top1, top5 = local_losses[i], local_top1s[i], local_top5s[i]
+#         for i, client_id in enumerate(part_users_ids):
+#             loss, top1, top5 = local_losses[i], local_top1s[i], local_top5s[i]
             
-            tb_writer.add_scalar(f"val_loss_client_{i}", loss, epoch)
-            tb_writer.add_scalar(f"val_top1_acc_client_{i}", top1, epoch)
-            tb_writer.add_scalar(f"val_top5_acc_client_{i}", top5, epoch)
+#             tb_writer.add_scalar(f"val_loss_client_{i}", loss, epoch)
+#             tb_writer.add_scalar(f"val_top1_acc_client_{i}", top1, epoch)
+#             tb_writer.add_scalar(f"val_top5_acc_client_{i}", top5, epoch)
         
         
-        # Compute cosine similarity between model weights
-        cos_sim = compute_similarity(torch.device(f"cuda:{args.train_device}"), local_weights)
+#         # Compute cosine similarity between model weights
+#         cos_sim = compute_similarity(torch.device(f"cuda:{args.train_device}"), local_weights)
         
-        for layer_idx, cos in enumerate(cos_sim):
-            tb_writer.add_scalar(f"cos_sim_round_{epoch}", cos, layer_idx)
+#         for layer_idx, cos in enumerate(cos_sim):
+#             tb_writer.add_scalar(f"cos_sim_round_{epoch}", cos, layer_idx)
             
-        # aggregate weights
-        global_weights = average_weights(local_weights)
+#         # aggregate weights
+#         global_weights = average_weights(local_weights)
 
-        # update global weights
-        global_model.load_state_dict(global_weights)
+#         # update global weights
+#         global_model.load_state_dict(global_weights)
         
         # test loader for linear eval 
         test_loader  = DataLoader(
             test_dataset, 
             batch_size=args.local_bs, 
             shuffle=False, 
-            num_workers=args.num_workers, 
+            num_workers=4, 
             pin_memory=True
         )
         
@@ -200,7 +200,8 @@ if __name__ == '__main__':
             client_id = -1
         )
         
-        _, _, loss_avg, top1_avg, top5_avg = server_model.test()
+        state_dict, _, loss_avg, top1_avg, top5_avg = server_model.test(finetune=True)
+        global_model.load_state_dict(state_dict)
         
         valid_loss.append(loss_avg)
         valid_top1.append(top1_avg)
