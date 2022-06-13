@@ -210,30 +210,48 @@ def get_dataset(args):
     
     # Normal FL
     elif args.exp == "FL":
+        s = args.strength
+        target_size = args.target_size
+        
+        color_jitter = transforms.ColorJitter(0.8 * s, 0.8 * s, 0.8 * s, 0.2 * s)
+        train_transforms = transforms.Compose([
+            transforms.RandomResizedCrop(size=target_size),
+            transforms.RandomHorizontalFlip(),
+            transforms.RandomApply([color_jitter], p=0.8),
+            #transforms.RandomGrayscale(p=0.2),
+            transforms.GaussianBlur(kernel_size=int(0.1 * target_size)),
+            transforms.ToTensor()
+        ])
+        
+        test_transforms = transforms.Compose([
+            transforms.Resize(size=target_size), 
+            transforms.ToTensor()
+        ])
+        
         if args.dataset == 'cifar':
-            transform = transforms.Compose([
-                transforms.ToTensor(),
-                transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
-            ])
+            # transform = transforms.Compose([
+            #     transforms.ToTensor(),
+            #     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+            # ])
 
             train_dataset = datasets.CIFAR10(
                 cifar_data_path, 
                 train=True, 
                 download=True,
-                transform=transform
+                transform=train_transforms
             )
 
             test_dataset = datasets.CIFAR10(
                 cifar_data_path, 
                 train=False, 
                 download=True,
-                transform=transform
+                transform=test_transforms
             )
             
             warmup_dataset = datasets.CIFAR10(
                 cifar_data_path, 
                 train=False, 
-                transform=transform, 
+                transform=test_transforms, 
                 download=True
             )
 
@@ -269,29 +287,24 @@ def get_dataset(args):
                     )
 
         elif args.dataset == 'mnist':
-            transform = transforms.Compose([
-                transforms.ToTensor(),
-                transforms.Normalize((0.1307,), (0.3081,))
-            ])
-
             train_dataset = datasets.MNIST(
                 mnist_data_path, 
                 train=True, 
                 download=True,      
-                transform=transform
+                transform=train_transforms
             )
 
             test_dataset = datasets.MNIST(
                 mnist_data_path, 
                 train=False, 
                 download=True,
-                transform=transform
+                transform=test_transforms
             )
              
             warmup_dataset = datasets.MNIST(
                 cifar_data_path, 
                 train=False, 
-                transform=transform, 
+                transform=test_transforms, 
                 download=True
             )
 

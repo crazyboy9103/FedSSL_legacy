@@ -256,13 +256,14 @@ class ResNet50(nn.Module):
         
         if self.exp == "simclr":
             self.backbone.fc = nn.Sequential(
-                nn.Linear(mlp_dim, out_dim), 
+                nn.Linear(mlp_dim, mlp_dim), 
                 nn.ReLU(), 
-                nn.Linear(out_dim, out_dim), 
+                nn.Linear(mlp_dim, out_dim), 
             )
             
             self.predictor = nn.Sequential(
-                nn.Linear(out_dim, num_classes)
+                nn.Linear(out_dim, num_classes), 
+                nn.Softmax(dim=-1)
             )
         elif self.exp == "simsiam":
             assert pred_dim != None
@@ -280,18 +281,25 @@ class ResNet50(nn.Module):
             # Remove bias as it's followed by BN
             #self.backbone.classifier[6].bias.requires_grad = False
 
-            self.predictor = nn.Sequential(
+            self.projector = nn.Sequential(
                 nn.Linear(out_dim, pred_dim), 
                 nn.BatchNorm1d(pred_dim), 
                 nn.ReLU(inplace=True), 
                 nn.Linear(pred_dim, out_dim)
             )
             
+            self.predictor = nn.Sequential(
+                nn.Linear(out_dim, num_classes),
+                nn.Softmax(dim=-1)
+            )
+            
+            
         elif self.exp == "FL":
             self.backbone.fc = nn.Identity()
             
             self.predictor = nn.Sequential(
-                nn.Linear(mlp_dim, num_classes)
+                nn.Linear(mlp_dim, num_classes), 
+                nn.Softmax(dim=-1)
             )
         
     
@@ -313,8 +321,8 @@ class ResNet50(nn.Module):
                 z1 = self.backbone(x1)
                 z2 = self.backbone(x2)
 
-                p1 = self.predictor(z1)
-                p2 = self.predictor(z2)
+                p1 = self.projector(z1)
+                p2 = self.projector(z2)
         
                 return p1, p2, z1.detach(), z2.detach()
         
@@ -334,13 +342,14 @@ class ResNet18(nn.Module):
         
         if self.exp == "simclr":
             self.backbone.fc = nn.Sequential(
-                nn.Linear(mlp_dim, out_dim), 
+                nn.Linear(mlp_dim, mlp_dim), 
                 nn.ReLU(), 
-                nn.Linear(out_dim, out_dim), 
+                nn.Linear(mlp_dim, out_dim), 
             )
             
             self.predictor = nn.Sequential(
-                nn.Linear(out_dim, num_classes)
+                nn.Linear(out_dim, num_classes),
+                nn.Softmax(dim=-1)
             )
         elif self.exp == "simsiam":
             assert pred_dim != None
@@ -358,18 +367,24 @@ class ResNet18(nn.Module):
             # Remove bias as it's followed by BN
             #self.backbone.classifier[6].bias.requires_grad = False
 
-            self.predictor = nn.Sequential(
+            self.projector = nn.Sequential(
                 nn.Linear(out_dim, pred_dim), 
                 nn.BatchNorm1d(pred_dim), 
                 nn.ReLU(inplace=True), 
                 nn.Linear(pred_dim, out_dim)
             )
             
+            self.predictor = nn.Sequential(
+                nn.Linear(out_dim, num_classes),
+                nn.Softmax(dim=-1)
+            )
+            
         elif self.exp == "FL":
             self.backbone.fc = nn.Identity()
             
             self.predictor = nn.Sequential(
-                nn.Linear(mlp_dim, num_classes)
+                nn.Linear(mlp_dim, num_classes),
+                nn.Softmax(dim=-1)
             )
     
     def forward(self, x1, x2 = None):
@@ -377,7 +392,9 @@ class ResNet18(nn.Module):
             if self.freeze:
                 self.backbone.eval()
             else:
-                self.backbone.train()    
+                self.backbone.train()
+            
+            
             return self.predictor(self.backbone(x1))
         
         elif self.mode == "train":
@@ -389,8 +406,8 @@ class ResNet18(nn.Module):
                 z1 = self.backbone(x1)
                 z2 = self.backbone(x2)
 
-                p1 = self.predictor(z1)
-                p2 = self.predictor(z2)
+                p1 = self.projector(z1)
+                p2 = self.projector(z2)
         
                 return p1, p2, z1.detach(), z2.detach()
         

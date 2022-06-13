@@ -207,7 +207,7 @@ if __name__ == '__main__':
             client_id = -1
         )
         
-        state_dict, _, loss_avg, top1_avg, top5_avg = server_model.test(finetune=False)
+        state_dict, _, loss_avg, top1_avg, top5_avg = server_model.test(finetune=True)
         global_model.load_state_dict(state_dict)
         
         valid_loss.append(loss_avg)
