@@ -97,7 +97,13 @@ class ResNet50(nn.Module):
             
     def forward(self, x1, x2 = None):
         if self.mode == "linear": 
-            return self.predictor(self.backbone(x1))
+            if self.freeze:
+                with torch.no_grad():
+                    z1 = self.backbone(x1)
+                return self.predictor(z1)
+            
+            else:
+                return self.predictor(self.backbone(x1))
         
         elif self.mode == "train":
             # self.backbone.train()
@@ -206,7 +212,13 @@ class ResNet18(nn.Module):
     
     def forward(self, x1, x2 = None):
         if self.mode == "linear":
-            return self.predictor(self.backbone(x1))
+            if self.freeze:
+                with torch.no_grad():
+                    z1 = self.backbone(x1)
+                return self.predictor(z1)
+            
+            else:
+                return self.predictor(self.backbone(x1))
         
         elif self.mode == "train":
             # self.backbone.train()

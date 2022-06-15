@@ -33,10 +33,10 @@ if __name__ == '__main__':
 
     device = torch.device(f'cuda:{args.train_device}') if torch.cuda.is_available() else torch.device('cpu')
     torch.manual_seed(args.seed)
-    #torch.cuda.manual_seed(args.seed)
+    torch.cuda.manual_seed(args.seed)
     np.random.seed(args.seed)
-    #torch.backends.cudnn.benchmark = True
-    #torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = True
+    torch.backends.cudnn.deterministic = True
     
     models_dict = {"resnet18": ResNet18, "resnet50": ResNet50, "vgg16": VGG16}
     if args.exp == "simclr":

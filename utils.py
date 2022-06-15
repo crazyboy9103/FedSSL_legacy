@@ -11,8 +11,7 @@ import os
 from torchvision import datasets, transforms
 from torchvision.transforms.functional import rotate
 
-from sampling import mnist_iid, mnist_noniid, mnist_noniid_unequal
-from sampling import cifar_iid, cifar_noniid, cifar_noniid_unequal
+from sampling import get_train_idxs
 
 from CKA import CKA, CudaCKA
 
@@ -128,32 +127,12 @@ def get_dataset(args):
                 download=True
             )
             
-            if args.iid:
-                user_train_idxs = cifar_iid(
-                    train_dataset, 
-                    args.num_users, 
-                    args.num_items
-                )
-            
-            else:
-                if args.unequal:
-                    user_train_idxs = cifar_noniid_unequal(
-                        train_dataset, 
-                        args.num_users,
-                        args.num_items, 
-                        args.alpha, 
-                        args.num_class_per_client
-                    )
-
-                else:
-                    # Chose equal size splits for every user
-                    user_train_idxs = cifar_noniid(
-                        train_dataset, 
-                        args.num_users, 
-                        args.num_items, 
-                        args.alpha,
-                        args.num_class_per_client
-                    )
+            user_train_idxs = get_train_idxs(
+                train_dataset, 
+                args.num_users, 
+                args.num_items,
+                args.alpha
+            )
         
         elif args.dataset == 'mnist':
             train_dataset = datasets.MNIST(
@@ -179,33 +158,12 @@ def get_dataset(args):
 
             # sample training data amongst users
 
-            if args.iid:
-                # Sample IID user data from Mnist
-                user_train_idxs = mnist_iid(
-                    train_dataset, 
-                    args.num_users, 
-                    args.num_items
-                )
-            else:
-                # Sample Non-IID user data from Mnist
-                if args.unequal:
-                    # Chose unequal splits for every user
-                    user_train_idxs = mnist_noniid_unequal(
-                        train_dataset, 
-                        args.num_users, 
-                        args.num_items, 
-                        args.alpha, 
-                        args.num_class_per_client
-                    )
-                else:
-                    # Chose equal splits for every user
-                    user_train_idxs = mnist_noniid(
-                        train_dataset, 
-                        args.num_users, 
-                        args.num_items, 
-                        args.alpha, 
-                        args.num_class_per_client
-                    )
+            user_train_idxs = get_train_idxs(
+                train_dataset, 
+                args.num_users, 
+                args.num_items,
+                args.alpha
+            )
 
     
     # Normal FL
@@ -255,36 +213,12 @@ def get_dataset(args):
                 download=True
             )
 
-            # sample training data amongst users
-            if args.iid:
-                # Sample IID user data from Mnist
-                user_train_idxs = cifar_iid(
-                    train_dataset, 
-                    args.num_users, 
-                    args.num_items
-                )
-
-            else:
-                # Sample Non-IID user data from Mnist
-                if args.unequal:
-                    # Chose unequal splits for every user
-                    user_train_idxs = cifar_noniid_unequal(
-                        train_dataset, 
-                        args.num_users,
-                        args.num_items, 
-                        args.alpha, 
-                        args.num_class_per_client
-                    )
-
-                else:
-                    # Chose equal splits for every user
-                    user_train_idxs = cifar_noniid(
-                        train_dataset, 
-                        args.num_users, 
-                        args.num_items, 
-                        args.alpha,
-                        args.num_class_per_client
-                    )
+            user_train_idxs = get_train_idxs(
+                train_dataset, 
+                args.num_users, 
+                args.num_items,
+                args.alpha
+            )
 
         elif args.dataset == 'mnist':
             train_dataset = datasets.MNIST(
@@ -308,35 +242,13 @@ def get_dataset(args):
                 download=True
             )
 
-            # sample training data amongst users
-
-            if args.iid:
-                # Sample IID user data from Mnist
-                user_train_idxs = mnist_iid(
-                    train_dataset, 
-                    args.num_users, 
-                    args.num_items
-                )
-            else:
-                # Sample Non-IID user data from Mnist
-                if args.unequal:
-                    # Chose unequal splits for every user
-                    user_train_idxs = mnist_noniid_unequal(
-                        train_dataset, 
-                        args.num_users, 
-                        args.num_items, 
-                        args.alpha, 
-                        args.num_class_per_client
-                    )
-                else:
-                    # Chose equal splits for every user
-                    user_train_idxs = mnist_noniid(
-                        train_dataset, 
-                        args.num_users, 
-                        args.num_items, 
-                        args.alpha, 
-                        args.num_class_per_client
-                    )
+            user_train_idxs = get_train_idxs(
+                train_dataset, 
+                args.num_users, 
+                args.num_items,
+                args.alpha
+            )
+            
     #TODO orchestra
     elif args.exp == "orchestra":
         s = args.strength
@@ -376,36 +288,12 @@ def get_dataset(args):
                 download=True
             )
 
-            # sample training data amongst users
-            if args.iid:
-                # Sample IID user data from Mnist
-                user_train_idxs = cifar_iid(
-                    train_dataset, 
-                    args.num_users, 
-                    args.num_items
-                )
-
-            else:
-                # Sample Non-IID user data from Mnist
-                if args.unequal:
-                    # Chose unequal splits for every user
-                    user_train_idxs = cifar_noniid_unequal(
-                        train_dataset, 
-                        args.num_users,
-                        args.num_items, 
-                        args.alpha, 
-                        args.num_class_per_client
-                    )
-
-                else:
-                    # Chose equal splits for every user
-                    user_train_idxs = cifar_noniid(
-                        train_dataset, 
-                        args.num_users, 
-                        args.num_items, 
-                        args.alpha,
-                        args.num_class_per_client
-                    )
+            user_train_idxs = get_train_idxs(
+                train_dataset, 
+                args.num_users, 
+                args.num_items,
+                args.alpha
+            )
         
         elif args.dataset == 'mnist':
             transform = transforms.Compose([
@@ -441,34 +329,12 @@ def get_dataset(args):
             )
 
             # sample training data amongst users
-
-            if args.iid:
-                # Sample IID user data from Mnist
-                user_train_idxs = mnist_iid(
-                    train_dataset, 
-                    args.num_users, 
-                    args.num_items
-                )
-            else:
-                # Sample Non-IID user data from Mnist
-                if args.unequal:
-                    # Chose unequal splits for every user
-                    user_train_idxs = mnist_noniid_unequal(
-                        train_dataset, 
-                        args.num_users, 
-                        args.num_items, 
-                        args.alpha, 
-                        args.num_class_per_client
-                    )
-                else:
-                    # Chose equal splits for every user
-                    user_train_idxs = mnist_noniid(
-                        train_dataset, 
-                        args.num_users, 
-                        args.num_items, 
-                        args.alpha, 
-                        args.num_class_per_client
-                    )
+            user_train_idxs = get_train_idxs(
+                train_dataset, 
+                args.num_users, 
+                args.num_items,
+                args.alpha
+            )
     
     return train_dataset, test_dataset, warmup_dataset, user_train_idxs
 
@@ -576,7 +442,6 @@ def exp_details(args, writer):
     print(f'    Number of users                : {args.num_users}')
     print(f'    Fraction of users              : {args.frac}')
     print(f'    Number of train items per user : {args.num_items}')
-    print(f'    Number of classes per user     : {args.num_class_per_client}')
     print(f'    Local Batch size               : {args.local_bs}')
     print(f'    Local Epochs                   : {args.local_ep}')
     print(f'    Checkpoint path                : {args.ckpt_path}')
@@ -584,7 +449,6 @@ def exp_details(args, writer):
     sb = sb + "\nNum users " + str(args.num_users)
     sb = sb + "\nFrac client " + str(args.frac)
     sb = sb + "\nNum items per user " + str(args.num_items)
-    sb = sb + "\nNum classes per user " + str(args.num_class_per_client)
     sb = sb + "\nLocal Batchsize " + str(args.local_bs)
     sb = sb + "\nLocal epochs " + str(args.local_ep)
     writer.add_text("Params", sb)

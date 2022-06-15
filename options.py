@@ -34,7 +34,7 @@ def args_parser():
     # Experimental setup
     parser.add_argument("--exp",           type=str,   default="FL",  help="FL|simclr|simsiam")
     parser.add_argument("--temperature",   type=float, default=0.1,       help="softmax temperature")
-    parser.add_argument("--alpha",         type=float, default=0.9,       help="dirichlet param 0<alpha<1 controls iidness")
+    parser.add_argument("--alpha",         type=float, default=0.9,       help="dirichlet param 0<alpha<infty controls iidness alpha=0:non iid")
     parser.add_argument('--adapt_epoch',   type=int,   default=10,        help="adaptation epochs")
     parser.add_argument('--strength',      type=float, default=0.5,       help="augmentation strength 0<s<1")
     parser.add_argument('--target_size',   type=int,   default=32,        help="augmentation target width (=height)")
@@ -57,7 +57,6 @@ def args_parser():
     # FL
     parser.add_argument("--num_users",            type=int,    default=100,        help="num users")
     parser.add_argument("--num_items",            type=int,    default=500,        help="num data each client holds")
-    parser.add_argument("--num_class_per_client", type=int,    default=5,          help="num classes each client holds")
     parser.add_argument('--unequal',              type=str2bool,   default=False,      help='unequal num of data')
     parser.add_argument('--epochs',               type=int,    default=200,        help="number of rounds of training") # FedMatch
     parser.add_argument('--frac',                 type=float,  default=0.05,       help='the fraction of clients: C')
@@ -86,6 +85,4 @@ def args_parser():
     if not args.log_path.split("logs")[-1]: 
         args.log_path = os.path.join(args.log_path, getTimestamp())
     
-    args.iid = args.alpha >= 0.9
-    assert args.num_class_per_client <= args.num_classes
     return args
