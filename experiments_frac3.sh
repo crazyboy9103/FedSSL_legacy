@@ -4,7 +4,7 @@
 IID_alpha="50000"
 nIID_alpha="0.1"
 frac="0.3"
-num_items="400"
+num_items="300"
 model="resnet18"
 pretrained="False"
 warmup="False"
