@@ -33,7 +33,10 @@ if __name__ == '__main__':
 
     device = torch.device(f'cuda:{args.train_device}') if torch.cuda.is_available() else torch.device('cpu')
     torch.manual_seed(args.seed)
+    #torch.cuda.manual_seed(args.seed)
     np.random.seed(args.seed)
+    #torch.backends.cudnn.benchmark = True
+    #torch.backends.cudnn.deterministic = True
     
     models_dict = {"resnet18": ResNet18, "resnet50": ResNet50, "vgg16": VGG16}
     if args.exp == "simclr":
@@ -72,7 +75,7 @@ if __name__ == '__main__':
         
     # Set the model to train and send it to device.
     global_model.to(device)
-    global_model.train()
+    global_model.set_mode("train")
     
     # load dataset and user train indices
     train_dataset, test_dataset, warmup_dataset, user_train_idxs = get_dataset(args)
@@ -85,42 +88,42 @@ if __name__ == '__main__':
     idxs = idxs[:len_data]
     test_dataset = Subset(test_dataset, idxs)
     
-    if args.warmup:
-        # Only test, warmup are used
-        test_loader  = DataLoader(
-            test_dataset, 
-            batch_size=args.local_bs, 
-            shuffle=False,
-            num_workers=8,
-            pin_memory=True
-        )
+#     if args.warmup:
+#         # Only test, warmup are used
+#         test_loader  = DataLoader(
+#             test_dataset, 
+#             batch_size=args.local_bs, 
+#             shuffle=False,
+#             num_workers=8,
+#             pin_memory=True
+#         )
         
-        warmup_loader = DataLoader(
-            test_dataset if args.sup_warmup else warmup_dataset,
-            batch_size=args.warmup_bs, 
-            shuffle=True, 
-            num_workers=8,
-            pin_memory=True
-        )
+#         warmup_loader = DataLoader(
+#             test_dataset if args.sup_warmup else warmup_dataset,
+#             batch_size=args.warmup_bs, 
+#             shuffle=True, 
+#             num_workers=8,
+#             pin_memory=True
+#         )
         
-        server_model = Trainer(
-            args = args,
-            model = copy.deepcopy(global_model), 
-            train_loader = None, 
-            test_loader = test_loader,
-            warmup_loader = warmup_loader,
-            device = device, 
-            client_id = -1
-        )
+#         server_model = Trainer(
+#             args = args,
+#             model = copy.deepcopy(global_model), 
+#             train_loader = None, 
+#             test_loader = test_loader,
+#             warmup_loader = warmup_loader,
+#             device = device, 
+#             client_id = -1
+#         )
         
-        # Start warmup
-        warmup_state = server_model.warmup(args.warmup_epochs, args.sup_warmup)
+#         # Start warmup
+#         warmup_state = server_model.warmup(args.warmup_epochs, args.sup_warmup)
         
-        # Get model_state_dict
-        warmup_model_state = warmup_state["model"]
+#         # Get model_state_dict
+#         warmup_model_state = warmup_state["model"]
         
-        # Initializes the current global model with the state_dict 
-        global_model.load_state_dict(warmup_model_state)
+#         # Initializes the current global model with the state_dict 
+#         global_model.load_state_dict(warmup_model_state)
         
     
     
@@ -177,16 +180,21 @@ if __name__ == '__main__':
         
         
         # Compute cosine similarity between model weights
-        cos_sim = compute_similarity(torch.device(f"cuda:{args.train_device}"), local_weights)
+        # cos_sim = compute_similarity(torch.device(f"cuda:{args.train_device}"), local_weights)
         
-        for layer_idx, cos in enumerate(cos_sim):
-            tb_writer.add_scalar(f"cos_sim_round_{epoch}", cos, layer_idx)
+        # for layer_idx, cos in enumerate(cos_sim):
+        #     tb_writer.add_scalar(f"cos_sim_round_{epoch}", cos, layer_idx)
             
         # aggregate weights
         global_weights = average_weights(local_weights)
 
         # update global weights
-        global_model.load_state_dict(global_weights)
+        missing_keys, unexpected_keys = global_model.load_state_dict(global_weights)
+        print(f"missing keys {missing_keys}")
+        print(f"unexp keys {unexpected_keys}")
+        
+        global_model.set_mode("train")
+
         
         # test loader for linear eval 
         test_loader  = DataLoader(
@@ -207,8 +215,10 @@ if __name__ == '__main__':
             client_id = -1
         )
         
-        state_dict, _, loss_avg, top1_avg, top5_avg = server_model.test(finetune=True)
-        global_model.load_state_dict(state_dict)
+        state_dict, _, loss_avg, top1_avg, top5_avg = server_model.test(finetune=True, epochs=10)
+        missing_keys, unexpected_keys = global_model.load_state_dict(state_dict)
+        print(f"missing keys {missing_keys}")
+        print(f"unexp keys {unexpected_keys}")
         
         valid_loss.append(loss_avg)
         valid_top1.append(top1_avg)

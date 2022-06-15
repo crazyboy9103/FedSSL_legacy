@@ -15,20 +15,6 @@ class LocalModel():
         self.model = model
         self.model.train()
         
-        if args.optimizer == "sgd":
-            self.optimizer = torch.optim.SGD(
-                self.model.parameters(), 
-                lr=args.lr, 
-                momentum=args.momentum
-            )
-            
-        elif args.optimizer == "adam":
-            self.optimizer = torch.optim.Adam(
-                self.model.parameters(), 
-                lr=args.lr, 
-                weight_decay=args.weight_decay
-            )
-        
         self.device = torch.device(f"cuda:{args.train_device}") if torch.cuda.is_available() else torch.device("cpu")
         if args.parallel:
             num_gpu = torch.cuda.device_count()

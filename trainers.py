@@ -30,14 +30,11 @@ class Trainer():
         
         self.model = model.to(device)
         
-        optim_dict = {
+        self.optim_dict = {
             "sgd": torch.optim.SGD, 
             "adam": torch.optim.Adam
         }
-        self.optimizer = optim_dict[args.optimizer](
-            self.model.parameters(), 
-            args.lr
-        )
+        
         
         
         self.train_loader = train_loader
@@ -47,7 +44,7 @@ class Trainer():
         self.client_id = client_id
         
         self.FL_criterion = nn.CrossEntropyLoss().to(self.device)
-        self.SimCLR_criterion = nn.CrossEntropyLoss(reduction="sum").to(self.device)
+        self.SimCLR_criterion = nn.CrossEntropyLoss(reduction="mean").to(self.device)
         self.SimSiam_criterion = nn.CosineSimilarity(dim=-1).to(self.device)
 
         
@@ -65,6 +62,7 @@ class Trainer():
         
         # each example in feature1 (or 2) corresponds assigned to label in [0, batch_size) 
         labels = torch.arange(0, batch_size, device=self.device, dtype=torch.int64)
+        #labels = torch.cat([labels, labels], dim=0)
         # mask to ignore diagonal entries (self similarity)
         masks = torch.eye(batch_size, device=self.device)
         
@@ -84,8 +82,14 @@ class Trainer():
         return loss
     
     def train(self):
+        self.model.set_mode("train") # change to train mode (requires_grad = False for backbone if freeze=True)
+        self.model.to(self.device)
         self.model.train()
         
+        optimizer = self.optim_dict[self.args.optimizer](
+            self.model.parameters(),
+            self.args.lr
+        )
         start = time.time()
         for epoch in range(self.local_epochs):
             # Metric
@@ -115,9 +119,10 @@ class Trainer():
                     angles = labels.to(self.device)
                     loss = self.model(images[0], images[1], images[2], angles)
 
-                self.optimizer.zero_grad()
+                optimizer.zero_grad()
+                #loss.requires_grad_(True)
                 loss.backward()
-                self.optimizer.step()
+                optimizer.step()
                 
                 loss_value = loss.item()
                 running_loss.update(loss_value)
@@ -125,13 +130,13 @@ class Trainer():
             # Train metrics
             avg_loss = running_loss.get_result()
             running_loss.reset()
-            
+            print(f"Client {self.client_id} Epoch [{epoch+1}/{self.local_epochs}]: train loss : {avg_loss:.2f}")
 
             
-            lr = self.optimizer.param_groups[0]['lr']
+            lr = optimizer.param_groups[0]['lr']
             if (epoch+1)%5 == 0:
                 # Test metrics
-                eval_model_state, optim_state, test_loss, test_top1, test_top5 = self.test()
+                _, _, test_loss, test_top1, test_top5 = self.test()
                 
                 end = time.time()
                 time_taken = end-start
@@ -151,7 +156,7 @@ class Trainer():
                     ########## Keondo: I think below part should be changed as below ##########
                     ## Client should not have access to the test data
                     "model": copy.deepcopy(self.model.state_dict()),
-                    "optim": copy.deepcopy(self.optimizer.state_dict())
+                    "optim": copy.deepcopy(optimizer.state_dict())
                     #"model": eval_model_state, 
                     #"optim": optim_state
                 }
@@ -161,13 +166,14 @@ class Trainer():
         return state_dict
     
     
-    def test(self, finetune=False):
+    def test(self, finetune=False, epochs=1):
         print(f"Linear evaluating {self.exp} model")
         eval_model = copy.deepcopy(self.model)
-        eval_model.mode = "linear"
+        eval_model.set_mode("linear")
+        eval_model.train()
         eval_model = eval_model.to(self.device)
         optimizer = optim.Adam(
-            eval_model.parameters(), 
+            eval_model.parameters(),
             lr=0.001
         )
         
@@ -176,50 +182,48 @@ class Trainer():
         running_loss = AverageMeter("loss")
         running_top1 = AverageMeter("acc/top1")
         running_top5 = AverageMeter("acc/top5")
-    
-        for batch_idx, (images, labels) in enumerate(self.test_loader):
-            if finetune and batch_idx < int(0.5 * N):
-                eval_model.train()
-                images = images.to(self.device)
-                labels = labels.to(self.device)
-                
-                preds = eval_model(images)
-                loss = self.FL_criterion(preds, labels) # FL_criterion is standard CE
-                
-                optimizer.zero_grad()
-                loss.backward()
-                optimizer.step()
-
-            # Testing
-            elif batch_idx >= int(0.5 * N):
-                eval_model.eval()
-                with torch.no_grad():
+        for epoch in range(epochs):
+            for batch_idx, (images, labels) in enumerate(self.test_loader):
+                if finetune and batch_idx < int(0.5 * N):
                     images = images.to(self.device)
                     labels = labels.to(self.device)
-                    
+
                     preds = eval_model(images)
-                    loss = self.FL_criterion(preds, labels)
-                    
-                    
-                    loss_value = loss.item()
+                    loss = self.FL_criterion(preds, labels) # FL_criterion is standard CE
+                    #loss.requires_grad_(True)
+                    optimizer.zero_grad()
+                    loss.backward()
+                    optimizer.step()
 
-                    _, top1_preds = torch.max(preds.data, 1)
-                    _, top5_preds = torch.topk(preds.data, k=5, dim=-1)
+                # Testing
+                elif batch_idx >= int(0.5 * N):
+                    with torch.no_grad():
+                        images = images.to(self.device)
+                        labels = labels.to(self.device)
 
-                    top1 = ((top1_preds == labels).sum().item() / labels.size(0)) * 100
-                    top5 = 0
-                    for label, pred in zip(labels, top5_preds):
-                        if label in pred:
-                            top5 += 1
+                        preds = eval_model(images)
+                        loss = self.FL_criterion(preds, labels)
 
-                    top5 /= labels.size(0)
-                    top5 *= 100
 
-                    running_loss.update(loss_value)
-                    running_top1.update(top1)
-                    running_top5.update(top5)                
+                        loss_value = loss.item()
+
+                        _, top1_preds = torch.max(preds.data, -1)
+                        _, top5_preds = torch.topk(preds.data, k=5, dim=-1)
+
+                        top1 = ((top1_preds == labels).sum().item() / labels.size(0)) * 100
+                        top5 = 0
+                        for label, pred in zip(labels, top5_preds):
+                            if label in pred:
+                                top5 += 1
+
+                        top5 /= labels.size(0)
+                        top5 *= 100
+
+                        running_loss.update(loss_value)
+                        running_top1.update(top1)
+                        running_top5.update(top5)
         
-        
+        eval_model.set_mode("train")
         eval_model_state = copy.deepcopy(eval_model.state_dict())
         optim_state = copy.deepcopy(optimizer.state_dict())
         avg_loss = running_loss.get_result()
@@ -242,9 +246,17 @@ class Trainer():
         best_model_state = None
         print(f"Warming up {self.exp} model")
         
-        self.model.mode = "linear" if sup else "train"
+        if sup:
+            self.model.set_mode("linear")
+        else:
+            self.model.set_mode("train")
+        
         self.model = self.model.to(self.device)
         
+        optimizer = self.optim_dict[self.args.optimizer](
+            self.model.parameters(), 
+            self.args.lr
+        )
         N = len(self.test_loader)
 
         
@@ -300,9 +312,9 @@ class Trainer():
                         angles = labels.to(self.device)
                         loss = self.model(images[0], images[1], images[2], angles)   
                         
-                self.optimizer.zero_grad()
+                optimizer.zero_grad()
                 loss.backward()
-                self.optimizer.step()
+                optimizer.step()
                 
                 loss_value = loss.item()
                 running_loss.update(loss_value)
@@ -313,7 +325,7 @@ class Trainer():
             avg_loss = running_loss.get_result()
             running_loss.reset()
             
-            lr = self.optimizer.param_groups[0]['lr']
+            lr = optimizer.param_groups[0]['lr']
             
             if (warm_epoch+1) % 5 == 0:
                 # Test metrics

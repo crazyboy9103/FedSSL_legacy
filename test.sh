@@ -1,4 +1,3 @@
 exp="simclr"
-frac="0.5"
 
-python main.py --exp $exp --freeze True --server_data_frac 0.5 --epochs 100 --log_path ./logs/test/freeze | tee "test"/"freeze"/"$exp"_"$frac".txt
+python main.py --exp $exp --freeze False --frac 0.02 --model resnet18 --server_data_frac 0.01 --epochs 100 --log_path ./logs/test/simsiam --lr 0.001 | tee simsiam/FL.txt
