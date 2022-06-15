@@ -11,13 +11,9 @@ warmup="False"
 epochs="100"
 # for frac in "0.01" "0.3" "0.9"
 # do
-# IID LOWER BOUND
-echo Lower bound IID 
-python main_lower_bound.py --server_data_frac $frac --exp FL --model "$model" --pretrained "$pretrained" --warmup "$warmup" --alpha "$IID_alpha" --log_path ./logs/FL/lower/"$frac"_iid --epochs "$epochs" --num_items "$num_items" 2>&1 | tee lower/lower_bound_"$frac"_iid.txt 
-
-# non IID LOWER BOUND
-echo Lower bound non IID 
-python main_lower_bound.py --server_data_frac $frac --exp FL --model "$model" --pretrained "$pretrained" --warmup "$warmup" --alpha "$nIID_alpha" --log_path ./logs/FL/lower/"$frac"_noniid --epochs "$epochs" --num_items "$num_items" 2>&1 | tee lower/lower_bound_"$frac"_noniid.txt 
+# LOWER BOUND
+echo Lower bound
+python main_lower_bound.py --server_data_frac $frac --exp FL --model "$model" --pretrained "$pretrained" --warmup "$warmup" --log_path ./logs/FL/lower/"$frac" --epochs "$epochs" --num_items "$num_items" 2>&1 | tee lower/lower_bound_"$frac".txt 
 
 # IID UPPER BOUND 
 echo Upper bound IID
