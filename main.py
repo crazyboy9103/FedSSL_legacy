@@ -215,7 +215,7 @@ if __name__ == '__main__':
             client_id = -1
         )
         
-        state_dict, _, loss_avg, top1_avg, top5_avg = server_model.test(finetune=True, epochs=args.finetune_epochs)
+        state_dict, _, loss_avg, top1_avg, top5_avg = server_model.test(finetune=True, epochs=args.finetune_epoch)
         missing_keys, unexpected_keys = global_model.load_state_dict(state_dict)
         print(f"missing keys {missing_keys}")
         print(f"unexp keys {unexpected_keys}")
