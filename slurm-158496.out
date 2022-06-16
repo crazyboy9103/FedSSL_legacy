@@ -1451,3 +1451,1890 @@ Client 2 Epoch [5/10]:
                           test loss : 2.24
                           time taken : 2.84 
 Client 2 Epoch [6/10]: train loss : 2.28
+Client 2 Epoch [7/10]: train loss : 2.28
+Client 2 Epoch [8/10]: train loss : 2.27
+Client 2 Epoch [9/10]: train loss : 2.27
+Client 2 Epoch [10/10]: train loss : 2.27
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 20.31%
+                          test acc/top5 : 57.81%
+                          test loss : 2.24
+                          time taken : 2.94 
+Training complete best top1/top5: 20.31%/57.81%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 2.28
+Client 3 Epoch [2/10]: train loss : 2.27
+Client 3 Epoch [3/10]: train loss : 2.29
+Client 3 Epoch [4/10]: train loss : 2.28
+Client 3 Epoch [5/10]: train loss : 2.28
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 14.06%
+                          test acc/top5 : 59.38%
+                          test loss : 2.27
+                          time taken : 2.86 
+Client 3 Epoch [6/10]: train loss : 2.27
+Client 3 Epoch [7/10]: train loss : 2.28
+Client 3 Epoch [8/10]: train loss : 2.27
+Client 3 Epoch [9/10]: train loss : 2.27
+Client 3 Epoch [10/10]: train loss : 2.29
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 18.75%
+                          test acc/top5 : 57.81%
+                          test loss : 2.25
+                          time taken : 2.86 
+Training complete best top1/top5: 18.75%/57.81%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 2.29
+Client 4 Epoch [2/10]: train loss : 2.29
+Client 4 Epoch [3/10]: train loss : 2.28
+Client 4 Epoch [4/10]: train loss : 2.28
+Client 4 Epoch [5/10]: train loss : 2.28
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 12.50%
+                          test acc/top5 : 60.94%
+                          test loss : 2.26
+                          time taken : 2.84 
+Client 4 Epoch [6/10]: train loss : 2.27
+Client 4 Epoch [7/10]: train loss : 2.27
+Client 4 Epoch [8/10]: train loss : 2.28
+Client 4 Epoch [9/10]: train loss : 2.28
+Client 4 Epoch [10/10]: train loss : 2.28
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 14.06%
+                          test acc/top5 : 59.38%
+                          test loss : 2.24
+                          time taken : 2.87 
+Training complete best top1/top5: 14.06%/59.38%
+client 4 updated
+missing keys []
+unexp keys []
+Linear evaluating FL model
+missing keys []
+unexp keys []
+ 
+Avg Validation Stats after 6 global rounds:
+Validation Loss : 2.23
+Validation Accuracy: top1/top5 26.56%/60.94%
+
+
+ | Global Training Round : 7 |
+
+Client 0 Epoch [1/10]: train loss : 2.28
+Client 0 Epoch [2/10]: train loss : 2.28
+Client 0 Epoch [3/10]: train loss : 2.29
+Client 0 Epoch [4/10]: train loss : 2.27
+Client 0 Epoch [5/10]: train loss : 2.28
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.56%
+                          test acc/top5 : 62.50%
+                          test loss : 2.25
+                          time taken : 2.87 
+Client 0 Epoch [6/10]: train loss : 2.27
+Client 0 Epoch [7/10]: train loss : 2.28
+Client 0 Epoch [8/10]: train loss : 2.27
+Client 0 Epoch [9/10]: train loss : 2.29
+Client 0 Epoch [10/10]: train loss : 2.27
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 15.62%
+                          test acc/top5 : 60.94%
+                          test loss : 2.23
+                          time taken : 2.91 
+Training complete best top1/top5: 15.62%/60.94%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : 2.29
+Client 1 Epoch [2/10]: train loss : 2.27
+Client 1 Epoch [3/10]: train loss : 2.28
+Client 1 Epoch [4/10]: train loss : 2.29
+Client 1 Epoch [5/10]: train loss : 2.28
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 29.69%
+                          test acc/top5 : 64.06%
+                          test loss : 2.22
+                          time taken : 2.82 
+Client 1 Epoch [6/10]: train loss : 2.28
+Client 1 Epoch [7/10]: train loss : 2.29
+Client 1 Epoch [8/10]: train loss : 2.28
+Client 1 Epoch [9/10]: train loss : 2.26
+Client 1 Epoch [10/10]: train loss : 2.27
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 17.19%
+                          test acc/top5 : 60.94%
+                          test loss : 2.25
+                          time taken : 2.89 
+Training complete best top1/top5: 17.19%/60.94%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 2.28
+Client 2 Epoch [2/10]: train loss : 2.29
+Client 2 Epoch [3/10]: train loss : 2.27
+Client 2 Epoch [4/10]: train loss : 2.28
+Client 2 Epoch [5/10]: train loss : 2.26
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 14.06%
+                          test acc/top5 : 57.81%
+                          test loss : 2.25
+                          time taken : 2.89 
+Client 2 Epoch [6/10]: train loss : 2.27
+Client 2 Epoch [7/10]: train loss : 2.28
+Client 2 Epoch [8/10]: train loss : 2.27
+Client 2 Epoch [9/10]: train loss : 2.25
+Client 2 Epoch [10/10]: train loss : 2.26
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 18.75%
+                          test acc/top5 : 71.88%
+                          test loss : 2.26
+                          time taken : 2.88 
+Training complete best top1/top5: 18.75%/71.88%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 2.28
+Client 3 Epoch [2/10]: train loss : 2.28
+Client 3 Epoch [3/10]: train loss : 2.26
+Client 3 Epoch [4/10]: train loss : 2.27
+Client 3 Epoch [5/10]: train loss : 2.28
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 17.19%
+                          test acc/top5 : 59.38%
+                          test loss : 2.26
+                          time taken : 2.88 
+Client 3 Epoch [6/10]: train loss : 2.27
+Client 3 Epoch [7/10]: train loss : 2.28
+Client 3 Epoch [8/10]: train loss : 2.27
+Client 3 Epoch [9/10]: train loss : 2.27
+Client 3 Epoch [10/10]: train loss : 2.26
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 4.69%
+                          test acc/top5 : 59.38%
+                          test loss : 2.29
+                          time taken : 2.84 
+Training complete best top1/top5: 4.69%/59.38%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 2.27
+Client 4 Epoch [2/10]: train loss : 2.26
+Client 4 Epoch [3/10]: train loss : 2.27
+Client 4 Epoch [4/10]: train loss : 2.28
+Client 4 Epoch [5/10]: train loss : 2.28
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 28.12%
+                          test acc/top5 : 60.94%
+                          test loss : 2.24
+                          time taken : 2.83 
+Client 4 Epoch [6/10]: train loss : 2.28
+Client 4 Epoch [7/10]: train loss : 2.27
+Client 4 Epoch [8/10]: train loss : 2.27
+Client 4 Epoch [9/10]: train loss : 2.27
+Client 4 Epoch [10/10]: train loss : 2.26
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.56%
+                          test acc/top5 : 59.38%
+                          test loss : 2.23
+                          time taken : 2.83 
+Training complete best top1/top5: 26.56%/59.38%
+client 4 updated
+missing keys []
+unexp keys []
+Linear evaluating FL model
+missing keys []
+unexp keys []
+ 
+Avg Validation Stats after 7 global rounds:
+Validation Loss : 2.23
+Validation Accuracy: top1/top5 15.62%/64.06%
+
+
+ | Global Training Round : 8 |
+
+Client 0 Epoch [1/10]: train loss : 2.27
+Client 0 Epoch [2/10]: train loss : 2.27
+Client 0 Epoch [3/10]: train loss : 2.26
+Client 0 Epoch [4/10]: train loss : 2.28
+Client 0 Epoch [5/10]: train loss : 2.27
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 28.12%
+                          test acc/top5 : 64.06%
+                          test loss : 2.22
+                          time taken : 2.88 
+Client 0 Epoch [6/10]: train loss : 2.27
+Client 0 Epoch [7/10]: train loss : 2.27
+Client 0 Epoch [8/10]: train loss : 2.27
+Client 0 Epoch [9/10]: train loss : 2.26
+Client 0 Epoch [10/10]: train loss : 2.26
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 15.62%
+                          test acc/top5 : 60.94%
+                          test loss : 2.23
+                          time taken : 2.88 
+Training complete best top1/top5: 15.62%/60.94%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : 2.26
+Client 1 Epoch [2/10]: train loss : 2.27
+Client 1 Epoch [3/10]: train loss : 2.27
+Client 1 Epoch [4/10]: train loss : 2.26
+Client 1 Epoch [5/10]: train loss : 2.26
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 18.75%
+                          test acc/top5 : 60.94%
+                          test loss : 2.23
+                          time taken : 2.90 
+Client 1 Epoch [6/10]: train loss : 2.27
+Client 1 Epoch [7/10]: train loss : 2.27
+Client 1 Epoch [8/10]: train loss : 2.27
+Client 1 Epoch [9/10]: train loss : 2.26
+Client 1 Epoch [10/10]: train loss : 2.26
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.38%
+                          test acc/top5 : 64.06%
+                          test loss : 2.23
+                          time taken : 2.86 
+Training complete best top1/top5: 34.38%/64.06%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 2.27
+Client 2 Epoch [2/10]: train loss : 2.27
+Client 2 Epoch [3/10]: train loss : 2.27
+Client 2 Epoch [4/10]: train loss : 2.27
+Client 2 Epoch [5/10]: train loss : 2.28
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.56%
+                          test acc/top5 : 59.38%
+                          test loss : 2.25
+                          time taken : 2.92 
+Client 2 Epoch [6/10]: train loss : 2.25
+Client 2 Epoch [7/10]: train loss : 2.27
+Client 2 Epoch [8/10]: train loss : 2.26
+Client 2 Epoch [9/10]: train loss : 2.26
+Client 2 Epoch [10/10]: train loss : 2.27
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 12.50%
+                          test acc/top5 : 60.94%
+                          test loss : 2.24
+                          time taken : 2.91 
+Training complete best top1/top5: 12.50%/60.94%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 2.28
+Client 3 Epoch [2/10]: train loss : 2.26
+Client 3 Epoch [3/10]: train loss : 2.26
+Client 3 Epoch [4/10]: train loss : 2.29
+Client 3 Epoch [5/10]: train loss : 2.26
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 31.25%
+                          test acc/top5 : 60.94%
+                          test loss : 2.21
+                          time taken : 2.90 
+Client 3 Epoch [6/10]: train loss : 2.26
+Client 3 Epoch [7/10]: train loss : 2.26
+Client 3 Epoch [8/10]: train loss : 2.26
+Client 3 Epoch [9/10]: train loss : 2.26
+Client 3 Epoch [10/10]: train loss : 2.27
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 31.25%
+                          test acc/top5 : 59.38%
+                          test loss : 2.21
+                          time taken : 2.87 
+Training complete best top1/top5: 31.25%/59.38%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 2.27
+Client 4 Epoch [2/10]: train loss : 2.26
+Client 4 Epoch [3/10]: train loss : 2.26
+Client 4 Epoch [4/10]: train loss : 2.27
+Client 4 Epoch [5/10]: train loss : 2.24
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 15.62%
+                          test acc/top5 : 64.06%
+                          test loss : 2.24
+                          time taken : 2.88 
+Client 4 Epoch [6/10]: train loss : 2.27
+Client 4 Epoch [7/10]: train loss : 2.26
+Client 4 Epoch [8/10]: train loss : 2.25
+Client 4 Epoch [9/10]: train loss : 2.26
+Client 4 Epoch [10/10]: train loss : 2.25
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 15.62%
+                          test acc/top5 : 60.94%
+                          test loss : 2.23
+                          time taken : 2.89 
+Training complete best top1/top5: 15.62%/60.94%
+client 4 updated
+missing keys []
+unexp keys []
+Linear evaluating FL model
+missing keys []
+unexp keys []
+ 
+Avg Validation Stats after 8 global rounds:
+Validation Loss : 2.21
+Validation Accuracy: top1/top5 17.19%/64.06%
+
+
+ | Global Training Round : 9 |
+
+Client 0 Epoch [1/10]: train loss : 2.26
+Client 0 Epoch [2/10]: train loss : 2.25
+Client 0 Epoch [3/10]: train loss : 2.26
+Client 0 Epoch [4/10]: train loss : 2.27
+Client 0 Epoch [5/10]: train loss : 2.26
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 17.19%
+                          test acc/top5 : 62.50%
+                          test loss : 2.27
+                          time taken : 2.82 
+Client 0 Epoch [6/10]: train loss : 2.24
+Client 0 Epoch [7/10]: train loss : 2.26
+Client 0 Epoch [8/10]: train loss : 2.25
+Client 0 Epoch [9/10]: train loss : 2.25
+Client 0 Epoch [10/10]: train loss : 2.26
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 29.69%
+                          test acc/top5 : 60.94%
+                          test loss : 2.22
+                          time taken : 2.90 
+Training complete best top1/top5: 29.69%/60.94%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : 2.26
+Client 1 Epoch [2/10]: train loss : 2.27
+Client 1 Epoch [3/10]: train loss : 2.26
+Client 1 Epoch [4/10]: train loss : 2.23
+Client 1 Epoch [5/10]: train loss : 2.26
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 20.31%
+                          test acc/top5 : 60.94%
+                          test loss : 2.25
+                          time taken : 2.84 
+Client 1 Epoch [6/10]: train loss : 2.26
+Client 1 Epoch [7/10]: train loss : 2.26
+Client 1 Epoch [8/10]: train loss : 2.26
+Client 1 Epoch [9/10]: train loss : 2.25
+Client 1 Epoch [10/10]: train loss : 2.26
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 18.75%
+                          test acc/top5 : 60.94%
+                          test loss : 2.21
+                          time taken : 2.76 
+Training complete best top1/top5: 18.75%/60.94%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 2.26
+Client 2 Epoch [2/10]: train loss : 2.26
+Client 2 Epoch [3/10]: train loss : 2.25
+Client 2 Epoch [4/10]: train loss : 2.28
+Client 2 Epoch [5/10]: train loss : 2.26
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 15.62%
+                          test acc/top5 : 59.38%
+                          test loss : 2.24
+                          time taken : 2.97 
+Client 2 Epoch [6/10]: train loss : 2.25
+Client 2 Epoch [7/10]: train loss : 2.27
+Client 2 Epoch [8/10]: train loss : 2.27
+Client 2 Epoch [9/10]: train loss : 2.26
+Client 2 Epoch [10/10]: train loss : 2.26
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.38%
+                          test acc/top5 : 73.44%
+                          test loss : 2.22
+                          time taken : 2.88 
+Training complete best top1/top5: 34.38%/73.44%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 2.26
+Client 3 Epoch [2/10]: train loss : 2.25
+Client 3 Epoch [3/10]: train loss : 2.26
+Client 3 Epoch [4/10]: train loss : 2.25
+Client 3 Epoch [5/10]: train loss : 2.27
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.56%
+                          test acc/top5 : 64.06%
+                          test loss : 2.22
+                          time taken : 2.86 
+Client 3 Epoch [6/10]: train loss : 2.26
+Client 3 Epoch [7/10]: train loss : 2.25
+Client 3 Epoch [8/10]: train loss : 2.25
+Client 3 Epoch [9/10]: train loss : 2.27
+Client 3 Epoch [10/10]: train loss : 2.26
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 31.25%
+                          test acc/top5 : 65.62%
+                          test loss : 2.21
+                          time taken : 2.82 
+Training complete best top1/top5: 31.25%/65.62%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 2.24
+Client 4 Epoch [2/10]: train loss : 2.27
+Client 4 Epoch [3/10]: train loss : 2.25
+Client 4 Epoch [4/10]: train loss : 2.26
+Client 4 Epoch [5/10]: train loss : 2.25
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 17.19%
+                          test acc/top5 : 64.06%
+                          test loss : 2.25
+                          time taken : 2.84 
+Client 4 Epoch [6/10]: train loss : 2.26
+Client 4 Epoch [7/10]: train loss : 2.25
+Client 4 Epoch [8/10]: train loss : 2.26
+Client 4 Epoch [9/10]: train loss : 2.26
+Client 4 Epoch [10/10]: train loss : 2.27
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 15.62%
+                          test acc/top5 : 64.06%
+                          test loss : 2.28
+                          time taken : 2.87 
+Training complete best top1/top5: 15.62%/64.06%
+client 4 updated
+missing keys []
+unexp keys []
+Linear evaluating FL model
+missing keys []
+unexp keys []
+ 
+Avg Validation Stats after 9 global rounds:
+Validation Loss : 2.23
+Validation Accuracy: top1/top5 18.75%/62.50%
+
+
+ | Global Training Round : 10 |
+
+Client 0 Epoch [1/10]: train loss : 2.24
+Client 0 Epoch [2/10]: train loss : 2.24
+Client 0 Epoch [3/10]: train loss : 2.26
+Client 0 Epoch [4/10]: train loss : 2.25
+Client 0 Epoch [5/10]: train loss : 2.24
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.56%
+                          test acc/top5 : 64.06%
+                          test loss : 2.24
+                          time taken : 2.84 
+Client 0 Epoch [6/10]: train loss : 2.25
+Client 0 Epoch [7/10]: train loss : 2.25
+Client 0 Epoch [8/10]: train loss : 2.25
+Client 0 Epoch [9/10]: train loss : 2.26
+Client 0 Epoch [10/10]: train loss : 2.25
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 20.31%
+                          test acc/top5 : 64.06%
+                          test loss : 2.23
+                          time taken : 2.86 
+Training complete best top1/top5: 20.31%/64.06%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : 2.27
+Client 1 Epoch [2/10]: train loss : 2.27
+Client 1 Epoch [3/10]: train loss : 2.26
+Client 1 Epoch [4/10]: train loss : 2.28
+Client 1 Epoch [5/10]: train loss : 2.26
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 14.06%
+                          test acc/top5 : 64.06%
+                          test loss : 2.25
+                          time taken : 2.90 
+Client 1 Epoch [6/10]: train loss : 2.25
+Client 1 Epoch [7/10]: train loss : 2.27
+Client 1 Epoch [8/10]: train loss : 2.26
+Client 1 Epoch [9/10]: train loss : 2.26
+Client 1 Epoch [10/10]: train loss : 2.26
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 21.88%
+                          test acc/top5 : 64.06%
+                          test loss : 2.23
+                          time taken : 2.84 
+Training complete best top1/top5: 21.88%/64.06%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 2.26
+Client 2 Epoch [2/10]: train loss : 2.27
+Client 2 Epoch [3/10]: train loss : 2.26
+Client 2 Epoch [4/10]: train loss : 2.26
+Client 2 Epoch [5/10]: train loss : 2.25
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 18.75%
+                          test acc/top5 : 62.50%
+                          test loss : 2.25
+                          time taken : 2.90 
+Client 2 Epoch [6/10]: train loss : 2.25
+Client 2 Epoch [7/10]: train loss : 2.25
+Client 2 Epoch [8/10]: train loss : 2.25
+Client 2 Epoch [9/10]: train loss : 2.26
+Client 2 Epoch [10/10]: train loss : 2.26
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 18.75%
+                          test acc/top5 : 60.94%
+                          test loss : 2.24
+                          time taken : 2.91 
+Training complete best top1/top5: 18.75%/60.94%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 2.27
+Client 3 Epoch [2/10]: train loss : 2.26
+Client 3 Epoch [3/10]: train loss : 2.26
+Client 3 Epoch [4/10]: train loss : 2.26
+Client 3 Epoch [5/10]: train loss : 2.25
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 17.19%
+                          test acc/top5 : 59.38%
+                          test loss : 2.26
+                          time taken : 2.87 
+Client 3 Epoch [6/10]: train loss : 2.28
+Client 3 Epoch [7/10]: train loss : 2.27
+Client 3 Epoch [8/10]: train loss : 2.26
+Client 3 Epoch [9/10]: train loss : 2.25
+Client 3 Epoch [10/10]: train loss : 2.26
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 15.62%
+                          test acc/top5 : 60.94%
+                          test loss : 2.25
+                          time taken : 2.86 
+Training complete best top1/top5: 15.62%/60.94%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 2.26
+Client 4 Epoch [2/10]: train loss : 2.25
+Client 4 Epoch [3/10]: train loss : 2.24
+Client 4 Epoch [4/10]: train loss : 2.25
+Client 4 Epoch [5/10]: train loss : 2.26
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.38%
+                          test acc/top5 : 62.50%
+                          test loss : 2.29
+                          time taken : 2.93 
+Client 4 Epoch [6/10]: train loss : 2.24
+Client 4 Epoch [7/10]: train loss : 2.24
+Client 4 Epoch [8/10]: train loss : 2.26
+Client 4 Epoch [9/10]: train loss : 2.25
+Client 4 Epoch [10/10]: train loss : 2.26
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 7.81%
+                          test acc/top5 : 62.50%
+                          test loss : 2.30
+                          time taken : 2.89 
+Training complete best top1/top5: 7.81%/62.50%
+client 4 updated
+missing keys []
+unexp keys []
+Linear evaluating FL model
+missing keys []
+unexp keys []
+ 
+Avg Validation Stats after 10 global rounds:
+Validation Loss : 2.22
+Validation Accuracy: top1/top5 17.19%/64.06%
+
+
+ | Global Training Round : 11 |
+
+Client 0 Epoch [1/10]: train loss : 2.26
+Client 0 Epoch [2/10]: train loss : 2.25
+Client 0 Epoch [3/10]: train loss : 2.25
+Client 0 Epoch [4/10]: train loss : 2.25
+Client 0 Epoch [5/10]: train loss : 2.25
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 20.31%
+                          test acc/top5 : 75.00%
+                          test loss : 2.24
+                          time taken : 2.89 
+Client 0 Epoch [6/10]: train loss : 2.26
+Client 0 Epoch [7/10]: train loss : 2.25
+Client 0 Epoch [8/10]: train loss : 2.26
+Client 0 Epoch [9/10]: train loss : 2.26
+Client 0 Epoch [10/10]: train loss : 2.24
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.94%
+                          test acc/top5 : 62.50%
+                          test loss : 2.23
+                          time taken : 2.91 
+Training complete best top1/top5: 35.94%/62.50%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : 2.26
+Client 1 Epoch [2/10]: train loss : 2.26
+Client 1 Epoch [3/10]: train loss : 2.26
+Client 1 Epoch [4/10]: train loss : 2.26
+Client 1 Epoch [5/10]: train loss : 2.25
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 18.75%
+                          test acc/top5 : 60.94%
+                          test loss : 2.25
+                          time taken : 2.83 
+Client 1 Epoch [6/10]: train loss : 2.25
+Client 1 Epoch [7/10]: train loss : 2.27
+Client 1 Epoch [8/10]: train loss : 2.25
+Client 1 Epoch [9/10]: train loss : 2.25
+Client 1 Epoch [10/10]: train loss : 2.24
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 31.25%
+                          test acc/top5 : 75.00%
+                          test loss : 2.23
+                          time taken : 2.89 
+Training complete best top1/top5: 31.25%/75.00%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 2.25
+Client 2 Epoch [2/10]: train loss : 2.26
+Client 2 Epoch [3/10]: train loss : 2.27
+Client 2 Epoch [4/10]: train loss : 2.26
+Client 2 Epoch [5/10]: train loss : 2.26
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 21.88%
+                          test acc/top5 : 64.06%
+                          test loss : 2.23
+                          time taken : 2.94 
+Client 2 Epoch [6/10]: train loss : 2.27
+Client 2 Epoch [7/10]: train loss : 2.27
+Client 2 Epoch [8/10]: train loss : 2.25
+Client 2 Epoch [9/10]: train loss : 2.26
+Client 2 Epoch [10/10]: train loss : 2.26
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 7.81%
+                          test acc/top5 : 64.06%
+                          test loss : 2.27
+                          time taken : 2.90 
+Training complete best top1/top5: 7.81%/64.06%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 2.24
+Client 3 Epoch [2/10]: train loss : 2.24
+Client 3 Epoch [3/10]: train loss : 2.24
+Client 3 Epoch [4/10]: train loss : 2.25
+Client 3 Epoch [5/10]: train loss : 2.25
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 6.25%
+                          test acc/top5 : 64.06%
+                          test loss : 2.26
+                          time taken : 2.82 
+Client 3 Epoch [6/10]: train loss : 2.24
+Client 3 Epoch [7/10]: train loss : 2.24
+Client 3 Epoch [8/10]: train loss : 2.25
+Client 3 Epoch [9/10]: train loss : 2.26
+Client 3 Epoch [10/10]: train loss : 2.24
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 20.31%
+                          test acc/top5 : 62.50%
+                          test loss : 2.25
+                          time taken : 2.88 
+Training complete best top1/top5: 20.31%/62.50%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 2.26
+Client 4 Epoch [2/10]: train loss : 2.25
+Client 4 Epoch [3/10]: train loss : 2.24
+Client 4 Epoch [4/10]: train loss : 2.24
+Client 4 Epoch [5/10]: train loss : 2.26
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 18.75%
+                          test acc/top5 : 75.00%
+                          test loss : 2.21
+                          time taken : 2.90 
+Client 4 Epoch [6/10]: train loss : 2.23
+Client 4 Epoch [7/10]: train loss : 2.23
+Client 4 Epoch [8/10]: train loss : 2.24
+Client 4 Epoch [9/10]: train loss : 2.24
+Client 4 Epoch [10/10]: train loss : 2.23
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 21.88%
+                          test acc/top5 : 76.56%
+                          test loss : 2.24
+                          time taken : 2.86 
+Training complete best top1/top5: 21.88%/76.56%
+client 4 updated
+missing keys []
+unexp keys []
+Linear evaluating FL model
+missing keys []
+unexp keys []
+ 
+Avg Validation Stats after 11 global rounds:
+Validation Loss : 2.22
+Validation Accuracy: top1/top5 18.75%/75.00%
+
+
+ | Global Training Round : 12 |
+
+Client 0 Epoch [1/10]: train loss : 2.25
+Client 0 Epoch [2/10]: train loss : 2.23
+Client 0 Epoch [3/10]: train loss : 2.25
+Client 0 Epoch [4/10]: train loss : 2.24
+Client 0 Epoch [5/10]: train loss : 2.25
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 20.31%
+                          test acc/top5 : 75.00%
+                          test loss : 2.20
+                          time taken : 2.86 
+Client 0 Epoch [6/10]: train loss : 2.25
+Client 0 Epoch [7/10]: train loss : 2.23
+Client 0 Epoch [8/10]: train loss : 2.23
+Client 0 Epoch [9/10]: train loss : 2.24
+Client 0 Epoch [10/10]: train loss : 2.25
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 23.44%
+                          test acc/top5 : 76.56%
+                          test loss : 2.17
+                          time taken : 2.91 
+Training complete best top1/top5: 23.44%/76.56%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : 2.24
+Client 1 Epoch [2/10]: train loss : 2.25
+Client 1 Epoch [3/10]: train loss : 2.25
+Client 1 Epoch [4/10]: train loss : 2.24
+Client 1 Epoch [5/10]: train loss : 2.23
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 20.31%
+                          test acc/top5 : 73.44%
+                          test loss : 2.25
+                          time taken : 2.95 
+Client 1 Epoch [6/10]: train loss : 2.25
+Client 1 Epoch [7/10]: train loss : 2.25
+Client 1 Epoch [8/10]: train loss : 2.24
+Client 1 Epoch [9/10]: train loss : 2.24
+Client 1 Epoch [10/10]: train loss : 2.25
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 4.69%
+                          test acc/top5 : 73.44%
+                          test loss : 2.24
+                          time taken : 2.85 
+Training complete best top1/top5: 4.69%/73.44%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 2.23
+Client 2 Epoch [2/10]: train loss : 2.23
+Client 2 Epoch [3/10]: train loss : 2.23
+Client 2 Epoch [4/10]: train loss : 2.24
+Client 2 Epoch [5/10]: train loss : 2.24
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 20.31%
+                          test acc/top5 : 78.12%
+                          test loss : 2.22
+                          time taken : 2.82 
+Client 2 Epoch [6/10]: train loss : 2.23
+Client 2 Epoch [7/10]: train loss : 2.24
+Client 2 Epoch [8/10]: train loss : 2.23
+Client 2 Epoch [9/10]: train loss : 2.23
+Client 2 Epoch [10/10]: train loss : 2.24
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 21.88%
+                          test acc/top5 : 78.12%
+                          test loss : 2.21
+                          time taken : 2.81 
+Training complete best top1/top5: 21.88%/78.12%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 2.25
+Client 3 Epoch [2/10]: train loss : 2.25
+Client 3 Epoch [3/10]: train loss : 2.26
+Client 3 Epoch [4/10]: train loss : 2.26
+Client 3 Epoch [5/10]: train loss : 2.24
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 20.31%
+                          test acc/top5 : 78.12%
+                          test loss : 2.19
+                          time taken : 2.90 
+Client 3 Epoch [6/10]: train loss : 2.24
+Client 3 Epoch [7/10]: train loss : 2.24
+Client 3 Epoch [8/10]: train loss : 2.23
+Client 3 Epoch [9/10]: train loss : 2.23
+Client 3 Epoch [10/10]: train loss : 2.24
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 12.50%
+                          test acc/top5 : 64.06%
+                          test loss : 2.26
+                          time taken : 2.91 
+Training complete best top1/top5: 12.50%/64.06%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 2.25
+Client 4 Epoch [2/10]: train loss : 2.25
+Client 4 Epoch [3/10]: train loss : 2.25
+Client 4 Epoch [4/10]: train loss : 2.25
+Client 4 Epoch [5/10]: train loss : 2.25
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 21.88%
+                          test acc/top5 : 65.62%
+                          test loss : 2.21
+                          time taken : 2.88 
+Client 4 Epoch [6/10]: train loss : 2.25
+Client 4 Epoch [7/10]: train loss : 2.24
+Client 4 Epoch [8/10]: train loss : 2.22
+Client 4 Epoch [9/10]: train loss : 2.23
+Client 4 Epoch [10/10]: train loss : 2.24
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 32.81%
+                          test acc/top5 : 64.06%
+                          test loss : 2.21
+                          time taken : 2.91 
+Training complete best top1/top5: 32.81%/64.06%
+client 4 updated
+missing keys []
+unexp keys []
+Linear evaluating FL model
+missing keys []
+unexp keys []
+ 
+Avg Validation Stats after 12 global rounds:
+Validation Loss : 2.23
+Validation Accuracy: top1/top5 20.31%/75.00%
+
+
+ | Global Training Round : 13 |
+
+Client 0 Epoch [1/10]: train loss : 2.23
+Client 0 Epoch [2/10]: train loss : 2.24
+Client 0 Epoch [3/10]: train loss : 2.25
+Client 0 Epoch [4/10]: train loss : 2.22
+Client 0 Epoch [5/10]: train loss : 2.24
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 21.88%
+                          test acc/top5 : 70.31%
+                          test loss : 2.21
+                          time taken : 2.86 
+Client 0 Epoch [6/10]: train loss : 2.24
+Client 0 Epoch [7/10]: train loss : 2.24
+Client 0 Epoch [8/10]: train loss : 2.24
+Client 0 Epoch [9/10]: train loss : 2.23
+Client 0 Epoch [10/10]: train loss : 2.23
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.94%
+                          test acc/top5 : 78.12%
+                          test loss : 2.19
+                          time taken : 2.90 
+Training complete best top1/top5: 35.94%/78.12%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : 2.23
+Client 1 Epoch [2/10]: train loss : 2.27
+Client 1 Epoch [3/10]: train loss : 2.25
+Client 1 Epoch [4/10]: train loss : 2.26
+Client 1 Epoch [5/10]: train loss : 2.22
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.38%
+                          test acc/top5 : 75.00%
+                          test loss : 2.26
+                          time taken : 2.82 
+Client 1 Epoch [6/10]: train loss : 2.24
+Client 1 Epoch [7/10]: train loss : 2.25
+Client 1 Epoch [8/10]: train loss : 2.25
+Client 1 Epoch [9/10]: train loss : 2.22
+Client 1 Epoch [10/10]: train loss : 2.24
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.56%
+                          test acc/top5 : 76.56%
+                          test loss : 2.24
+                          time taken : 2.88 
+Training complete best top1/top5: 26.56%/76.56%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 2.24
+Client 2 Epoch [2/10]: train loss : 2.24
+Client 2 Epoch [3/10]: train loss : 2.25
+Client 2 Epoch [4/10]: train loss : 2.24
+Client 2 Epoch [5/10]: train loss : 2.25
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.94%
+                          test acc/top5 : 75.00%
+                          test loss : 2.20
+                          time taken : 2.87 
+Client 2 Epoch [6/10]: train loss : 2.23
+Client 2 Epoch [7/10]: train loss : 2.25
+Client 2 Epoch [8/10]: train loss : 2.23
+Client 2 Epoch [9/10]: train loss : 2.23
+Client 2 Epoch [10/10]: train loss : 2.22
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 25.00%
+                          test acc/top5 : 79.69%
+                          test loss : 2.20
+                          time taken : 2.89 
+Training complete best top1/top5: 25.00%/79.69%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 2.23
+Client 3 Epoch [2/10]: train loss : 2.23
+Client 3 Epoch [3/10]: train loss : 2.23
+Client 3 Epoch [4/10]: train loss : 2.21
+Client 3 Epoch [5/10]: train loss : 2.23
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 23.44%
+                          test acc/top5 : 75.00%
+                          test loss : 2.22
+                          time taken : 2.81 
+Client 3 Epoch [6/10]: train loss : 2.23
+Client 3 Epoch [7/10]: train loss : 2.20
+Client 3 Epoch [8/10]: train loss : 2.24
+Client 3 Epoch [9/10]: train loss : 2.23
+Client 3 Epoch [10/10]: train loss : 2.24
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 10.94%
+                          test acc/top5 : 75.00%
+                          test loss : 2.23
+                          time taken : 2.85 
+Training complete best top1/top5: 10.94%/75.00%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 2.24
+Client 4 Epoch [2/10]: train loss : 2.23
+Client 4 Epoch [3/10]: train loss : 2.25
+Client 4 Epoch [4/10]: train loss : 2.24
+Client 4 Epoch [5/10]: train loss : 2.23
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 31.25%
+                          test acc/top5 : 76.56%
+                          test loss : 2.21
+                          time taken : 2.95 
+Client 4 Epoch [6/10]: train loss : 2.24
+Client 4 Epoch [7/10]: train loss : 2.25
+Client 4 Epoch [8/10]: train loss : 2.24
+Client 4 Epoch [9/10]: train loss : 2.24
+Client 4 Epoch [10/10]: train loss : 2.24
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.94%
+                          test acc/top5 : 78.12%
+                          test loss : 2.20
+                          time taken : 2.86 
+Training complete best top1/top5: 35.94%/78.12%
+client 4 updated
+missing keys []
+unexp keys []
+Linear evaluating FL model
+missing keys []
+unexp keys []
+ 
+Avg Validation Stats after 13 global rounds:
+Validation Loss : 2.21
+Validation Accuracy: top1/top5 25.00%/75.00%
+
+
+ | Global Training Round : 14 |
+
+Client 0 Epoch [1/10]: train loss : 2.22
+Client 0 Epoch [2/10]: train loss : 2.22
+Client 0 Epoch [3/10]: train loss : 2.23
+Client 0 Epoch [4/10]: train loss : 2.23
+Client 0 Epoch [5/10]: train loss : 2.23
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.94%
+                          test acc/top5 : 75.00%
+                          test loss : 2.18
+                          time taken : 2.82 
+Client 0 Epoch [6/10]: train loss : 2.22
+Client 0 Epoch [7/10]: train loss : 2.23
+Client 0 Epoch [8/10]: train loss : 2.23
+Client 0 Epoch [9/10]: train loss : 2.24
+Client 0 Epoch [10/10]: train loss : 2.22
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 50.00%
+                          test acc/top5 : 73.44%
+                          test loss : 2.16
+                          time taken : 2.86 
+Training complete best top1/top5: 50.00%/73.44%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : 2.25
+Client 1 Epoch [2/10]: train loss : 2.26
+Client 1 Epoch [3/10]: train loss : 2.27
+Client 1 Epoch [4/10]: train loss : 2.24
+Client 1 Epoch [5/10]: train loss : 2.25
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.56%
+                          test acc/top5 : 75.00%
+                          test loss : 2.22
+                          time taken : 2.90 
+Client 1 Epoch [6/10]: train loss : 2.25
+Client 1 Epoch [7/10]: train loss : 2.24
+Client 1 Epoch [8/10]: train loss : 2.25
+Client 1 Epoch [9/10]: train loss : 2.24
+Client 1 Epoch [10/10]: train loss : 2.23
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 23.44%
+                          test acc/top5 : 76.56%
+                          test loss : 2.19
+                          time taken : 2.84 
+Training complete best top1/top5: 23.44%/76.56%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 2.24
+Client 2 Epoch [2/10]: train loss : 2.21
+Client 2 Epoch [3/10]: train loss : 2.21
+Client 2 Epoch [4/10]: train loss : 2.24
+Client 2 Epoch [5/10]: train loss : 2.23
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.94%
+                          test acc/top5 : 71.88%
+                          test loss : 2.17
+                          time taken : 2.87 
+Client 2 Epoch [6/10]: train loss : 2.22
+Client 2 Epoch [7/10]: train loss : 2.21
+Client 2 Epoch [8/10]: train loss : 2.20
+Client 2 Epoch [9/10]: train loss : 2.22
+Client 2 Epoch [10/10]: train loss : 2.20
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.38%
+                          test acc/top5 : 75.00%
+                          test loss : 2.17
+                          time taken : 2.86 
+Training complete best top1/top5: 34.38%/75.00%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 2.24
+Client 3 Epoch [2/10]: train loss : 2.23
+Client 3 Epoch [3/10]: train loss : 2.24
+Client 3 Epoch [4/10]: train loss : 2.24
+Client 3 Epoch [5/10]: train loss : 2.22
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 21.88%
+                          test acc/top5 : 78.12%
+                          test loss : 2.23
+                          time taken : 2.88 
+Client 3 Epoch [6/10]: train loss : 2.22
+Client 3 Epoch [7/10]: train loss : 2.22
+Client 3 Epoch [8/10]: train loss : 2.22
+Client 3 Epoch [9/10]: train loss : 2.24
+Client 3 Epoch [10/10]: train loss : 2.23
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 23.44%
+                          test acc/top5 : 75.00%
+                          test loss : 2.22
+                          time taken : 2.83 
+Training complete best top1/top5: 23.44%/75.00%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 2.23
+Client 4 Epoch [2/10]: train loss : 2.25
+Client 4 Epoch [3/10]: train loss : 2.25
+Client 4 Epoch [4/10]: train loss : 2.26
+Client 4 Epoch [5/10]: train loss : 2.25
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.56%
+                          test acc/top5 : 73.44%
+                          test loss : 2.22
+                          time taken : 2.84 
+Client 4 Epoch [6/10]: train loss : 2.24
+Client 4 Epoch [7/10]: train loss : 2.25
+Client 4 Epoch [8/10]: train loss : 2.26
+Client 4 Epoch [9/10]: train loss : 2.24
+Client 4 Epoch [10/10]: train loss : 2.23
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 21.88%
+                          test acc/top5 : 70.31%
+                          test loss : 2.19
+                          time taken : 2.80 
+Training complete best top1/top5: 21.88%/70.31%
+client 4 updated
+missing keys []
+unexp keys []
+Linear evaluating FL model
+missing keys []
+unexp keys []
+ 
+Avg Validation Stats after 14 global rounds:
+Validation Loss : 2.21
+Validation Accuracy: top1/top5 37.50%/70.31%
+
+
+ | Global Training Round : 15 |
+
+Client 0 Epoch [1/10]: train loss : 2.23
+Client 0 Epoch [2/10]: train loss : 2.25
+Client 0 Epoch [3/10]: train loss : 2.24
+Client 0 Epoch [4/10]: train loss : 2.23
+Client 0 Epoch [5/10]: train loss : 2.24
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 21.88%
+                          test acc/top5 : 68.75%
+                          test loss : 2.22
+                          time taken : 2.87 
+Client 0 Epoch [6/10]: train loss : 2.22
+Client 0 Epoch [7/10]: train loss : 2.23
+Client 0 Epoch [8/10]: train loss : 2.22
+Client 0 Epoch [9/10]: train loss : 2.22
+Client 0 Epoch [10/10]: train loss : 2.22
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.38%
+                          test acc/top5 : 71.88%
+                          test loss : 2.14
+                          time taken : 2.89 
+Training complete best top1/top5: 34.38%/71.88%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : 2.23
+Client 1 Epoch [2/10]: train loss : 2.24
+Client 1 Epoch [3/10]: train loss : 2.22
+Client 1 Epoch [4/10]: train loss : 2.23
+Client 1 Epoch [5/10]: train loss : 2.24
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 28.12%
+                          test acc/top5 : 73.44%
+                          test loss : 2.19
+                          time taken : 2.83 
+Client 1 Epoch [6/10]: train loss : 2.21
+Client 1 Epoch [7/10]: train loss : 2.21
+Client 1 Epoch [8/10]: train loss : 2.23
+Client 1 Epoch [9/10]: train loss : 2.22
+Client 1 Epoch [10/10]: train loss : 2.22
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.56%
+                          test acc/top5 : 73.44%
+                          test loss : 2.16
+                          time taken : 2.88 
+Training complete best top1/top5: 26.56%/73.44%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 2.21
+Client 2 Epoch [2/10]: train loss : 2.25
+Client 2 Epoch [3/10]: train loss : 2.24
+Client 2 Epoch [4/10]: train loss : 2.25
+Client 2 Epoch [5/10]: train loss : 2.22
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 42.19%
+                          test acc/top5 : 76.56%
+                          test loss : 2.19
+                          time taken : 2.83 
+Client 2 Epoch [6/10]: train loss : 2.23
+Client 2 Epoch [7/10]: train loss : 2.22
+Client 2 Epoch [8/10]: train loss : 2.24
+Client 2 Epoch [9/10]: train loss : 2.25
+Client 2 Epoch [10/10]: train loss : 2.23
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 39.06%
+                          test acc/top5 : 75.00%
+                          test loss : 2.16
+                          time taken : 2.85 
+Training complete best top1/top5: 39.06%/75.00%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 2.23
+Client 3 Epoch [2/10]: train loss : 2.23
+Client 3 Epoch [3/10]: train loss : 2.24
+Client 3 Epoch [4/10]: train loss : 2.24
+Client 3 Epoch [5/10]: train loss : 2.25
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 39.06%
+                          test acc/top5 : 73.44%
+                          test loss : 2.20
+                          time taken : 2.88 
+Client 3 Epoch [6/10]: train loss : 2.22
+Client 3 Epoch [7/10]: train loss : 2.23
+Client 3 Epoch [8/10]: train loss : 2.23
+Client 3 Epoch [9/10]: train loss : 2.25
+Client 3 Epoch [10/10]: train loss : 2.22
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 39.06%
+                          test acc/top5 : 73.44%
+                          test loss : 2.19
+                          time taken : 2.83 
+Training complete best top1/top5: 39.06%/73.44%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 2.26
+Client 4 Epoch [2/10]: train loss : 2.25
+Client 4 Epoch [3/10]: train loss : 2.22
+Client 4 Epoch [4/10]: train loss : 2.26
+Client 4 Epoch [5/10]: train loss : 2.23
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 25.00%
+                          test acc/top5 : 70.31%
+                          test loss : 2.23
+                          time taken : 2.87 
+Client 4 Epoch [6/10]: train loss : 2.24
+Client 4 Epoch [7/10]: train loss : 2.24
+Client 4 Epoch [8/10]: train loss : 2.24
+Client 4 Epoch [9/10]: train loss : 2.24
+Client 4 Epoch [10/10]: train loss : 2.22
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.50%
+                          test acc/top5 : 73.44%
+                          test loss : 2.20
+                          time taken : 2.83 
+Training complete best top1/top5: 37.50%/73.44%
+client 4 updated
+missing keys []
+unexp keys []
+Linear evaluating FL model
+missing keys []
+unexp keys []
+ 
+Avg Validation Stats after 15 global rounds:
+Validation Loss : 2.20
+Validation Accuracy: top1/top5 39.06%/70.31%
+
+
+ | Global Training Round : 16 |
+
+Client 0 Epoch [1/10]: train loss : 2.23
+Client 0 Epoch [2/10]: train loss : 2.24
+Client 0 Epoch [3/10]: train loss : 2.22
+Client 0 Epoch [4/10]: train loss : 2.24
+Client 0 Epoch [5/10]: train loss : 2.23
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.50%
+                          test acc/top5 : 79.69%
+                          test loss : 2.14
+                          time taken : 2.88 
+Client 0 Epoch [6/10]: train loss : 2.23
+Client 0 Epoch [7/10]: train loss : 2.24
+Client 0 Epoch [8/10]: train loss : 2.25
+Client 0 Epoch [9/10]: train loss : 2.22
+Client 0 Epoch [10/10]: train loss : 2.24
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 28.12%
+                          test acc/top5 : 76.56%
+                          test loss : 2.21
+                          time taken : 2.87 
+Training complete best top1/top5: 28.12%/76.56%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : 2.20
+Client 1 Epoch [2/10]: train loss : 2.23
+Client 1 Epoch [3/10]: train loss : 2.21
+Client 1 Epoch [4/10]: train loss : 2.24
+Client 1 Epoch [5/10]: train loss : 2.23
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 25.00%
+                          test acc/top5 : 62.50%
+                          test loss : 2.20
+                          time taken : 2.86 
+Client 1 Epoch [6/10]: train loss : 2.23
+Client 1 Epoch [7/10]: train loss : 2.22
+Client 1 Epoch [8/10]: train loss : 2.22
+Client 1 Epoch [9/10]: train loss : 2.21
+Client 1 Epoch [10/10]: train loss : 2.21
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 40.62%
+                          test acc/top5 : 76.56%
+                          test loss : 2.17
+                          time taken : 2.87 
+Training complete best top1/top5: 40.62%/76.56%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 2.22
+Client 2 Epoch [2/10]: train loss : 2.22
+Client 2 Epoch [3/10]: train loss : 2.21
+Client 2 Epoch [4/10]: train loss : 2.23
+Client 2 Epoch [5/10]: train loss : 2.22
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 25.00%
+                          test acc/top5 : 70.31%
+                          test loss : 2.18
+                          time taken : 2.87 
+Client 2 Epoch [6/10]: train loss : 2.21
+Client 2 Epoch [7/10]: train loss : 2.23
+Client 2 Epoch [8/10]: train loss : 2.21
+Client 2 Epoch [9/10]: train loss : 2.19
+Client 2 Epoch [10/10]: train loss : 2.22
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.56%
+                          test acc/top5 : 71.88%
+                          test loss : 2.21
+                          time taken : 2.87 
+Training complete best top1/top5: 26.56%/71.88%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 2.22
+Client 3 Epoch [2/10]: train loss : 2.23
+Client 3 Epoch [3/10]: train loss : 2.22
+Client 3 Epoch [4/10]: train loss : 2.22
+Client 3 Epoch [5/10]: train loss : 2.23
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 25.00%
+                          test acc/top5 : 71.88%
+                          test loss : 2.20
+                          time taken : 2.88 
+Client 3 Epoch [6/10]: train loss : 2.22
+Client 3 Epoch [7/10]: train loss : 2.23
+Client 3 Epoch [8/10]: train loss : 2.22
+Client 3 Epoch [9/10]: train loss : 2.24
+Client 3 Epoch [10/10]: train loss : 2.22
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 39.06%
+                          test acc/top5 : 73.44%
+                          test loss : 2.17
+                          time taken : 2.90 
+Training complete best top1/top5: 39.06%/73.44%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 2.21
+Client 4 Epoch [2/10]: train loss : 2.24
+Client 4 Epoch [3/10]: train loss : 2.22
+Client 4 Epoch [4/10]: train loss : 2.21
+Client 4 Epoch [5/10]: train loss : 2.20
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.50%
+                          test acc/top5 : 75.00%
+                          test loss : 2.21
+                          time taken : 2.87 
+Client 4 Epoch [6/10]: train loss : 2.24
+Client 4 Epoch [7/10]: train loss : 2.21
+Client 4 Epoch [8/10]: train loss : 2.22
+Client 4 Epoch [9/10]: train loss : 2.20
+Client 4 Epoch [10/10]: train loss : 2.21
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 39.06%
+                          test acc/top5 : 78.12%
+                          test loss : 2.16
+                          time taken : 2.84 
+Training complete best top1/top5: 39.06%/78.12%
+client 4 updated
+missing keys []
+unexp keys []
+Linear evaluating FL model
+missing keys []
+unexp keys []
+ 
+Avg Validation Stats after 16 global rounds:
+Validation Loss : 2.22
+Validation Accuracy: top1/top5 26.56%/75.00%
+
+
+ | Global Training Round : 17 |
+
+Client 0 Epoch [1/10]: train loss : 2.21
+Client 0 Epoch [2/10]: train loss : 2.23
+Client 0 Epoch [3/10]: train loss : 2.22
+Client 0 Epoch [4/10]: train loss : 2.24
+Client 0 Epoch [5/10]: train loss : 2.22
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 40.62%
+                          test acc/top5 : 71.88%
+                          test loss : 2.18
+                          time taken : 2.81 
+Client 0 Epoch [6/10]: train loss : 2.24
+Client 0 Epoch [7/10]: train loss : 2.25
+Client 0 Epoch [8/10]: train loss : 2.23
+Client 0 Epoch [9/10]: train loss : 2.22
+Client 0 Epoch [10/10]: train loss : 2.23
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.50%
+                          test acc/top5 : 78.12%
+                          test loss : 2.19
+                          time taken : 2.88 
+Training complete best top1/top5: 37.50%/78.12%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : 2.21
+Client 1 Epoch [2/10]: train loss : 2.24
+Client 1 Epoch [3/10]: train loss : 2.23
+Client 1 Epoch [4/10]: train loss : 2.21
+Client 1 Epoch [5/10]: train loss : 2.24
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 39.06%
+                          test acc/top5 : 71.88%
+                          test loss : 2.19
+                          time taken : 2.90 
+Client 1 Epoch [6/10]: train loss : 2.24
+Client 1 Epoch [7/10]: train loss : 2.21
+Client 1 Epoch [8/10]: train loss : 2.22
+Client 1 Epoch [9/10]: train loss : 2.21
+Client 1 Epoch [10/10]: train loss : 2.21
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.94%
+                          test acc/top5 : 75.00%
+                          test loss : 2.18
+                          time taken : 2.85 
+Training complete best top1/top5: 35.94%/75.00%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 2.22
+Client 2 Epoch [2/10]: train loss : 2.22
+Client 2 Epoch [3/10]: train loss : 2.22
+Client 2 Epoch [4/10]: train loss : 2.22
+Client 2 Epoch [5/10]: train loss : 2.21
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 12.50%
+                          test acc/top5 : 71.88%
+                          test loss : 2.25
+                          time taken : 2.87 
+Client 2 Epoch [6/10]: train loss : 2.21
+Client 2 Epoch [7/10]: train loss : 2.23
+Client 2 Epoch [8/10]: train loss : 2.20
+Client 2 Epoch [9/10]: train loss : 2.23
+Client 2 Epoch [10/10]: train loss : 2.19
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 23.44%
+                          test acc/top5 : 76.56%
+                          test loss : 2.26
+                          time taken : 2.88 
+Training complete best top1/top5: 23.44%/76.56%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 2.23
+Client 3 Epoch [2/10]: train loss : 2.22
+Client 3 Epoch [3/10]: train loss : 2.22
+Client 3 Epoch [4/10]: train loss : 2.23
+Client 3 Epoch [5/10]: train loss : 2.23
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 23.44%
+                          test acc/top5 : 75.00%
+                          test loss : 2.18
+                          time taken : 2.84 
+Client 3 Epoch [6/10]: train loss : 2.21
+Client 3 Epoch [7/10]: train loss : 2.21
+Client 3 Epoch [8/10]: train loss : 2.20
+Client 3 Epoch [9/10]: train loss : 2.22
+Client 3 Epoch [10/10]: train loss : 2.22
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.94%
+                          test acc/top5 : 75.00%
+                          test loss : 2.14
+                          time taken : 2.90 
+Training complete best top1/top5: 35.94%/75.00%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 2.23
+Client 4 Epoch [2/10]: train loss : 2.23
+Client 4 Epoch [3/10]: train loss : 2.25
+Client 4 Epoch [4/10]: train loss : 2.23
+Client 4 Epoch [5/10]: train loss : 2.21
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.50%
+                          test acc/top5 : 76.56%
+                          test loss : 2.19
+                          time taken : 2.88 
+Client 4 Epoch [6/10]: train loss : 2.23
+Client 4 Epoch [7/10]: train loss : 2.21
+Client 4 Epoch [8/10]: train loss : 2.24
+Client 4 Epoch [9/10]: train loss : 2.22
+Client 4 Epoch [10/10]: train loss : 2.23
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.50%
+                          test acc/top5 : 75.00%
+                          test loss : 2.17
+                          time taken : 2.92 
+Training complete best top1/top5: 37.50%/75.00%
+client 4 updated
+missing keys []
+unexp keys []
+Linear evaluating FL model
+missing keys []
+unexp keys []
+ 
+Avg Validation Stats after 17 global rounds:
+Validation Loss : 2.16
+Validation Accuracy: top1/top5 34.38%/73.44%
+
+
+ | Global Training Round : 18 |
+
+Client 0 Epoch [1/10]: train loss : 2.23
+Client 0 Epoch [2/10]: train loss : 2.22
+Client 0 Epoch [3/10]: train loss : 2.21
+Client 0 Epoch [4/10]: train loss : 2.21
+Client 0 Epoch [5/10]: train loss : 2.22
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.50%
+                          test acc/top5 : 76.56%
+                          test loss : 2.18
+                          time taken : 2.86 
+Client 0 Epoch [6/10]: train loss : 2.23
+Client 0 Epoch [7/10]: train loss : 2.21
+Client 0 Epoch [8/10]: train loss : 2.22
+Client 0 Epoch [9/10]: train loss : 2.22
+Client 0 Epoch [10/10]: train loss : 2.20
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.94%
+                          test acc/top5 : 65.62%
+                          test loss : 2.17
+                          time taken : 2.96 
+Training complete best top1/top5: 35.94%/65.62%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : 2.22
+Client 1 Epoch [2/10]: train loss : 2.24
+Client 1 Epoch [3/10]: train loss : 2.22
+Client 1 Epoch [4/10]: train loss : 2.23
+Client 1 Epoch [5/10]: train loss : 2.23
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.56%
+                          test acc/top5 : 73.44%
+                          test loss : 2.16
+                          time taken : 2.88 
+Client 1 Epoch [6/10]: train loss : 2.23
+Client 1 Epoch [7/10]: train loss : 2.22
+Client 1 Epoch [8/10]: train loss : 2.22
+Client 1 Epoch [9/10]: train loss : 2.21
+Client 1 Epoch [10/10]: train loss : 2.22
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 23.44%
+                          test acc/top5 : 73.44%
+                          test loss : 2.22
+                          time taken : 2.81 
+Training complete best top1/top5: 23.44%/73.44%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 2.22
+Client 2 Epoch [2/10]: train loss : 2.21
+Client 2 Epoch [3/10]: train loss : 2.20
+Client 2 Epoch [4/10]: train loss : 2.23
+Client 2 Epoch [5/10]: train loss : 2.22
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.94%
+                          test acc/top5 : 75.00%
+                          test loss : 2.19
+                          time taken : 2.86 
+Client 2 Epoch [6/10]: train loss : 2.21
+Client 2 Epoch [7/10]: train loss : 2.21
+Client 2 Epoch [8/10]: train loss : 2.22
+Client 2 Epoch [9/10]: train loss : 2.22
+Client 2 Epoch [10/10]: train loss : 2.19
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 21.88%
+                          test acc/top5 : 76.56%
+                          test loss : 2.16
+                          time taken : 2.82 
+Training complete best top1/top5: 21.88%/76.56%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 2.21
+Client 3 Epoch [2/10]: train loss : 2.20
+Client 3 Epoch [3/10]: train loss : 2.21
+Client 3 Epoch [4/10]: train loss : 2.18
+Client 3 Epoch [5/10]: train loss : 2.21
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 39.06%
+                          test acc/top5 : 75.00%
+                          test loss : 2.19
+                          time taken : 2.88 
+Client 3 Epoch [6/10]: train loss : 2.21
+Client 3 Epoch [7/10]: train loss : 2.19
+Client 3 Epoch [8/10]: train loss : 2.19
+Client 3 Epoch [9/10]: train loss : 2.22
+Client 3 Epoch [10/10]: train loss : 2.21
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.56%
+                          test acc/top5 : 75.00%
+                          test loss : 2.20
+                          time taken : 2.87 
+Training complete best top1/top5: 26.56%/75.00%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 2.23
+Client 4 Epoch [2/10]: train loss : 2.23
+Client 4 Epoch [3/10]: train loss : 2.22
+Client 4 Epoch [4/10]: train loss : 2.21
+Client 4 Epoch [5/10]: train loss : 2.23
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.38%
+                          test acc/top5 : 76.56%
+                          test loss : 2.20
+                          time taken : 2.85 
+Client 4 Epoch [6/10]: train loss : 2.22
+Client 4 Epoch [7/10]: train loss : 2.23
+Client 4 Epoch [8/10]: train loss : 2.22
+Client 4 Epoch [9/10]: train loss : 2.22
+Client 4 Epoch [10/10]: train loss : 2.22
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 40.62%
+                          test acc/top5 : 73.44%
+                          test loss : 2.12
+                          time taken : 2.87 
+Training complete best top1/top5: 40.62%/73.44%
+client 4 updated
+missing keys []
+unexp keys []
+Linear evaluating FL model
+missing keys []
+unexp keys []
+ 
+Avg Validation Stats after 18 global rounds:
+Validation Loss : 2.22
+Validation Accuracy: top1/top5 37.50%/75.00%
+
+
+ | Global Training Round : 19 |
+
+Client 0 Epoch [1/10]: train loss : 2.21
+Client 0 Epoch [2/10]: train loss : 2.22
+Client 0 Epoch [3/10]: train loss : 2.20
+Client 0 Epoch [4/10]: train loss : 2.22
+Client 0 Epoch [5/10]: train loss : 2.22
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.56%
+                          test acc/top5 : 75.00%
+                          test loss : 2.20
+                          time taken : 2.82 
+Client 0 Epoch [6/10]: train loss : 2.19
+Client 0 Epoch [7/10]: train loss : 2.20
+Client 0 Epoch [8/10]: train loss : 2.21
+Client 0 Epoch [9/10]: train loss : 2.20
+Client 0 Epoch [10/10]: train loss : 2.23
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.50%
+                          test acc/top5 : 76.56%
+                          test loss : 2.18
+                          time taken : 2.90 
+Training complete best top1/top5: 37.50%/76.56%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : 2.21
+Client 1 Epoch [2/10]: train loss : 2.22
+Client 1 Epoch [3/10]: train loss : 2.22
+Client 1 Epoch [4/10]: train loss : 2.20
+Client 1 Epoch [5/10]: train loss : 2.24
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.94%
+                          test acc/top5 : 76.56%
+                          test loss : 2.20
+                          time taken : 2.86 
+Client 1 Epoch [6/10]: train loss : 2.21
+Client 1 Epoch [7/10]: train loss : 2.22
+Client 1 Epoch [8/10]: train loss : 2.23
+Client 1 Epoch [9/10]: train loss : 2.22
+Client 1 Epoch [10/10]: train loss : 2.21
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.50%
+                          test acc/top5 : 76.56%
+                          test loss : 2.13
+                          time taken : 2.92 
+Training complete best top1/top5: 37.50%/76.56%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 2.22
+Client 2 Epoch [2/10]: train loss : 2.21
+Client 2 Epoch [3/10]: train loss : 2.21
+Client 2 Epoch [4/10]: train loss : 2.22
+Client 2 Epoch [5/10]: train loss : 2.20
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 23.44%
+                          test acc/top5 : 75.00%
+                          test loss : 2.22
+                          time taken : 2.95 
+Client 2 Epoch [6/10]: train loss : 2.22
+Client 2 Epoch [7/10]: train loss : 2.20
+Client 2 Epoch [8/10]: train loss : 2.22
+Client 2 Epoch [9/10]: train loss : 2.21
+Client 2 Epoch [10/10]: train loss : 2.22
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 21.88%
+                          test acc/top5 : 73.44%
+                          test loss : 2.23
+                          time taken : 2.92 
+Training complete best top1/top5: 21.88%/73.44%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 2.21
+Client 3 Epoch [2/10]: train loss : 2.21
+Client 3 Epoch [3/10]: train loss : 2.19
+Client 3 Epoch [4/10]: train loss : 2.20
+Client 3 Epoch [5/10]: train loss : 2.20
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.94%
+                          test acc/top5 : 76.56%
+                          test loss : 2.15
+                          time taken : 2.92 
+Client 3 Epoch [6/10]: train loss : 2.22
+Client 3 Epoch [7/10]: train loss : 2.22
+Client 3 Epoch [8/10]: train loss : 2.21
