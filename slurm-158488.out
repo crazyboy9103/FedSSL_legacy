@@ -1,0 +1,1526 @@
+Lower bound
+tee: lower/hyper_lower_bound_0.01_0.1_1_True.txt: No such file or directory
+2022-06-16 13:37:42.686718: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+/home/dongkyucho/FedSSL/sampling.py:49: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure(client_id)
+Experimental details:
+    Seed            : 2022
+    Dataset         : cifar
+    Model           : resnet18
+    Pretrained      : False
+    Optimizer       : sgd
+    Learning rate   : 0.001
+    Total Rounds    : 100
+    Alpha           : 0.9
+    Momentum        : 0.9
+    Weight decay    : 0.0001
+    Sup Warmup      : True
+    Server data frac: 0.01
+FL
+    Warmup          : False
+    Freeze          : True
+    Adapt Epochs    : 10
+    Warmup Epochs   : 30
+    Warmup Batchsize: 512
+Federated parameters:
+    Number of users                : 100
+    Fraction of users              : 0.05
+    Number of train items per user : 300
+    Local Batch size               : 32
+    Local Epochs                   : 10
+    Checkpoint path                : checkpoint.pth.tar
+    Tensorboard log path           : ./logs/FL/hyper/lower/0.01_0.1_1_True
+Files already downloaded and verified
+Files already downloaded and verified
+Files already downloaded and verified
+Linear evaluating FL model
+ 
+Avg Validation Stats after 1 global rounds:
+Validation Loss : 2.28
+Validation Accuracy: top1/top5 32.81%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 2 global rounds:
+Validation Loss : 2.28
+Validation Accuracy: top1/top5 31.25%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 3 global rounds:
+Validation Loss : 2.29
+Validation Accuracy: top1/top5 18.75%/48.44%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 4 global rounds:
+Validation Loss : 2.30
+Validation Accuracy: top1/top5 18.75%/45.31%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 5 global rounds:
+Validation Loss : 2.31
+Validation Accuracy: top1/top5 4.69%/43.75%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 6 global rounds:
+Validation Loss : 2.31
+Validation Accuracy: top1/top5 6.25%/43.75%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 7 global rounds:
+Validation Loss : 2.31
+Validation Accuracy: top1/top5 6.25%/29.69%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 8 global rounds:
+Validation Loss : 2.31
+Validation Accuracy: top1/top5 6.25%/42.19%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 9 global rounds:
+Validation Loss : 2.31
+Validation Accuracy: top1/top5 6.25%/42.19%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 10 global rounds:
+Validation Loss : 2.31
+Validation Accuracy: top1/top5 6.25%/42.19%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 11 global rounds:
+Validation Loss : 2.30
+Validation Accuracy: top1/top5 6.25%/43.75%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 12 global rounds:
+Validation Loss : 2.30
+Validation Accuracy: top1/top5 4.69%/45.31%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 13 global rounds:
+Validation Loss : 2.29
+Validation Accuracy: top1/top5 4.69%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 14 global rounds:
+Validation Loss : 2.29
+Validation Accuracy: top1/top5 7.81%/50.00%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 15 global rounds:
+Validation Loss : 2.28
+Validation Accuracy: top1/top5 20.31%/50.00%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 16 global rounds:
+Validation Loss : 2.28
+Validation Accuracy: top1/top5 20.31%/50.00%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 17 global rounds:
+Validation Loss : 2.27
+Validation Accuracy: top1/top5 20.31%/50.00%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 18 global rounds:
+Validation Loss : 2.27
+Validation Accuracy: top1/top5 20.31%/50.00%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 19 global rounds:
+Validation Loss : 2.27
+Validation Accuracy: top1/top5 20.31%/50.00%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 20 global rounds:
+Validation Loss : 2.27
+Validation Accuracy: top1/top5 18.75%/50.00%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 21 global rounds:
+Validation Loss : 2.27
+Validation Accuracy: top1/top5 18.75%/50.00%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 22 global rounds:
+Validation Loss : 2.27
+Validation Accuracy: top1/top5 18.75%/50.00%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 23 global rounds:
+Validation Loss : 2.27
+Validation Accuracy: top1/top5 18.75%/50.00%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 24 global rounds:
+Validation Loss : 2.27
+Validation Accuracy: top1/top5 6.25%/48.44%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 25 global rounds:
+Validation Loss : 2.28
+Validation Accuracy: top1/top5 4.69%/48.44%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 26 global rounds:
+Validation Loss : 2.28
+Validation Accuracy: top1/top5 4.69%/48.44%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 27 global rounds:
+Validation Loss : 2.28
+Validation Accuracy: top1/top5 4.69%/48.44%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 28 global rounds:
+Validation Loss : 2.28
+Validation Accuracy: top1/top5 4.69%/50.00%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 29 global rounds:
+Validation Loss : 2.28
+Validation Accuracy: top1/top5 6.25%/50.00%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 30 global rounds:
+Validation Loss : 2.28
+Validation Accuracy: top1/top5 6.25%/50.00%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 31 global rounds:
+Validation Loss : 2.28
+Validation Accuracy: top1/top5 7.81%/50.00%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 32 global rounds:
+Validation Loss : 2.28
+Validation Accuracy: top1/top5 7.81%/50.00%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 33 global rounds:
+Validation Loss : 2.29
+Validation Accuracy: top1/top5 7.81%/50.00%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 34 global rounds:
+Validation Loss : 2.29
+Validation Accuracy: top1/top5 7.81%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 35 global rounds:
+Validation Loss : 2.29
+Validation Accuracy: top1/top5 7.81%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 36 global rounds:
+Validation Loss : 2.29
+Validation Accuracy: top1/top5 7.81%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 37 global rounds:
+Validation Loss : 2.29
+Validation Accuracy: top1/top5 7.81%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 38 global rounds:
+Validation Loss : 2.29
+Validation Accuracy: top1/top5 7.81%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 39 global rounds:
+Validation Loss : 2.29
+Validation Accuracy: top1/top5 7.81%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 40 global rounds:
+Validation Loss : 2.30
+Validation Accuracy: top1/top5 7.81%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 41 global rounds:
+Validation Loss : 2.30
+Validation Accuracy: top1/top5 7.81%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 42 global rounds:
+Validation Loss : 2.30
+Validation Accuracy: top1/top5 6.25%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 43 global rounds:
+Validation Loss : 2.30
+Validation Accuracy: top1/top5 6.25%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 44 global rounds:
+Validation Loss : 2.30
+Validation Accuracy: top1/top5 6.25%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 45 global rounds:
+Validation Loss : 2.30
+Validation Accuracy: top1/top5 6.25%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 46 global rounds:
+Validation Loss : 2.30
+Validation Accuracy: top1/top5 6.25%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 47 global rounds:
+Validation Loss : 2.30
+Validation Accuracy: top1/top5 7.81%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 48 global rounds:
+Validation Loss : 2.31
+Validation Accuracy: top1/top5 7.81%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 49 global rounds:
+Validation Loss : 2.31
+Validation Accuracy: top1/top5 7.81%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 50 global rounds:
+Validation Loss : 2.31
+Validation Accuracy: top1/top5 7.81%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 51 global rounds:
+Validation Loss : 2.31
+Validation Accuracy: top1/top5 7.81%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 52 global rounds:
+Validation Loss : 2.31
+Validation Accuracy: top1/top5 7.81%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 53 global rounds:
+Validation Loss : 2.31
+Validation Accuracy: top1/top5 7.81%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 54 global rounds:
+Validation Loss : 2.31
+Validation Accuracy: top1/top5 7.81%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 55 global rounds:
+Validation Loss : 2.32
+Validation Accuracy: top1/top5 7.81%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 56 global rounds:
+Validation Loss : 2.32
+Validation Accuracy: top1/top5 9.38%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 57 global rounds:
+Validation Loss : 2.32
+Validation Accuracy: top1/top5 9.38%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 58 global rounds:
+Validation Loss : 2.32
+Validation Accuracy: top1/top5 9.38%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 59 global rounds:
+Validation Loss : 2.32
+Validation Accuracy: top1/top5 9.38%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 60 global rounds:
+Validation Loss : 2.32
+Validation Accuracy: top1/top5 9.38%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 61 global rounds:
+Validation Loss : 2.32
+Validation Accuracy: top1/top5 9.38%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 62 global rounds:
+Validation Loss : 2.32
+Validation Accuracy: top1/top5 9.38%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 63 global rounds:
+Validation Loss : 2.32
+Validation Accuracy: top1/top5 9.38%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 64 global rounds:
+Validation Loss : 2.32
+Validation Accuracy: top1/top5 9.38%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 65 global rounds:
+Validation Loss : 2.33
+Validation Accuracy: top1/top5 9.38%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 66 global rounds:
+Validation Loss : 2.33
+Validation Accuracy: top1/top5 9.38%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 67 global rounds:
+Validation Loss : 2.33
+Validation Accuracy: top1/top5 9.38%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 68 global rounds:
+Validation Loss : 2.33
+Validation Accuracy: top1/top5 9.38%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 69 global rounds:
+Validation Loss : 2.33
+Validation Accuracy: top1/top5 9.38%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 70 global rounds:
+Validation Loss : 2.33
+Validation Accuracy: top1/top5 10.94%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 71 global rounds:
+Validation Loss : 2.33
+Validation Accuracy: top1/top5 10.94%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 72 global rounds:
+Validation Loss : 2.33
+Validation Accuracy: top1/top5 10.94%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 73 global rounds:
+Validation Loss : 2.33
+Validation Accuracy: top1/top5 10.94%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 74 global rounds:
+Validation Loss : 2.33
+Validation Accuracy: top1/top5 10.94%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 75 global rounds:
+Validation Loss : 2.33
+Validation Accuracy: top1/top5 10.94%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 76 global rounds:
+Validation Loss : 2.33
+Validation Accuracy: top1/top5 10.94%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 77 global rounds:
+Validation Loss : 2.33
+Validation Accuracy: top1/top5 10.94%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 78 global rounds:
+Validation Loss : 2.33
+Validation Accuracy: top1/top5 10.94%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 79 global rounds:
+Validation Loss : 2.33
+Validation Accuracy: top1/top5 10.94%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 80 global rounds:
+Validation Loss : 2.33
+Validation Accuracy: top1/top5 10.94%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 81 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 10.94%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 82 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 10.94%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 83 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 10.94%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 84 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 10.94%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 85 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 10.94%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 86 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 10.94%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 87 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 10.94%/53.12%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 88 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 10.94%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 89 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 10.94%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 90 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 10.94%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 91 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 10.94%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 92 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 10.94%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 93 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 10.94%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 94 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 10.94%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 95 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 9.38%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 96 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 10.94%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 97 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 9.38%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 98 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 9.38%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 99 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 9.38%/51.56%
+
+Linear evaluating FL model
+ 
+Avg Validation Stats after 100 global rounds:
+Validation Loss : 2.34
+Validation Accuracy: top1/top5 9.38%/50.00%
+
+Upper bound IID
+tee: upper/hyper_upper_bound_0.01_iid_0.1_1_True.txt: No such file or directory
+2022-06-16 13:38:59.066589: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+/home/dongkyucho/FedSSL/sampling.py:49: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure(client_id)
+Experimental details:
+    Seed            : 2022
+    Dataset         : cifar
+    Model           : resnet18
+    Pretrained      : False
+    Optimizer       : sgd
+    Learning rate   : 0.001
+    Total Rounds    : 100
+    Alpha           : 50000.0
+    Momentum        : 0.9
+    Weight decay    : 0.0001
+    Sup Warmup      : True
+    Server data frac: 0.01
+FL
+    Warmup          : False
+    Freeze          : True
+    Adapt Epochs    : 10
+    Warmup Epochs   : 30
+    Warmup Batchsize: 512
+Federated parameters:
+    Number of users                : 100
+    Fraction of users              : 0.05
+    Number of train items per user : 300
+    Local Batch size               : 32
+    Local Epochs                   : 10
+    Checkpoint path                : checkpoint.pth.tar
+    Tensorboard log path           : ./logs/FL/hyper/upper/0.01_iid_0.1_1_True
+Files already downloaded and verified
+Files already downloaded and verified
+Files already downloaded and verified
+
+ | Global Training Round : 1 |
+
+Client 0 Epoch [1/10]: train loss : 2.31
+Client 0 Epoch [2/10]: train loss : 2.30
+Client 0 Epoch [3/10]: train loss : 2.30
+Client 0 Epoch [4/10]: train loss : 2.31
+Client 0 Epoch [5/10]: train loss : 2.30
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 15.62%
+                          test acc/top5 : 43.75%
+                          test loss : 2.30
+                          time taken : 7.88 
+Client 0 Epoch [6/10]: train loss : 2.31
+Client 0 Epoch [7/10]: train loss : 2.30
+Client 0 Epoch [8/10]: train loss : 2.30
+Client 0 Epoch [9/10]: train loss : 2.30
+Client 0 Epoch [10/10]: train loss : 2.30
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 14.06%
+                          test acc/top5 : 57.81%
+                          test loss : 2.31
+                          time taken : 3.76 
+Training complete best top1/top5: 14.06%/57.81%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : 2.30
+Client 1 Epoch [2/10]: train loss : 2.30
+Client 1 Epoch [3/10]: train loss : 2.31
+Client 1 Epoch [4/10]: train loss : 2.30
+Client 1 Epoch [5/10]: train loss : 2.30
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 15.62%
+                          test acc/top5 : 60.94%
+                          test loss : 2.31
+                          time taken : 3.75 
+Client 1 Epoch [6/10]: train loss : 2.30
+Client 1 Epoch [7/10]: train loss : 2.30
+Client 1 Epoch [8/10]: train loss : 2.30
+Client 1 Epoch [9/10]: train loss : 2.30
+Client 1 Epoch [10/10]: train loss : 2.29
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 28.12%
+                          test acc/top5 : 57.81%
+                          test loss : 2.27
+                          time taken : 3.77 
+Training complete best top1/top5: 28.12%/57.81%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 2.31
+Client 2 Epoch [2/10]: train loss : 2.31
+Client 2 Epoch [3/10]: train loss : 2.31
+Client 2 Epoch [4/10]: train loss : 2.30
+Client 2 Epoch [5/10]: train loss : 2.31
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 4.69%
+                          test acc/top5 : 53.12%
+                          test loss : 2.31
+                          time taken : 3.73 
+Client 2 Epoch [6/10]: train loss : 2.30
+Client 2 Epoch [7/10]: train loss : 2.30
+Client 2 Epoch [8/10]: train loss : 2.30
+Client 2 Epoch [9/10]: train loss : 2.30
+Client 2 Epoch [10/10]: train loss : 2.30
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.56%
+                          test acc/top5 : 62.50%
+                          test loss : 2.28
+                          time taken : 3.78 
+Training complete best top1/top5: 26.56%/62.50%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 2.30
+Client 3 Epoch [2/10]: train loss : 2.30
+Client 3 Epoch [3/10]: train loss : 2.31
+Client 3 Epoch [4/10]: train loss : 2.30
+Client 3 Epoch [5/10]: train loss : 2.31
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 4.69%
+                          test acc/top5 : 60.94%
+                          test loss : 2.29
+                          time taken : 3.73 
+Client 3 Epoch [6/10]: train loss : 2.30
+Client 3 Epoch [7/10]: train loss : 2.30
+Client 3 Epoch [8/10]: train loss : 2.30
+Client 3 Epoch [9/10]: train loss : 2.30
+Client 3 Epoch [10/10]: train loss : 2.30
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 20.31%
+                          test acc/top5 : 46.88%
+                          test loss : 2.29
+                          time taken : 3.77 
+Training complete best top1/top5: 20.31%/46.88%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 2.30
+Client 4 Epoch [2/10]: train loss : 2.30
+Client 4 Epoch [3/10]: train loss : 2.30
+Client 4 Epoch [4/10]: train loss : 2.30
+Client 4 Epoch [5/10]: train loss : 2.30
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 4.69%
+                          test acc/top5 : 60.94%
+                          test loss : 2.31
+                          time taken : 3.84 
+Client 4 Epoch [6/10]: train loss : 2.30
+Client 4 Epoch [7/10]: train loss : 2.30
+Client 4 Epoch [8/10]: train loss : 2.30
+Client 4 Epoch [9/10]: train loss : 2.30
+Client 4 Epoch [10/10]: train loss : 2.30
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 18.75%
+                          test acc/top5 : 50.00%
+                          test loss : 2.29
+                          time taken : 3.77 
+Training complete best top1/top5: 18.75%/50.00%
+client 4 updated
+missing keys []
+unexp keys []
+Traceback (most recent call last):
+  File "/home/dongkyucho/FedSSL/main.py", line 218, in <module>
+    state_dict, _, loss_avg, top1_avg, top5_avg = server_model.test(finetune=True, epochs=args.finetune_epochs)
+AttributeError: 'Namespace' object has no attribute 'finetune_epochs'
+srun: error: b01: task 0: Exited with exit code 1
+Upper bound non IID
+tee: upper/hyper_upper_bound_0.01_noniid_0.1_1_True.txt: No such file or directory
+2022-06-16 13:40:37.225658: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+/home/dongkyucho/FedSSL/sampling.py:49: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure(client_id)
+Experimental details:
+    Seed            : 2022
+    Dataset         : cifar
+    Model           : resnet18
+    Pretrained      : False
+    Optimizer       : sgd
+    Learning rate   : 0.001
+    Total Rounds    : 100
+    Alpha           : 0.1
+    Momentum        : 0.9
+    Weight decay    : 0.0001
+    Sup Warmup      : True
+    Server data frac: 0.01
+FL
+    Warmup          : False
+    Freeze          : True
+    Adapt Epochs    : 10
+    Warmup Epochs   : 30
+    Warmup Batchsize: 512
+Federated parameters:
+    Number of users                : 100
+    Fraction of users              : 0.05
+    Number of train items per user : 300
+    Local Batch size               : 32
+    Local Epochs                   : 10
+    Checkpoint path                : checkpoint.pth.tar
+    Tensorboard log path           : ./logs/FL/hyper/upper/0.01_noniid_0.1_1_True
+Files already downloaded and verified
+Files already downloaded and verified
+Files already downloaded and verified
+
+ | Global Training Round : 1 |
+
+Client 0 Epoch [1/10]: train loss : 2.34
+Client 0 Epoch [2/10]: train loss : 2.34
+Client 0 Epoch [3/10]: train loss : 2.33
+Client 0 Epoch [4/10]: train loss : 2.32
+Client 0 Epoch [5/10]: train loss : 2.30
+Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 6.25%
+                          test acc/top5 : 53.12%
+                          test loss : 2.31
+                          time taken : 6.64 
+Client 0 Epoch [6/10]: train loss : 2.29
+Client 0 Epoch [7/10]: train loss : 2.27
+Client 0 Epoch [8/10]: train loss : 2.24
+Client 0 Epoch [9/10]: train loss : 2.23
+Client 0 Epoch [10/10]: train loss : 2.20
+Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 4.69%
+                          test acc/top5 : 26.56%
+                          test loss : 2.34
+                          time taken : 3.69 
+Training complete best top1/top5: 4.69%/26.56%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : 2.24
+Client 1 Epoch [2/10]: train loss : 2.16
+Client 1 Epoch [3/10]: train loss : 2.02
+Client 1 Epoch [4/10]: train loss : 1.86
+Client 1 Epoch [5/10]: train loss : 1.74
+Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 3.12%
+                          test acc/top5 : 48.44%
+                          test loss : 2.39
+                          time taken : 3.75 
+Client 1 Epoch [6/10]: train loss : 1.66
+Client 1 Epoch [7/10]: train loss : 1.61
+Client 1 Epoch [8/10]: train loss : 1.59
+Client 1 Epoch [9/10]: train loss : 1.56
+Client 1 Epoch [10/10]: train loss : 1.55
+Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 3.12%
+                          test acc/top5 : 46.88%
+                          test loss : 2.42
+                          time taken : 3.69 
+Training complete best top1/top5: 3.12%/46.88%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 2.25
+Client 2 Epoch [2/10]: train loss : 2.19
+Client 2 Epoch [3/10]: train loss : 2.09
+Client 2 Epoch [4/10]: train loss : 1.96
+Client 2 Epoch [5/10]: train loss : 1.85
+Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 3.12%
+                          test acc/top5 : 31.25%
+                          test loss : 2.39
+                          time taken : 3.74 
+Client 2 Epoch [6/10]: train loss : 1.78
+Client 2 Epoch [7/10]: train loss : 1.74
+Client 2 Epoch [8/10]: train loss : 1.71
+Client 2 Epoch [9/10]: train loss : 1.67
+Client 2 Epoch [10/10]: train loss : 1.67
+Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 3.12%
+                          test acc/top5 : 56.25%
+                          test loss : 2.41
+                          time taken : 3.69 
+Training complete best top1/top5: 3.12%/56.25%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 2.32
+Client 3 Epoch [2/10]: train loss : 2.30
+Client 3 Epoch [3/10]: train loss : 2.28
+Client 3 Epoch [4/10]: train loss : 2.24
+Client 3 Epoch [5/10]: train loss : 2.17
+Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 4.69%
+                          test acc/top5 : 42.19%
+                          test loss : 2.34
+                          time taken : 3.74 
+Client 3 Epoch [6/10]: train loss : 2.11
+Client 3 Epoch [7/10]: train loss : 2.05
+Client 3 Epoch [8/10]: train loss : 1.96
+Client 3 Epoch [9/10]: train loss : 1.91
+Client 3 Epoch [10/10]: train loss : 1.85
+Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 3.12%
+                          test acc/top5 : 42.19%
+                          test loss : 2.39
+                          time taken : 3.68 
+Training complete best top1/top5: 3.12%/42.19%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 2.31
+Client 4 Epoch [2/10]: train loss : 2.29
+Client 4 Epoch [3/10]: train loss : 2.27
+Client 4 Epoch [4/10]: train loss : 2.23
+Client 4 Epoch [5/10]: train loss : 2.15
+Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 6.25%
+                          test acc/top5 : 60.94%
+                          test loss : 2.34
+                          time taken : 3.82 
+Client 4 Epoch [6/10]: train loss : 2.06
+Client 4 Epoch [7/10]: train loss : 1.98
+Client 4 Epoch [8/10]: train loss : 1.93
+Client 4 Epoch [9/10]: train loss : 1.87
+Client 4 Epoch [10/10]: train loss : 1.84
+Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 3.12%
+                          test acc/top5 : 45.31%
+                          test loss : 2.40
+                          time taken : 3.73 
+Training complete best top1/top5: 3.12%/45.31%
+client 4 updated
+missing keys []
+unexp keys []
+Traceback (most recent call last):
+  File "/home/dongkyucho/FedSSL/main.py", line 218, in <module>
+    state_dict, _, loss_avg, top1_avg, top5_avg = server_model.test(finetune=True, epochs=args.finetune_epochs)
+AttributeError: 'Namespace' object has no attribute 'finetune_epochs'
+srun: error: b01: task 0: Exited with exit code 1
+SimCLR IID
+tee: simclr/hyper_simclr_0.01_iid_0.1_1_True.txt: No such file or directory
+2022-06-16 13:42:04.470562: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+/home/dongkyucho/FedSSL/sampling.py:49: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure(client_id)
+Experimental details:
+    Seed            : 2022
+    Dataset         : cifar
+    Model           : resnet18
+    Pretrained      : False
+    Optimizer       : sgd
+    Learning rate   : 0.001
+    Total Rounds    : 100
+    Alpha           : 50000.0
+    Momentum        : 0.9
+    Weight decay    : 0.0001
+    Sup Warmup      : True
+    Server data frac: 0.01
+SimCLR
+    Warmup          : False
+    Freeze          : True
+    Adapt Epochs    : 10
+    Warmup Epochs   : 30
+    Warmup Batchsize: 512
+    Temperature     : 0.1
+    Output dim      : 512
+    N views         : 2
+Federated parameters:
+    Number of users                : 100
+    Fraction of users              : 0.05
+    Number of train items per user : 300
+    Local Batch size               : 32
+    Local Epochs                   : 10
+    Checkpoint path                : checkpoint.pth.tar
+    Tensorboard log path           : ./logs/simclr/hyper/0.01_iid_0.1_1_True
+Files already downloaded and verified
+Files already downloaded and verified
+Files already downloaded and verified
+
+ | Global Training Round : 1 |
+
+Client 0 Epoch [1/10]: train loss : 7.04
+Client 0 Epoch [2/10]: train loss : 6.80
+Client 0 Epoch [3/10]: train loss : 6.69
+Client 0 Epoch [4/10]: train loss : 6.49
+Client 0 Epoch [5/10]: train loss : 5.84
+Linear evaluating simclr model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 4.69%
+                          test acc/top5 : 34.38%
+                          test loss : 2.30
+                          time taken : 9.73 
+Client 0 Epoch [6/10]: train loss : 6.04
+Client 0 Epoch [7/10]: train loss : 5.87
+Client 0 Epoch [8/10]: train loss : 6.01
+Client 0 Epoch [9/10]: train loss : 5.41
+Client 0 Epoch [10/10]: train loss : 5.08
+Linear evaluating simclr model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 4.69%
+                          test acc/top5 : 37.50%
+                          test loss : 2.30
+                          time taken : 3.68 
+Training complete best top1/top5: 4.69%/37.50%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : 7.26
+Client 1 Epoch [2/10]: train loss : 6.90
+Client 1 Epoch [3/10]: train loss : 6.66
+Client 1 Epoch [4/10]: train loss : 6.40
+Client 1 Epoch [5/10]: train loss : 6.19
+Linear evaluating simclr model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 0.00%
+                          test acc/top5 : 39.06%
+                          test loss : 2.30
+                          time taken : 3.70 
+Client 1 Epoch [6/10]: train loss : 6.13
+Client 1 Epoch [7/10]: train loss : 5.85
+Client 1 Epoch [8/10]: train loss : 5.62
+Client 1 Epoch [9/10]: train loss : 5.33
+Client 1 Epoch [10/10]: train loss : 5.24
+Linear evaluating simclr model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 17.19%
+                          test acc/top5 : 31.25%
+                          test loss : 2.30
+                          time taken : 3.74 
+Training complete best top1/top5: 17.19%/31.25%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 7.27
+Client 2 Epoch [2/10]: train loss : 7.11
+Client 2 Epoch [3/10]: train loss : 6.93
+Client 2 Epoch [4/10]: train loss : 6.73
+Client 2 Epoch [5/10]: train loss : 6.46
+Linear evaluating simclr model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 0.00%
+                          test acc/top5 : 39.06%
+                          test loss : 2.30
+                          time taken : 3.81 
+Client 2 Epoch [6/10]: train loss : 6.02
+Client 2 Epoch [7/10]: train loss : 6.00
+Client 2 Epoch [8/10]: train loss : 5.83
+Client 2 Epoch [9/10]: train loss : 5.64
+Client 2 Epoch [10/10]: train loss : 5.49
+Linear evaluating simclr model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 4.69%
+                          test acc/top5 : 46.88%
+                          test loss : 2.30
+                          time taken : 3.77 
+Training complete best top1/top5: 4.69%/46.88%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 7.14
+Client 3 Epoch [2/10]: train loss : 6.73
+Client 3 Epoch [3/10]: train loss : 6.56
+Client 3 Epoch [4/10]: train loss : 6.32
+Client 3 Epoch [5/10]: train loss : 6.27
+Linear evaluating simclr model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 6.25%
+                          test acc/top5 : 76.56%
+                          test loss : 2.30
+                          time taken : 3.74 
+Client 3 Epoch [6/10]: train loss : 6.15
+Client 3 Epoch [7/10]: train loss : 5.77
+Client 3 Epoch [8/10]: train loss : 5.64
+Client 3 Epoch [9/10]: train loss : 5.42
+Client 3 Epoch [10/10]: train loss : 5.26
+Linear evaluating simclr model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 3.12%
+                          test acc/top5 : 50.00%
+                          test loss : 2.30
+                          time taken : 3.77 
+Training complete best top1/top5: 3.12%/50.00%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 7.24
+Client 4 Epoch [2/10]: train loss : 6.97
+Client 4 Epoch [3/10]: train loss : 6.60
+Client 4 Epoch [4/10]: train loss : 6.62
+Client 4 Epoch [5/10]: train loss : 6.34
+Linear evaluating simclr model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 3.12%
+                          test acc/top5 : 51.56%
+                          test loss : 2.30
+                          time taken : 3.76 
+Client 4 Epoch [6/10]: train loss : 6.07
+Client 4 Epoch [7/10]: train loss : 5.89
+Client 4 Epoch [8/10]: train loss : 5.84
+Client 4 Epoch [9/10]: train loss : 5.84
+Client 4 Epoch [10/10]: train loss : 5.66
+Linear evaluating simclr model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 10.94%
+                          test acc/top5 : 37.50%
+                          test loss : 2.31
+                          time taken : 3.70 
+Training complete best top1/top5: 10.94%/37.50%
+client 4 updated
+missing keys []
+unexp keys []
+Traceback (most recent call last):
+  File "/home/dongkyucho/FedSSL/main.py", line 218, in <module>
+    state_dict, _, loss_avg, top1_avg, top5_avg = server_model.test(finetune=True, epochs=args.finetune_epochs)
+AttributeError: 'Namespace' object has no attribute 'finetune_epochs'
+srun: error: b01: task 0: Exited with exit code 1
+SimCLR non IID
+tee: simclr/hyper_simclr_0.01_noniid_0.1_1_True.txt: No such file or directory
+2022-06-16 13:44:00.759664: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+/home/dongkyucho/FedSSL/sampling.py:49: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure(client_id)
+Experimental details:
+    Seed            : 2022
+    Dataset         : cifar
+    Model           : resnet18
+    Pretrained      : False
+    Optimizer       : sgd
+    Learning rate   : 0.001
+    Total Rounds    : 100
+    Alpha           : 0.1
+    Momentum        : 0.9
+    Weight decay    : 0.0001
+    Sup Warmup      : True
+    Server data frac: 0.01
+SimCLR
+    Warmup          : False
+    Freeze          : True
+    Adapt Epochs    : 10
+    Warmup Epochs   : 30
+    Warmup Batchsize: 512
+    Temperature     : 0.1
+    Output dim      : 512
+    N views         : 2
+Federated parameters:
+    Number of users                : 100
+    Fraction of users              : 0.05
+    Number of train items per user : 300
+    Local Batch size               : 32
+    Local Epochs                   : 10
+    Checkpoint path                : checkpoint.pth.tar
+    Tensorboard log path           : ./logs/simclr/hyper/0.01_noniid_0.1_1_True
+Files already downloaded and verified
+Files already downloaded and verified
+Files already downloaded and verified
+
+ | Global Training Round : 1 |
+
+Client 0 Epoch [1/10]: train loss : 7.23
+Client 0 Epoch [2/10]: train loss : 6.88
+Client 0 Epoch [3/10]: train loss : 6.92
+Client 0 Epoch [4/10]: train loss : 6.49
+Client 0 Epoch [5/10]: train loss : 6.25
+Linear evaluating simclr model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.38%
+                          test acc/top5 : 51.56%
+                          test loss : 2.30
+                          time taken : 6.68 
+Client 0 Epoch [6/10]: train loss : 6.18
+Client 0 Epoch [7/10]: train loss : 5.89
+Client 0 Epoch [8/10]: train loss : 5.63
+Client 0 Epoch [9/10]: train loss : 5.54
+Client 0 Epoch [10/10]: train loss : 5.32
+Linear evaluating simclr model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 18.75%
+                          test acc/top5 : 50.00%
+                          test loss : 2.30
+                          time taken : 3.49 
+Training complete best top1/top5: 18.75%/50.00%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : 7.11
+Client 1 Epoch [2/10]: train loss : 6.91
+Client 1 Epoch [3/10]: train loss : 6.63
+Client 1 Epoch [4/10]: train loss : 6.34
+Client 1 Epoch [5/10]: train loss : 5.99
+Linear evaluating simclr model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 20.31%
+                          test acc/top5 : 57.81%
+                          test loss : 2.30
+                          time taken : 3.59 
+Client 1 Epoch [6/10]: train loss : 5.97
+Client 1 Epoch [7/10]: train loss : 5.67
+Client 1 Epoch [8/10]: train loss : 5.51
+Client 1 Epoch [9/10]: train loss : 5.22
+Client 1 Epoch [10/10]: train loss : 5.28
+Linear evaluating simclr model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.38%
+                          test acc/top5 : 65.62%
+                          test loss : 2.30
+                          time taken : 3.52 
+Training complete best top1/top5: 9.38%/65.62%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 7.09
+Client 2 Epoch [2/10]: train loss : 6.90
+Client 2 Epoch [3/10]: train loss : 6.44
+Client 2 Epoch [4/10]: train loss : 6.37
+Client 2 Epoch [5/10]: train loss : 6.01
+Linear evaluating simclr model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.38%
+                          test acc/top5 : 67.19%
+                          test loss : 2.30
+                          time taken : 3.49 
+Client 2 Epoch [6/10]: train loss : 5.82
+Client 2 Epoch [7/10]: train loss : 5.78
+Client 2 Epoch [8/10]: train loss : 5.72
+Client 2 Epoch [9/10]: train loss : 5.33
+Client 2 Epoch [10/10]: train loss : 5.08
+Linear evaluating simclr model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.94%
+                          test acc/top5 : 68.75%
+                          test loss : 2.29
+                          time taken : 3.53 
+Training complete best top1/top5: 35.94%/68.75%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : 7.49
+Client 3 Epoch [2/10]: train loss : 7.35
+Client 3 Epoch [3/10]: train loss : 7.23
+Client 3 Epoch [4/10]: train loss : 6.95
+Client 3 Epoch [5/10]: train loss : 6.91
+Linear evaluating simclr model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 3.12%
+                          test acc/top5 : 31.25%
+                          test loss : 2.31
+                          time taken : 3.53 
+Client 3 Epoch [6/10]: train loss : 6.66
+Client 3 Epoch [7/10]: train loss : 6.80
+Client 3 Epoch [8/10]: train loss : 6.55
+Client 3 Epoch [9/10]: train loss : 6.23
+Client 3 Epoch [10/10]: train loss : 6.15
+Linear evaluating simclr model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 1.56%
+                          test acc/top5 : 35.94%
+                          test loss : 2.31
+                          time taken : 3.50 
+Training complete best top1/top5: 1.56%/35.94%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 7.36
+Client 4 Epoch [2/10]: train loss : 7.21
+Client 4 Epoch [3/10]: train loss : 6.91
+Client 4 Epoch [4/10]: train loss : 6.55
+Client 4 Epoch [5/10]: train loss : 6.43
+Linear evaluating simclr model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 4.69%
+                          test acc/top5 : 54.69%
+                          test loss : 2.30
+                          time taken : 3.59 
+Client 4 Epoch [6/10]: train loss : 6.10
+Client 4 Epoch [7/10]: train loss : 5.98
+Client 4 Epoch [8/10]: train loss : 5.94
+Client 4 Epoch [9/10]: train loss : 5.96
+Client 4 Epoch [10/10]: train loss : 5.82
+Linear evaluating simclr model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 20.31%
+                          test acc/top5 : 67.19%
+                          test loss : 2.30
+                          time taken : 3.54 
+Training complete best top1/top5: 20.31%/67.19%
+client 4 updated
+missing keys []
+unexp keys []
+Traceback (most recent call last):
+  File "/home/dongkyucho/FedSSL/main.py", line 218, in <module>
+    state_dict, _, loss_avg, top1_avg, top5_avg = server_model.test(finetune=True, epochs=args.finetune_epochs)
+AttributeError: 'Namespace' object has no attribute 'finetune_epochs'
+srun: error: b01: task 0: Exited with exit code 1
+Simsiam IID
+tee: simsiam/hyper_simsiam_0.01_iid_0.1_1_True.txt: No such file or directory
+2022-06-16 13:45:19.600828: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+/home/dongkyucho/FedSSL/sampling.py:49: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure(client_id)
+Experimental details:
+    Seed            : 2022
+    Dataset         : cifar
+    Model           : resnet18
+    Pretrained      : False
+    Optimizer       : sgd
+    Learning rate   : 0.001
+    Total Rounds    : 100
+    Alpha           : 50000.0
+    Momentum        : 0.9
+    Weight decay    : 0.0001
+    Sup Warmup      : True
+    Server data frac: 0.01
+SimSiam
+    Warmup          : False
+    Freeze          : True
+    Adapt Epochs    : 10
+    Warmup Epochs   : 30
+    Warmup Batchsize: 512
+    Output dim      : 512
+    Pred   dim      : 256
+Federated parameters:
+    Number of users                : 100
+    Fraction of users              : 0.05
+    Number of train items per user : 300
+    Local Batch size               : 32
+    Local Epochs                   : 10
+    Checkpoint path                : checkpoint.pth.tar
+    Tensorboard log path           : ./logs/simsiam/hyper/0.01_iid_0.1_1_True
+Files already downloaded and verified
+Files already downloaded and verified
+Files already downloaded and verified
+
+ | Global Training Round : 1 |
+
+Client 0 Epoch [1/10]: train loss : 0.00
+Client 0 Epoch [2/10]: train loss : -0.00
+Client 0 Epoch [3/10]: train loss : 0.00
+Client 0 Epoch [4/10]: train loss : 0.00
+Client 0 Epoch [5/10]: train loss : -0.00
+Linear evaluating simsiam model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 14.06%
+                          test acc/top5 : 51.56%
+                          test loss : 2.29
+                          time taken : 6.96 
+Client 0 Epoch [6/10]: train loss : 0.00
+Client 0 Epoch [7/10]: train loss : -0.00
+Client 0 Epoch [8/10]: train loss : 0.00
+Client 0 Epoch [9/10]: train loss : -0.00
+Client 0 Epoch [10/10]: train loss : 0.00
+Linear evaluating simsiam model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 17.19%
+                          test acc/top5 : 48.44%
+                          test loss : 2.29
+                          time taken : 3.86 
+Training complete best top1/top5: 17.19%/48.44%
+client 0 updated
+Client 1 Epoch [1/10]: train loss : -0.00
+Client 1 Epoch [2/10]: train loss : 0.00
+Client 1 Epoch [3/10]: train loss : -0.00
+Client 1 Epoch [4/10]: train loss : -0.00
+Client 1 Epoch [5/10]: train loss : 0.00
+Linear evaluating simsiam model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 29.69%
+                          test acc/top5 : 53.12%
+                          test loss : 2.28
+                          time taken : 3.89 
+Client 1 Epoch [6/10]: train loss : -0.00
+Client 1 Epoch [7/10]: train loss : -0.00
+Client 1 Epoch [8/10]: train loss : -0.00
+Client 1 Epoch [9/10]: train loss : 0.00
+Client 1 Epoch [10/10]: train loss : 0.00
+Linear evaluating simsiam model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 15.62%
+                          test acc/top5 : 56.25%
+                          test loss : 2.29
+                          time taken : 3.91 
+Training complete best top1/top5: 15.62%/56.25%
+client 1 updated
+Client 2 Epoch [1/10]: train loss : 0.00
+Client 2 Epoch [2/10]: train loss : 0.00
+Client 2 Epoch [3/10]: train loss : -0.00
+Client 2 Epoch [4/10]: train loss : -0.00
+Client 2 Epoch [5/10]: train loss : -0.00
+Linear evaluating simsiam model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 12.50%
+                          test acc/top5 : 48.44%
+                          test loss : 2.30
+                          time taken : 4.00 
+Client 2 Epoch [6/10]: train loss : -0.00
+Client 2 Epoch [7/10]: train loss : -0.00
+Client 2 Epoch [8/10]: train loss : -0.00
+Client 2 Epoch [9/10]: train loss : 0.00
+Client 2 Epoch [10/10]: train loss : -0.00
+Linear evaluating simsiam model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 18.75%
+                          test acc/top5 : 60.94%
+                          test loss : 2.28
+                          time taken : 3.96 
+Training complete best top1/top5: 18.75%/60.94%
+client 2 updated
+Client 3 Epoch [1/10]: train loss : -0.00
+Client 3 Epoch [2/10]: train loss : 0.00
+Client 3 Epoch [3/10]: train loss : 0.00
+Client 3 Epoch [4/10]: train loss : -0.00
+Client 3 Epoch [5/10]: train loss : -0.00
+Linear evaluating simsiam model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 4.69%
+                          test acc/top5 : 82.81%
+                          test loss : 2.29
+                          time taken : 3.81 
+Client 3 Epoch [6/10]: train loss : -0.00
+Client 3 Epoch [7/10]: train loss : 0.00
+Client 3 Epoch [8/10]: train loss : 0.00
+Client 3 Epoch [9/10]: train loss : -0.00
+Client 3 Epoch [10/10]: train loss : 0.00
+Linear evaluating simsiam model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 15.62%
+                          test acc/top5 : 65.62%
+                          test loss : 2.28
+                          time taken : 3.88 
+Training complete best top1/top5: 15.62%/65.62%
+client 3 updated
+Client 4 Epoch [1/10]: train loss : 0.00
+Client 4 Epoch [2/10]: train loss : 0.00
+Client 4 Epoch [3/10]: train loss : -0.00
+Client 4 Epoch [4/10]: train loss : 0.00
+Client 4 Epoch [5/10]: train loss : 0.00
+Linear evaluating simsiam model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 6.25%
+                          test acc/top5 : 42.19%
+                          test loss : 2.31
+                          time taken : 3.99 
+Client 4 Epoch [6/10]: train loss : -0.00
+Client 4 Epoch [7/10]: train loss : 0.00
+Client 4 Epoch [8/10]: train loss : -0.00
+Client 4 Epoch [9/10]: train loss : 0.00
+Client 4 Epoch [10/10]: train loss : -0.00
+Linear evaluating simsiam model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 14.06%
+                          test acc/top5 : 54.69%
+                          test loss : 2.30
+                          time taken : 3.92 
+Training complete best top1/top5: 14.06%/54.69%
+client 4 updated
+missing keys []
+unexp keys []
+Traceback (most recent call last):
+  File "/home/dongkyucho/FedSSL/main.py", line 218, in <module>
+    state_dict, _, loss_avg, top1_avg, top5_avg = server_model.test(finetune=True, epochs=args.finetune_epochs)
+AttributeError: 'Namespace' object has no attribute 'finetune_epochs'
+srun: error: b01: task 0: Exited with exit code 1
+Simsiam non IID
+tee: simsiam/hyper_simsiam_0.01_noniid_0.1_1_True.txt: No such file or directory
+2022-06-16 13:46:44.876708: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+/home/dongkyucho/FedSSL/sampling.py:49: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure(client_id)
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 158488.6 ON b01 CANCELLED AT 2022-06-16T13:47:05 ***
+slurmstepd: error: *** JOB 158488 ON b01 CANCELLED AT 2022-06-16T13:47:05 ***
