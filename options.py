@@ -77,7 +77,7 @@ def args_parser():
     parser.add_argument('--data_path',   type=str,   default="./data",             help="path to dataset")
     parser.add_argument('--train_device', type=str,  default="0",                  help="gpu device number for train")
     parser.add_argument('--test_device', type=str,   default="0",                  help="gpu device number for test")
-    
+    parser.add_argument('--finetune_epoch',        type=int,   default=10,                 help='finetune epochs at server')
 
     args = parser.parse_args()
     
