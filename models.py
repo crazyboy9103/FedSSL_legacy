@@ -8,66 +8,75 @@ from torchvision import models
 import copy 
 import torch
 
-            
-class ResNet50(nn.Module):
-    def __init__(self, pretrained, out_dim, exp, mode, freeze, pred_dim = None, num_classes = 10):
-        super(ResNet50, self).__init__()
-        self.backbone = models.resnet50(pretrained=pretrained)
-        mlp_dim = self.backbone.fc.in_features
+
+class ResNet_model(nn.Module):
+    def __init__(self, args):
+        super(ResNet_model, self).__init__()
         
-        self.exp = exp
-        self.freeze = freeze
+        
+        out_dim = args.out_dim 
+        pred_dim = args.pred_dim
+        num_classes = args.num_classes
+        
+        models_dict = {"resnet18": models.resnet18, "resnet50": models.resnet50}
+        
+        self.exp = args.exp
+        self.freeze = args.freeze
         
         if self.exp == "simclr":
+            self.backbone = models_dict[args.model](pretrained=args.pretrained)
+            in_features = self.backbone.fc.in_features
+            
             self.backbone.fc = nn.Sequential(
-                nn.Linear(mlp_dim, mlp_dim), 
+                nn.Linear(in_features, in_features, bias=True), 
                 nn.ReLU(), 
-                nn.Linear(mlp_dim, out_dim), 
+                nn.Linear(in_features, out_dim, bias=True), 
             )
             
             self.predictor = nn.Sequential(
-                nn.Linear(out_dim, num_classes), 
+                nn.Linear(out_dim, num_classes, bias=True), 
                 nn.Softmax(dim=-1)
             )
         elif self.exp == "simsiam":
+            self.backbone = models_dict[args.model](pretrained=args.pretrained)
+            in_features = self.backbone.fc.in_features
             assert pred_dim != None
             self.backbone.fc = nn.Sequential(
-                nn.Linear(mlp_dim, out_dim, bias=False), 
+                nn.Linear(in_features, out_dim, bias=False), 
                 nn.BatchNorm1d(out_dim), 
-                nn.ReLU(inplace=True), 
-                nn.Linear(out_dim, mlp_dim, bias=False), 
-                nn.BatchNorm1d(mlp_dim), 
-                nn.ReLU(inplace=True), 
-                self.backbone.fc,
-                #nn.Linear(mlp_dim, out_dim, bias=False), 
+                nn.ReLU(), 
+                nn.Linear(out_dim, in_features, bias=False), 
+                nn.BatchNorm1d(in_features), 
+                nn.ReLU(), 
+                nn.Linear(in_features, out_dim, bias=False),
                 nn.BatchNorm1d(out_dim, affine=False)
             )
-
-            # Remove bias as it's followed by BN
-            #self.backbone.classifier[6].bias.requires_grad = False
 
             self.projector = nn.Sequential(
                 nn.Linear(out_dim, pred_dim, bias=False), 
                 nn.BatchNorm1d(pred_dim), 
-                nn.ReLU(inplace=True), 
+                nn.ReLU(), 
                 nn.Linear(pred_dim, out_dim)
             )
             
             self.predictor = nn.Sequential(
-                nn.Linear(out_dim, num_classes),
+                nn.Linear(out_dim, num_classes, bias=True),
                 nn.Softmax(dim=-1)
             )
             
             
         elif self.exp == "FL":
+            self.backbone = models_dict[args.model](pretrained=args.pretrained)
+            in_features = self.backbone.fc.in_features
             self.backbone.fc = nn.Identity()
             
             self.predictor = nn.Sequential(
-                nn.Linear(mlp_dim, num_classes), 
+                nn.Linear(in_features, num_classes, bias=True), 
                 nn.Softmax(dim=-1)
             )
         
-        self.set_mode(mode)
+        # By default train
+        self.set_mode("train")
             
     def set_mode(self, mode):
         self.mode = mode
@@ -105,9 +114,7 @@ class ResNet50(nn.Module):
             else:
                 return self.predictor(self.backbone(x1))
         
-        elif self.mode == "train":
-            # self.backbone.train()
-            
+        elif self.mode == "train":           
             if self.exp == "simclr":
                 return self.backbone(x1)
             
@@ -122,121 +129,8 @@ class ResNet50(nn.Module):
         
             elif self.exp == "FL":
                 return self.predictor(self.backbone(x1))
-        
-class ResNet18(nn.Module):
-    def __init__(self, pretrained, out_dim, exp, mode, freeze, pred_dim = None, num_classes = 10):
-        super(ResNet18, self).__init__()
-        self.backbone = models.resnet18(pretrained=pretrained)
-        mlp_dim = self.backbone.fc.in_features
-        
-        self.exp = exp
-        self.freeze = freeze
-        
-        
-        if self.exp == "simclr":
-            self.backbone.fc = nn.Sequential(
-                nn.Linear(mlp_dim, mlp_dim), 
-                nn.ReLU(), 
-                nn.Linear(mlp_dim, out_dim), 
-            )
-            
-            self.predictor = nn.Sequential(
-                nn.Linear(out_dim, num_classes),
-                nn.Softmax(dim=-1)
-            )
-        elif self.exp == "simsiam":
-            assert pred_dim != None
-            self.backbone.fc = nn.Sequential(
-                nn.Linear(mlp_dim, out_dim, bias=False), 
-                nn.BatchNorm1d(out_dim), 
-                nn.ReLU(inplace=True), 
-                nn.Linear(out_dim, mlp_dim, bias=False), 
-                nn.BatchNorm1d(mlp_dim), 
-                nn.ReLU(inplace=True), 
-                nn.Linear(mlp_dim, out_dim, bias=False), 
-                nn.BatchNorm1d(out_dim, affine=False)
-            )
-
-            # Remove bias as it's followed by BN
-            #self.backbone.classifier[6].bias.requires_grad = False
-
-            self.projector = nn.Sequential(
-                nn.Linear(out_dim, pred_dim), 
-                nn.BatchNorm1d(pred_dim), 
-                nn.ReLU(inplace=True), 
-                nn.Linear(pred_dim, out_dim)
-            )
-            
-            self.predictor = nn.Sequential(
-                nn.Linear(out_dim, num_classes),
-                nn.Softmax(dim=-1)
-            )
-            
-        elif self.exp == "FL":
-            self.backbone.fc = nn.Identity()
-            
-            self.predictor = nn.Sequential(
-                nn.Linear(mlp_dim, num_classes),
-                nn.Softmax(dim=-1)
-            )
-            
-        self.set_mode(mode)
-        
-    def set_mode(self, mode):
-        self.mode = mode
-        if mode == "linear":
-            if self.freeze:
-                for param in self.backbone.parameters():
-                    param.requires_grad = False
-                
-                self.backbone.eval()
-            
-            else:
-                for param in self.backbone.parameters():
-                    param.requires_grad = True
-                
-                self.backbone.train()
-            
-            
-        elif mode == "train":
-            for param in self.backbone.parameters():
-                param.requires_grad = True
-            
-            self.backbone.train()
-        
-        for param in self.predictor.parameters():
-            param.requires_grad = True
-        
-        self.predictor.train()
-            
-    
-    def forward(self, x1, x2 = None):
-        if self.mode == "linear":
-            if self.freeze:
-                with torch.no_grad():
-                    z1 = self.backbone(x1)
-                return self.predictor(z1)
-            
-            else:
-                return self.predictor(self.backbone(x1))
-        
-        elif self.mode == "train":
-            # self.backbone.train()
-            if self.exp == "simclr":
-                return self.backbone(x1)
-            
-            elif self.exp == "simsiam":
-                z1 = self.backbone(x1)
-                z2 = self.backbone(x2)
-
-                p1 = self.projector(z1)
-                p2 = self.projector(z2)
-        
-                return p1, p2, z1.detach(), z2.detach()
-        
-            elif self.exp == "FL":
-                return self.predictor(self.backbone(x1))
-
+               
+##########################################################################################
 
 # Orchestra Clustering function
 def sknopp(cZ, lamb=25, max_iters=100):

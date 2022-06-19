@@ -27,7 +27,8 @@ class Trainer():
         self.exp = args.exp
         self.temperature = args.temperature
         self.local_epochs = args.local_ep
-        
+        self.device = device
+        self.client_id = client_id
         self.model = model.to(device)
         
         self.optim_dict = {
@@ -40,8 +41,8 @@ class Trainer():
         self.train_loader = train_loader
         self.test_loader = test_loader
         self.warmup_loader = warmup_loader
-        self.device = device
-        self.client_id = client_id
+        
+
         
         self.FL_criterion = nn.CrossEntropyLoss().to(self.device)
         self.SimCLR_criterion = nn.CrossEntropyLoss(reduction="mean").to(self.device)
@@ -49,7 +50,14 @@ class Trainer():
 
         
     def simsiam_loss(self, p1, p2, z1, z2):
+#         p1, p2 = F.normalize(p1, dim=1), F.normalize(p2, dim=1)
+#         z1, z2 = F.normalize(z1, dim=1), F.normalize(z2, dim=1)
+        
+#         loss = -(p1*z2).sum(dim=1).mean()-(p2*z1).sum(dim=1).mean()
         loss = -(self.SimSiam_criterion(p1, z2).mean() + self.SimSiam_criterion(p2, z1).mean()) * 0.5
+        
+        #print("orig loss", loss)
+        #print("test loss", test_loss)
         return loss
     
     def nce_loss(self, features):
@@ -83,8 +91,6 @@ class Trainer():
     
     def train(self):
         self.model.set_mode("train") # change to train mode (requires_grad = False for backbone if freeze=True)
-        self.model.to(self.device)
-        self.model.train()
         
         optimizer = self.optim_dict[self.args.optimizer](
             self.model.parameters(),
@@ -96,6 +102,8 @@ class Trainer():
             running_loss = AverageMeter("loss")
             
             for batch_idx, (images, labels) in enumerate(self.train_loader):
+                optimizer.zero_grad()
+            
                 if self.exp == "FL":
                     images = images.to(self.device)
                     labels = labels.to(self.device)
@@ -119,8 +127,6 @@ class Trainer():
                     angles = labels.to(self.device)
                     loss = self.model(images[0], images[1], images[2], angles)
 
-                optimizer.zero_grad()
-                #loss.requires_grad_(True)
                 loss.backward()
                 optimizer.step()
                 
@@ -136,7 +142,7 @@ class Trainer():
             lr = optimizer.param_groups[0]['lr']
             if (epoch+1)%5 == 0:
                 # Test metrics
-                _, _, test_loss, test_top1, test_top5 = self.test()
+                _, test_loss, test_top1, test_top5 = self.test(finetune=False, epochs=1)
                 
                 end = time.time()
                 time_taken = end-start
@@ -155,8 +161,7 @@ class Trainer():
                     "top5": test_top5,
                     ########## Keondo: I think below part should be changed as below ##########
                     ## Client should not have access to the test data
-                    "model": copy.deepcopy(self.model.state_dict()),
-                    "optim": copy.deepcopy(optimizer.state_dict())
+                    "model": copy.deepcopy(self.model.state_dict())
                     #"model": eval_model_state, 
                     #"optim": optim_state
                 }
@@ -170,7 +175,6 @@ class Trainer():
         print(f"Linear evaluating {self.exp} model")
         eval_model = copy.deepcopy(self.model)
         eval_model.set_mode("linear")
-        eval_model.train()
         eval_model = eval_model.to(self.device)
         optimizer = optim.Adam(
             eval_model.parameters(),
@@ -184,19 +188,47 @@ class Trainer():
         running_top5 = AverageMeter("acc/top5")
         for epoch in range(epochs):
             for batch_idx, (images, labels) in enumerate(self.test_loader):
-                if finetune and batch_idx < int(0.5 * N):
-                    images = images.to(self.device)
-                    labels = labels.to(self.device)
+                if finetune:
+                    if batch_idx < int(0.5 * N):
+                        optimizer.zero_grad()
 
-                    preds = eval_model(images)
-                    loss = self.FL_criterion(preds, labels) # FL_criterion is standard CE
-                    #loss.requires_grad_(True)
-                    optimizer.zero_grad()
-                    loss.backward()
-                    optimizer.step()
+                        images = images.to(self.device)
+                        labels = labels.to(self.device)
 
-                # Testing
-                elif batch_idx >= int(0.5 * N):
+                        preds = eval_model(images)
+                        loss = self.FL_criterion(preds, labels) # FL_criterion is standard CE
+                        #loss.requires_grad_(True)
+
+                        loss.backward()
+                        optimizer.step()
+                    # Testing
+                    elif batch_idx >= int(0.5 * N):
+                        with torch.no_grad():
+                            images = images.to(self.device)
+                            labels = labels.to(self.device)
+
+                            preds = eval_model(images)
+                            loss = self.FL_criterion(preds, labels)
+
+
+                            loss_value = loss.item()
+
+                            _, top1_preds = torch.max(preds.data, -1)
+                            _, top5_preds = torch.topk(preds.data, k=5, dim=-1)
+
+                            top1 = ((top1_preds == labels).sum().item() / labels.size(0)) * 100
+                            top5 = 0
+                            for label, pred in zip(labels, top5_preds):
+                                if label in pred:
+                                    top5 += 1
+
+                            top5 /= labels.size(0)
+                            top5 *= 100
+
+                            running_loss.update(loss_value)
+                            running_top1.update(top1)
+                            running_top5.update(top5)
+                else: # if no finetune, test only
                     with torch.no_grad():
                         images = images.to(self.device)
                         labels = labels.to(self.device)
@@ -222,14 +254,12 @@ class Trainer():
                         running_loss.update(loss_value)
                         running_top1.update(top1)
                         running_top5.update(top5)
-        
-        eval_model.set_mode("train")
+                        
         eval_model_state = copy.deepcopy(eval_model.state_dict())
-        optim_state = copy.deepcopy(optimizer.state_dict())
         avg_loss = running_loss.get_result()
         avg_top1 = running_top1.get_result()
         avg_top5 = running_top5.get_result()
-        return eval_model_state, optim_state, avg_loss, avg_top1, avg_top5
+        return eval_model_state, avg_loss, avg_top1, avg_top5
     
     def warmup(self, epochs, sup):
         # sup: supervised warmup

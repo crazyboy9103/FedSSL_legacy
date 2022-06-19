@@ -18,7 +18,7 @@ from options import args_parser
 
 from trainers import Trainer
 from update import LocalModel
-from models import ResNet50, ResNet18, VGG16
+from models import ResNet_model
 from utils import get_dataset, average_weights, exp_details, compute_similarity
 from CKA import CKA, CudaCKA
 
@@ -35,44 +35,15 @@ if __name__ == '__main__':
     torch.manual_seed(args.seed)
     torch.cuda.manual_seed(args.seed)
     np.random.seed(args.seed)
-    torch.backends.cudnn.benchmark = True
+    torch.backends.cudnn.benchmark = False
     torch.backends.cudnn.deterministic = True
     
-    models_dict = {"resnet18": ResNet18, "resnet50": ResNet50, "vgg16": VGG16}
-    if args.exp == "simclr":
-        # BUILD MODEL
-        global_model = models_dict[args.model](
-            pretrained = args.pretrained, 
-            out_dim = args.out_dim, 
-            exp = "simclr", 
-            mode = "train", 
-            freeze = args.freeze,
-            pred_dim = None, 
-            num_classes = 10
-        )
+   
+
+    # BUILD MODEL
+    global_model = ResNet_model(args)
     
-    elif args.exp == "simsiam":
-         global_model = models_dict[args.model](
-            pretrained = args.pretrained, 
-            out_dim = args.out_dim, 
-            exp = "simsiam", 
-            mode = "train", 
-            freeze = args.freeze,
-            pred_dim = args.pred_dim, 
-            num_classes = 10
-        )
-                
-    elif args.exp == "FL":
-        global_model = models_dict[args.model](
-            pretrained = args.pretrained, 
-            out_dim = args.out_dim, 
-            exp = "FL", 
-            mode = "train", 
-            freeze = args.freeze,
-            pred_dim = None, 
-            num_classes = 10
-        )
-        
+   
     # Set the model to train and send it to device.
     global_model.to(device)
     global_model.set_mode("train")
@@ -80,68 +51,69 @@ if __name__ == '__main__':
     # load dataset and user train indices
     train_dataset, test_dataset, warmup_dataset, user_train_idxs = get_dataset(args)
     
-    # only used small fraction of the test data 
-    len_data = len(test_dataset)
-    idxs = [i for i in range(len_data)]
-    np.random.shuffle(idxs)
-    len_data = int(len_data * args.server_data_frac)
-    idxs = idxs[:len_data]
-    test_dataset = Subset(test_dataset, idxs)
+    if args.exp != "FL":
+        # only used smaller fraction of the test data 
+        len_data = len(test_dataset)
+        idxs = [i for i in range(len_data)]
+        np.random.shuffle(idxs)
+        len_data = int(len_data * args.server_data_frac)
+        idxs = idxs[:len_data]
+        test_dataset = Subset(test_dataset, idxs)
     
-#     if args.warmup:
-#         # Only test, warmup are used
-#         test_loader  = DataLoader(
-#             test_dataset, 
-#             batch_size=args.local_bs, 
-#             shuffle=False,
-#             num_workers=8,
-#             pin_memory=True
-#         )
-        
-#         warmup_loader = DataLoader(
-#             test_dataset if args.sup_warmup else warmup_dataset,
-#             batch_size=args.warmup_bs, 
-#             shuffle=True, 
-#             num_workers=8,
-#             pin_memory=True
-#         )
-        
-#         server_model = Trainer(
-#             args = args,
-#             model = copy.deepcopy(global_model), 
-#             train_loader = None, 
-#             test_loader = test_loader,
-#             warmup_loader = warmup_loader,
-#             device = device, 
-#             client_id = -1
-#         )
-        
-#         # Start warmup
-#         warmup_state = server_model.warmup(args.warmup_epochs, args.sup_warmup)
-        
-#         # Get model_state_dict
-#         warmup_model_state = warmup_state["model"]
-        
-#         # Initializes the current global model with the state_dict 
-#         global_model.load_state_dict(warmup_model_state)
-        
-    
-    
-    # Training
-    valid_loss, valid_top1, valid_top5 = [],  [], []
+    if args.warmup:
+        # Only test, warmup are used
+        test_loader  = DataLoader(
+            test_dataset, 
+            batch_size=args.local_bs, 
+            shuffle=False,
+            num_workers=8,
+            pin_memory=True
+        )
 
+        warmup_loader = DataLoader(
+            test_dataset if args.sup_warmup else warmup_dataset, # if sup_warmup, use 1 view sup dataset; else 2 view simclr dataset
+            batch_size=args.warmup_bs, 
+            shuffle=True, 
+            num_workers=8,
+            pin_memory=True
+        )
+
+        server_model = Trainer(
+            args = args,
+            model = copy.deepcopy(global_model), 
+            train_loader = None, 
+            test_loader = test_loader,
+            warmup_loader = warmup_loader,
+            device = device, 
+            client_id = -1
+        )
+
+        # Start warmup
+        warmup_state = server_model.warmup(args.warmup_epochs, args.sup_warmup)
+
+        # Get model_state_dict
+        warmup_model_state = warmup_state["model"]
+
+        # Initializes the current global model with the state_dict 
+        global_model.load_state_dict(warmup_model_state)
+
+    
+    num_clients_part = int(args.frac * args.num_users)
+    assert num_clients_part > 0
+    # Training 
     for epoch in range(args.epochs):
         local_weights, local_losses, local_top1s, local_top5s = {}, {}, {}, {}
         print(f'\n | Global Training Round : {epoch+1} |\n')
         
         # Select clients for training in this round
-        num_clients_part = int(args.frac * args.num_users)
-        assert num_clients_part > 0
         part_users_ids = np.random.choice(range(args.num_users), num_clients_part, replace=False)
         
         threads = []
         for i, client_id in enumerate(part_users_ids):
-            trainset = Subset(train_dataset, user_train_idxs[client_id]) 
+            trainset = Subset(
+                train_dataset, 
+                user_train_idxs[client_id]
+            ) 
             # instantiate local model
             local_model = LocalModel(
                 args=args,
@@ -179,56 +151,116 @@ if __name__ == '__main__':
             tb_writer.add_scalar(f"val_top5_acc_client_{i}", top5, epoch)
         
         
-        # Compute cosine similarity between model weights
-        # cos_sim = compute_similarity(torch.device(f"cuda:{args.train_device}"), local_weights)
-        
-        # for layer_idx, cos in enumerate(cos_sim):
-        #     tb_writer.add_scalar(f"cos_sim_round_{epoch}", cos, layer_idx)
+        # simclr 나 simsiam의 경우 finetune이 무조건 필요 (classifier 가 없으므로)
+        # 1. aggregation 전에 finetune, args.finetune_before_agg = True
+        # 2. finetune 전에 aggregation, args.finetune_before_agg = False
+        if args.exp != "FL":
+            # Finetune each client's model before aggregation
+            if args.finetune_before_agg:
+                for i, client_id in enumerate(part_users_ids):
+                    local_weight = local_weights[i]
+                    global_model.load_state_dict(local_weight)
+                     # test loader for linear eval 
+                    test_loader  = DataLoader(
+                        test_dataset, 
+                        batch_size=args.local_bs, 
+                        shuffle=False, 
+                        num_workers=4, 
+                        pin_memory=True
+                    )
+
+                    server_model = Trainer(
+                        args = args,
+                        model = copy.deepcopy(global_model), 
+                        train_loader = None, 
+                        test_loader = test_loader,
+                        warmup_loader = None,
+                        device = device, 
+                        client_id = -1
+                    )
+
+                    state_dict, loss_avg, top1_avg, top5_avg = server_model.test(
+                        finetune=args.finetune, 
+                        epochs=args.finetune_epoch
+                    )
+                         
+                    local_weights[i] = state_dict
+
+                # aggregate weights
+                global_weights = average_weights(local_weights)
+                
+                global_model.load_state_dict(global_weights)
+                
+            # Finetune each client's model after aggregation
+            if not args.finetune_before_agg:
+                # aggregate weights
+                global_weights = average_weights(local_weights)
+
+                global_model.load_state_dict(global_weights)
+                 # test loader for linear eval 
+                test_loader  = DataLoader(
+                    test_dataset, 
+                    batch_size=args.local_bs, 
+                    shuffle=False, 
+                    num_workers=4, 
+                    pin_memory=True
+                )
+
+                server_model = Trainer(
+                    args = args,
+                    model = copy.deepcopy(global_model), 
+                    train_loader = None, 
+                    test_loader = test_loader,
+                    warmup_loader = None,
+                    device = device, 
+                    client_id = -1
+                )
+
+                state_dict, loss_avg, top1_avg, top5_avg = server_model.test(
+                    finetune=args.finetune, 
+                    epochs=args.finetune_epoch
+                )
+
+                if args.finetune:
+                    missing_keys, unexpected_keys = global_model.load_state_dict(state_dict)
+                    print(f"missing keys {missing_keys}")
+                    print(f"unexp keys {unexpected_keys}")
+                    
+                    
+        # FL일 경우 finetune 하지 않고 aggregate된 weight로만 성능 평가 
+        else:
+            # aggregate weights only
+            global_weights = average_weights(local_weights)
+            global_model.load_state_dict(global_weights)
+            # test loader for linear eval 
+            test_loader  = DataLoader(
+                test_dataset, 
+                batch_size=args.local_bs, 
+                shuffle=False, 
+                num_workers=4, 
+                pin_memory=True
+            )
+
+            server_model = Trainer(
+                args = args,
+                model = copy.deepcopy(global_model), 
+                train_loader = None, 
+                test_loader = test_loader,
+                warmup_loader = None,
+                device = device, 
+                client_id = -1
+            )
+
+            state_dict, loss_avg, top1_avg, top5_avg = server_model.test(
+                finetune=False, 
+                epochs=1
+            )
             
-        # aggregate weights
-        global_weights = average_weights(local_weights)
-
-        # update global weights
-        missing_keys, unexpected_keys = global_model.load_state_dict(global_weights)
-        print(f"missing keys {missing_keys}")
-        print(f"unexp keys {unexpected_keys}")
-        
-        global_model.set_mode("train")
-
-        
-        # test loader for linear eval 
-        test_loader  = DataLoader(
-            test_dataset, 
-            batch_size=args.local_bs, 
-            shuffle=False, 
-            num_workers=4, 
-            pin_memory=True
-        )
-        
-        server_model = Trainer(
-            args = args,
-            model = copy.deepcopy(global_model), 
-            train_loader = None, 
-            test_loader = test_loader,
-            warmup_loader = None,
-            device = device, 
-            client_id = -1
-        )
-        
-        state_dict, _, loss_avg, top1_avg, top5_avg = server_model.test(finetune=True, epochs=args.finetune_epoch)
-        missing_keys, unexpected_keys = global_model.load_state_dict(state_dict)
-        print(f"missing keys {missing_keys}")
-        print(f"unexp keys {unexpected_keys}")
-        
-        valid_loss.append(loss_avg)
-        valid_top1.append(top1_avg)
-        valid_top5.append(top5_avg)
-
-        # print global training loss after every 'i' rounds
-        #if (epoch+1) % print_every == 0:
-        print(f' \nAvg Validation Stats after {epoch+1} global rounds:')
-        print(f'Validation Loss : {loss_avg:.2f}')
-        print(f'Validation Accuracy: top1/top5 {top1_avg:.2f}%/{top5_avg:.2f}%\n')
+        print("#######################################################")
+        print(f' \nAvg Validation Stats after {epoch+1} global rounds')
+        print(f'Validation Loss     : {loss_avg:.2f}')
+        print(f'Validation Accuracy : top1/top5 {top1_avg:.2f}%/{top5_avg:.2f}%\n')
+        print("#######################################################")
         
         tb_writer.add_scalar("Server_loss", loss_avg, epoch)
         tb_writer.add_scalar("Server_top1_acc", top1_avg, epoch)

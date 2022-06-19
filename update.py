@@ -9,16 +9,11 @@ from trainers import Trainer
 import copy 
 
 class LocalModel():
-    def __init__(self, args, client_id, model, trainset, test_dataset):
-        self.args = args
-        self.client_id = client_id
-        self.model = model
-        self.model.train()
-        
-        self.device = torch.device(f"cuda:{args.train_device}") if torch.cuda.is_available() else torch.device("cpu")
+    def __init__(self, args, client_id, model, trainset, test_dataset):        
+        device = torch.device(f"cuda:{args.train_device}") if torch.cuda.is_available() else torch.device("cpu")
         if args.parallel:
             num_gpu = torch.cuda.device_count()
-            self.device = torch.device(f"cuda:{client_id % num_gpu}")
+            device = torch.device(f"cuda:{client_id % num_gpu}")
         
         self.train_loader = DataLoader(
             trainset, 
@@ -37,12 +32,12 @@ class LocalModel():
         
 
         self.trainer = Trainer(
-            args = self.args,
-            model = self.model, 
+            args = args,
+            model = model, 
             train_loader = self.train_loader,
             test_loader = self.test_loader,
             warmup_loader = None,
-            device = self.device, 
+            device = device, 
             client_id = client_id
         )
     
