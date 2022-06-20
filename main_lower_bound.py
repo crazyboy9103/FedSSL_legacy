@@ -65,6 +65,7 @@ if __name__ == '__main__':
             num_items = len_data, 
             alpha=100000
         )
+        
     else: 
         train_idxs = get_train_idxs(
             test_dataset,
@@ -84,7 +85,8 @@ if __name__ == '__main__':
             batch_size=args.local_bs, 
             shuffle=False, 
             num_workers=4, 
-            pin_memory=True
+            pin_memory=True,
+            drop_last=True
         )
 
          # test loader for linear eval 
@@ -93,7 +95,8 @@ if __name__ == '__main__':
             batch_size=args.local_bs, 
             shuffle=False, 
             num_workers=4, 
-            pin_memory=True
+            pin_memory=True,
+            drop_last=True
         )
 
         server_model = Trainer(

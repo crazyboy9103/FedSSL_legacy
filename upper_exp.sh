@@ -10,7 +10,7 @@ finetune="False"
 freeze="False"
 
 frac="0.9"
-for model in "resnet50"
+for model in "resnet18"
 do
     for pretrained in "False" "True"
     do

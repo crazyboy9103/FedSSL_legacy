@@ -20,9 +20,18 @@ def get_train_idxs(dataset, num_users, num_items, alpha):
     # 10 labels
     class_dist = np.random.dirichlet(alpha=[alpha for _ in range(10)], size=num_users)
     class_dist = (class_dist * num_items).astype(int)
-
-    for _class, class_num in enumerate(class_dist.T.sum(axis=1)):
-        assert class_num < len(idxs_labels[_class]), "num_items must be smaller"
+    
+    if num_users == 1:
+        class_dist = class_dist
+        
+        for _class, class_num in enumerate(class_dist[0]):
+            if class_num > len(idxs_labels[_class]):
+                class_dist[0][_class] = len(idxs_labels[_class])
+            
+    else:
+            
+        for _class, class_num in enumerate(class_dist.T.sum(axis=1)):
+            assert class_num < len(idxs_labels[_class]), "num_items must be smaller"
     
     
     dict_users = {i: set() for i in range(num_users)}

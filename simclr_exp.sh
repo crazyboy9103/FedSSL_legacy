@@ -19,7 +19,7 @@ do
         do 
             for frac in "1"
             do 
-                for model in "resnet18" "resnet50"
+                for model in "resnet18"
                 do
                     for pretrained in "False" "True"
                     do
@@ -36,7 +36,7 @@ do
                             --strength "$strength" \
                             --temperature "$temperature" \
                             --out_dim "$out_dim" \
-                            --log_path ./logs/simclr/"$finetune_before_agg"_"$finetune_epoch"_"$freeze"_"$frac"_"$model"_"$pretrained"_"$niid_alpha"
+                            --log_path ./logs/simclr/ftbfag_"$finetune_before_agg"_ftepoch_"$finetune_epoch"_frz_"$freeze"_fr_"$frac"_"$model"_pre_"$pretrained"_alpha_"$niid_alpha"
 
                         python main.py \
                             --server_data_frac "$frac" \
@@ -51,7 +51,7 @@ do
                             --strength "$strength" \
                             --temperature "$temperature" \
                             --out_dim "$out_dim" \
-                            --log_path ./logs/simclr/"$finetune_before_agg"_"$finetune_epoch"_"$freeze"_"$frac"_"$model"_"$pretrained"_"$iid_alpha"
+                            --log_path ./logs/simclr/ftbfag_"$finetune_before_agg"_ftepoch_"$finetune_epoch"_frz_"$freeze"_fr_"$frac"_"$model"_pre_"$pretrained"_alpha_"$iid_alpha"
                     done
                 done
             done
