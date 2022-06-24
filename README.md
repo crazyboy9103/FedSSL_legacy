@@ -1,6 +1,6 @@
 # Environment Setup
 1. Install anaconda/miniconda
-2. Modify $HOME in environment.yaml ($HOME/miniconda3/envs/FedSSL)
+2. Modify conda path in environment.yaml ($CONDA_PATH/envs/FedSSL)
 3. ```conda env create --file environment.yaml```
 4. ```conda activate FedSSL```
 
