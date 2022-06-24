@@ -6,7 +6,7 @@
 
 # Run
 1. Pass arguments (see options.py)
-* python federated_clr.py --args
+* python main.py --args
 
 2. Run Tensorboard for monitoring
 * sh run_tb.sh "Tensorboard log path"

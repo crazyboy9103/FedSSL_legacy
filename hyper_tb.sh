@@ -1,1 +1,0 @@
-tensorboard --logdir_spec upper:./logs/FL/hyper/upper,lower:./logs/FL/hyper/lower,simclr:./logs/simclr/hyper,simsiam:./logs/simsiam/hyper --bind_all

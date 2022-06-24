@@ -1,6 +1,17 @@
 *.tar
 logs/
 data/
+lower/
+simclr/
+simsiam/
+upper/
+alpha/
+50/
+50_new/
+*.ipynb
+*.json
+*.zip
+*.sh/
 .ipynb_checkpoints/
 __pycache__/
 *.txt
